@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { FinalCta } from "@/components/organisms/FinalCta";
 import { PageIntro } from "@/components/organisms/PageIntro";
-import { Reassurance } from "@/components/organisms/Reassurance";
 import { RiskList } from "@/components/organisms/RiskList";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
@@ -26,7 +25,6 @@ export function WhyTemplate({ content, signupUrl }: WhyTemplateProps): ReactNode
           <PageIntro title={why.intro.title} lede={why.intro.lede} />
           <ValueGrid title={why.reasons.title} values={why.reasons.items} />
           <RiskList content={why.risks} />
-          <Reassurance content={why.reassurance} />
           <FinalCta content={content.finalCta} signupUrl={signupUrl} />
         </main>
         <SiteFooter content={content.footer} />

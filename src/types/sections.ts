@@ -290,11 +290,6 @@ export interface WhyContent {
   readonly intro: { readonly title: RichText; readonly lede: string };
   readonly reasons: { readonly title: RichText; readonly items: readonly MissionValue[] };
   readonly risks: { readonly title: RichText; readonly items: readonly Risk[] };
-  readonly reassurance: {
-    readonly title: string;
-    readonly body: string;
-    readonly quotes: readonly AttributedQuote[];
-  };
 }
 
 export interface WhyPageContent {

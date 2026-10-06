@@ -105,20 +105,6 @@ export const WHY = {
       },
     ],
   },
-  reassurance: {
-    title: "None of this means stop vibe coding.",
-    body: "Build fast. Ship ideas. Just check what you've built before strangers do. Founders who saw their results felt it too.",
-    quotes: [
-      {
-        parts: ["Now I'm stressed. I'm really stressed.", "I'm happy that you found it."],
-        attribution: "Founder of a charity marketplace, as his findings came in",
-      },
-      {
-        parts: ["It's not as bad as I thought it was going to be."],
-        attribution: "Founder of a social app, after her first scan",
-      },
-    ],
-  },
 } as const satisfies WhyContent;
 
 export const WHY_FINAL_CTA = {
