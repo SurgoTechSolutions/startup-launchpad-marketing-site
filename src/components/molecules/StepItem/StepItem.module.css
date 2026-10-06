@@ -1,0 +1,55 @@
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 0 36px 76px;
+  counter-increment: step;
+  font-size: 16px;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+/* Numbered circle. */
+.step::before {
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Connector line to the next step. */
+.step::after {
+  content: "";
+  position: absolute;
+  top: 52px;
+  bottom: 8px;
+  left: 21px;
+  width: 2px;
+  background: var(--line);
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+.title {
+  height: 44px;
+  margin-bottom: -6px;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 44px;
+}

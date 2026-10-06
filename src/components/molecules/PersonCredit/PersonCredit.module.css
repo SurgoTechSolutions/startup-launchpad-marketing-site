@@ -1,0 +1,18 @@
+.who {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.name {
+  display: block;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.withAvatar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}

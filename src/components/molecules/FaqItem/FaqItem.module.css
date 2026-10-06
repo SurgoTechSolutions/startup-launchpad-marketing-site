@@ -1,0 +1,17 @@
+.item {
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+}
+
+.question {
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.answer {
+  margin-top: 10px;
+  font-size: 15px;
+}

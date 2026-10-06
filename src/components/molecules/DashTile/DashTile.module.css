@@ -1,0 +1,122 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.icon {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.total {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.total b {
+  font-size: 38px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.total span {
+  color: var(--body);
+  font-size: 14px;
+}
+
+/* Total colour by worst severity, as in the mock-up. */
+.total-critical {
+  color: #e53e3e;
+}
+
+.total-high {
+  color: #dd6b20;
+}
+
+.total-medium {
+  color: #b7791f;
+}
+
+.total-low,
+.total-info {
+  color: #38a169;
+}
+
+.bar {
+  display: flex;
+  gap: 3px;
+  height: 7px;
+}
+
+.bar i {
+  min-width: 10px;
+  border-radius: 999px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  color: var(--body);
+  font-size: 12.5px;
+  list-style: none;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.legend i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+/* Severity colours for bar segments and legend dots. */
+.critical {
+  background: #e53e3e;
+}
+
+.high {
+  background: #dd6b20;
+}
+
+.medium {
+  background: #d69e2e;
+}
+
+.low {
+  background: #718096;
+}
+
+.info {
+  background: #a0aec0;
+}
