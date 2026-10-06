@@ -8,6 +8,7 @@ export const HEADER_BASE = {
 
 /** Header links, the same on every page. The current page's link is underlined. */
 export const NAV_LINKS = [
+  { label: "Why", href: ROUTES.why },
   { label: "Mission", href: ROUTES.mission },
   { label: "Pricing", href: ROUTES.pricing },
   { label: "Terms", href: ROUTES.terms },

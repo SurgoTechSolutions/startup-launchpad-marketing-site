@@ -1,0 +1,81 @@
+.risk {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: start;
+  gap: 40px;
+  padding-block: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.number {
+  color: var(--accent);
+  font-size: clamp(40px, 5vw, 56px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.title {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+}
+
+.body {
+  font-size: 17px;
+}
+
+.proof {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow:
+    var(--shadow-stack),
+    0 18px 36px rgba(0, 21, 36, 0.1);
+}
+
+.label {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.list li::marker {
+  color: var(--crit);
+}
+
+@media (max-width: 900px) {
+  .risk {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .proof {
+    padding: 22px 20px;
+  }
+}

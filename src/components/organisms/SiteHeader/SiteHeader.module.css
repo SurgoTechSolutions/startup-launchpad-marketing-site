@@ -79,6 +79,13 @@
 
   .bar[data-scrolled] .wordmark {
     font-size: 16px;
+    white-space: nowrap;
+  }
+
+  /* Switch sizes instantly here: mid-animation, the full-size title and button do not fit one row. */
+  .wordmark,
+  .cta {
+    transition: none;
   }
 
   .bar[data-scrolled] .cta {
@@ -93,5 +100,11 @@
   .wordmark,
   .cta {
     transition: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .links {
+    gap: 16px;
   }
 }

@@ -271,6 +271,40 @@ export interface MissionPageContent {
   readonly footer: FooterContent;
 }
 
+/** A quote from an unnamed founder. Several parts are joined with an ellipsis. */
+export interface AttributedQuote {
+  readonly parts: readonly string[];
+  readonly attribution: string;
+}
+
+export interface Risk {
+  readonly number: string;
+  readonly title: string;
+  readonly body: RichText;
+  readonly proofLabel: string;
+  readonly proofs: readonly string[];
+  readonly quote?: AttributedQuote;
+}
+
+export interface WhyContent {
+  readonly intro: { readonly title: RichText; readonly lede: string };
+  readonly reasons: { readonly title: RichText; readonly items: readonly MissionValue[] };
+  readonly risks: { readonly title: RichText; readonly items: readonly Risk[] };
+  readonly reassurance: {
+    readonly title: string;
+    readonly body: string;
+    readonly quotes: readonly AttributedQuote[];
+  };
+  readonly fits: HowItWorksContent;
+}
+
+export interface WhyPageContent {
+  readonly header: HeaderContent;
+  readonly why: WhyContent;
+  readonly finalCta: FinalCtaContent;
+  readonly footer: FooterContent;
+}
+
 export interface PageMeta {
   readonly title: string;
   readonly description: string;

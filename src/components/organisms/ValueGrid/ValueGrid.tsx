@@ -3,15 +3,16 @@ import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
 import { ValueCard } from "@/components/molecules/ValueCard";
-import type { MissionContent } from "@/types";
-import styles from "./MissionValues.module.css";
+import type { MissionValue, RichText as RichTextContent } from "@/types";
+import styles from "./ValueGrid.module.css";
 
-export interface MissionValuesProps {
-  readonly title: MissionContent["valuesTitle"];
-  readonly values: MissionContent["values"];
+export interface ValueGridProps {
+  readonly title: RichTextContent;
+  readonly values: readonly MissionValue[];
 }
 
-export function MissionValues({ title, values }: MissionValuesProps): ReactNode {
+/** A heading over a row of short principle cards. */
+export function ValueGrid({ title, values }: ValueGridProps): ReactNode {
   return (
     <section>
       <SectionHead>

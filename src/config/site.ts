@@ -17,6 +17,7 @@ export const ROUTES = {
   launchpad: "/startup-launchpad",
   pricing: "/startup-launchpad/pricing",
   mission: "/startup-launchpad/mission",
+  why: "/startup-launchpad/why",
   privacy: "/startup-launchpad/privacy",
   terms: "/startup-launchpad/terms",
 } as const;
