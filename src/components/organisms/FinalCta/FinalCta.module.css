@@ -17,6 +17,18 @@
   text-align: center;
 }
 
+/* Quote card under the button, centred, with its contents centred too. */
+.centered .stackedQuote {
+  align-items: center;
+  max-width: 640px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.centered .stackedQuote figcaption {
+  justify-content: center;
+}
+
 .contact {
   color: var(--muted);
   font-size: 14px;

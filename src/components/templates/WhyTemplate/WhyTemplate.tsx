@@ -25,7 +25,7 @@ export function WhyTemplate({ content, signupUrl }: WhyTemplateProps): ReactNode
           <PageIntro title={why.intro.title} lede={why.intro.lede} />
           <ValueGrid title={why.reasons.title} values={why.reasons.items} />
           <RiskList content={why.risks} />
-          <FinalCta content={content.finalCta} signupUrl={signupUrl} />
+          <FinalCta content={content.finalCta} signupUrl={signupUrl} layout="centered" />
         </main>
         <SiteFooter content={content.footer} />
       </div>
