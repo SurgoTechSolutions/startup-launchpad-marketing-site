@@ -31,7 +31,14 @@ export function FinalCta({ content, signupUrl, id }: FinalCtaProps): ReactNode {
         <Button href={signupUrl}>{content.ctaLabel}</Button>
         {content.contact !== undefined && <p className={styles.contact}>{content.contact}</p>}
       </div>
-      {quote !== undefined && <QuoteCard variant="glyph" text={quote.text} person={quote.person} />}
+      {quote !== undefined && (
+        <QuoteCard
+          variant="glyph"
+          text={quote.text}
+          person={quote.person}
+          {...(quote.context === undefined ? {} : { context: quote.context })}
+        />
+      )}
     </section>
   );
 }

@@ -40,6 +40,11 @@ export const QUOTES = {
     text: "I like how simply it's explained. You're clearly explaining the scenario rather than giving me just a bunch of words I don't understand.",
     person: "alice",
   },
+  aliceFixes: {
+    text: "Not a challenge at all. The explanations are the best part for me. Simple and clear.",
+    person: "alice",
+    context: "On fixing her issues, a week later",
+  },
   aliceTimeShort: {
     text: "You're giving me my time back.",
     person: "alice",

@@ -1,6 +1,7 @@
 import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, PageMeta, WhyContent, WhyPageContent } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
+import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
 
 /**
@@ -109,8 +110,9 @@ export const WHY = {
 
 export const WHY_FINAL_CTA = {
   title: ["Find out what's in your code ", { highlight: "before someone else does" }, "."],
-  lede: "Free first scan. Money back if your first scan finds nothing. Cancel any time.",
+  lede: "Free first scan. Cancel any time.",
   ctaLabel: "Scan my code free",
+  quote: resolveQuote("aliceFixes"),
 } as const satisfies FinalCtaContent;
 
 export const WHY_META = {
