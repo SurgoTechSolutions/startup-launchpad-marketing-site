@@ -28,7 +28,6 @@ export interface HeaderContent {
 }
 
 export interface HeroContent {
-  readonly eyebrow: string;
   readonly title: RichText;
   readonly lede: string;
   readonly ctaLabel: string;

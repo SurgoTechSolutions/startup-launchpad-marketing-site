@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
-import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Lede } from "@/components/atoms/Lede";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
@@ -31,7 +30,6 @@ export function Hero({ content, signupUrl }: HeroProps): ReactNode {
   return (
     <section className={styles.hero}>
       <div className={styles.copy}>
-        <Eyebrow>{content.eyebrow}</Eyebrow>
         <SectionTitle as="h1">
           <RichText content={content.title} />
         </SectionTitle>
