@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { RevealList } from "@/components/atoms/RevealList";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -20,11 +21,11 @@ export function HowItWorks({ content, signupUrl }: HowItWorksProps): ReactNode {
           <RichText content={content.title} />
         </SectionTitle>
       </SectionHead>
-      <ol className={styles.steps}>
+      <RevealList className={styles.steps}>
         {content.steps.map((step) => (
           <StepItem key={step.title} step={step} />
         ))}
-      </ol>
+      </RevealList>
       <div className={styles.cta}>
         <p>{content.ctaText}</p>
         <Button href={signupUrl}>{content.ctaLabel}</Button>

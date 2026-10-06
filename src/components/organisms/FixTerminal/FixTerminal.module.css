@@ -107,3 +107,8 @@
     animation: none;
   }
 }
+
+/* Keeps its space so the terminal does not grow while lines appear. */
+.hidden {
+  visibility: hidden;
+}

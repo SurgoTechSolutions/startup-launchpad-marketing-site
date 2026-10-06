@@ -35,6 +35,8 @@ export interface HeroContent {
   readonly note: string;
   /** Accessible name for the rotating quote card. */
   readonly quotesLabel: string;
+  /** Start of each dot button's label, followed by the person's name. */
+  readonly quoteDotLabel: string;
   readonly quotes: readonly QuoteWithPerson[];
 }
 

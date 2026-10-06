@@ -35,6 +35,7 @@ export const HERO = {
   ctaLabel: "Scan my code free",
   note: "Read-only access. Find out how many issues you have before you pay anything.",
   quotesLabel: "What founders said when they saw their results",
+  quoteDotLabel: "Show quote from",
   quotes: HERO_QUOTE_KEYS.map(resolveQuote),
 } as const satisfies HeroContent;
 

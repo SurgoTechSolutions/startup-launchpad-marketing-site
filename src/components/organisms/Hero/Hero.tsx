@@ -3,6 +3,7 @@ import { Button } from "@/components/atoms/Button";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Lede } from "@/components/atoms/Lede";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
+import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
 import type { HeroContent } from "@/types";
 import { HeroQuoteRotator } from "../HeroQuoteRotator";
@@ -14,6 +15,19 @@ export interface HeroProps {
 }
 
 export function Hero({ content, signupUrl }: HeroProps): ReactNode {
+  // Slides render on the server; the rotator only switches between them.
+  const slides = content.quotes.map((quote, index) => (
+    <QuoteCard
+      key={quote.text}
+      variant="shout"
+      text={quote.text}
+      person={quote.person}
+      {...(quote.context === undefined ? {} : { context: quote.context })}
+      priority={index === 0}
+    />
+  ));
+  const dotLabels = content.quotes.map((quote) => `${content.quoteDotLabel} ${quote.person.name}`);
+
   return (
     <section className={styles.hero}>
       <div className={styles.copy}>
@@ -25,7 +39,7 @@ export function Hero({ content, signupUrl }: HeroProps): ReactNode {
         <Button href={signupUrl}>{content.ctaLabel}</Button>
         <small className={styles.note}>{content.note}</small>
       </div>
-      <HeroQuoteRotator quotes={content.quotes} label={content.quotesLabel} />
+      <HeroQuoteRotator slides={slides} dotLabels={dotLabels} label={content.quotesLabel} />
     </section>
   );
 }

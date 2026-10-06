@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CountUp } from "@/components/atoms/CountUp";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -19,8 +20,13 @@ export function StatsSection({ content }: StatsSectionProps): ReactNode {
         </SectionTitle>
       </SectionHead>
       <div className={styles.grid}>
-        {content.stats.map((stat) => (
-          <StatCard key={stat.label} hot value={`${String(stat.value)}${stat.suffix}`} label={stat.label} />
+        {content.stats.map((stat, index) => (
+          <StatCard
+            key={stat.label}
+            hot
+            value={<CountUp to={stat.value} suffix={stat.suffix} durationMs={1100} delayMs={index * 220} />}
+            label={stat.label}
+          />
         ))}
       </div>
       <p className={styles.note}>{content.note}</p>

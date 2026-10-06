@@ -1,0 +1,14 @@
+/* The sizer and the live value share one grid cell, so the box is always the final width. */
+.root {
+  display: inline-grid;
+  font-variant-numeric: tabular-nums;
+}
+
+.sizer,
+.value {
+  grid-area: 1 / 1;
+}
+
+.sizer {
+  visibility: hidden;
+}

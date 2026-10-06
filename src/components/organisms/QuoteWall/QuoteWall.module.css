@@ -1,14 +1,5 @@
+/* Bleeds into the page gutter so cards scroll to the edge. */
 .wall {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   margin-inline: -20px;
   padding-block: 4px;
-  overflow-x: auto;
-}
-
-.row {
-  display: flex;
-  gap: 16px;
-  width: max-content;
 }

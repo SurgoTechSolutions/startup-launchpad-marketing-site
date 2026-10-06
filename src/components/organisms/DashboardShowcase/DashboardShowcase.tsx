@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { CountUp } from "@/components/atoms/CountUp";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
-import { DashTile } from "@/components/molecules/DashTile";
+import { DashTile, getTileTotal } from "@/components/molecules/DashTile";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
 import type { DashboardContent } from "@/types";
@@ -31,8 +32,12 @@ export function DashboardShowcase({ content, signupUrl }: DashboardShowcaseProps
             </div>
           </div>
           <div className={styles.grid}>
-            {content.tiles.map((tile) => (
-              <DashTile key={tile.area} tile={tile} />
+            {content.tiles.map((tile, index) => (
+              <DashTile
+                key={tile.area}
+                tile={tile}
+                count={<CountUp to={getTileTotal(tile)} durationMs={1200} delayMs={index * 280} />}
+              />
             ))}
           </div>
         </div>

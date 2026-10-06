@@ -1,0 +1,56 @@
+.marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+/* The copy joins the row's flex line so the gap stays even across the loop point. */
+.copy {
+  display: contents;
+}
+
+.animated {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.animated .row {
+  animation: slide 60s linear infinite;
+}
+
+.animated .reverse {
+  animation-direction: reverse;
+  animation-duration: 70s;
+}
+
+.animated:hover .row,
+.animated:focus-within .row {
+  animation-play-state: paused;
+}
+
+/* Half the doubled row, plus half the gap between the two halves. */
+@keyframes slide {
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .animated .row {
+    animation: none;
+  }
+}
