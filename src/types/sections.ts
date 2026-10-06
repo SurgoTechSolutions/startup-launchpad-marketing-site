@@ -23,7 +23,7 @@ export interface QuoteWithPerson {
 
 export interface HeaderContent {
   readonly wordmark: { readonly lead: string; readonly accent: string; readonly href: string };
-  readonly navLink: Link;
+  readonly navLinks: readonly Link[];
   readonly ctaLabel: string;
 }
 

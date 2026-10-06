@@ -6,6 +6,12 @@ export const HEADER_BASE = {
   ctaLabel: "Scan my code free",
 } as const;
 
+/** Legal pages, linked from every header after the page's own nav link. */
+export const LEGAL_NAV_LINKS = [
+  { label: "Terms", href: ROUTES.terms },
+  { label: "Privacy", href: ROUTES.privacy },
+] as const;
+
 /** The header title. The lead keeps its trailing space; the accent is drawn in orange. */
 export const WORDMARK = { lead: "Startup ", accent: "Launchpad" } as const;
 

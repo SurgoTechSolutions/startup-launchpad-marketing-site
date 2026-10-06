@@ -14,9 +14,11 @@ export function SiteHeader({ content, signupUrl }: SiteHeaderProps): ReactNode {
     <header className={styles.header}>
       <Wordmark {...content.wordmark} />
       <nav className={styles.nav} aria-label="Main">
-        <Button href={content.navLink.href} variant="underline">
-          {content.navLink.label}
-        </Button>
+        {content.navLinks.map((link) => (
+          <Button key={link.href} href={link.href} variant="underline">
+            {link.label}
+          </Button>
+        ))}
         <Button href={signupUrl}>{content.ctaLabel}</Button>
       </nav>
     </header>
