@@ -167,6 +167,8 @@ export interface CostComparisonContent {
   readonly title: RichText;
   /** Screen-reader label for the empty first header cell. */
   readonly rowHeader: string;
+  /** Screen-reader text for the tick and cross cells. */
+  readonly cellLabels: { readonly yes: string; readonly no: string };
   readonly columns: readonly ComparisonColumn[];
   readonly rows: readonly ComparisonRow[];
   /** Footnote text with source links in between. */

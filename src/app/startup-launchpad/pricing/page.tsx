@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
+import { PricingTemplate } from "@/components/templates/PricingTemplate";
+import { SIGNUP_URL } from "@/config/site";
+import { PRICING_PAGE } from "@/content/pricingPage";
 
-// Placeholder until PricingTemplate is built in stage 5.
 export default function PricingPage(): ReactNode {
-  return <main>Pricing</main>;
+  return <PricingTemplate content={PRICING_PAGE} signupUrl={SIGNUP_URL} />;
 }
