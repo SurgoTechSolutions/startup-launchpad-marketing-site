@@ -1,0 +1,142 @@
+.explain {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.title {
+  grid-column: 1 / -1;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.issue {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: var(--surface);
+  box-shadow: 0 34px 70px rgba(0, 21, 36, 0.16);
+}
+
+.issueTop {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 30px 30px 26px;
+}
+
+.issueTop h3 {
+  font-size: clamp(19px, 2.2vw, 23px);
+  font-weight: 700;
+}
+
+.issueTop p {
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.severity {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--crit-strong);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.category {
+  color: var(--body);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--body);
+  font-size: 13.5px;
+}
+
+.location code {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.issueBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 26px 28px;
+  border-top: 1px solid var(--line);
+  background: #f4f4f4;
+  color: #1f2933;
+}
+
+.promptBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.promptBar > span {
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.prompt {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 26px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .explain {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .issueTop {
+    padding: 24px 20px;
+  }
+
+  .issueBottom {
+    padding: 20px;
+  }
+}

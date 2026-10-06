@@ -5,7 +5,7 @@ import styles from "./FindingCard.module.css";
 
 export interface FindingCardProps {
   readonly finding: Finding;
-  readonly className?: string;
+  readonly className?: string | undefined;
 }
 
 export function FindingCard({ finding, className }: FindingCardProps): ReactNode {

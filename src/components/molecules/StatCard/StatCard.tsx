@@ -8,7 +8,7 @@ export interface StatCardProps {
   readonly label: string;
   /** Hot stats draw the figure in red. */
   readonly hot?: boolean;
-  readonly className?: string;
+  readonly className?: string | undefined;
 }
 
 export function StatCard({ value, label, hot = false, className }: StatCardProps): ReactNode {

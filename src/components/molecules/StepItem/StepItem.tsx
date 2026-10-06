@@ -5,7 +5,7 @@ import styles from "./StepItem.module.css";
 
 export interface StepItemProps {
   readonly step: Step;
-  readonly className?: string;
+  readonly className?: string | undefined;
 }
 
 /** One numbered step. The parent list resets the counter and draws nothing else. */

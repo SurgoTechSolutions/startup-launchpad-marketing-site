@@ -9,7 +9,7 @@ export interface ButtonProps {
   readonly href: string;
   readonly children: ReactNode;
   readonly variant?: ButtonVariant;
-  readonly className?: string;
+  readonly className?: string | undefined;
 }
 
 /** Internal paths use next/link. Anything else, such as the sign-up subdomain, is a plain anchor. */

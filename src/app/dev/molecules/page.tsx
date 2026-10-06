@@ -10,7 +10,7 @@ import { RichText } from "@/components/molecules/RichText";
 import { StatCard } from "@/components/molecules/StatCard";
 import { StepItem } from "@/components/molecules/StepItem";
 import { SIGNUP_URL } from "@/config/site";
-import { HERO_QUOTES } from "@/content/hero";
+import { resolveQuote } from "@/content/quotes";
 import { getPerson } from "@/content/people";
 
 // Development-only gallery for checking molecules against the mock-up. Removed before launch.
@@ -18,14 +18,14 @@ export default function MoleculesPreviewPage(): ReactNode {
   if (process.env.NODE_ENV === "production") notFound();
 
   const grid3 = { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 } as const;
-  const hero = HERO_QUOTES[0];
+  const hero = resolveQuote("robHoly");
 
   return (
     <main style={{ maxWidth: 1120, margin: "0 auto", padding: "40px 20px", display: "grid", gap: 48 }}>
       <h2>
         <RichText content={["Then fixed with ", { keys: ["Ctrl", "V"] }, " and ", { badge: "critical" }, " ", { highlight: "1.5 days", noWrap: true }]} />
       </h2>
-      <QuoteCard variant="shout" text={hero.text} person={getPerson(hero.person)} context={hero.context} priority />
+      <QuoteCard variant="shout" text={hero.text} person={hero.person} context={hero.context ?? ""} priority />
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
         <QuoteCard variant="spotlight" text="It did in a few minutes what my security colleague spent 1.5 days to unearth." person={getPerson("rousseau")} />
         <QuoteCard variant="glyph" text="What you've given me will be a huge help, I can't thank you enough!" person={getPerson("jo")} />

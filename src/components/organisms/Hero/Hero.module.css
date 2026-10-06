@@ -1,0 +1,21 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-block: 48px 64px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 720px;
+  text-align: center;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 13px;
+}

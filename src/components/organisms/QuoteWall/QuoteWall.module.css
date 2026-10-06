@@ -1,0 +1,14 @@
+.wall {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-inline: -20px;
+  padding-block: 4px;
+  overflow-x: auto;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}

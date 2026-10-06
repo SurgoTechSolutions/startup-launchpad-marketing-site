@@ -29,7 +29,7 @@ export interface QuoteCardProps {
   readonly variant: QuoteCardVariant;
   readonly context?: string;
   readonly priority?: boolean;
-  readonly className?: string;
+  readonly className?: string | undefined;
 }
 
 export function QuoteCard({

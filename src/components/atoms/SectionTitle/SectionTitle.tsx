@@ -20,7 +20,7 @@ export interface SectionTitleProps {
   readonly children: ReactNode;
   readonly as?: "h1" | "h2";
   readonly size?: SectionTitleSize;
-  readonly className?: string;
+  readonly className?: string | undefined;
 }
 
 export function SectionTitle({

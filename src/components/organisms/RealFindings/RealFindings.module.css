@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 24px;
+  padding-bottom: 28px;
+}
+
+/* The middle card of each row sits lower, and keeps that offset on hover. */
+.grid > :nth-child(3n + 2) {
+  transform: translateY(28px);
+}
+
+.grid > :nth-child(3n + 2):hover {
+  transform: translateY(22px);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid > :nth-child(3n + 2),
+  .grid > :nth-child(3n + 2):hover {
+    transform: none;
+  }
+}

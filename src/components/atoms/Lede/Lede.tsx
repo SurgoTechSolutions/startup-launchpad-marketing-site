@@ -4,7 +4,7 @@ import styles from "./Lede.module.css";
 
 export interface LedeProps {
   readonly children: ReactNode;
-  readonly className?: string;
+  readonly className?: string | undefined;
 }
 
 /** Larger intro paragraph under a heading. */
