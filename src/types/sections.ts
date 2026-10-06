@@ -295,7 +295,6 @@ export interface WhyContent {
     readonly body: string;
     readonly quotes: readonly AttributedQuote[];
   };
-  readonly fits: HowItWorksContent;
 }
 
 export interface WhyPageContent {

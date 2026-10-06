@@ -119,17 +119,6 @@ export const WHY = {
       },
     ],
   },
-  fits: {
-    title: ["How Launchpad ", { highlight: "fits" }],
-    steps: [
-      { title: "Connect your repo", body: "Read-only access." },
-      { title: "See your numbers free", body: "By area and severity." },
-      { title: "Paste a fix prompt", body: "One for each finding." },
-    ],
-    ctaText:
-      "A first line of defence that runs every six hours, not a replacement for a pen test where you need one.",
-    ctaLabel: "Scan my code free",
-  },
 } as const satisfies WhyContent;
 
 export const WHY_FINAL_CTA = {
