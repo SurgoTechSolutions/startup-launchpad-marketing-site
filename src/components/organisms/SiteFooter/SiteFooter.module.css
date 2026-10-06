@@ -1,6 +1,23 @@
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
   padding-block: 28px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 13px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  color: var(--muted);
+}
+
+.links a:hover {
+  color: var(--accent);
 }

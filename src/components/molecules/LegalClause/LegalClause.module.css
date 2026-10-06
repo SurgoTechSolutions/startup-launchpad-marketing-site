@@ -1,0 +1,38 @@
+.clause {
+  display: grid;
+  grid-template-columns: 3.25em 1fr;
+  gap: 4px 12px;
+}
+
+.number {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.list li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .clause {
+    grid-template-columns: 1fr;
+  }
+}

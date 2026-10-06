@@ -192,6 +192,34 @@ export interface FinalCtaContent {
 
 export interface FooterContent {
   readonly text: string;
+  readonly links?: readonly Link[];
+}
+
+/** A numbered clause, e.g. "3.1", with an optional list underneath. */
+export interface LegalClause {
+  readonly number: string;
+  readonly text: RichText;
+  readonly list?: readonly RichText[];
+}
+
+export interface LegalSection {
+  readonly number: string;
+  readonly title: string;
+  readonly clauses: readonly LegalClause[];
+}
+
+export interface LegalDocumentContent {
+  readonly title: string;
+  readonly version: string;
+  readonly summary: { readonly title: string; readonly paragraphs: readonly RichText[] };
+  readonly sections: readonly LegalSection[];
+  readonly details: { readonly title: string; readonly lines: readonly RichText[] };
+}
+
+export interface LegalPageContent {
+  readonly header: HeaderContent;
+  readonly document: LegalDocumentContent;
+  readonly footer: FooterContent;
 }
 
 export interface LaunchpadPageContent {

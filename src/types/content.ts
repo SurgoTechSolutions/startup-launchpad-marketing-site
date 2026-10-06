@@ -35,6 +35,7 @@ export type RichSegment =
   | { readonly highlight: string; readonly noWrap?: boolean }
   | { readonly badge: string }
   | { readonly keys: readonly string[] }
+  | { readonly link: Link }
   | { readonly lineBreak: true };
 
 export type RichText = readonly RichSegment[];

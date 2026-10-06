@@ -1,0 +1,70 @@
+.document {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 780px;
+  margin-inline: auto;
+  padding-block: 48px 64px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.version {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Sections inside the document should not pick up the page-level section padding. */
+.section,
+.card {
+  padding-block: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sectionTitle {
+  font-size: clamp(20px, 2.4vw, 24px);
+  scroll-margin-top: 24px;
+}
+
+.sectionNumber {
+  color: var(--accent);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow:
+    var(--shadow-stack),
+    0 18px 36px rgba(0, 21, 36, 0.06);
+}
+
+.cardTitle {
+  font-size: 20px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-style: normal;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 22px 20px;
+  }
+}

@@ -27,6 +27,7 @@ function renderSegment(segment: RichSegment): ReactNode {
       </span>
     );
   }
+  if ("link" in segment) return <a href={segment.link.href}>{segment.link.label}</a>;
   return <br />;
 }
 

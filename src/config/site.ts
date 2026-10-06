@@ -16,4 +16,5 @@ export const SITE_URL: string =
 export const ROUTES = {
   launchpad: "/startup-launchpad",
   pricing: "/startup-launchpad/pricing",
+  privacy: "/startup-launchpad/privacy",
 } as const;
