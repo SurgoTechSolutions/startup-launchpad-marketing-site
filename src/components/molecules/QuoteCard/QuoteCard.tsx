@@ -29,6 +29,8 @@ export interface QuoteCardProps {
   readonly variant: QuoteCardVariant;
   readonly context?: string;
   readonly priority?: boolean;
+  /** Set false to show the words with no quote marks at all. */
+  readonly showQuoteMarks?: boolean;
   readonly className?: string | undefined;
 }
 
@@ -38,9 +40,11 @@ export function QuoteCard({
   variant,
   context,
   priority = false,
+  showQuoteMarks = true,
   className,
 }: QuoteCardProps): ReactNode {
-  const glyph = GLYPH_VARIANTS.has(variant);
+  const glyph = showQuoteMarks && GLYPH_VARIANTS.has(variant);
+  const inlineMarks = showQuoteMarks && !GLYPH_VARIANTS.has(variant);
 
   return (
     <figure className={cx(styles.quote, styles[variant], className)}>
@@ -50,7 +54,7 @@ export function QuoteCard({
           &quot;
         </span>
       )}
-      <blockquote className={styles.text}>{glyph ? text : `"${text}"`}</blockquote>
+      <blockquote className={styles.text}>{inlineMarks ? `"${text}"` : text}</blockquote>
       <PersonCredit
         person={person}
         avatarSize={variant === "spotlight" ? "lg" : "md"}

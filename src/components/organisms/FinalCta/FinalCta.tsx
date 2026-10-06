@@ -39,6 +39,7 @@ export function FinalCta({ content, signupUrl, id, layout }: FinalCtaProps): Rea
           text={quote.text}
           person={quote.person}
           {...(quote.context === undefined ? {} : { context: quote.context })}
+          showQuoteMarks={!centered}
           className={centered ? styles.stackedQuote : undefined}
         />
       )}
