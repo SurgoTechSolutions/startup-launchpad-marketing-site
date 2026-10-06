@@ -1,0 +1,38 @@
+.primary {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 16px;
+  background: var(--accent);
+  box-shadow: 0 8px 28px rgba(235, 115, 0, 0.3);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+}
+
+.underline {
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.underline:hover {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary {
+    transition: none;
+  }
+
+  .primary:hover {
+    transform: none;
+  }
+}

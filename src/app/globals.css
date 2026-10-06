@@ -1,6 +1,116 @@
-/* Design tokens and base styles are ported from the mock-up in stage 2. */
+/* Design tokens and base element styles, ported from design/startup-launchpad.html. Light theme only. */
+:root {
+  color-scheme: light;
+
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #001524;
+  --body: #333333;
+  --muted: #666666;
+  --line: #e0e0e0;
+  --grid: rgba(0, 21, 36, 0.043);
+  --accent: #eb7300;
+  --warm-soft: #fdf0e3;
+  --crit: #e53e3e;
+  --crit-soft: #fdecec;
+  --crit-strong: #c53d36;
+  --high: #dd6b20;
+  --bar: #a0aec0;
+  --ok: #1e7b3c;
+  --ok-soft: #e6f4ea;
+
+  --r: 22px;
+  --r-sm: 14px;
+
+  /* --font is set on <html> by next/font (Comfortaa). */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --shadow-stack: 8px 10px 0 -1px var(--surface), 8px 10px 0 0 var(--line);
+  --shadow-stack-lg: 12px 15px 0 -1px var(--surface), 12px 15px 0 0 var(--line);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+  color: var(--body);
+  font-family: var(--font), "Trebuchet MS", "Arial Rounded MT Bold", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(24px, 3.2vw, 30px);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+section {
+  padding-block: 64px;
+}
+
+@media (max-width: 900px) {
+  section {
+    padding-block: 44px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }

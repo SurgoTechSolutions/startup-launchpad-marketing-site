@@ -1,0 +1,8 @@
+.highlight {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.noWrap {
+  white-space: nowrap;
+}

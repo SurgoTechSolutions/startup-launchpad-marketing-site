@@ -1,0 +1,16 @@
+.kbd {
+  display: inline-block;
+  margin-inline: 0.12em;
+  padding: 0.32em 0.5em 0.26em;
+  border: 1px solid var(--line);
+  border-bottom-width: 4px;
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 6px 14px rgba(0, 21, 36, 0.1);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.78em;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: 0.08em;
+}
