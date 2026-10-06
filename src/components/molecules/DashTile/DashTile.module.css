@@ -42,7 +42,8 @@
   line-height: 1;
 }
 
-.total span {
+/* Direct child only, so the count-up spans inside the number keep the number's size and colour. */
+.total > span {
   color: var(--body);
   font-size: 14px;
 }
