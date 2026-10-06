@@ -1,0 +1,33 @@
+{
+  "name": "startup-launchpad",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "extract-assets": "node scripts/extract-assets.mjs",
+    "check": "npm run typecheck && npm run lint"
+  },
+  "dependencies": {
+    "next": "15.5.27",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.27",
+    "sharp": "0.35.5",
+    "typescript": "^5",
+    "typescript-eslint": "8.71.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

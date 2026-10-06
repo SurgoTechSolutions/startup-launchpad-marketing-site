@@ -1,0 +1,6 @@
+/* Design tokens and base styles are ported from the mock-up in stage 2. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
