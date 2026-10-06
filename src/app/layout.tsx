@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
 import type { ReactNode } from "react";
+import { SITE_URL } from "@/config/site";
 import "./globals.css";
 
 // Comfortaa is a variable font, so one file covers the 400 to 700 weights the design uses.
@@ -11,6 +12,7 @@ const comfortaa = Comfortaa({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Startup Launchpad",
 };
 

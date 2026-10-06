@@ -221,3 +221,10 @@ export interface PricingPageContent {
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
 }
+
+export interface PageMeta {
+  readonly title: string;
+  readonly description: string;
+  /** Route path, e.g. "/startup-launchpad". Resolved against the site URL. */
+  readonly path: string;
+}

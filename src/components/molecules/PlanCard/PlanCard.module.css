@@ -10,6 +10,12 @@
   background: var(--surface);
 }
 
+/* Same look whichever heading level the page needs. */
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .featured {
   border: 2px solid var(--accent);
 }

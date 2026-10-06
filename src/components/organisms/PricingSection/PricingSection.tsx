@@ -27,7 +27,12 @@ export function PricingSection({ content, signupUrl, headingLevel = "h2" }: Pric
       </SectionHead>
       <div className={styles.plans}>
         {content.plans.map((plan) => (
-          <PlanCard key={plan.title} plan={plan} ctaHref={signupUrl} />
+          <PlanCard
+            key={plan.title}
+            plan={plan}
+            ctaHref={signupUrl}
+            headingLevel={headingLevel === "h1" ? "h2" : "h3"}
+          />
         ))}
       </div>
       {content.moreLink !== undefined && (

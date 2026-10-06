@@ -8,12 +8,14 @@ export interface PlanCardProps {
   readonly plan: Plan;
   /** Where the plan's button goes, if it has one. */
   readonly ctaHref: string;
+  /** One level below the section heading: h3 under an h2, h2 under the page h1. */
+  readonly headingLevel?: "h2" | "h3";
 }
 
-export function PlanCard({ plan, ctaHref }: PlanCardProps): ReactNode {
+export function PlanCard({ plan, ctaHref, headingLevel: Heading = "h3" }: PlanCardProps): ReactNode {
   return (
     <div className={cx(styles.plan, plan.featured === true && styles.featured)}>
-      <h3>{plan.title}</h3>
+      <Heading className={styles.title}>{plan.title}</Heading>
       <div className={styles.amount}>
         {plan.price.amount}
         {plan.price.period !== undefined && (

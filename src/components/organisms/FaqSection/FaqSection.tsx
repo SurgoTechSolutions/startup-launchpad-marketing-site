@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
+import { JsonLd } from "@/components/atoms/JsonLd";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { FaqItem } from "@/components/molecules/FaqItem";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
+import { faqPageJsonLd } from "@/lib/jsonLd";
 import type { FaqContent } from "@/types";
 import styles from "./FaqSection.module.css";
 
@@ -13,6 +15,7 @@ export interface FaqSectionProps {
 export function FaqSection({ content }: FaqSectionProps): ReactNode {
   return (
     <section>
+      <JsonLd data={faqPageJsonLd(content.faqs)} />
       <SectionHead>
         <SectionTitle size="find">
           <RichText content={content.title} />
