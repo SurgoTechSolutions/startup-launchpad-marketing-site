@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "extract-assets": "node scripts/extract-assets.mjs",
     "check": "npm run typecheck && npm run lint",
-    "build-privacy": "node scripts/build-privacy-content.mjs design/privacy-policy.txt"
+    "build-legal": "node scripts/build-legal-content.mjs"
   },
   "dependencies": {
     "next": "15.5.27",

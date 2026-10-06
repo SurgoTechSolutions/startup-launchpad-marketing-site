@@ -1,10 +1,10 @@
-// Generated from the policy text by scripts/build-privacy-content.mjs. Edit the text and regenerate.
+// Generated from design/privacy-policy.txt by scripts/build-legal-content.mjs. Edit the text and regenerate.
 import { ROUTES } from "@/config/site";
 import type { LegalDocumentContent, LegalPageContent, PageMeta } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { FOOTER } from "./site";
 
-export const PRIVACY_POLICY = {
+export const PRIVACY_DOCUMENT = {
   "title": "Privacy Policy",
   "version": "Version 1.1, in force from 4 October 2026.",
   "summary": {
@@ -45,7 +45,14 @@ export const PRIVACY_POLICY = {
         {
           "number": "1.3",
           "text": [
-            "This policy sits alongside our terms of service. Where the two documents deal with the same thing, the terms say that this policy prevails on how we handle personal data for which we are the controller."
+            "This policy sits alongside our ",
+            {
+              "link": {
+                "label": "terms of service",
+                "href": "/startup-launchpad/terms"
+              }
+            },
+            ". Where the two documents deal with the same thing, the terms say that this policy prevails on how we handle personal data for which we are the controller."
           ]
         }
       ]
@@ -631,13 +638,12 @@ export const PRIVACY_POLICY = {
 
 export const PRIVACY_META = {
   title: "Privacy Policy",
-  description:
-    "We hold very little about you: an email address to sign you in, a billing record, and logs to keep the Service secure. Your data stays in the United Kingdom.",
+  description: "We hold very little about you: an email address to sign you in, a billing record, and logs to keep the Service secure. Your data stays in the United Kingdom.",
   path: ROUTES.privacy,
 } as const satisfies PageMeta;
 
 export const PRIVACY_PAGE = {
   header: LAUNCHPAD_HEADER,
-  document: PRIVACY_POLICY,
+  document: PRIVACY_DOCUMENT,
   footer: FOOTER,
 } as const satisfies LegalPageContent;

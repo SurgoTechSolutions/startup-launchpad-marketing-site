@@ -11,5 +11,8 @@ export const WORDMARK = { lead: "Startup ", accent: "Launchpad" } as const;
 
 export const FOOTER = {
   text: "©2026 SurgoTech Solutions · Newcastle upon Tyne, UK",
-  links: [{ label: "Privacy policy", href: ROUTES.privacy }],
+  links: [
+    { label: "Terms and conditions", href: ROUTES.terms },
+    { label: "Privacy policy", href: ROUTES.privacy },
+  ],
 } as const satisfies FooterContent;
