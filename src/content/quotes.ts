@@ -32,6 +32,11 @@ export const QUOTES = {
     text: "The good thing is I can fix it, so I don't have to pay someone to fix it all.",
     person: "jo",
   },
+  joScared: {
+    text: "I was s***ting myself\u2026 It's not as bad as I thought it was going to be.",
+    person: "jo",
+    context: "Before and after her first scan",
+  },
   joThanks: {
     text: "What you've given me will be a huge help, I can't thank you enough!",
     person: "jo",

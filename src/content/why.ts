@@ -112,7 +112,7 @@ export const WHY_FINAL_CTA = {
   title: ["Find out what's in your code ", { highlight: "before someone else does" }, "."],
   lede: "Free first scan. Cancel any time.",
   ctaLabel: "Scan my code free",
-  quote: resolveQuote("aliceFixes"),
+  quote: resolveQuote("joScared"),
 } as const satisfies FinalCtaContent;
 
 export const WHY_META = {
