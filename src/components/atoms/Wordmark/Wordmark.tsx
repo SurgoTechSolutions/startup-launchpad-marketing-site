@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { cx } from "@/lib/cx";
 import styles from "./Wordmark.module.css";
 
 export interface WordmarkProps {
@@ -8,10 +9,12 @@ export interface WordmarkProps {
   readonly lead: string;
   /** The orange part of the name, e.g. "Launchpad". */
   readonly accent: string;
+  readonly className?: string | undefined;
 }
 
 /** The text logo in the header. */
-export function Wordmark({ href, lead, accent }: WordmarkProps): ReactNode {
+export function Wordmark({ href, lead, accent, className }: WordmarkProps): ReactNode {
+  const classes = cx(styles.mark, className);
   const content = (
     <>
       {lead}
@@ -21,14 +24,14 @@ export function Wordmark({ href, lead, accent }: WordmarkProps): ReactNode {
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} className={styles.mark}>
+      <Link href={href} className={classes}>
         {content}
       </Link>
     );
   }
 
   return (
-    <a href={href} className={styles.mark}>
+    <a href={href} className={classes}>
       {content}
     </a>
   );

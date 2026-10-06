@@ -114,3 +114,8 @@ section {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* Keep anchor targets clear of the pinned header. */
+html {
+  scroll-padding-top: 80px;
+}

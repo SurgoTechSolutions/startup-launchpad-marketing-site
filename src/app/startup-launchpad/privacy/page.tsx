@@ -9,5 +9,5 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata(PRIVACY_META, SITE_NAME);
 
 export default function PrivacyPage(): ReactNode {
-  return <LegalTemplate content={PRIVACY_PAGE} signupUrl={SIGNUP_URL} />;
+  return <LegalTemplate content={PRIVACY_PAGE} signupUrl={SIGNUP_URL} currentPath={PRIVACY_META.path} />;
 }

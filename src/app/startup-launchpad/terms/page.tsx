@@ -9,5 +9,5 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata(TERMS_META, SITE_NAME);
 
 export default function TermsPage(): ReactNode {
-  return <LegalTemplate content={TERMS_PAGE} signupUrl={SIGNUP_URL} />;
+  return <LegalTemplate content={TERMS_PAGE} signupUrl={SIGNUP_URL} currentPath={TERMS_META.path} />;
 }

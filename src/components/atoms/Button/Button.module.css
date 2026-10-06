@@ -27,6 +27,23 @@
   color: var(--accent);
 }
 
+/* Header links: only the current page is underlined. The transparent border keeps every link the same height. */
+.nav {
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav:hover {
+  color: var(--accent);
+}
+
+.nav.current {
+  border-bottom-color: var(--accent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .primary {
     transition: none;

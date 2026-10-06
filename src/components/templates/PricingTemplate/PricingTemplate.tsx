@@ -4,6 +4,7 @@ import { FinalCta } from "@/components/organisms/FinalCta";
 import { PricingSection } from "@/components/organisms/PricingSection";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
+import { ROUTES } from "@/config/site";
 import type { PricingPageContent } from "@/types";
 import styles from "./PricingTemplate.module.css";
 
@@ -13,15 +14,19 @@ export interface PricingTemplateProps {
 }
 
 export function PricingTemplate({ content, signupUrl }: PricingTemplateProps): ReactNode {
+  const currentPath = ROUTES.pricing;
+
   return (
-    <div className={styles.wrap}>
-      <SiteHeader content={content.header} signupUrl={signupUrl} />
-      <main>
-        <PricingSection content={content.pricing} signupUrl={signupUrl} headingLevel="h1" />
-        <CostComparison content={content.comparison} />
-        <FinalCta content={content.finalCta} signupUrl={signupUrl} />
-      </main>
-      <SiteFooter content={content.footer} />
-    </div>
+    <>
+      <SiteHeader content={content.header} signupUrl={signupUrl} currentPath={currentPath} />
+      <div className={styles.wrap}>
+        <main>
+          <PricingSection content={content.pricing} signupUrl={signupUrl} headingLevel="h1" />
+          <CostComparison content={content.comparison} />
+          <FinalCta content={content.finalCta} signupUrl={signupUrl} />
+        </main>
+        <SiteFooter content={content.footer} />
+      </div>
+    </>
   );
 }
