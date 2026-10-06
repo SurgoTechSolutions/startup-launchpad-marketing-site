@@ -5,7 +5,8 @@ export const HEADER_BASE = {
   ctaLabel: "Scan my code free",
 } as const;
 
-export const WORDMARK = { lead: "Surgo", accent: "Tech" } as const;
+/** The header title. The lead keeps its trailing space; the accent is drawn in orange. */
+export const WORDMARK = { lead: "Startup ", accent: "Launchpad" } as const;
 
 export const FOOTER = {
   text: "©2026 SurgoTech Solutions · Newcastle upon Tyne, UK",

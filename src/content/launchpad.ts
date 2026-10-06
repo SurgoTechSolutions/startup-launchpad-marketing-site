@@ -24,7 +24,7 @@ import { FOOTER, HEADER_BASE, WORDMARK } from "./site";
 
 export const LAUNCHPAD_HEADER = {
   ...HEADER_BASE,
-  wordmark: { ...WORDMARK, href: "https://surgotechsolutions.co.uk" },
+  wordmark: { ...WORDMARK, href: ROUTES.launchpad },
   navLink: { label: "Pricing", href: ROUTES.pricing },
 } as const satisfies HeaderContent;
 

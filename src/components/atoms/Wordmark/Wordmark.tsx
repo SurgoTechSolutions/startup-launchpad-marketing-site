@@ -4,9 +4,9 @@ import styles from "./Wordmark.module.css";
 
 export interface WordmarkProps {
   readonly href: string;
-  /** The plain part of the name, e.g. "Surgo". */
+  /** The plain part of the name, including any trailing space, e.g. "Startup ". */
   readonly lead: string;
-  /** The orange part of the name, e.g. "Tech". */
+  /** The orange part of the name, e.g. "Launchpad". */
   readonly accent: string;
 }
 

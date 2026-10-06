@@ -47,14 +47,11 @@ export default async function OpengraphImage(): Promise<ImageResponse> {
           fontFamily: "Comfortaa",
         }}
       >
-        <div style={{ display: "flex", fontSize: 40 }}>
+        <div style={{ display: "flex", fontSize: 40, whiteSpace: "pre" }}>
           {WORDMARK.lead}
           <span style={{ color: ACCENT }}>{WORDMARK.accent}</span>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-          <div style={{ color: ACCENT, fontSize: 26, letterSpacing: 4, textTransform: "uppercase" }}>
-            {HERO.eyebrow}
-          </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", flexWrap: "wrap", fontSize: 68, lineHeight: 1.2 }}>
             {titleWords().map(({ word, highlight }, index) => (
               <span
