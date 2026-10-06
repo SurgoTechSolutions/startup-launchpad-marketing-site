@@ -2,12 +2,12 @@ import { ROUTES } from "@/config/site";
 import type { CostComparisonContent, FinalCtaContent, HeaderContent, PricingPageContent } from "@/types";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
-import { FOOTER, HEADER_BASE, LEGAL_NAV_LINKS, WORDMARK } from "./site";
+import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
 
 export const PRICING_HEADER = {
   ...HEADER_BASE,
   wordmark: { ...WORDMARK, href: ROUTES.launchpad },
-  navLinks: [{ label: "Pricing", href: ROUTES.pricing }, ...LEGAL_NAV_LINKS],
+  navLinks: NAV_LINKS,
 } as const satisfies HeaderContent;
 
 export const COST_COMPARISON = {

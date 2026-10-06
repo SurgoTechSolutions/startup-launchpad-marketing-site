@@ -6,8 +6,10 @@ export const HEADER_BASE = {
   ctaLabel: "Scan my code free",
 } as const;
 
-/** Legal pages, linked from every header after the page's own nav link. */
-export const LEGAL_NAV_LINKS = [
+/** Header links, the same on every page. The current page's link is underlined. */
+export const NAV_LINKS = [
+  { label: "Mission", href: ROUTES.mission },
+  { label: "Pricing", href: ROUTES.pricing },
   { label: "Terms", href: ROUTES.terms },
   { label: "Privacy", href: ROUTES.privacy },
 ] as const;

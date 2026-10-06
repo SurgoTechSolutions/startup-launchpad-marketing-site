@@ -20,12 +20,12 @@ import type {
 import { HERO_QUOTE_KEYS } from "./hero";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
-import { FOOTER, HEADER_BASE, LEGAL_NAV_LINKS, WORDMARK } from "./site";
+import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
 
 export const LAUNCHPAD_HEADER = {
   ...HEADER_BASE,
   wordmark: { ...WORDMARK, href: ROUTES.launchpad },
-  navLinks: [{ label: "Pricing", href: ROUTES.pricing }, ...LEGAL_NAV_LINKS],
+  navLinks: NAV_LINKS,
 } as const satisfies HeaderContent;
 
 export const HERO = {

@@ -249,6 +249,28 @@ export interface PricingPageContent {
   readonly footer: FooterContent;
 }
 
+export interface MissionValue {
+  readonly title: string;
+  readonly body: string;
+}
+
+export interface MissionContent {
+  readonly eyebrow: string;
+  readonly title: RichText;
+  /** The mission in one sentence, shown in the card under the title. */
+  readonly statement: string;
+  readonly paragraphs: readonly string[];
+  readonly valuesTitle: RichText;
+  readonly values: readonly MissionValue[];
+}
+
+export interface MissionPageContent {
+  readonly header: HeaderContent;
+  readonly mission: MissionContent;
+  readonly finalCta: FinalCtaContent;
+  readonly footer: FooterContent;
+}
+
 export interface PageMeta {
   readonly title: string;
   readonly description: string;
