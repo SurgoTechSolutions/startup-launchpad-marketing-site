@@ -7,7 +7,7 @@ import { FOOTER, HEADER_BASE, LEGAL_NAV_LINKS, WORDMARK } from "./site";
 export const PRICING_HEADER = {
   ...HEADER_BASE,
   wordmark: { ...WORDMARK, href: ROUTES.launchpad },
-  navLinks: [{ label: "← Startup Launchpad", href: ROUTES.launchpad }, ...LEGAL_NAV_LINKS],
+  navLinks: [{ label: "Pricing", href: ROUTES.pricing }, ...LEGAL_NAV_LINKS],
 } as const satisfies HeaderContent;
 
 export const COST_COMPARISON = {
