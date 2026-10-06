@@ -83,7 +83,7 @@ function parse(source, links) {
     }
   }
 
-  if (/—/.test(JSON.stringify({ title, version, summary, sections, details }))) {
+  if (/\u2014/.test(JSON.stringify({ title, version, summary, sections, details }))) {
     throw new Error(`${source}: contains an em dash`);
   }
   return { title, version, summary: { title: summaryTitle, paragraphs: summary }, sections, details };
