@@ -299,6 +299,67 @@ export interface WhyPageContent {
   readonly footer: FooterContent;
 }
 
+/** Rings filled on the Launchpad Verified mark. 0 means none yet. */
+export type RingCount = 0 | 1 | 2 | 3;
+
+export interface VerifiedLevel {
+  readonly number: string;
+  readonly name: string;
+  readonly tagline: string;
+  readonly rules: readonly string[];
+  /** Typical time to reach it, e.g. "Minutes". */
+  readonly time: string;
+  /** Rings the public mark shows, or null for levels that stay in the dashboard. */
+  readonly rings: RingCount | null;
+}
+
+export interface VerifiedBadgeExample {
+  readonly label: string;
+  readonly level: string;
+  readonly date: string;
+  readonly rings: RingCount;
+}
+
+export interface RuleGroup {
+  readonly title: string;
+  readonly items: readonly string[];
+}
+
+export interface VerifiedContent {
+  readonly intro: { readonly status: string; readonly title: RichText; readonly lede: string };
+  readonly levels: {
+    readonly title: RichText;
+    readonly lede: string;
+    /** Word before each level number, e.g. "Level". */
+    readonly levelLabel: string;
+    readonly timeLabel: string;
+    readonly publicLabel: string;
+    readonly privateLabel: string;
+    readonly items: readonly VerifiedLevel[];
+  };
+  readonly badge: {
+    readonly title: RichText;
+    readonly lede: string;
+    readonly example: VerifiedBadgeExample;
+    readonly lapsed: VerifiedBadgeExample;
+    readonly lapsedNote: string;
+    readonly page: {
+      readonly caption: string;
+      readonly heading: string;
+      readonly rows: readonly { readonly label: string; readonly value: string }[];
+      readonly scope: string;
+    };
+  };
+  readonly rules: { readonly title: RichText; readonly groups: readonly RuleGroup[]; readonly note: string };
+}
+
+export interface VerifiedPageContent {
+  readonly header: HeaderContent;
+  readonly verified: VerifiedContent;
+  readonly finalCta: FinalCtaContent;
+  readonly footer: FooterContent;
+}
+
 export interface PageMeta {
   readonly title: string;
   readonly description: string;

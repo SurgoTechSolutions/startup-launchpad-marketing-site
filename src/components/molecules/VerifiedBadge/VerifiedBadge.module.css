@@ -1,0 +1,53 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.light {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.dark {
+  background: var(--ink);
+  color: #fff;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.level {
+  font-weight: 700;
+}
+
+.light .level {
+  color: var(--accent);
+}
+
+.dark .level {
+  color: #ffb066;
+}
+
+.sep,
+.date {
+  opacity: 0.7;
+}
+
+.lapsed,
+.lapsed .level {
+  color: var(--muted);
+}
+
+@media (max-width: 400px) {
+  .badge {
+    white-space: normal;
+  }
+}

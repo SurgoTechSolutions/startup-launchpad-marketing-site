@@ -18,6 +18,7 @@ export const ROUTES = {
   pricing: "/startup-launchpad/pricing",
   mission: "/startup-launchpad/mission",
   why: "/startup-launchpad/why",
+  verified: "/startup-launchpad/verified",
   privacy: "/startup-launchpad/privacy",
   terms: "/startup-launchpad/terms",
 } as const;

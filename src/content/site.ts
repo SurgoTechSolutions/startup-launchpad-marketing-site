@@ -12,6 +12,7 @@ export const NAV_LINKS = [
   { label: "Why", href: ROUTES.why },
   { label: "Mission", href: ROUTES.mission },
   { label: "Pricing", href: ROUTES.pricing },
+  { label: "Verified", href: ROUTES.verified },
 ] as const;
 
 /** Words the hero headlines roll through. The first is the one search engines and screen readers get. */

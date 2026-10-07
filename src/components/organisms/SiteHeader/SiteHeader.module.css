@@ -71,6 +71,8 @@
 @media (max-width: 640px) {
   .bar[data-scrolled] .inner {
     flex-wrap: nowrap;
+    gap: 10px;
+    padding-inline: 16px;
   }
 
   .bar[data-scrolled] .links {
@@ -78,7 +80,7 @@
   }
 
   .bar[data-scrolled] .wordmark {
-    font-size: 16px;
+    font-size: 15px;
     white-space: nowrap;
   }
 
@@ -89,8 +91,20 @@
   }
 
   .bar[data-scrolled] .cta {
-    padding: 9px 14px;
+    padding: 8px 12px;
+    font-size: 13px;
     white-space: nowrap;
+  }
+}
+
+/* The narrowest phones need a touch less room for the compact title and button to share a row. */
+@media (max-width: 380px) {
+  .bar[data-scrolled] .wordmark {
+    font-size: 14px;
+  }
+
+  .bar[data-scrolled] .cta {
+    padding-inline: 10px;
   }
 }
 

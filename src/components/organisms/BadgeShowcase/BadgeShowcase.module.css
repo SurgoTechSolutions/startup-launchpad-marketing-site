@@ -1,0 +1,117 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.surfaceLight,
+.surfaceDark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px 24px;
+  border-radius: 20px;
+}
+
+.surfaceLight {
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.surfaceDark {
+  background: #0b2233;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.caption {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.pageCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 32px 28px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 0 24px 60px rgba(0, 21, 36, 0.08);
+  text-align: center;
+}
+
+.programme {
+  margin-top: 6px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pageHeading {
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 700;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 340px;
+  margin: 12px 0 0;
+}
+
+.rowItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.rowItem dt {
+  color: var(--muted);
+}
+
+.rowItem dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.scope {
+  max-width: 340px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
