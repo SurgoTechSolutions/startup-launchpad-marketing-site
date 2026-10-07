@@ -12,8 +12,6 @@ export const VERIFIED = {
   levels: {
     title: ["The ", { highlight: "Four Levels" }],
     levelLabel: "Level",
-    publicLabel: "Public badge",
-    privateLabel: "Dashboard only",
     items: [
       {
         number: "1",
@@ -25,7 +23,6 @@ export const VERIFIED = {
           "Legal pages: privacy policy and sub-processor disclosure published",
         ],
         metal: "bronze",
-        publicBadge: false,
       },
       {
         number: "2",
@@ -33,7 +30,6 @@ export const VERIFIED = {
         tagline: "Baseline. No open doors.",
         rules: ["Security: no open critical findings", "Vulnerable dependencies: no critical flaws"],
         metal: "silver",
-        publicBadge: true,
       },
       {
         number: "3",
@@ -45,7 +41,6 @@ export const VERIFIED = {
           "Missing security headers: every medium one added",
         ],
         metal: "gold",
-        publicBadge: true,
       },
       {
         number: "4",
@@ -60,7 +55,6 @@ export const VERIFIED = {
           "No more than 3 accepted risks, each with a reason",
         ],
         metal: "platinum",
-        publicBadge: true,
       },
     ],
   },

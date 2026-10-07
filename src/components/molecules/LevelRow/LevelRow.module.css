@@ -57,31 +57,3 @@
 .rules li::marker {
   color: var(--accent);
 }
-
-/* Pinned to the bottom so every card's tag lines up across the row. */
-.meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px dashed var(--line);
-}
-
-.tag {
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.public {
-  background: var(--warm-soft);
-  color: #a34f00;
-}
-
-.private {
-  background: var(--bg);
-  color: var(--muted);
-}

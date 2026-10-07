@@ -26,8 +26,6 @@ export function LevelTrack({ content }: LevelTrackProps): ReactNode {
             key={level.number}
             level={level}
             levelLabel={content.levelLabel}
-            publicLabel={content.publicLabel}
-            privateLabel={content.privateLabel}
           />
         ))}
       </div>

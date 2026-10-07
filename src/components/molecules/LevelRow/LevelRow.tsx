@@ -1,20 +1,15 @@
 import type { ReactNode } from "react";
 import { LevelMark } from "@/components/atoms/LevelMark";
-import { cx } from "@/lib/cx";
 import type { VerifiedLevel } from "@/types";
 import styles from "./LevelRow.module.css";
 
 export interface LevelRowProps {
   readonly level: VerifiedLevel;
   readonly levelLabel: string;
-  readonly publicLabel: string;
-  readonly privateLabel: string;
 }
 
-/** One level: its metal mark, name and rules, and whether it earns a public badge. */
-export function LevelRow({ level, levelLabel, publicLabel, privateLabel }: LevelRowProps): ReactNode {
-  const isPublic = level.publicBadge;
-
+/** One level: its metal mark, name, tagline and rules. */
+export function LevelRow({ level, levelLabel }: LevelRowProps): ReactNode {
   return (
     <article className={styles.row}>
       <div className={styles.mark}>
@@ -31,11 +26,6 @@ export function LevelRow({ level, levelLabel, publicLabel, privateLabel }: Level
             <li key={rule}>{rule}</li>
           ))}
         </ul>
-      </div>
-      <div className={styles.meta}>
-        <span className={cx(styles.tag, isPublic ? styles.public : styles.private)}>
-          {isPublic ? publicLabel : privateLabel}
-        </span>
       </div>
     </article>
   );
