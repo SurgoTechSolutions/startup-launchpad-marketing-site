@@ -1,14 +1,14 @@
-/* Five levels side by side, left to right. Narrower screens wrap to three, then one. */
+/* Four levels side by side, left to right. Tablets show two by two, phones one per row. */
 .track {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
   gap: 14px;
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 960px) {
   .track {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
 }

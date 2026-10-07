@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Lede } from "@/components/atoms/Lede";
-import { RingMark } from "@/components/atoms/RingMark";
+import { LevelMark } from "@/components/atoms/LevelMark";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -40,7 +40,7 @@ export function BadgeShowcase({ content }: BadgeShowcaseProps): ReactNode {
         <figure className={styles.page}>
           <figcaption className={styles.caption}>{page.caption}</figcaption>
           <div className={styles.pageCard}>
-            <RingMark rings={content.example.rings} size={72} />
+            <LevelMark metal={content.example.metal} height={96} />
             <span className={styles.programme}>{content.example.label}</span>
             <h3 className={styles.pageHeading}>{page.heading}</h3>
             <dl className={styles.rows}>

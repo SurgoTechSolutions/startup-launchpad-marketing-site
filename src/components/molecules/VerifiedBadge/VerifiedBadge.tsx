@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { RingMark } from "@/components/atoms/RingMark";
+import { LevelMark } from "@/components/atoms/LevelMark";
 import { cx } from "@/lib/cx";
 import type { VerifiedBadgeExample } from "@/types";
 import styles from "./VerifiedBadge.module.css";
@@ -14,7 +14,7 @@ export interface VerifiedBadgeProps {
 export function VerifiedBadge({ badge, tone = "light", lapsed = false }: VerifiedBadgeProps): ReactNode {
   return (
     <span className={cx(styles.badge, styles[tone], lapsed && styles.lapsed)}>
-      <RingMark rings={badge.rings} size={20} lapsed={lapsed} onDark={tone === "dark"} />
+      <LevelMark metal={badge.metal} height={20} lapsed={lapsed} />
       <span>
         <b className={styles.label}>{badge.label}</b>
         <span className={styles.sep} aria-hidden="true">

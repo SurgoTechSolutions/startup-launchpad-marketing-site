@@ -14,22 +14,7 @@
 }
 
 .mark {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-}
-
-/* Private levels: a numbered step instead of rings. */
-.step {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 2px dashed var(--bar);
-  border-radius: 50%;
-  color: var(--muted);
-  font-weight: 700;
+  height: 64px;
 }
 
 .body {

@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "extract-assets": "node scripts/extract-assets.mjs",
     "check": "npm run typecheck && npm run lint",
-    "build-legal": "node scripts/build-legal-content.mjs"
+    "build-legal": "node scripts/build-legal-content.mjs",
+    "build-level-marks": "node scripts/build-level-marks.mjs"
   },
   "dependencies": {
     "next": "15.5.27",

@@ -1,0 +1,9 @@
+.mark {
+  display: block;
+  flex: none;
+}
+
+.lapsed {
+  filter: grayscale(1);
+  opacity: 0.45;
+}

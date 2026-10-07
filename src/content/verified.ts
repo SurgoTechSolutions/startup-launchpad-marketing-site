@@ -10,8 +10,8 @@ export const VERIFIED = {
     lede: "A live, public check that your app meets published security rules. Earn it, keep it, and show it to the customers and investors who ask.",
   },
   levels: {
-    title: ["Five levels. ", { highlight: "Quick wins first." }],
-    lede: "The first steps take minutes. The top level takes a month of keeping things right. The last three earn a public badge.",
+    title: ["Four levels. ", { highlight: "Quick wins first." }],
+    lede: "Bronze takes an afternoon. Platinum takes a month of keeping things right. Silver and above earn a public badge.",
     levelLabel: "Level",
     timeLabel: "Typically",
     publicLabel: "Public badge",
@@ -19,53 +19,45 @@ export const VERIFIED = {
     items: [
       {
         number: "1",
-        name: "Aware",
-        tagline: "You know where you stand.",
-        rules: ["First scan complete", "Project setup: .env files excluded in your .gitignore"],
-        time: "Minutes",
-        rings: null,
-      },
-      {
-        number: "2",
-        name: "Secrets clean",
-        tagline: "The most dangerous fixes, done first.",
+        name: "Bronze",
+        tagline: "Secrets clean. The most dangerous fixes, done first.",
         rules: [
           "Leaked secrets: none left, including in your code's history",
           "No .env file committed to your repository",
           "Legal pages: privacy policy and sub-processor disclosure published",
         ],
         time: "An afternoon",
-        rings: null,
+        metal: "bronze",
+        publicBadge: false,
+      },
+      {
+        number: "2",
+        name: "Silver",
+        tagline: "Baseline. No open doors.",
+        rules: ["Security: no open critical findings", "Vulnerable dependencies: no critical flaws"],
+        time: "A few days",
+        metal: "silver",
+        publicBadge: true,
       },
       {
         number: "3",
-        name: "Baseline",
-        tagline: "No open doors.",
-        rules: [
-          "Security: no open critical findings",
-          "Vulnerable dependencies: no critical flaws",
-        ],
-        time: "A few days",
-        rings: 1,
-      },
-      {
-        number: "4",
-        name: "Hardened",
-        tagline: "Defended.",
+        name: "Gold",
+        tagline: "Hardened. Defended.",
         rules: [
           "Security: no open high findings",
           "Vulnerable dependencies: no high flaws",
           "Missing security headers: every medium one added",
         ],
         time: "A couple of weeks",
-        rings: 2,
+        metal: "gold",
+        publicBadge: true,
       },
       {
-        number: "5",
-        name: "Assured",
-        tagline: "And kept that way.",
+        number: "4",
+        name: "Platinum",
+        tagline: "Assured. And kept that way.",
         rules: [
-          "Hardened held for 30 days in a row",
+          "Gold held for 30 days in a row",
           "Vulnerable dependencies: no medium flaws",
           "Accessibility: no high findings",
           "Reliability & Performance: no medium findings",
@@ -73,19 +65,20 @@ export const VERIFIED = {
           "No more than 3 accepted risks, each with a reason",
         ],
         time: "30 days or more",
-        rings: 3,
+        metal: "platinum",
+        publicBadge: true,
       },
     ],
   },
   badge: {
     title: ["Show it where ", { highlight: "it counts" }],
     lede: "Add the badge to your site footer or README. It links to a public page anyone can check, showing your level and when it was last verified. Never your findings.",
-    example: { label: "Launchpad verified", level: "Hardened", date: "3 Oct 2026", rings: 2 },
-    lapsed: { label: "Launchpad verified", level: "Lapsed", date: "4 Nov 2026", rings: 0 },
+    example: { label: "Launchpad verified", level: "Gold", date: "3 Oct 2026", metal: "gold" },
+    lapsed: { label: "Launchpad verified", level: "Lapsed", date: "4 Nov 2026", metal: "silver" },
     lapsedNote: "If a level is lost, the badge goes grey and says so. A badge that can lapse is one people can trust.",
     page: {
       caption: "What your verification page shows",
-      heading: "Hardened",
+      heading: "Gold",
       rows: [
         { label: "Held since", value: "3 Oct 2026" },
         { label: "Last verified", value: "2 hours ago" },
@@ -104,7 +97,7 @@ export const VERIFIED = {
           "Your level is re-checked on every scan of your production branch.",
           "A new critical finding gives you 7 days to fix it. A new high finding, or a newly disclosed dependency vulnerability, gives you 14.",
           "While you fix it, your page says so openly, with the days left.",
-          "Run out of time and you drop to the level you still meet. Fix it and the level comes back. Assured restarts its 30 days.",
+          "Run out of time and you drop to the level you still meet. Fix it and the level comes back. Platinum restarts its 30 days.",
           "No successful scan for 7 days and your badge shows Not currently verified.",
         ],
       },
@@ -124,15 +117,15 @@ export const VERIFIED = {
 } as const satisfies VerifiedContent;
 
 export const VERIFIED_FINAL_CTA = {
-  title: ["Start at ", { highlight: "level one" }, " today."],
-  lede: "Your first scan gets you to Aware in minutes.",
+  title: ["Start your way to ", { highlight: "Bronze" }, " today."],
+  lede: "Your first scan shows exactly what stands between you and each level.",
   ctaLabel: "Scan my code for free",
 } as const satisfies FinalCtaContent;
 
 export const VERIFIED_META = {
   title: "Launchpad Verified",
   description:
-    "A live, public check that your app meets published security rules. Five levels, quick wins first, and a badge you can show customers and investors.",
+    "A live, public check that your app meets published security rules. Four levels from Bronze to Platinum, and a badge you can show customers and investors.",
   path: ROUTES.verified,
 } as const satisfies PageMeta;
 

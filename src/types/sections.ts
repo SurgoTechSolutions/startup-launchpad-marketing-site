@@ -299,8 +299,8 @@ export interface WhyPageContent {
   readonly footer: FooterContent;
 }
 
-/** Rings filled on the Launchpad Verified mark. 0 means none yet. */
-export type RingCount = 0 | 1 | 2 | 3;
+/** Launchpad Verified levels, lowest first. */
+export type Metal = "bronze" | "silver" | "gold" | "platinum";
 
 export interface VerifiedLevel {
   readonly number: string;
@@ -309,15 +309,16 @@ export interface VerifiedLevel {
   readonly rules: readonly string[];
   /** Typical time to reach it, e.g. "Minutes". */
   readonly time: string;
-  /** Rings the public mark shows, or null for levels that stay in the dashboard. */
-  readonly rings: RingCount | null;
+  readonly metal: Metal;
+  /** Whether the level earns a public badge, or stays in the dashboard. */
+  readonly publicBadge: boolean;
 }
 
 export interface VerifiedBadgeExample {
   readonly label: string;
   readonly level: string;
   readonly date: string;
-  readonly rings: RingCount;
+  readonly metal: Metal;
 }
 
 export interface RuleGroup {

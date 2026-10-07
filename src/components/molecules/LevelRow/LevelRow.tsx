@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { RingMark } from "@/components/atoms/RingMark";
+import { LevelMark } from "@/components/atoms/LevelMark";
 import { cx } from "@/lib/cx";
 import type { VerifiedLevel } from "@/types";
 import styles from "./LevelRow.module.css";
@@ -12,20 +12,14 @@ export interface LevelRowProps {
   readonly privateLabel: string;
 }
 
-/** One level: its mark, name and rules, how long it takes, and whether it earns a public badge. */
+/** One level: its metal mark, name and rules, how long it takes, and whether it earns a public badge. */
 export function LevelRow({ level, levelLabel, timeLabel, publicLabel, privateLabel }: LevelRowProps): ReactNode {
-  const isPublic = level.rings !== null;
+  const isPublic = level.publicBadge;
 
   return (
     <article className={styles.row}>
       <div className={styles.mark}>
-        {level.rings === null ? (
-          <span className={styles.step} aria-hidden="true">
-            {level.number}
-          </span>
-        ) : (
-          <RingMark rings={level.rings} size={56} />
-        )}
+        <LevelMark metal={level.metal} height={64} />
       </div>
       <div className={styles.body}>
         <span className={styles.number}>
