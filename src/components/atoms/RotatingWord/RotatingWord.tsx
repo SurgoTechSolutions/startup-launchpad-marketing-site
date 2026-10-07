@@ -7,7 +7,7 @@ import { cx } from "@/lib/cx";
 import { Highlight } from "../Highlight";
 import styles from "./RotatingWord.module.css";
 
-const ROTATE_EVERY_MS = 2500;
+const ROTATE_EVERY_MS = 1600;
 
 export interface RotatingWordProps {
   /** Words to cycle through. The first is shown before hydration and to screen readers. */
