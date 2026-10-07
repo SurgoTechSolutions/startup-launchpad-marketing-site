@@ -323,7 +323,7 @@ export interface RuleGroup {
 }
 
 export interface VerifiedContent {
-  readonly intro: { readonly status: string; readonly title: RichText; readonly lede: string };
+  readonly intro: { readonly status?: string; readonly title: RichText; readonly lede: string };
   readonly levels: {
     readonly title: RichText;
     readonly lede?: string;

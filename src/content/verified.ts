@@ -5,7 +5,6 @@ import { FOOTER } from "./site";
 
 export const VERIFIED = {
   intro: {
-    status: "Coming soon for subscribers",
     title: ["Launchpad ", { highlight: "Verified" }],
     lede: "A live, public check that your app meets published security rules. Earn it, keep it, and show it to the customers and investors who ask.",
   },

@@ -23,7 +23,11 @@ export function VerifiedTemplate({ content, signupUrl }: VerifiedTemplateProps):
       <SiteHeader content={content.header} signupUrl={signupUrl} currentPath={ROUTES.verified} />
       <div className={styles.wrap}>
         <main>
-          <PageIntro eyebrow={verified.intro.status} title={verified.intro.title} lede={verified.intro.lede} />
+          <PageIntro
+            title={verified.intro.title}
+            lede={verified.intro.lede}
+            {...(verified.intro.status === undefined ? {} : { eyebrow: verified.intro.status })}
+          />
           <LevelTrack content={verified.levels} />
           <BadgeShowcase content={verified.badge} />
           <RulesSection content={verified.rules} />
