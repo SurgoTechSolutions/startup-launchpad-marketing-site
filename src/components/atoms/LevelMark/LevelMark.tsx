@@ -4,8 +4,8 @@ import { cx } from "@/lib/cx";
 import type { Metal } from "@/types";
 import styles from "./LevelMark.module.css";
 
-/** Source artwork is 186 by 240. */
-const ASPECT = 186 / 240;
+/** The SVG artwork's viewBox is 80.97 by 101.81. */
+const ASPECT = 80.97 / 101.81;
 
 export interface LevelMarkProps {
   readonly metal: Metal;
@@ -21,11 +21,13 @@ export interface LevelMarkProps {
 export function LevelMark({ metal, height, lapsed = false, label }: LevelMarkProps): ReactNode {
   return (
     <Image
-      src={`/images/level-${metal}.webp`}
+      src={`/images/level-${metal}.svg`}
       alt={label ?? ""}
       width={Math.round(height * ASPECT)}
       height={height}
       className={cx(styles.mark, lapsed && styles.lapsed)}
+      // Vector artwork: nothing to resize, so serve the file as it is.
+      unoptimized
     />
   );
 }
