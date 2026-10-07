@@ -1,6 +1,7 @@
 import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, PageMeta, WhatWeCheckContent, WhatWeCheckPageContent } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
+import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
 
 /**
@@ -188,6 +189,7 @@ export const WHAT_WE_CHECK_FINAL_CTA = {
   title: ["See what we'd find in ", { highlight: "your code" }, "."],
   lede: "Your first scan is free.",
   ctaLabel: "Scan my code for free",
+  quote: resolveQuote("aliceFixes"),
 } as const satisfies FinalCtaContent;
 
 export const WHAT_WE_CHECK_META = {

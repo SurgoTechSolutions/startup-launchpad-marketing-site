@@ -47,7 +47,6 @@ export const QUOTES = {
   aliceFixes: {
     text: "Not a challenge at all. The explanations are the best part for me. Simple and clear.",
     person: "alice",
-    context: "On fixing her issues, a week later",
   },
   aliceTimeShort: {
     text: "You're giving me my time back.",

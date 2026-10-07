@@ -25,7 +25,7 @@ export function WhatWeCheckTemplate({ content, signupUrl }: WhatWeCheckTemplateP
           <PageIntro title={page.intro.title} lede={page.intro.lede} />
           <CheckAreaList content={page} />
           <ScoringGuide content={page.scoring} />
-          <FinalCta content={content.finalCta} signupUrl={signupUrl} />
+          <FinalCta content={content.finalCta} signupUrl={signupUrl} layout="centered" />
         </main>
         <SiteFooter content={content.footer} />
       </div>
