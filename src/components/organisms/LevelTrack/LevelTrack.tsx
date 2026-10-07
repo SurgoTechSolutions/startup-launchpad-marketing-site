@@ -18,7 +18,7 @@ export function LevelTrack({ content }: LevelTrackProps): ReactNode {
         <SectionTitle size="find">
           <RichText content={content.title} />
         </SectionTitle>
-        <Lede>{content.lede}</Lede>
+        {content.lede !== undefined && <Lede>{content.lede}</Lede>}
       </SectionHead>
       <div className={styles.track}>
         {content.items.map((level) => (

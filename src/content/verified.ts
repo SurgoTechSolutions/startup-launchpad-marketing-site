@@ -10,8 +10,7 @@ export const VERIFIED = {
     lede: "A live, public check that your app meets published security rules. Earn it, keep it, and show it to the customers and investors who ask.",
   },
   levels: {
-    title: ["Four levels. ", { highlight: "Quick wins first." }],
-    lede: "Bronze takes an afternoon. Platinum takes a month of keeping things right. Silver and above earn a public badge.",
+    title: ["The ", { highlight: "Four Levels" }],
     levelLabel: "Level",
     timeLabel: "Typically",
     publicLabel: "Public badge",

@@ -330,7 +330,7 @@ export interface VerifiedContent {
   readonly intro: { readonly status: string; readonly title: RichText; readonly lede: string };
   readonly levels: {
     readonly title: RichText;
-    readonly lede: string;
+    readonly lede?: string;
     /** Word before each level number, e.g. "Level". */
     readonly levelLabel: string;
     readonly timeLabel: string;
