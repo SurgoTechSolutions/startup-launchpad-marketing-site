@@ -6,13 +6,11 @@ export const HEADER_BASE = {
   ctaLabel: "Scan my code free",
 } as const;
 
-/** Header links, the same on every page. The current page's link is underlined. */
+/** Header links, the same on every page. The current page's link is underlined. Legal pages live in the footer. */
 export const NAV_LINKS = [
   { label: "Why", href: ROUTES.why },
   { label: "Mission", href: ROUTES.mission },
   { label: "Pricing", href: ROUTES.pricing },
-  { label: "Terms", href: ROUTES.terms },
-  { label: "Privacy", href: ROUTES.privacy },
 ] as const;
 
 /** The header title. The lead keeps its trailing space; the accent is drawn in orange. */
