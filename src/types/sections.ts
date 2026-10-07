@@ -307,8 +307,6 @@ export interface VerifiedLevel {
   readonly name: string;
   readonly tagline: string;
   readonly rules: readonly string[];
-  /** Typical time to reach it, e.g. "Minutes". */
-  readonly time: string;
   readonly metal: Metal;
   /** Whether the level earns a public badge, or stays in the dashboard. */
   readonly publicBadge: boolean;
@@ -333,7 +331,6 @@ export interface VerifiedContent {
     readonly lede?: string;
     /** Word before each level number, e.g. "Level". */
     readonly levelLabel: string;
-    readonly timeLabel: string;
     readonly publicLabel: string;
     readonly privateLabel: string;
     readonly items: readonly VerifiedLevel[];

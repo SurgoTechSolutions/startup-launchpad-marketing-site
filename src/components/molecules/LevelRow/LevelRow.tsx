@@ -7,13 +7,12 @@ import styles from "./LevelRow.module.css";
 export interface LevelRowProps {
   readonly level: VerifiedLevel;
   readonly levelLabel: string;
-  readonly timeLabel: string;
   readonly publicLabel: string;
   readonly privateLabel: string;
 }
 
-/** One level: its metal mark, name and rules, how long it takes, and whether it earns a public badge. */
-export function LevelRow({ level, levelLabel, timeLabel, publicLabel, privateLabel }: LevelRowProps): ReactNode {
+/** One level: its metal mark, name and rules, and whether it earns a public badge. */
+export function LevelRow({ level, levelLabel, publicLabel, privateLabel }: LevelRowProps): ReactNode {
   const isPublic = level.publicBadge;
 
   return (
@@ -34,8 +33,6 @@ export function LevelRow({ level, levelLabel, timeLabel, publicLabel, privateLab
         </ul>
       </div>
       <div className={styles.meta}>
-        <span className={styles.timeLabel}>{timeLabel}</span>
-        <span className={styles.time}>{level.time}</span>
         <span className={cx(styles.tag, isPublic ? styles.public : styles.private)}>
           {isPublic ? publicLabel : privateLabel}
         </span>

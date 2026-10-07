@@ -58,7 +58,7 @@
   color: var(--accent);
 }
 
-/* Pinned to the bottom so every card's time and tag line up across the row. */
+/* Pinned to the bottom so every card's tag lines up across the row. */
 .meta {
   display: flex;
   flex-direction: column;
@@ -69,18 +69,7 @@
   border-top: 1px dashed var(--line);
 }
 
-.timeLabel {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.time {
-  color: var(--ink);
-  font-weight: 700;
-}
-
 .tag {
-  margin-top: 8px;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 12px;
