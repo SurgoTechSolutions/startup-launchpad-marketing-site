@@ -9,7 +9,7 @@ export const VERIFIED = {
     lede: "A live, public check that your app meets published security rules. Earn it, keep it, and show it to the customers and investors who ask.",
   },
   levels: {
-    title: ["The ", { highlight: "Four Levels" }],
+    title: ["The Four Levels"],
     levelLabel: "Level",
     items: [
       {
