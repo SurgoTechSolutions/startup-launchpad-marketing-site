@@ -39,7 +39,6 @@
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 22px;
 }
@@ -67,44 +66,131 @@
   font-size: 14px;
 }
 
-/* On phones the compact bar keeps one row: title and button. The links stay in the footer. */
-@media (max-width: 640px) {
-  .bar[data-scrolled] .inner {
+/* Burger menu: hidden on wide screens. */
+.menu {
+  display: none;
+}
+
+.burger {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  cursor: pointer;
+  list-style: none;
+}
+
+.burger::-webkit-details-marker {
+  display: none;
+}
+
+/* Three bars drawn with one span and its shadows; they turn into a cross when open. */
+.bars,
+.bars::before,
+.bars::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform 0.2s ease;
+}
+
+.bars {
+  position: relative;
+}
+
+.bars::before,
+.bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.bars::before {
+  top: -6px;
+}
+
+.bars::after {
+  top: 6px;
+}
+
+.menu[open] .bars {
+  background: transparent;
+}
+
+.menu[open] .bars::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu[open] .bars::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* The open menu drops down full width under the bar. */
+.panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px 20px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 18px 30px rgba(0, 21, 36, 0.12);
+}
+
+.panel > a:not(.panelCta) {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 18px;
+}
+
+/* Scoped under their parents so they outrank the button's own display rule. */
+.panel > a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.panel .panelCta {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .inner {
     flex-wrap: nowrap;
-    gap: 10px;
-    padding-inline: 16px;
   }
 
-  .bar[data-scrolled] .links {
+  .nav {
+    gap: 12px;
+  }
+
+  .links {
     display: none;
   }
 
-  .bar[data-scrolled] .wordmark {
-    font-size: 15px;
-    white-space: nowrap;
-  }
-
-  /* Switch sizes instantly here: mid-animation, the full-size title and button do not fit one row. */
-  .wordmark,
-  .cta {
-    transition: none;
-  }
-
-  .bar[data-scrolled] .cta {
-    padding: 8px 12px;
-    font-size: 13px;
-    white-space: nowrap;
+  .menu {
+    display: block;
   }
 }
 
-/* The narrowest phones need a touch less room for the compact title and button to share a row. */
-@media (max-width: 380px) {
-  .bar[data-scrolled] .wordmark {
-    font-size: 14px;
+/* Phones: the button moves into the menu so the bar stays one slim row. */
+@media (max-width: 560px) {
+  .nav .cta {
+    display: none;
   }
 
-  .bar[data-scrolled] .cta {
-    padding-inline: 10px;
+  .panel .panelCta {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .bar[data-scrolled] .wordmark {
+    font-size: 16px;
   }
 }
 
@@ -112,13 +198,10 @@
   .bar,
   .inner,
   .wordmark,
-  .cta {
+  .cta,
+  .bars,
+  .bars::before,
+  .bars::after {
     transition: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .links {
-    gap: 16px;
   }
 }

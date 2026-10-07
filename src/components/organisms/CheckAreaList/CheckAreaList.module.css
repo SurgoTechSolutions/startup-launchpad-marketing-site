@@ -1,0 +1,155 @@
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Each area: the summary on the left, the detail on the right. */
+.area {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.lead {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.title {
+  font-size: clamp(28px, 3.6vw, 40px);
+}
+
+.intro {
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.example {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 16px 16px 0;
+  background: var(--warm-soft);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.exampleLabel {
+  color: #a34f00;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.blockTitle {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.commonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.check {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 22px;
+}
+
+.check + .check {
+  border-top: 1px solid var(--line);
+}
+
+.check dt {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.check dd {
+  margin: 0;
+  font-size: 15px;
+}
+
+.aiReview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  border: 1px dashed var(--bar);
+  border-radius: 22px;
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .area {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .lead {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .commonGrid {
+    grid-template-columns: 1fr;
+  }
+}

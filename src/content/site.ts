@@ -4,6 +4,7 @@ import type { FooterContent } from "@/types";
 /** Header copy shared by both pages. Each page adds its own wordmark link and nav link. */
 export const HEADER_BASE = {
   ctaLabel: "Scan my code for free",
+  menuLabel: "Menu",
 } as const;
 
 /** Header links, the same on every page. The current page's link is underlined. Legal pages live in the footer. */
@@ -11,6 +12,7 @@ export const NAV_LINKS = [
   { label: "Home", href: ROUTES.launchpad },
   { label: "Why", href: ROUTES.why },
   { label: "Mission", href: ROUTES.mission },
+  { label: "What we check", href: ROUTES.whatWeCheck },
   { label: "Pricing", href: ROUTES.pricing },
   { label: "Verified", href: ROUTES.verified },
 ] as const;

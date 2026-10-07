@@ -1,5 +1,6 @@
 /** Content shapes for each page section. Organisms take these as props. */
 import type {
+  Severity,
   ComparisonColumn,
   ComparisonRow,
   DashTileData,
@@ -25,6 +26,8 @@ export interface HeaderContent {
   readonly wordmark: { readonly lead: string; readonly accent: string; readonly href: string };
   readonly navLinks: readonly Link[];
   readonly ctaLabel: string;
+  /** Accessible name for the phone menu button. */
+  readonly menuLabel: string;
 }
 
 export interface HeroContent {
@@ -350,6 +353,53 @@ export interface VerifiedContent {
 export interface VerifiedPageContent {
   readonly header: HeaderContent;
   readonly verified: VerifiedContent;
+  readonly finalCta: FinalCtaContent;
+  readonly footer: FooterContent;
+}
+
+export interface CheckGroup {
+  readonly title: string;
+  readonly body: string;
+}
+
+/** One area the scan covers, e.g. Security. */
+export interface CheckArea {
+  /** Anchor for the jump links, e.g. "security". */
+  readonly id: string;
+  readonly title: string;
+  readonly intro: string;
+  /** The most common failures, shown as cards. Security only. */
+  readonly common?: { readonly title: string; readonly items: readonly MissionValue[] };
+  readonly checksTitle: string;
+  readonly checks: readonly CheckGroup[];
+  /** A note about the AI security review. Security only. */
+  readonly aiReview?: CheckGroup;
+  readonly exampleLabel: string;
+  readonly example: string;
+}
+
+export interface SeverityLevel {
+  readonly severity: Severity;
+  readonly name: string;
+  readonly body: string;
+}
+
+export interface WhatWeCheckContent {
+  readonly intro: { readonly title: RichText; readonly lede: string };
+  /** Accessible name for the jump links. */
+  readonly jumpLabel: string;
+  readonly areas: readonly CheckArea[];
+  readonly scoring: {
+    readonly title: RichText;
+    readonly lede: string;
+    readonly levels: readonly SeverityLevel[];
+    readonly notes: readonly string[];
+  };
+}
+
+export interface WhatWeCheckPageContent {
+  readonly header: HeaderContent;
+  readonly page: WhatWeCheckContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
 }

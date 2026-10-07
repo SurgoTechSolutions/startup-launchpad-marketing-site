@@ -19,6 +19,7 @@ export const ROUTES = {
   mission: "/startup-launchpad/mission",
   why: "/startup-launchpad/why",
   verified: "/startup-launchpad/verified",
+  whatWeCheck: "/startup-launchpad/what-we-check",
   privacy: "/startup-launchpad/privacy",
   terms: "/startup-launchpad/terms",
 } as const;
