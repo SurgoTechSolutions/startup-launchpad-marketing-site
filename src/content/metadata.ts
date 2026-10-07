@@ -9,7 +9,7 @@ export const SHARE_IMAGE_ALT = "Startup Launchpad: you built something real. Do 
 export const LAUNCHPAD_META = {
   title: "Startup Launchpad",
   description:
-    "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in for every fix.",
+    "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
   path: ROUTES.launchpad,
 } as const satisfies PageMeta;
 

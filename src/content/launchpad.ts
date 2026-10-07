@@ -30,7 +30,7 @@ export const LAUNCHPAD_HEADER = {
 
 export const HERO = {
   title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
-  lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in for every fix.",
+  lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
   ctaLabel: "Scan my code for free",
   note: "Find out how many issues you have before you pay anything.",
   quotesLabel: "What founders said when they saw their results",
