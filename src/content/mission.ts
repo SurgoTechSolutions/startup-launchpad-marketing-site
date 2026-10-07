@@ -7,7 +7,7 @@ export const MISSION = {
   eyebrow: "Our mission",
   title: ["Great companies shouldn't need a ", { highlight: "security budget" }, " to launch."],
   statement:
-    "We want more startups to succeed. So we put professional-grade security in the hands of the people building them, at a price a first product can afford, so anyone can launch something secure and launch it with confidence.",
+    "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford. Build it secure. Launch it with confidence.",
   paragraphs: [
     "Proper security is priced for companies that have already made it: pen tests that cost thousands, contractors billed by the day. So most founders launch without it and hope for the best.",
     "We think that's backwards. The people with the best ideas aren't always the ones with the deepest pockets, and a security gap shouldn't be what stops them.",
@@ -23,13 +23,13 @@ export const MISSION = {
 
 export const MISSION_FINAL_CTA = {
   title: ["Build something secure, and ", { highlight: "launch it with confidence" }, "."],
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
 } as const satisfies FinalCtaContent;
 
 export const MISSION_META = {
   title: "Our Mission",
   description:
-    "We want more startups to succeed, so we put professional-grade security in the hands of the people building them, at a price a first product can afford.",
+    "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford.",
   path: ROUTES.mission,
 } as const satisfies PageMeta;
 

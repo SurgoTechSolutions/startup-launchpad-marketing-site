@@ -2,7 +2,7 @@ import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, PageMeta, WhyContent, WhyPageContent } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
-import { FOOTER } from "./site";
+import { FOOTER, ROLLING_QUALITIES } from "./site";
 
 /**
  * Findings come from real Startup Launchpad case studies, described by type of app
@@ -10,23 +10,23 @@ import { FOOTER } from "./site";
  */
 export const WHY = {
   intro: {
-    title: ["Your app works. That doesn't mean it's ", { highlight: "safe" }, "."],
+    title: ["Your app works. That doesn't mean it's ", { rotate: ROLLING_QUALITIES, suffix: "." }],
     lede: "AI tools build things that work. They don't build things that defend themselves. Every startup codebase we've scanned had critical security issues. Here's what those issues actually cost.",
   },
   reasons: {
-    title: ["Why vibe-coded apps are ", { highlight: "different" }],
+    title: ["Why your AI ", { highlight: "didn't warn you" }],
     items: [
       {
-        title: "It builds the happy path",
-        body: "If it works when you click through it, the AI moves on. Nobody tries what a stranger would.",
+        title: "It only tested what you tried",
+        body: "Your app works because you clicked through it. A stranger won't click the same buttons. They'll try the ones you never thought of.",
       },
       {
-        title: "It doesn't know your business",
-        body: "It can't tell that one customer shouldn't see another's data, or that a price should never come from the browser.",
+        title: "It doesn't know what's precious",
+        body: "To the AI it's all just code. It can't tell that your customers' data is private, or that a price should never come from the browser.",
       },
       {
-        title: "It forgets what it fixed",
-        body: "Old versions of files get left behind, and an AI assistant can pull them straight back in. One founder fixed the same admin loophole twice.",
+        title: 'It says "fixed" and moves on',
+        body: "Old files get left behind and slip straight back in. One founder fixed the same admin loophole twice.",
       },
     ],
   },
@@ -111,7 +111,7 @@ export const WHY = {
 export const WHY_FINAL_CTA = {
   title: ["Find out what's in your code ", { highlight: "before someone else does" }, "."],
   lede: "Free first scan. Cancel any time.",
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
   quote: resolveQuote("joScared"),
 } as const satisfies FinalCtaContent;
 

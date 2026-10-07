@@ -2,6 +2,7 @@ import { Fragment, type ReactNode } from "react";
 import { CritBadge } from "@/components/atoms/CritBadge";
 import { Highlight } from "@/components/atoms/Highlight";
 import { Kbd } from "@/components/atoms/Kbd";
+import { RotatingWord } from "@/components/atoms/RotatingWord";
 import type { RichSegment, RichText as RichTextContent } from "@/types";
 import styles from "./RichText.module.css";
 
@@ -26,6 +27,9 @@ function renderSegment(segment: RichSegment): ReactNode {
         ))}
       </span>
     );
+  }
+  if ("rotate" in segment) {
+    return <RotatingWord words={segment.rotate} suffix={segment.suffix ?? ""} />;
   }
   if ("link" in segment) return <a href={segment.link.href}>{segment.link.label}</a>;
   return <br />;

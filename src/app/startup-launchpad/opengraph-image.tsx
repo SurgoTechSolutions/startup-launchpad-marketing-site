@@ -13,15 +13,24 @@ export const contentType = "image/png";
 const INK = "#001524";
 const ACCENT = "#EB7300";
 
-/** Splits the hero title into words so it wraps like running text. */
-function titleWords(): { readonly word: string; readonly highlight: boolean }[] {
-  return HERO.title.flatMap((segment) => {
-    const highlight = typeof segment !== "string";
-    const text = typeof segment === "string" ? segment : segment.highlight;
-    return text
+interface TitleWord {
+  readonly word: string;
+  readonly highlight: boolean;
+}
+
+/** Splits the hero title into words so it wraps like running text. The rolling word shows its first option. */
+function titleWords(): TitleWord[] {
+  return HERO.title.flatMap((segment): TitleWord[] => {
+    if (typeof segment !== "string") {
+      return [
+        { word: segment.rotate[0], highlight: true },
+        { word: segment.suffix, highlight: false },
+      ];
+    }
+    return segment
       .split(/(?<=\s)/)
       .filter((word) => word !== "")
-      .map((word) => ({ word, highlight }));
+      .map((word) => ({ word, highlight: false }));
   });
 }
 

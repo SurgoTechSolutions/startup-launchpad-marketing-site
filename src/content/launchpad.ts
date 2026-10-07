@@ -20,7 +20,7 @@ import type {
 import { HERO_QUOTE_KEYS } from "./hero";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
-import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
+import { FOOTER, HEADER_BASE, NAV_LINKS, ROLLING_QUALITIES, WORDMARK } from "./site";
 
 export const LAUNCHPAD_HEADER = {
   ...HEADER_BASE,
@@ -29,9 +29,9 @@ export const LAUNCHPAD_HEADER = {
 } as const satisfies HeaderContent;
 
 export const HERO = {
-  title: ["You built something real. Do you know it's ", { highlight: "secure" }, "?"],
+  title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
   lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in for every fix.",
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
   note: "Find out how many issues you have before you pay anything.",
   quotesLabel: "What founders said when they saw their results",
   quoteDotLabel: "Show quote from",
@@ -90,7 +90,7 @@ export const STATS = {
 export const FREE_SCAN = {
   title: ["Find out how many issues you have ", { highlight: "before you pay" }, " a penny."],
   lede: "Connect your repository and we scan it for free. You get your real numbers across all six areas, split by severity, so you know exactly what you're dealing with.",
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
 } as const satisfies FreeScanContent;
 
 export const FOUNDER_STORY = {
@@ -196,7 +196,7 @@ export const FEATURE_QUOTE = {
   photo: { src: "/images/feature-jason-nesbitt.webp", alt: "Jason Nesbitt" },
   bio: "Founder, Affordable MTD. 15 years building software, sold his last SaaS business in 2023.",
   ctaText: "See what's in your code. Your first scan is free.",
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
 } as const satisfies FeatureQuoteContent;
 
 export const QUOTE_WALL = {
@@ -276,7 +276,7 @@ export const FAQS = {
 export const FINAL_CTA = {
   title: ["Find out what's in your codebase before someone else does."],
   lede: "Connect your repository, run the scan and see your numbers. No payment until you decide to unlock the fixes.",
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
   contact: "Info@SurgoTechSolutions.co.uk · +44 7407 742219",
   quote: resolveQuote("joThanks"),
 } as const satisfies FinalCtaContent;

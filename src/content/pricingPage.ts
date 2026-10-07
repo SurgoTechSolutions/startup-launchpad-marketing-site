@@ -61,7 +61,7 @@ export const COST_COMPARISON = {
 
 export const PRICING_FINAL_CTA = {
   title: ["Find out how many issues you have ", { highlight: "before you pay" }, " a penny."],
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
 } as const satisfies FinalCtaContent;
 
 /** Everything the pricing page shows, in page order. */

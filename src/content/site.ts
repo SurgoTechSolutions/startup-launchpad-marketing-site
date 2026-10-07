@@ -3,15 +3,19 @@ import type { FooterContent } from "@/types";
 
 /** Header copy shared by both pages. Each page adds its own wordmark link and nav link. */
 export const HEADER_BASE = {
-  ctaLabel: "Scan my code free",
+  ctaLabel: "Scan my code for free",
 } as const;
 
 /** Header links, the same on every page. The current page's link is underlined. Legal pages live in the footer. */
 export const NAV_LINKS = [
+  { label: "Home", href: ROUTES.launchpad },
   { label: "Why", href: ROUTES.why },
   { label: "Mission", href: ROUTES.mission },
   { label: "Pricing", href: ROUTES.pricing },
 ] as const;
+
+/** Words the hero headlines roll through. The first is the one search engines and screen readers get. */
+export const ROLLING_QUALITIES = ["secure", "private", "reliable", "ready"] as const;
 
 /** The header title. The lead keeps its trailing space; the accent is drawn in orange. */
 export const WORDMARK = { lead: "Startup ", accent: "Launchpad" } as const;

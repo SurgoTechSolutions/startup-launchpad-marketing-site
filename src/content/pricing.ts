@@ -14,7 +14,7 @@ export const PRICING = {
         "Your issue count across all six areas",
         "Broken down by severity, so you know how many are critical",
       ],
-      ctaLabel: "Scan my code free",
+      ctaLabel: "Scan my code for free",
     },
     {
       title: "Ongoing protection",
