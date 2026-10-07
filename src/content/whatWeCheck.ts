@@ -181,11 +181,6 @@ export const WHAT_WE_CHECK = {
       { severity: "low", name: "Low", body: "Minor, but worth tidying." },
       { severity: "info", name: "Info", body: "For awareness only. Never urgent." },
     ],
-    notes: [
-      "Automated checks give the same result for the same code, every time.",
-      "AI security review findings are labelled AI-generated and never count towards your score.",
-      "Recommendations, like AI agent readiness, never affect your score either.",
-    ],
   },
 } as const satisfies WhatWeCheckContent;
 

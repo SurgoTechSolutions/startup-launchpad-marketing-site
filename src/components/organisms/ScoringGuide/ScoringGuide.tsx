@@ -32,11 +32,13 @@ export function ScoringGuide({ content }: ScoringGuideProps): ReactNode {
           </div>
         ))}
       </dl>
-      <ul className={styles.notes}>
-        {content.notes.map((note) => (
-          <li key={note}>{note}</li>
-        ))}
-      </ul>
+      {content.notes !== undefined && (
+        <ul className={styles.notes}>
+          {content.notes.map((note) => (
+            <li key={note}>{note}</li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }

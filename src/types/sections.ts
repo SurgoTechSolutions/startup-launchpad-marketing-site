@@ -393,7 +393,7 @@ export interface WhatWeCheckContent {
     readonly title: RichText;
     readonly lede: string;
     readonly levels: readonly SeverityLevel[];
-    readonly notes: readonly string[];
+    readonly notes?: readonly string[];
   };
 }
 
