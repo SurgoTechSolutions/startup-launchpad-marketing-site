@@ -1,6 +1,7 @@
 import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, MissionContent, MissionPageContent, PageMeta } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
+import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
 
 export const MISSION = {
@@ -24,6 +25,7 @@ export const MISSION = {
 export const MISSION_FINAL_CTA = {
   title: ["Build something secure, and ", { highlight: "launch it with confidence" }, "."],
   ctaLabel: "Scan my code for free",
+  quote: resolveQuote("richardBuilders"),
 } as const satisfies FinalCtaContent;
 
 export const MISSION_META = {

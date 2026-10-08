@@ -41,6 +41,10 @@ export const PEOPLE = {
     name: "Wale Ameen",
     role: "Founder, Kush",
   },
+  richard: {
+    name: "Richard Blakeborough",
+    role: "Co-Founder, Tech Builders NCL",
+  },
   catherine: {
     name: "Catherine Hancher",
     role: "The Networker",

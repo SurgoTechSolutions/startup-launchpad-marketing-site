@@ -68,6 +68,11 @@ export const QUOTES = {
     text: "There's a whole bunch of people vibe coding stuff now that don't really know what they can do, and they can totally make mistakes.",
     person: "robertMcLeod",
   },
+  // Richard agreed to "first-time builders" in place of "amateur builders".
+  richardBuilders: {
+    text: "Whilst we're now able to build anything we want, based on any idea we have, the grim reality is you can build something that is inherently insecure or dangerous for your users. Startup Launchpad is a fantastic tool to help first-time builders create proper businesses, reducing risk and safeguarding their users. Love it.",
+    person: "richard",
+  },
   rosiePaying: {
     text: "I was paying 250 quid a month for a similar service. So the price has come down and the value has gone up.",
     person: "rosie",
