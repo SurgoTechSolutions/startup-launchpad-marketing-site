@@ -17,8 +17,8 @@ export function TrustedBy({ content }: TrustedByProps): ReactNode {
           href === undefined ? (
             <Logo key={logo.src} {...logo} />
           ) : (
-            // The logo's alt text names the link.
-            <a key={logo.src} href={href} className={styles.logoLink}>
+            // Opens in a new tab so visitors keep their place. The logo's alt text names the link.
+            <a key={logo.src} href={href} target="_blank" rel="noopener noreferrer" className={styles.logoLink}>
               <Logo {...logo} />
             </a>
           ),
