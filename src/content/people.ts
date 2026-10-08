@@ -44,6 +44,7 @@ export const PEOPLE = {
   richard: {
     name: "Richard Blakeborough",
     role: "Co-Founder, Tech Builders NCL",
+    photo: { src: "/images/headshot-richard.webp", alt: "Richard Blakeborough" },
   },
   catherine: {
     name: "Catherine Hancher",
