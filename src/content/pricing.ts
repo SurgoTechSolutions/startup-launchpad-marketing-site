@@ -11,7 +11,7 @@ export const PRICING = {
       price: { amount: "Free" },
       features: [
         "Full scan of your repository and live site",
-        "Your issue count across all six areas",
+        "Your issue count across all five areas",
         "Broken down by severity, so you know how many are critical",
       ],
       ctaLabel: "Scan my code for free",

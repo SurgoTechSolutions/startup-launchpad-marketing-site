@@ -101,7 +101,7 @@ export const STATS = {
 
 export const FREE_SCAN = {
   title: ["Find out how many issues you have ", { highlight: "before you pay" }, " a penny."],
-  lede: "Connect your repository and we scan it for free. You get your real numbers across all six areas, split by severity, so you know exactly what you're dealing with.",
+  lede: "Connect your repository and we scan it for free. You get your real numbers across all five areas, split by severity, so you know exactly what you're dealing with.",
   ctaLabel: "Scan my code for free",
 } as const satisfies FreeScanContent;
 
@@ -118,7 +118,7 @@ export const FOUNDER_STORY = {
 export const DASHBOARD = {
   title: ["Everything you ", { highlight: "need" }],
   label:
-    "Example scan dashboard showing open issues across security, accessibility, SEO, reliability and performance, cost and housekeeping",
+    "Example scan dashboard showing open issues across security, accessibility, SEO, reliability and performance, and housekeeping",
   repo: "demo/your-app",
   badge: "Example scan",
   tiles: [
@@ -126,7 +126,9 @@ export const DASHBOARD = {
     { area: "accessibility", label: "Accessibility", counts: { high: 11, low: 14, info: 1 } },
     { area: "seo", label: "SEO", counts: { high: 3, low: 30, info: 7 } },
     { area: "reliability", label: "Reliability & Performance", counts: { medium: 14, info: 2 } },
-    { area: "cost", label: "Cost", counts: { high: 1, medium: 5, low: 2, info: 1 } },
+    // Cost is hidden until the feature ships. When it does, restore this tile, the word "cost"
+    // in the label above, and "six areas" in the free scan lede and the pricing plan.
+    // { area: "cost", label: "Cost", counts: { high: 1, medium: 5, low: 2, info: 1 } },
     { area: "housekeeping", label: "Housekeeping", counts: { low: 532, info: 51 } },
   ],
   quote: resolveQuote("joIncredible"),
