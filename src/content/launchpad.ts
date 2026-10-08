@@ -73,6 +73,14 @@ export const TRUSTED_BY = {
       height: 34,
       href: "https://techbuilders.uk/",
     },
+    {
+      src: "/images/logo-silicon-mingle.png",
+      alt: "Silicon Mingle",
+      intrinsicWidth: 577,
+      intrinsicHeight: 291,
+      height: 48,
+      href: "https://siliconmingle.com/",
+    },
   ],
 } as const satisfies TrustedByContent;
 
