@@ -54,6 +54,7 @@ export const TRUSTED_BY = {
       intrinsicWidth: 140,
       intrinsicHeight: 140,
       height: 52,
+      href: "https://www.dcincubator.co.uk/",
     },
     {
       src: "/images/logo-newcastle-university.png",

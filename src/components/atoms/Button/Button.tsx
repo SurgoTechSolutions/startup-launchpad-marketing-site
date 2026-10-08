@@ -14,7 +14,10 @@ export interface ButtonProps {
   readonly className?: string | undefined;
 }
 
-/** Internal paths use next/link. Anything else, such as the sign-up subdomain, is a plain anchor. */
+/**
+ * Internal paths use next/link. Anything else, such as the sign-up subdomain, is a plain
+ * anchor that opens in a new tab, so visitors keep their place on the site.
+ */
 export function Button({
   href,
   children,
@@ -34,7 +37,7 @@ export function Button({
   }
 
   return (
-    <a href={href} className={classes} aria-current={ariaCurrent}>
+    <a href={href} className={classes} aria-current={ariaCurrent} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   );
