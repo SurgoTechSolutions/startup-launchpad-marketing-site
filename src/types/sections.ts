@@ -49,6 +49,8 @@ export interface PartnerLogo {
   readonly intrinsicHeight: number;
   /** Rendered height in CSS pixels, from the mock-up. */
   readonly height: number;
+  /** The partner's website. The logo links there when set. */
+  readonly href?: string;
 }
 
 export interface TrustedByContent {

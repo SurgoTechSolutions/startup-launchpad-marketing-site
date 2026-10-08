@@ -17,3 +17,13 @@
   border-radius: 28px;
   background: var(--surface);
 }
+
+.logoLink {
+  display: block;
+  border-radius: 6px;
+  transition: opacity 0.15s;
+}
+
+.logoLink:hover {
+  opacity: 0.75;
+}

@@ -13,9 +13,16 @@ export function TrustedBy({ content }: TrustedByProps): ReactNode {
     <section className={styles.trust} aria-label={content.eyebrow}>
       <Eyebrow>{content.eyebrow}</Eyebrow>
       <div className={styles.logos}>
-        {content.logos.map((logo) => (
-          <Logo key={logo.src} {...logo} />
-        ))}
+        {content.logos.map(({ href, ...logo }) =>
+          href === undefined ? (
+            <Logo key={logo.src} {...logo} />
+          ) : (
+            // The logo's alt text names the link.
+            <a key={logo.src} href={href} className={styles.logoLink}>
+              <Logo {...logo} />
+            </a>
+          ),
+        )}
       </div>
     </section>
   );

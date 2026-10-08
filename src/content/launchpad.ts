@@ -68,6 +68,7 @@ export const TRUSTED_BY = {
       intrinsicWidth: 495,
       intrinsicHeight: 76,
       height: 34,
+      href: "https://techbuilders.uk/",
     },
   ],
 } as const satisfies TrustedByContent;
