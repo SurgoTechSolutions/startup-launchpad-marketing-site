@@ -47,6 +47,7 @@ export const TRUSTED_BY = {
       intrinsicWidth: 314,
       intrinsicHeight: 140,
       height: 44,
+      href: "https://www.sunderlandsoftwarecity.com/",
     },
     {
       src: "/images/logo-durham-city-incubator.png",
@@ -62,6 +63,7 @@ export const TRUSTED_BY = {
       intrinsicWidth: 493,
       intrinsicHeight: 140,
       height: 46,
+      href: "https://www.ncl.ac.uk/",
     },
     {
       src: "/images/logo-tech-builders-uk-co-working-club.png",
