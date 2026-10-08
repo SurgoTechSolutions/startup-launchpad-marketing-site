@@ -6,7 +6,6 @@ export const QUOTES = {
   robHoly: {
     text: "Holy s***, that's a lot of things.",
     person: "robertBowey",
-    context: "First look at his dashboard",
   },
   robSelling: {
     text: "You're not selling them their problems. You're selling them the ways to solve and fix all those problems.",

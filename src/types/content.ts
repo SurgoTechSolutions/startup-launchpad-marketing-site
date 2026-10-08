@@ -22,7 +22,7 @@ export interface Quote<K extends string = string> {
   /** The words only, without quote marks. Components add the marks they need. */
   readonly text: string;
   readonly person: K;
-  /** Short scene-setting line shown above the quote, e.g. "First look at his dashboard". */
+  /** Short scene-setting line shown above the quote, e.g. "On fixing her issues, a week later". */
   readonly context?: string;
 }
 
