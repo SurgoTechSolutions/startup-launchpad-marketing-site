@@ -19,8 +19,8 @@ Next.js 15 (App Router) build of the Startup Launchpad mock-ups in `design/`, ho
 
 See `.env.example`. Both are optional.
 
-- `NEXT_PUBLIC_SIGNUP_URL` is where every sign-up button points. Defaults to `https://launchpad.surgotechsolutions.co.uk/sign-up`.
-- `NEXT_PUBLIC_SITE_URL` is the public origin for canonical and Open Graph URLs. Defaults to `https://surgotechsolutions.co.uk`.
+- `NEXT_PUBLIC_SIGNUP_URL` is where every sign-up button points. Defaults to `https://app.startuplaunchpad.app/sign-up`.
+- `NEXT_PUBLIC_SITE_URL` is the public origin for canonical and Open Graph URLs. Defaults to `https://startuplaunchpad.app`.
 
 ## Structure
 

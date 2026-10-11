@@ -1,4 +1,4 @@
-const DEFAULT_SIGNUP_URL = "https://launchpad.surgotechsolutions.co.uk/sign-up";
+const DEFAULT_SIGNUP_URL = "https://app.startuplaunchpad.app/sign-up";
 
 const envSignupUrl = process.env.NEXT_PUBLIC_SIGNUP_URL;
 
@@ -6,7 +6,7 @@ const envSignupUrl = process.env.NEXT_PUBLIC_SIGNUP_URL;
 export const SIGNUP_URL: string =
   envSignupUrl !== undefined && envSignupUrl !== "" ? envSignupUrl : DEFAULT_SIGNUP_URL;
 
-const DEFAULT_SITE_URL = "https://surgotechsolutions.co.uk";
+const DEFAULT_SITE_URL = "https://startuplaunchpad.app";
 const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 /** Public origin the pages are served from. Used for canonical and Open Graph URLs. */
