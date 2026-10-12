@@ -269,8 +269,7 @@ export interface MissionValue {
 
 export interface MissionContent {
   readonly eyebrow: string;
-  readonly title: RichText;
-  /** The mission in one sentence, shown in the card under the title. */
+  /** The mission itself. It is the page heading. */
   readonly statement: string;
   readonly paragraphs: readonly string[];
   readonly valuesTitle: RichText;

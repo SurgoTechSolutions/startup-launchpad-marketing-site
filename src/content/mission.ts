@@ -6,7 +6,6 @@ import { FOOTER } from "./site";
 
 export const MISSION = {
   eyebrow: "Our mission",
-  title: ["Great companies shouldn't need a ", { highlight: "security budget" }, " to launch."],
   statement:
     "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford. Build it secure. Launch it with confidence.",
   paragraphs: [
