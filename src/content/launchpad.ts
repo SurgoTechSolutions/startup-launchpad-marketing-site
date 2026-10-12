@@ -280,7 +280,7 @@ export const FAQS = {
 } as const satisfies FaqContent;
 
 export const FINAL_CTA = {
-  title: ["Find out what's in your codebase before someone else does."],
+  title: ["Find out what's in your codebase ", { highlight: "before someone else does" }, "."],
   lede: "Connect your repository, run the scan and see your numbers. No payment until you decide to unlock the fixes.",
   ctaLabel: "Scan my code for free",
   contact: "Info@SurgoTechSolutions.co.uk · +44 7407 742219",
