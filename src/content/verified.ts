@@ -59,7 +59,7 @@ export const VERIFIED = {
   },
   badge: {
     title: ["Show it where ", { highlight: "it counts" }],
-    lede: "Add the badge to your site footer or README. It links to a public page anyone can check, showing your level and when it was last verified. Never your findings.",
+    lede: "Add the badge to your site footer or README. It links to a public page anyone can check, showing your level and when it was last verified.",
     example: { label: "Launchpad verified", level: "Gold", date: "3 Oct 2026", metal: "gold" },
     lapsed: { label: "Launchpad verified", level: "Lapsed", date: "4 Nov 2026", metal: "silver" },
     lapsedNote: "If a level is lost, the badge goes grey and says so. A badge that can lapse is one people can trust.",
@@ -104,7 +104,7 @@ export const VERIFIED = {
 } as const satisfies VerifiedContent;
 
 export const VERIFIED_FINAL_CTA = {
-  title: ["Start your way to ", { highlight: "Bronze" }, " today."],
+  title: ["Start your way to ", { highlight: "Gold" }, " today."],
   lede: "Your first scan shows exactly what stands between you and each level.",
   ctaLabel: "Scan my code for free",
 } as const satisfies FinalCtaContent;
