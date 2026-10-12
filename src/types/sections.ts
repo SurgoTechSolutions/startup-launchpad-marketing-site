@@ -65,11 +65,6 @@ export interface StatsContent {
   readonly note: string;
 }
 
-export interface FreeScanContent {
-  readonly title: RichText;
-  readonly ctaLabel: string;
-}
-
 export interface FounderStoryContent {
   readonly eyebrow: string;
   readonly title: RichText;
@@ -239,7 +234,6 @@ export interface LaunchpadPageContent {
   readonly hero: HeroContent;
   readonly trustedBy: TrustedByContent;
   readonly stats: StatsContent;
-  readonly freeScan: FreeScanContent;
   readonly founderStory: FounderStoryContent;
   readonly findings: FindingsContent;
   readonly dashboard: DashboardContent;

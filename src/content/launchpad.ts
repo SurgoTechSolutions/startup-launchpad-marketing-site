@@ -9,7 +9,6 @@ import type {
   FinalCtaContent,
   FindingsContent,
   FounderStoryContent,
-  FreeScanContent,
   HeroContent,
   HowItWorksContent,
   LaunchpadPageContent,
@@ -90,11 +89,6 @@ export const STATS = {
   ],
   note: "Figures from Startup Launchpad scans, 2026.",
 } as const satisfies StatsContent;
-
-export const FREE_SCAN = {
-  title: ["Find out how many issues you have ", { highlight: "before you pay" }, " a penny."],
-  ctaLabel: "Scan my code for free",
-} as const satisfies FreeScanContent;
 
 export const FOUNDER_STORY = {
   eyebrow: "Founder story",
@@ -293,7 +287,6 @@ export const LAUNCHPAD_PAGE = {
   hero: HERO,
   trustedBy: TRUSTED_BY,
   stats: STATS,
-  freeScan: FREE_SCAN,
   founderStory: FOUNDER_STORY,
   findings: FINDINGS,
   dashboard: DASHBOARD,

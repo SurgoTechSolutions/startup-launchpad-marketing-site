@@ -5,7 +5,6 @@ import { FaqSection } from "@/components/organisms/FaqSection";
 import { FeatureQuote } from "@/components/organisms/FeatureQuote";
 import { FinalCta } from "@/components/organisms/FinalCta";
 import { FounderStory } from "@/components/organisms/FounderStory";
-import { FreeScanSection } from "@/components/organisms/FreeScanSection";
 import { Hero } from "@/components/organisms/Hero";
 import { HowItWorks } from "@/components/organisms/HowItWorks";
 import { PricingSection } from "@/components/organisms/PricingSection";
@@ -35,7 +34,6 @@ export function LaunchpadTemplate({ content, signupUrl }: LaunchpadTemplateProps
           <Hero content={content.hero} signupUrl={signupUrl} />
           <TrustedBy content={content.trustedBy} />
           <StatsSection content={content.stats} />
-          <FreeScanSection content={content.freeScan} signupUrl={signupUrl} />
           <FounderStory content={content.founderStory} signupUrl={signupUrl} />
           <RealFindings content={content.findings} />
           <DashboardShowcase content={content.dashboard} signupUrl={signupUrl} />
