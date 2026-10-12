@@ -151,7 +151,7 @@ export const WHAT_WE_CHECK_FINAL_CTA = {
 export const WHAT_WE_CHECK_META = {
   title: "What we check",
   description:
-    "Security, accessibility, SEO, reliability and housekeeping: what Startup Launchpad checks in your code and live site, and what we've found in real apps.",
+    "Security, accessibility, SEO, reliability and housekeeping: what Startup Launchpad checks in your code and live site, and what each check looks for.",
   path: ROUTES.whatWeCheck,
 } as const satisfies PageMeta;
 
