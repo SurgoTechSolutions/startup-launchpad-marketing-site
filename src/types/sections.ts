@@ -242,8 +242,8 @@ export interface LaunchpadPageContent {
   readonly stats: StatsContent;
   readonly freeScan: FreeScanContent;
   readonly founderStory: FounderStoryContent;
-  readonly dashboard: DashboardContent;
   readonly findings: FindingsContent;
+  readonly dashboard: DashboardContent;
   readonly explain: ExplainContent;
   readonly featureQuote: FeatureQuoteContent;
   readonly quoteWall: QuoteWallContent;
