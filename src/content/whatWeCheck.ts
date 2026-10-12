@@ -40,16 +40,11 @@ export const WHAT_WE_CHECK = {
           body: "Pages you are required to publish in the UK and EU, like a privacy policy and a sub-processor disclosure. The gap usually surfaces in a customer's security review or a regulator's complaint.",
         },
       ],
-      aiReview: {
-        title: "AI security review",
-        body: "An AI model also reads how your app fits together and asks how someone could misuse it, using STRIDE, a standard way of listing how software gets attacked. Its findings are labelled AI-generated and treated as leads to confirm, not verdicts, so they never count towards your score.",
-      },
     },
     {
       id: "accessibility",
       title: "Accessibility",
-      intro:
-        "The people who can't use what you built, and the standards your customers' procurement teams will ask about.",
+      intro: "Issues that make your product harder to use for people with disabilities.",
       checksTitle: "The checks",
       checks: [
         {

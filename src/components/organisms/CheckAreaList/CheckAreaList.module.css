@@ -103,16 +103,6 @@
   font-size: 15px;
 }
 
-.aiReview {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 22px;
-  border: 1px dashed var(--bar);
-  border-radius: 22px;
-  font-size: 15px;
-}
-
 @media (max-width: 900px) {
   .checks {
     grid-template-columns: repeat(2, minmax(0, 1fr));

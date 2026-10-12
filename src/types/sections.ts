@@ -365,8 +365,6 @@ export interface CheckArea {
   readonly common?: { readonly title: string; readonly items: readonly MissionValue[] };
   readonly checksTitle: string;
   readonly checks: readonly CheckGroup[];
-  /** A note about the AI security review. Security only. */
-  readonly aiReview?: CheckGroup;
 }
 
 export interface SeverityLevel {

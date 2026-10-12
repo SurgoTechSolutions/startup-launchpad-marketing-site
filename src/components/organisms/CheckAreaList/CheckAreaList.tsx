@@ -40,12 +40,6 @@ function Area({ area }: { readonly area: CheckArea }): ReactNode {
             ))}
           </dl>
         </div>
-        {area.aiReview !== undefined && (
-          <div className={styles.aiReview}>
-            <h3 className={styles.blockTitle}>{area.aiReview.title}</h3>
-            <p>{area.aiReview.body}</p>
-          </div>
-        )}
       </div>
     </section>
   );
