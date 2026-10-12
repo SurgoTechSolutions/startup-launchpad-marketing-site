@@ -10,7 +10,8 @@ export const HEADER_BASE = {
 /** Header links, the same on every page. The current page's link is underlined. Legal pages live in the footer. */
 export const NAV_LINKS = [
   { label: "Home", href: ROUTES.launchpad },
-  { label: "Why", href: ROUTES.why },
+  // Hidden for now. The page is still live at its address. Uncomment to bring it back.
+  // { label: "Why", href: ROUTES.why },
   { label: "Mission", href: ROUTES.mission },
   { label: "What we check", href: ROUTES.whatWeCheck },
   { label: "Pricing", href: ROUTES.pricing },
