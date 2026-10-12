@@ -236,6 +236,7 @@ export interface LaunchpadPageContent {
   readonly stats: StatsContent;
   readonly founderStory: FounderStoryContent;
   readonly findings: FindingsContent;
+  readonly findingsCta: FinalCtaContent;
   readonly dashboard: DashboardContent;
   readonly explain: ExplainContent;
   readonly featureQuote: FeatureQuoteContent;

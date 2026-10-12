@@ -100,6 +100,13 @@ export const FOUNDER_STORY = {
   quote: resolveQuote("rousseauMinutes"),
 } as const satisfies FounderStoryContent;
 
+/** Call to action straight after the real findings. */
+export const FINDINGS_CTA = {
+  title: ["See what we'd find in ", { highlight: "your code" }, "."],
+  lede: "Your first scan is free.",
+  ctaLabel: "Scan my code for free",
+} as const satisfies FinalCtaContent;
+
 export const DASHBOARD = {
   title: ["Everything you ", { highlight: "need" }],
   label:
@@ -289,6 +296,7 @@ export const LAUNCHPAD_PAGE = {
   stats: STATS,
   founderStory: FOUNDER_STORY,
   findings: FINDINGS,
+  findingsCta: FINDINGS_CTA,
   dashboard: DASHBOARD,
   explain: EXPLAIN,
   featureQuote: FEATURE_QUOTE,
