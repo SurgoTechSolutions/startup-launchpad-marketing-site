@@ -23,7 +23,13 @@ export interface QuoteWithPerson {
 }
 
 export interface HeaderContent {
-  readonly wordmark: { readonly lead: string; readonly accent: string; readonly href: string };
+  readonly wordmark: {
+    readonly lead: string;
+    readonly accent: string;
+    readonly href: string;
+    /** Logo image shown before the name. */
+    readonly logo?: string;
+  };
   readonly navLinks: readonly Link[];
   readonly ctaLabel: string;
   /** Accessible name for the phone menu button. */

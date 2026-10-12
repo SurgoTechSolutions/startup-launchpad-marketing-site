@@ -20,8 +20,8 @@ export const NAV_LINKS = [
 /** Words the hero headlines roll through. The first is the one search engines and screen readers get. */
 export const ROLLING_QUALITIES = ["secure", "private", "reliable", "ready"] as const;
 
-/** The header title. The lead keeps its trailing space; the accent is drawn in orange. */
-export const WORDMARK = { lead: "Startup ", accent: "Launchpad" } as const;
+/** The header title. The lead keeps its trailing space; the accent is drawn in orange. The logo sits before it. */
+export const WORDMARK = { lead: "Startup ", accent: "Launchpad", logo: "/images/logo-mark.png" } as const;
 
 export const FOOTER = {
   home: {

@@ -1,4 +1,7 @@
 .mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
   color: var(--ink);
   font-size: 20px;
   font-weight: 700;
@@ -7,4 +10,10 @@
 
 .accent {
   color: var(--accent);
+}
+
+/* Sized in em so it follows the name when the header shrinks. */
+.logo {
+  width: auto;
+  height: 1.4em;
 }
