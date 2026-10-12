@@ -32,13 +32,14 @@
   }
 }
 
-/* Some logo files have a white background. Multiply blends it into the page. */
-.logos img {
-  mix-blend-mode: multiply;
-}
-
+/*
+ * Some logo files have a white background. Multiply blends it into the page.
+ * It sits on the item rather than the image so the hover scale doesn't cut the image
+ * off from the page and bring the white back.
+ */
 .item {
   display: block;
+  mix-blend-mode: multiply;
 }
 
 /* On phones the square-ish logos share a row and the wide one gets the row below. */
