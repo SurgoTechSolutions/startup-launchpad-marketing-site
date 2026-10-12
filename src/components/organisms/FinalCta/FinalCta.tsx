@@ -13,14 +13,30 @@ export interface FinalCtaProps {
   readonly id?: string;
   /**
    * "split" puts the quote beside the copy (main page). "centered" stacks everything in the
-   * middle with the quote under the button. Defaults to split when there is a quote.
+   * middle with the quote under the button. "banner" is a full-width white band with the words
+   * on the left and the button on the right, and no quote. Defaults to split when there is a quote.
    */
-  readonly layout?: "split" | "centered";
+  readonly layout?: "split" | "centered" | "banner";
 }
 
 /** The closing call to action, with an optional quote. */
 export function FinalCta({ content, signupUrl, id, layout }: FinalCtaProps): ReactNode {
   const { quote } = content;
+
+  if (layout === "banner") {
+    return (
+      <section id={id} className={styles.banner}>
+        <div className={styles.bannerText}>
+          <SectionTitle size="base">
+            <RichText content={content.title} />
+          </SectionTitle>
+          {content.lede !== undefined && <Lede>{content.lede}</Lede>}
+        </div>
+        <Button href={signupUrl}>{content.ctaLabel}</Button>
+      </section>
+    );
+  }
+
   const centered = (layout ?? (quote === undefined ? "centered" : "split")) === "centered";
 
   return (
