@@ -41,6 +41,17 @@
   font-size: clamp(28px, 3.6vw, 40px);
 }
 
+/* Short orange bar under each area's name. */
+.title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
 .intro {
   color: var(--ink);
   font-size: 18px;
