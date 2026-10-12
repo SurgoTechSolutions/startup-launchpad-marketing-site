@@ -46,7 +46,7 @@ export const TRUSTED_BY = {
       alt: "Sunderland Software City",
       intrinsicWidth: 314,
       intrinsicHeight: 140,
-      height: 44,
+      height: 60,
       href: "https://www.sunderlandsoftwarecity.com/",
     },
     {
@@ -54,7 +54,7 @@ export const TRUSTED_BY = {
       alt: "Durham City Incubator",
       intrinsicWidth: 140,
       intrinsicHeight: 140,
-      height: 52,
+      height: 70,
       href: "https://www.dcincubator.co.uk/",
     },
     {
@@ -62,7 +62,7 @@ export const TRUSTED_BY = {
       alt: "Tech Builders UK Co-working Club",
       intrinsicWidth: 495,
       intrinsicHeight: 76,
-      height: 34,
+      height: 46,
       href: "https://techbuilders.uk/",
     },
     {
@@ -70,7 +70,7 @@ export const TRUSTED_BY = {
       alt: "Silicon Mingle",
       intrinsicWidth: 577,
       intrinsicHeight: 291,
-      height: 48,
+      height: 64,
       href: "https://siliconmingle.com/",
     },
   ],

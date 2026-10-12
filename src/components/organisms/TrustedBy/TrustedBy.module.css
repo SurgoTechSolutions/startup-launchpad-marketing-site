@@ -30,12 +30,23 @@
   mix-blend-mode: multiply;
 }
 
-/* Two by two on phones, rather than three and one. */
+.item {
+  display: block;
+}
+
+/* On phones the square-ish logos share a row and the wide one gets the row below. */
 @media (max-width: 640px) {
   .logos {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-items: center;
-    gap: 24px 40px;
+    gap: 28px 20px;
+    width: 100%;
+  }
+
+  .wide {
+    grid-column: 1 / -1;
+    order: 1;
+    max-width: 240px;
   }
 }
