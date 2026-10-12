@@ -9,7 +9,7 @@ export const MISSION = {
     "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford.",
   photo: {
     src: "/images/mission-founders.webp",
-    alt: "The Startup Launchpad co-founders presenting at an event, with a SurgoTech Solutions slide on the screen behind them.",
+    alt: "The Startup Launchpad co-founders presenting at an event, with Jack Sheriff's profile slide on the screen behind them.",
     width: 1200,
     height: 1200,
   },
