@@ -5,10 +5,10 @@ import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
 
 export const MISSION = {
-  statement:
-    "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford.",
+  title: ["We want more ", { highlight: "startups to succeed" }, "."],
+  lede: "So we put professional-grade security in founders' hands, at a price a first product can afford.",
   photo: {
-    src: "/images/mission-founders.webp",
+    src: "/images/mission-team.webp",
     alt: "The Startup Launchpad co-founders presenting at an event, with the Startup Launchpad logo on the screen behind them.",
     width: 822,
     height: 822,

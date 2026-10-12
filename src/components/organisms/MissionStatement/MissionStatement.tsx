@@ -1,5 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { Lede } from "@/components/atoms/Lede";
+import { SectionTitle } from "@/components/atoms/SectionTitle";
+import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
 import type { MissionContent } from "@/types";
 import styles from "./MissionStatement.module.css";
@@ -13,7 +16,10 @@ export function MissionStatement({ content }: MissionStatementProps): ReactNode 
   return (
     <section className={styles.section}>
       <SectionHead>
-        <h1 className={styles.statement}>{content.statement}</h1>
+        <SectionTitle as="h1" size="find" className={styles.title}>
+          <RichText content={content.title} />
+        </SectionTitle>
+        <Lede>{content.lede}</Lede>
       </SectionHead>
       <div className={styles.body}>
         <Image

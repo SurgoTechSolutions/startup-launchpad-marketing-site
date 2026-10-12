@@ -268,8 +268,10 @@ export interface MissionValue {
 }
 
 export interface MissionContent {
-  /** The mission itself. It is the page heading. */
-  readonly statement: string;
+  /** The mission in a few words. It is the page heading. */
+  readonly title: RichText;
+  /** The rest of the mission, under the heading. */
+  readonly lede: string;
   /** Shown under the heading, before the story. */
   readonly photo: Photo & { readonly width: number; readonly height: number };
   readonly paragraphs: readonly string[];
