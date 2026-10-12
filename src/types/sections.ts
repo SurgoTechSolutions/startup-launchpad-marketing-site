@@ -162,6 +162,13 @@ export interface PricingContent {
   /** Link to the full pricing page. Left out on the pricing page itself. */
   readonly moreLink?: Link;
   readonly quote: QuoteWithPerson;
+  /** When set, these quotes cycle in place of the single quote. */
+  readonly rotation?: {
+    readonly label: string;
+    /** Start of each dot button's label, followed by the person's name. */
+    readonly dotLabel: string;
+    readonly quotes: readonly QuoteWithPerson[];
+  };
 }
 
 export interface ComparisonSource {

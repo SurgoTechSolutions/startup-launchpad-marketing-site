@@ -14,6 +14,8 @@ export interface HeroQuoteRotatorProps {
   /** One label per slide, for its dot button. */
   readonly dotLabels: readonly string[];
   readonly label: string;
+  /** Set false to drop the card frame, e.g. under the pricing plans. */
+  readonly framed?: boolean;
 }
 
 /**
@@ -22,7 +24,12 @@ export interface HeroQuoteRotatorProps {
  * while hovered or focused, and stop once a visitor picks one with the dots. With reduced
  * motion, or without JavaScript, the first slide stays put.
  */
-export function HeroQuoteRotator({ slides, dotLabels, label }: HeroQuoteRotatorProps): ReactNode {
+export function HeroQuoteRotator({
+  slides,
+  dotLabels,
+  label,
+  framed = true,
+}: HeroQuoteRotatorProps): ReactNode {
   const reduced = usePrefersReducedMotion();
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -37,7 +44,7 @@ export function HeroQuoteRotator({ slides, dotLabels, label }: HeroQuoteRotatorP
 
   return (
     <div
-      className={styles.frame}
+      className={cx(styles.frame, !framed && styles.bare)}
       role="group"
       aria-roledescription="carousel"
       aria-label={label}

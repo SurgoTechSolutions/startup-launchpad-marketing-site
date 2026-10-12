@@ -72,6 +72,10 @@ export const QUOTES = {
     text: "Startup Launchpad is a fantastic tool to help first-time builders create proper businesses, reducing risk and safeguarding their users. Love it.",
     person: "richard",
   },
+  robPrice: {
+    text: "You'd pay £100 per month to know your code was safe and secure.",
+    person: "robertBowey",
+  },
   rosiePaying: {
     text: "I was paying 250 quid a month for a similar service. So the price has come down and the value has gone up.",
     person: "rosie",

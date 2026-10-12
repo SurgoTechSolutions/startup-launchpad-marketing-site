@@ -6,6 +6,7 @@ import { PlanCard } from "@/components/molecules/PlanCard";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
+import { HeroQuoteRotator } from "@/components/organisms/HeroQuoteRotator";
 import type { PricingContent } from "@/types";
 import styles from "./PricingSection.module.css";
 
@@ -42,7 +43,18 @@ export function PricingSection({ content, signupUrl, headingLevel = "h2" }: Pric
           </Button>
         </p>
       )}
-      <QuoteCard variant="centered" text={content.quote.text} person={content.quote.person} />
+      {content.rotation === undefined ? (
+        <QuoteCard variant="centered" text={content.quote.text} person={content.quote.person} />
+      ) : (
+        <HeroQuoteRotator
+          framed={false}
+          label={content.rotation.label}
+          dotLabels={content.rotation.quotes.map((quote) => `${content.rotation?.dotLabel ?? ""} ${quote.person.name}`)}
+          slides={content.rotation.quotes.map((quote) => (
+            <QuoteCard key={quote.text} variant="centered" text={quote.text} person={quote.person} />
+          ))}
+        />
+      )}
     </section>
   );
 }

@@ -67,7 +67,14 @@ export const PRICING_FINAL_CTA = {
 /** Everything the pricing page shows, in page order. */
 export const PRICING_PAGE = {
   header: PRICING_HEADER,
-  pricing: PRICING,
+  pricing: {
+    ...PRICING,
+    rotation: {
+      label: "What founders said about the price",
+      dotLabel: "Show quote from",
+      quotes: [resolveQuote("rosiePaying"), resolveQuote("rousseauPenTesting"), resolveQuote("robPrice")],
+    },
+  },
   comparison: COST_COMPARISON,
   finalCta: PRICING_FINAL_CTA,
   footer: FOOTER,

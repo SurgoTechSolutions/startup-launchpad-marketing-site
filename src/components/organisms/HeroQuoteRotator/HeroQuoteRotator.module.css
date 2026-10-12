@@ -13,6 +13,16 @@
   text-align: center;
 }
 
+/* No card, for quotes that sit straight on the page. */
+.bare {
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
 /* All slides share one cell, so the frame height is the tallest slide. */
 .slides {
   display: grid;
