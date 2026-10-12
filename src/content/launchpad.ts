@@ -151,14 +151,8 @@ export const FINDINGS = {
 } as const satisfies FindingsContent;
 
 export const EXPLAIN = {
-  title: [
-    "Your issues explained in ",
-    { highlight: "plain English" },
-    ".",
-    { lineBreak: true },
-    "Then fixed with ",
-    { keys: ["Ctrl", "V"] },
-  ],
+  title: ["Your issues explained in ", { highlight: "plain English" }, "."],
+  fixTitle: ["Then fixed with ", { keys: ["Ctrl", "V"] }],
   quote: resolveQuote("aliceSimply"),
   issue: {
     severity: "Critical",

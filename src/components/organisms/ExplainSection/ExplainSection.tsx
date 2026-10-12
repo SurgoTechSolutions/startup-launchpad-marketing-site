@@ -15,44 +15,57 @@ export interface ExplainSectionProps {
   readonly signupUrl: string;
 }
 
+/**
+ * Two parts. First how an issue is explained, beside a founder's quote. Then the fix prompt for
+ * it, beside a terminal pasting it in, with the call to action underneath.
+ */
 export function ExplainSection({ content, signupUrl }: ExplainSectionProps): ReactNode {
   const { issue, prompt } = content;
 
   return (
-    <section className={styles.explain}>
-      <SectionTitle size="explain" className={styles.title}>
-        <RichText content={content.title} />
-      </SectionTitle>
-      <div className={styles.copy}>
-        <QuoteCard variant="stacked" text={content.quote.text} person={content.quote.person} />
-      </div>
-      <div className={styles.issue}>
-        <div className={styles.issueTop}>
-          <div className={styles.tags}>
-            <span className={styles.severity}>{issue.severity}</span>
-            <span className={styles.category}>{issue.category}</span>
-          </div>
-          <h3>{issue.title}</h3>
-          <p>{issue.body}</p>
-          <div className={styles.location}>
-            <code>{issue.location}</code>
-            <span>{issue.locationNote}</span>
+    <>
+      <section className={styles.part}>
+        <SectionTitle size="explain" className={styles.title}>
+          <RichText content={content.title} />
+        </SectionTitle>
+        <div className={styles.copy}>
+          <QuoteCard variant="stacked" text={content.quote.text} person={content.quote.person} />
+        </div>
+        <div className={styles.card}>
+          <div className={styles.issue}>
+            <div className={styles.tags}>
+              <span className={styles.severity}>{issue.severity}</span>
+              <span className={styles.category}>{issue.category}</span>
+            </div>
+            <h3>{issue.title}</h3>
+            <p>{issue.body}</p>
+            <div className={styles.location}>
+              <code>{issue.location}</code>
+              <span>{issue.locationNote}</span>
+            </div>
           </div>
         </div>
-        <div className={styles.issueBottom}>
-          <div className={styles.promptBar}>
-            <span>{prompt.heading}</span>
-            <CopyPromptButton text={prompt.text} targetId={PROMPT_ID} labels={prompt.copyLabels} />
+      </section>
+      <section className={styles.part}>
+        <SectionTitle size="explain" className={styles.title}>
+          <RichText content={content.fixTitle} />
+        </SectionTitle>
+        <div className={styles.card}>
+          <div className={styles.fix}>
+            <div className={styles.promptBar}>
+              <span>{prompt.heading}</span>
+              <CopyPromptButton text={prompt.text} targetId={PROMPT_ID} labels={prompt.copyLabels} />
+            </div>
+            <pre id={PROMPT_ID} className={styles.prompt}>
+              {prompt.text}
+            </pre>
           </div>
-          <pre id={PROMPT_ID} className={styles.prompt}>
-            {prompt.text}
-          </pre>
         </div>
-      </div>
-      <div className={styles.cta}>
         <FixTerminal content={content.terminal} />
-        <Button href={signupUrl}>{content.ctaLabel}</Button>
-      </div>
-    </section>
+        <div className={styles.cta}>
+          <Button href={signupUrl}>{content.ctaLabel}</Button>
+        </div>
+      </section>
+    </>
   );
 }

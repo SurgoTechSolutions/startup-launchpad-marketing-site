@@ -1,8 +1,13 @@
-.explain {
+.part {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   align-items: center;
   gap: 48px;
+}
+
+/* Prompt first, terminal beside it. */
+.part + .part {
+  grid-template-columns: 1.1fr 0.9fr;
 }
 
 .title {
@@ -16,7 +21,7 @@
   min-width: 0;
 }
 
-.issue {
+.card {
   min-width: 0;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -25,19 +30,19 @@
   box-shadow: 0 34px 70px rgba(0, 21, 36, 0.16);
 }
 
-.issueTop {
+.issue {
   display: flex;
   flex-direction: column;
   gap: 14px;
   padding: 30px 30px 26px;
 }
 
-.issueTop h3 {
+.issue h3 {
   font-size: clamp(19px, 2.2vw, 23px);
   font-weight: 700;
 }
 
-.issueTop p {
+.issue p {
   font-size: 15.5px;
   line-height: 1.65;
 }
@@ -83,12 +88,11 @@
   overflow-wrap: anywhere;
 }
 
-.issueBottom {
+.fix {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 24px 26px 28px;
-  border-top: 1px solid var(--line);
   background: #f4f4f4;
   color: #1f2933;
 }
@@ -118,25 +122,22 @@
 
 .cta {
   display: flex;
-  flex-direction: column;
   grid-column: 1 / -1;
-  align-items: center;
-  gap: 26px;
-  margin-top: 20px;
-  text-align: center;
+  justify-content: center;
 }
 
 @media (max-width: 900px) {
-  .explain {
+  .part,
+  .part + .part {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .issueTop {
+  .issue {
     padding: 24px 20px;
   }
 
-  .issueBottom {
+  .fix {
     padding: 20px;
   }
 }

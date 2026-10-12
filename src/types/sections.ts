@@ -115,7 +115,10 @@ export interface TerminalContent {
 }
 
 export interface ExplainContent {
+  /** Heading over the explained issue. */
   readonly title: RichText;
+  /** Heading over the fix prompt. */
+  readonly fixTitle: RichText;
   readonly quote: QuoteWithPerson;
   readonly issue: {
     readonly severity: string;
