@@ -15,19 +15,21 @@ export function MissionStatement({ content }: MissionStatementProps): ReactNode 
       <SectionHead>
         <h1 className={styles.statement}>{content.statement}</h1>
       </SectionHead>
-      <Image
-        className={styles.photo}
-        src={content.photo.src}
-        alt={content.photo.alt}
-        width={content.photo.width}
-        height={content.photo.height}
-        sizes="(max-width: 680px) calc(100vw - 32px), 640px"
-        priority
-      />
-      <div className={styles.story}>
-        {content.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+      <div className={styles.body}>
+        <Image
+          className={styles.photo}
+          src={content.photo.src}
+          alt={content.photo.alt}
+          width={content.photo.width}
+          height={content.photo.height}
+          sizes="(max-width: 860px) calc(100vw - 32px), 460px"
+          priority
+        />
+        <div className={styles.story}>
+          {content.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </div>
     </section>
   );

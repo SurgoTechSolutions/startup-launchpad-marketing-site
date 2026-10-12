@@ -13,11 +13,20 @@
   line-height: 1.4;
 }
 
+/* Photo on the left, story on the right. Stacks on narrow screens. */
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  max-width: 1040px;
+  margin-top: 8px;
+}
+
 .photo {
   width: 100%;
-  max-width: 640px;
   height: auto;
-  margin-top: 8px;
   border: 1px solid var(--line);
   border-radius: 28px;
   box-shadow: 0 24px 60px rgba(0, 21, 36, 0.08);
@@ -28,6 +37,17 @@
   flex-direction: column;
   gap: 18px;
   max-width: 64ch;
-  margin-top: 40px;
   font-size: 18px;
+}
+
+@media (max-width: 860px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 36px;
+  }
+
+  .photo {
+    max-width: 640px;
+  }
 }
