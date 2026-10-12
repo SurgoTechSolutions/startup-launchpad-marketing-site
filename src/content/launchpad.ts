@@ -192,7 +192,7 @@ Review the change before merging.`,
       { kind: "question", text: "Ready to fix your code?", typed: true },
     ],
   },
-  ctaLabel: "Fix my s***!",
+  ctaLabel: "Start fixing my code",
 } as const satisfies ExplainContent;
 
 export const FEATURE_QUOTE = {
