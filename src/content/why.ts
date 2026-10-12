@@ -37,7 +37,7 @@ export const WHY = {
       { tag: "Money", text: "A \u00a32,000 instrument, bought for 1p." },
       {
         tag: "Secrets",
-        text: "17 leaked keys in one codebase, including two Stripe keys and a private signing key. 15 were still in the live code.",
+        text: "17 leaked keys in one codebase, including two Stripe keys and a private signing key.",
       },
       { tag: "Data", text: "A stranger could guess a six-digit code and see someone's live location." },
       { tag: "Law", text: "CVs kept forever, despite a promise to delete them within 24 hours." },

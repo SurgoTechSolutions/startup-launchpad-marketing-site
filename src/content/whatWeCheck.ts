@@ -4,14 +4,11 @@ import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
 
-/**
- * What the scan covers, area by area. Check descriptions follow the dashboard's own
- * sections. Examples come from real scans, described by type of app rather than by name.
- */
+/** What the scan covers, area by area. Check descriptions follow the dashboard's own sections. */
 export const WHAT_WE_CHECK = {
   intro: {
     title: ["What we ", { highlight: "check" }],
-    lede: "Five areas, checked automatically every time we scan your code and your live site. Here's what's in each one, and what we've found in real apps.",
+    lede: "Five areas, checked automatically every time we scan your code and your live site. Here's what's in each one.",
   },
   jumpLabel: "Jump to an area",
   areas: [
@@ -60,9 +57,6 @@ export const WHAT_WE_CHECK = {
           body: "Parts of a site that people relying on a screen reader or a keyboard cannot use. That locks out real customers, and in many places it is also a legal requirement.",
         },
       ],
-      exampleLabel: "From a real scan",
-      example:
-        "A site that blocked zooming on phones and gave keyboard users no way to skip past its repeated menus.",
     },
     {
       id: "seo",
@@ -95,8 +89,6 @@ export const WHAT_WE_CHECK = {
           body: "How easily AI assistants like ChatGPT and Claude can read your site. These are recommendations only and never affect your score.",
         },
       ],
-      exampleLabel: "From a real scan",
-      example: "99 pages that almost nothing linked to, and the same page title used on 100 pages.",
     },
     {
       id: "reliability",
@@ -109,8 +101,6 @@ export const WHAT_WE_CHECK = {
           body: "Pages that are slower to load than they need to be. Visitors leave slow pages, and Google factors loading speed into where you rank.",
         },
       ],
-      exampleLabel: "From a real scan",
-      example: "No caching on any of 100 pages, and one JavaScript file over 250 KB.",
     },
     {
       id: "housekeeping",
@@ -136,8 +126,6 @@ export const WHAT_WE_CHECK = {
           body: "Files nothing in your project uses. They're a common leftover from AI coding tools, and they make every change riskier because it is not obvious what is safe to touch.",
         },
       ],
-      exampleLabel: "From a real scan",
-      example: "600 unused files and 962 copied blocks of code in a single project.",
     },
   ],
   scoring: {
