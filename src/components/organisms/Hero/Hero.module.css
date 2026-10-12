@@ -1,29 +1,10 @@
 /* Words on the left, quote card on the right. Stacks and centres on smaller screens. */
 .hero {
-  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: center;
   gap: 48px;
   padding-block: 48px 64px;
-}
-
-/*
- * The page grid, drawn behind the hero only. It reaches up behind the header and out to the
- * screen edges, and fades out at the bottom.
- */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -200px -100vmax 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-position: center top;
-  background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 120px), transparent);
-  pointer-events: none;
 }
 
 .copy {

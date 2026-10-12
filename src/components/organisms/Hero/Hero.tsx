@@ -28,7 +28,7 @@ export function Hero({ content, signupUrl }: HeroProps): ReactNode {
   const dotLabels = content.quotes.map((quote) => `${content.quoteDotLabel} ${quote.person.name}`);
 
   return (
-    <section className={styles.hero} data-grid-hero>
+    <section className={styles.hero}>
       <div className={styles.copy}>
         <SectionTitle as="h1">
           <RichText content={content.title} />

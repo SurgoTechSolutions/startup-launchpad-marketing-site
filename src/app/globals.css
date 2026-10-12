@@ -48,17 +48,6 @@ body {
   line-height: 1.65;
 }
 
-/* Pages with a gridded hero draw the grid there only, so the rest of the page is plain. */
-body:has([data-grid-hero]) {
-  background-image: none;
-}
-
-/* Lets full-width backgrounds reach the screen edges without ever adding a sideways scroll. */
-html,
-body {
-  overflow-x: clip;
-}
-
 img {
   max-width: 100%;
 }
