@@ -5,7 +5,8 @@ import { CopyPromptButton } from "@/components/molecules/CopyPromptButton";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
 import type { ExplainContent } from "@/types";
-import { FixTerminal } from "../FixTerminal";
+// Hidden for now. Restore this import and the <FixTerminal> line below to bring the terminal back.
+// import { FixTerminal } from "../FixTerminal";
 import styles from "./ExplainSection.module.css";
 
 const PROMPT_ID = "fix-prompt";
@@ -17,7 +18,7 @@ export interface ExplainSectionProps {
 
 /**
  * Two parts. First how an issue is explained, beside a founder's quote. Then the fix prompt for
- * it, beside a terminal pasting it in, with the call to action underneath.
+ * it, with the call to action underneath.
  */
 export function ExplainSection({ content, signupUrl }: ExplainSectionProps): ReactNode {
   const { issue, prompt } = content;
@@ -61,7 +62,7 @@ export function ExplainSection({ content, signupUrl }: ExplainSectionProps): Rea
             </pre>
           </div>
         </div>
-        <FixTerminal content={content.terminal} />
+        {/* <FixTerminal content={content.terminal} /> */}
         <div className={styles.cta}>
           <Button href={signupUrl}>{content.ctaLabel}</Button>
         </div>
