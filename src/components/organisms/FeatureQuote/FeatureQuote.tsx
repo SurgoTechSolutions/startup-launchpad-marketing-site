@@ -22,6 +22,9 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
           <RichText content={content.title} />
         </SectionTitle>
         {content.lede !== undefined && <Lede>{content.lede}</Lede>}
+        <div className={styles.cta}>
+          <Button href={signupUrl}>{content.ctaLabel}</Button>
+        </div>
       </SectionHead>
       <figure className={styles.feature}>
         <Avatar src={content.photo.src} alt={content.photo.alt} size="feature" />
@@ -36,10 +39,6 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
             showAvatar={false}
             className={styles.credit}
           />
-          <div className={styles.cta}>
-            <p>{content.ctaText}</p>
-            <Button href={signupUrl}>{content.ctaLabel}</Button>
-          </div>
         </div>
       </figure>
     </section>

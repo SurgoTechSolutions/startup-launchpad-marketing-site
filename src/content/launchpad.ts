@@ -195,7 +195,6 @@ export const FEATURE_QUOTE = {
   quote: resolveQuote("jasonCalm"),
   photo: { src: "/images/feature-jason-nesbitt.webp", alt: "Jason Nesbitt" },
   bio: "Founder, Affordable MTD. 15 years building software, sold his last SaaS business in 2023.",
-  ctaText: "See what's in your code. Your first scan is free.",
   ctaLabel: "Scan my code for free",
 } as const satisfies FeatureQuoteContent;
 

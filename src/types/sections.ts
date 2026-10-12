@@ -144,7 +144,6 @@ export interface FeatureQuoteContent {
   readonly photo: Photo;
   /** Longer bio shown in place of the person's usual role. */
   readonly bio: string;
-  readonly ctaText: string;
   readonly ctaLabel: string;
 }
 
