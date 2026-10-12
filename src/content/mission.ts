@@ -5,7 +5,6 @@ import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
 
 export const MISSION = {
-  eyebrow: "Our mission",
   statement:
     "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford.",
   paragraphs: [

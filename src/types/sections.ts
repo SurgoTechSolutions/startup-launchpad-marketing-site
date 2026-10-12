@@ -268,7 +268,6 @@ export interface MissionValue {
 }
 
 export interface MissionContent {
-  readonly eyebrow: string;
   /** The mission itself. It is the page heading. */
   readonly statement: string;
   readonly paragraphs: readonly string[];

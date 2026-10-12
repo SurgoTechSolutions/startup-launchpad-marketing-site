@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { SectionHead } from "@/components/molecules/SectionHead";
 import type { MissionContent } from "@/types";
 import styles from "./MissionStatement.module.css";
@@ -13,7 +12,6 @@ export function MissionStatement({ content }: MissionStatementProps): ReactNode 
   return (
     <section className={styles.section}>
       <SectionHead>
-        <Eyebrow>{content.eyebrow}</Eyebrow>
         <h1 className={styles.statement}>{content.statement}</h1>
       </SectionHead>
       <div className={styles.story}>
