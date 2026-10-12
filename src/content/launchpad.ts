@@ -221,7 +221,7 @@ export const HOW_IT_WORKS = {
     },
     {
       title: "Unlock",
-      body: "For £20 a month, each finding says what's wrong, how someone would abuse it, and gives you a prompt to paste in to fix it.",
+      body: "For £27 a month, each finding says what's wrong, how someone would abuse it, and gives you a prompt to paste in to fix it.",
     },
     {
       title: "Keep watching",

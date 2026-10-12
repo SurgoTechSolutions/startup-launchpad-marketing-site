@@ -18,7 +18,7 @@ export const PRICING = {
     },
     {
       title: "Ongoing protection",
-      price: { amount: "£20", period: "a month" },
+      price: { amount: "£27", period: "a month" },
       features: [
         "Every finding explained in plain English",
         "A fix prompt to paste in for each one",
@@ -27,7 +27,7 @@ export const PRICING = {
         "Cancel any time",
       ],
       featured: true,
-      note: "Under 1% of a contractor one day a week.",
+      note: "About 1% of a contractor one day a week.",
     },
   ],
   quote: resolveQuote("rosiePaying"),

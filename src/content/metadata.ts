@@ -16,6 +16,6 @@ export const LAUNCHPAD_META = {
 export const PRICING_META = {
   title: "Launchpad Pricing",
   description:
-    "See your numbers first. Pay when you want the fixes. Your first scan is free, then £20 a month for every finding explained with a fix prompt.",
+    "See your numbers first. Pay when you want the fixes. Your first scan is free, then £27 a month for every finding explained with a fix prompt.",
   path: ROUTES.pricing,
 } as const satisfies PageMeta;

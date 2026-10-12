@@ -26,7 +26,7 @@ export const COST_COMPARISON = {
       cells: [
         { kind: "price", amount: "£2,500 to £12,000", unit: "per test" },
         { kind: "price", amount: "£2,300", unit: "a month" },
-        { kind: "price", amount: "£20", unit: "a month" },
+        { kind: "price", amount: "£27", unit: "a month" },
       ],
     },
     {
