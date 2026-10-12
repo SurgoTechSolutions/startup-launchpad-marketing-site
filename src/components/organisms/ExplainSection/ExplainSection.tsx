@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { CopyPromptButton } from "@/components/molecules/CopyPromptButton";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
+import { cx } from "@/lib/cx";
 import type { ExplainContent } from "@/types";
 // Hidden for now. Restore this import and the <FixTerminal> line below to bring the terminal back.
 // import { FixTerminal } from "../FixTerminal";
@@ -18,7 +19,7 @@ export interface ExplainSectionProps {
 
 /**
  * Two parts. First how an issue is explained, beside a founder's quote. Then the fix prompt for
- * it, with the call to action underneath.
+ * it, with its heading and the call to action alongside.
  */
 export function ExplainSection({ content, signupUrl }: ExplainSectionProps): ReactNode {
   const { issue, prompt } = content;
@@ -47,10 +48,13 @@ export function ExplainSection({ content, signupUrl }: ExplainSectionProps): Rea
           </div>
         </div>
       </section>
-      <section className={styles.part}>
-        <SectionTitle size="explain" className={styles.title}>
-          <RichText content={content.fixTitle} />
-        </SectionTitle>
+      <section className={cx(styles.part, styles.fixPart)}>
+        <div className={styles.side}>
+          <SectionTitle size="explain">
+            <RichText content={content.fixTitle} />
+          </SectionTitle>
+          <Button href={signupUrl}>{content.ctaLabel}</Button>
+        </div>
         <div className={styles.card}>
           <div className={styles.fix}>
             <div className={styles.promptBar}>
@@ -63,9 +67,6 @@ export function ExplainSection({ content, signupUrl }: ExplainSectionProps): Rea
           </div>
         </div>
         {/* <FixTerminal content={content.terminal} /> */}
-        <div className={styles.cta}>
-          <Button href={signupUrl}>{content.ctaLabel}</Button>
-        </div>
       </section>
     </>
   );
