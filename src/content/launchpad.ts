@@ -194,7 +194,7 @@ export const FEATURE_QUOTE = {
   lede: "More time for the good stuff.",
   quote: resolveQuote("jasonCalm"),
   photo: { src: "/images/feature-jason-nesbitt.webp", alt: "Jason Nesbitt" },
-  bio: "Founder, Affordable MTD. 15 years building software, sold his last SaaS business in 2023.",
+  bio: "15 years building software, sold his last SaaS business in 2023.",
   ctaLabel: "Scan my code for free",
 } as const satisfies FeatureQuoteContent;
 

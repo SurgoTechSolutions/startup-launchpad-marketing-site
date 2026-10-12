@@ -8,8 +8,10 @@ export interface PersonCreditProps {
   readonly person: Person;
   readonly avatarSize?: Extract<AvatarSize, "md" | "lg">;
   readonly priority?: boolean;
-  /** Overrides the role line, e.g. for the longer bio under the feature quote. */
+  /** Overrides the role line. */
   readonly role?: string;
+  /** An extra line under the role, e.g. a short bio. */
+  readonly note?: string;
   /** Hides the headshot, e.g. when a large portrait sits next to the quote. */
   readonly showAvatar?: boolean;
   readonly className?: string | undefined;
@@ -21,16 +23,19 @@ export function PersonCredit({
   avatarSize = "md",
   priority = false,
   role,
+  note,
   showAvatar = true,
   className,
 }: PersonCreditProps): ReactNode {
   const roleLine = role ?? person.role;
+  const noteLine = note === undefined ? null : <span className={styles.note}>{note}</span>;
 
   if (person.photo === undefined || !showAvatar) {
     return (
       <figcaption className={cx(styles.who, className)}>
         <b className={styles.name}>{person.name}</b>
         {roleLine}
+        {noteLine}
       </figcaption>
     );
   }
@@ -41,6 +46,7 @@ export function PersonCredit({
       <span>
         <b className={styles.name}>{person.name}</b>
         {roleLine}
+        {noteLine}
       </span>
     </figcaption>
   );

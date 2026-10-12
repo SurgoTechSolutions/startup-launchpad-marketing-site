@@ -35,7 +35,7 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
           <blockquote className={styles.text}>{content.quote.text}</blockquote>
           <PersonCredit
             person={content.quote.person}
-            role={content.bio}
+            note={content.bio}
             showAvatar={false}
             className={styles.credit}
           />

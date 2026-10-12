@@ -142,7 +142,7 @@ export interface FeatureQuoteContent {
   readonly lede?: string;
   readonly quote: QuoteWithPerson;
   readonly photo: Photo;
-  /** Longer bio shown in place of the person's usual role. */
+  /** Short bio shown on its own line under the person's role. */
   readonly bio: string;
   readonly ctaLabel: string;
 }
