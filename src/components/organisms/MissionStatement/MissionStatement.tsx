@@ -21,7 +21,7 @@ export function MissionStatement({ content }: MissionStatementProps): ReactNode 
         alt={content.photo.alt}
         width={content.photo.width}
         height={content.photo.height}
-        sizes="(max-width: 860px) calc(100vw - 32px), 820px"
+        sizes="(max-width: 680px) calc(100vw - 32px), 640px"
         priority
       />
       <div className={styles.story}>

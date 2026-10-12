@@ -9,9 +9,9 @@ export const MISSION = {
     "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford.",
   photo: {
     src: "/images/mission-founders.webp",
-    alt: "The Startup Launchpad co-founders presenting at an event, with Jack Sheriff's profile slide on the screen behind them.",
-    width: 872,
-    height: 720,
+    alt: "The Startup Launchpad co-founders presenting at an event, with a SurgoTech Solutions slide on the screen behind them.",
+    width: 1200,
+    height: 1200,
   },
   paragraphs: [
     "Proper security is priced for companies that have already made it: pen tests that cost thousands, contractors billed by the day. So most founders launch without it and hope for the best.",
