@@ -1,10 +1,29 @@
+/*
+ * White band across the full width, heading on the left and Jason's quote on the right.
+ * The shadow fills the sides without widening the page.
+ */
+.band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: 56px;
+  padding-block: 64px;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
+}
+
+.band > :first-child {
+  margin-bottom: 0;
+}
+
 .feature {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 28px;
-  max-width: 880px;
-  margin-inline: auto;
+  min-width: 0;
+  margin: 0;
 }
 
 .mark {
@@ -19,7 +38,7 @@
 .text {
   max-width: 44ch;
   color: var(--ink);
-  font-size: clamp(20px, 2.6vw, 26px);
+  font-size: clamp(18px, 2vw, 22px);
   font-weight: 600;
   line-height: 1.45;
 }
@@ -40,6 +59,14 @@
   color: var(--ink);
   font-size: 17px;
   font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .band {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-block: 48px;
+  }
 }
 
 @media (max-width: 480px) {

@@ -16,8 +16,8 @@ export interface FeatureQuoteProps {
 
 export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNode {
   return (
-    <section>
-      <SectionHead>
+    <section className={styles.band}>
+      <SectionHead align="start">
         <SectionTitle size="find">
           <RichText content={content.title} />
         </SectionTitle>
