@@ -6,5 +6,4 @@ export const HERO_QUOTE_KEYS = [
   "rousseauMinutes",
   "joFixIt",
   "aliceTimeShort",
-  "rosiePaying",
 ] as const satisfies readonly QuoteKey[];
