@@ -16,6 +16,8 @@ export interface HeroQuoteRotatorProps {
   readonly label: string;
   /** Set false to drop the card frame, e.g. under the pricing plans. */
   readonly framed?: boolean;
+  /** Time each quote stays up, in milliseconds. */
+  readonly intervalMs?: number;
 }
 
 /**
@@ -29,6 +31,7 @@ export function HeroQuoteRotator({
   dotLabels,
   label,
   framed = true,
+  intervalMs = ROTATE_EVERY_MS,
 }: HeroQuoteRotatorProps): ReactNode {
   const reduced = usePrefersReducedMotion();
   const [active, setActive] = useState(0);
@@ -39,7 +42,7 @@ export function HeroQuoteRotator({
     () => {
       setActive((current) => (current + 1) % slides.length);
     },
-    reduced || paused || stopped || slides.length < 2 ? null : ROTATE_EVERY_MS,
+    reduced || paused || stopped || slides.length < 2 ? null : intervalMs,
   );
 
   return (

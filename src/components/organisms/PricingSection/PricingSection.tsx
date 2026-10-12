@@ -48,6 +48,7 @@ export function PricingSection({ content, signupUrl, headingLevel = "h2" }: Pric
       ) : (
         <HeroQuoteRotator
           framed={false}
+          intervalMs={3000}
           label={content.rotation.label}
           dotLabels={content.rotation.quotes.map((quote) => `${content.rotation?.dotLabel ?? ""} ${quote.person.name}`)}
           slides={content.rotation.quotes.map((quote) => (
