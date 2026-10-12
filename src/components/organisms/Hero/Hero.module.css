@@ -1,21 +1,35 @@
+/* Words on the left, quote card on the right. Stacks and centres on smaller screens. */
 .hero {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: center;
-  gap: 40px;
+  gap: 48px;
   padding-block: 48px 64px;
 }
 
 .copy {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
-  max-width: 720px;
-  text-align: center;
+  min-width: 0;
 }
 
 .note {
   color: var(--muted);
   font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 40px;
+  }
+
+  .copy {
+    align-items: center;
+    max-width: 720px;
+    text-align: center;
+  }
 }
