@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Avatar } from "@/components/atoms/Avatar";
 import { Button } from "@/components/atoms/Button";
+import { Lede } from "@/components/atoms/Lede";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { PersonCredit } from "@/components/molecules/PersonCredit";
 import { RichText } from "@/components/molecules/RichText";
@@ -20,6 +21,7 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
         <SectionTitle size="find">
           <RichText content={content.title} />
         </SectionTitle>
+        {content.lede !== undefined && <Lede>{content.lede}</Lede>}
       </SectionHead>
       <figure className={styles.feature}>
         <Avatar src={content.photo.src} alt={content.photo.alt} size="feature" />

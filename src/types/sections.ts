@@ -139,6 +139,7 @@ export interface ExplainContent {
 
 export interface FeatureQuoteContent {
   readonly title: RichText;
+  readonly lede?: string;
   readonly quote: QuoteWithPerson;
   readonly photo: Photo;
   /** Longer bio shown in place of the person's usual role. */

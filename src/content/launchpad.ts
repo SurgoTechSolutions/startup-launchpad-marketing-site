@@ -190,7 +190,8 @@ Review the change before merging.`,
 } as const satisfies ExplainContent;
 
 export const FEATURE_QUOTE = {
-  title: ["Peace of mind, even for the ", { highlight: "pros" }, "."],
+  title: ["One less thing to ", { highlight: "worry about" }, "."],
+  lede: "More time for the good stuff.",
   quote: resolveQuote("jasonCalm"),
   photo: { src: "/images/feature-jason-nesbitt.webp", alt: "Jason Nesbitt" },
   bio: "Founder, Affordable MTD. 15 years building software, sold his last SaaS business in 2023.",
