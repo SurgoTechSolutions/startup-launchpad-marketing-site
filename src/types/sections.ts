@@ -336,6 +336,8 @@ export interface VerifiedContent {
     readonly lede: string;
     readonly example: VerifiedBadgeExample;
     readonly lapsed: VerifiedBadgeExample;
+    /** Caption above the example badges. */
+    readonly badgesCaption: string;
     readonly lapsedNote: string;
     readonly page: {
       readonly caption: string;

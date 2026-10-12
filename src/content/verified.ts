@@ -62,6 +62,7 @@ export const VERIFIED = {
     lede: "Add the badge to your site footer or README. It links to a public page anyone can check, showing your level and when it was last verified.",
     example: { label: "Launchpad verified", level: "Gold", date: "3 Oct 2026", metal: "gold" },
     lapsed: { label: "Launchpad verified", level: "Lapsed", date: "4 Nov 2026", metal: "silver" },
+    badgesCaption: "On your site or in your app",
     lapsedNote: "If a level is lost, the badge goes grey and says so. A badge that can lapse is one people can trust.",
     page: {
       caption: "What your verification page shows",

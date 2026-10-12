@@ -25,7 +25,8 @@ export function BadgeShowcase({ content }: BadgeShowcaseProps): ReactNode {
         <Lede>{content.lede}</Lede>
       </SectionHead>
       <div className={styles.grid}>
-        <div className={styles.badges}>
+        <figure className={styles.badges}>
+          <figcaption className={styles.caption}>{content.badgesCaption}</figcaption>
           <div className={styles.surfaceLight}>
             <VerifiedBadge badge={content.example} />
           </div>
@@ -36,7 +37,7 @@ export function BadgeShowcase({ content }: BadgeShowcaseProps): ReactNode {
             <VerifiedBadge badge={content.lapsed} lapsed />
             <p className={styles.note}>{content.lapsedNote}</p>
           </div>
-        </div>
+        </figure>
         <figure className={styles.page}>
           <figcaption className={styles.caption}>{page.caption}</figcaption>
           <div className={styles.pageCard}>
