@@ -367,8 +367,9 @@ export interface CheckArea {
   readonly checks: readonly CheckGroup[];
   /** A note about the AI security review. Security only. */
   readonly aiReview?: CheckGroup;
-  readonly exampleLabel: string;
-  readonly example: string;
+  /** A real finding for this area. Optional: some areas leave it out. */
+  readonly exampleLabel?: string;
+  readonly example?: string;
 }
 
 export interface SeverityLevel {

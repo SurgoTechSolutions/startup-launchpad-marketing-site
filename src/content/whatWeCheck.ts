@@ -47,9 +47,6 @@ export const WHAT_WE_CHECK = {
         title: "AI security review",
         body: "An AI model also reads how your app fits together and asks how someone could misuse it, using STRIDE, a standard way of listing how software gets attacked. Its findings are labelled AI-generated and treated as leads to confirm, not verdicts, so they never count towards your score.",
       },
-      exampleLabel: "From a real scan",
-      example:
-        "17 leaked keys in one codebase, including two Stripe keys and a private signing key. 15 of them were still in the live code.",
     },
     {
       id: "accessibility",

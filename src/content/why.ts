@@ -35,6 +35,10 @@ export const WHY = {
     items: [
       { tag: "Data", text: "Any account, including the admin, could be opened with just an email address." },
       { tag: "Money", text: "A \u00a32,000 instrument, bought for 1p." },
+      {
+        tag: "Secrets",
+        text: "17 leaked keys in one codebase, including two Stripe keys and a private signing key. 15 were still in the live code.",
+      },
       { tag: "Data", text: "A stranger could guess a six-digit code and see someone's live location." },
       { tag: "Law", text: "CVs kept forever, despite a promise to delete them within 24 hours." },
       { tag: "Growth", text: "21 critical issues, found mid-negotiation with national partners." },

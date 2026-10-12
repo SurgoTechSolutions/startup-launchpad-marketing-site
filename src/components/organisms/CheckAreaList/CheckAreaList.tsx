@@ -16,10 +16,12 @@ function Area({ area }: { readonly area: CheckArea }): ReactNode {
           <span id={`${area.id}-title`}>{area.title}</span>
         </SectionTitle>
         <p className={styles.intro}>{area.intro}</p>
-        <div className={styles.example}>
-          <span className={styles.exampleLabel}>{area.exampleLabel}</span>
-          <p>{area.example}</p>
-        </div>
+        {area.example !== undefined && (
+          <div className={styles.example}>
+            <span className={styles.exampleLabel}>{area.exampleLabel}</span>
+            <p>{area.example}</p>
+          </div>
+        )}
       </div>
 
       <div className={styles.detail}>
