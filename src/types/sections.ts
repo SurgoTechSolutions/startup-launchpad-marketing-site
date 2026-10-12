@@ -197,11 +197,26 @@ export interface FinalCtaContent {
   readonly quote?: QuoteWithPerson;
 }
 
+export type ContactKind = "email" | "phone";
+
+export interface FooterContact {
+  readonly kind: ContactKind;
+  readonly label: string;
+  readonly href: string;
+}
+
+export interface FooterColumn {
+  readonly title: string;
+  readonly links: readonly Link[];
+}
+
 export interface FooterContent {
+  /** The logo, linking to the home page. */
+  readonly home: { readonly href: string; readonly logo: Photo };
+  readonly columns: readonly FooterColumn[];
+  readonly contact: readonly FooterContact[];
+  /** The line along the bottom. */
   readonly text: string;
-  /** Email and phone, shown as links. */
-  readonly contact?: readonly Link[];
-  readonly links?: readonly Link[];
 }
 
 /** A numbered clause, e.g. "3.1", with an optional list underneath. */

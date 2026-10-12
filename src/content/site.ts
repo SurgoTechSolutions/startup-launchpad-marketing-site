@@ -24,13 +24,23 @@ export const ROLLING_QUALITIES = ["secure", "private", "reliable", "ready"] as c
 export const WORDMARK = { lead: "Startup ", accent: "Launchpad" } as const;
 
 export const FOOTER = {
-  text: "©2026 SurgoTech Solutions · Newcastle upon Tyne, UK",
+  home: {
+    href: ROUTES.launchpad,
+    logo: { src: "/images/logo-mark.png", alt: "Startup Launchpad home" },
+  },
+  columns: [
+    { title: "Explore", links: NAV_LINKS },
+    {
+      title: "Legal",
+      links: [
+        { label: "Terms and conditions", href: ROUTES.terms },
+        { label: "Privacy policy", href: ROUTES.privacy },
+      ],
+    },
+  ],
   contact: [
-    { label: "Info@SurgoTechSolutions.co.uk", href: "mailto:info@surgotechsolutions.co.uk" },
-    { label: "+44 7407 742219", href: "tel:+447407742219" },
+    { kind: "email", label: "Info@SurgoTechSolutions.co.uk", href: "mailto:info@surgotechsolutions.co.uk" },
+    { kind: "phone", label: "+44 7407 742219", href: "tel:+447407742219" },
   ],
-  links: [
-    { label: "Terms and conditions", href: ROUTES.terms },
-    { label: "Privacy policy", href: ROUTES.privacy },
-  ],
+  text: "©2026 SurgoTech Solutions · All rights reserved · Newcastle upon Tyne, UK",
 } as const satisfies FooterContent;

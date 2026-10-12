@@ -1,31 +1,104 @@
+/* White band across the full width. The shadow fills the sides without widening the page. */
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 24px;
-  padding-block: 28px;
+  margin-top: 48px;
+  padding-block: 48px 28px;
   border-top: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
 }
 
-.links,
+.top {
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
+  align-items: start;
+  gap: 32px 64px;
+}
+
+.logo {
+  display: block;
+  width: 56px;
+  border-radius: 12px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.heading {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .contact {
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px 20px;
-}
-
-.contact {
+  flex-direction: column;
+  justify-self: end;
+  gap: 14px;
   font-style: normal;
 }
 
-.links a,
+.list a,
 .contact a {
   color: var(--muted);
+  text-decoration: none;
 }
 
-.links a:hover,
+.contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list a:hover,
 .contact a:hover {
   color: var(--accent);
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Tablets: logo and contact on their own rows, page links side by side. */
+@media (max-width: 860px) {
+  .top {
+    grid-template-columns: auto auto;
+    justify-content: start;
+    gap: 32px 64px;
+  }
+
+  .logo,
+  .contact {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 420px) {
+  .top {
+    gap: 28px 40px;
+  }
 }
