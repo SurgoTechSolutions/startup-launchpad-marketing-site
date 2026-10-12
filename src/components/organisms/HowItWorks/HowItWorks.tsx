@@ -16,7 +16,7 @@ export interface HowItWorksProps {
 
 export function HowItWorks({ content, signupUrl }: HowItWorksProps): ReactNode {
   return (
-    <section>
+    <section className={styles.band}>
       <SectionHead>
         <SectionTitle size="big">
           <RichText content={content.title} />
