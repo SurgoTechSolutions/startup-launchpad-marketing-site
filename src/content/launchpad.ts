@@ -19,7 +19,7 @@ import type {
 import { HERO_QUOTE_KEYS } from "./hero";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
-import { FOOTER, HEADER_BASE, NAV_LINKS, ROLLING_QUALITIES, WORDMARK } from "./site";
+import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
 
 export const LAUNCHPAD_HEADER = {
   ...HEADER_BASE,
@@ -28,7 +28,7 @@ export const LAUNCHPAD_HEADER = {
 } as const satisfies HeaderContent;
 
 export const HERO = {
-  title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
+  title: ["Find the ", { highlight: "security holes" }, " in your AI-built app, and fix them in minutes."],
   lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
   ctaLabel: "Scan my code for free",
   note: "Find out how many issues you have before you pay anything.",
