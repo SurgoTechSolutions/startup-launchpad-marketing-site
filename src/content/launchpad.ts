@@ -39,7 +39,7 @@ export const HERO = {
 } as const satisfies HeroContent;
 
 export const TRUSTED_BY = {
-  eyebrow: "Trusted by",
+  label: "Trusted by",
   logos: [
     {
       src: "/images/logo-sunderland-software-city.png",
@@ -56,14 +56,6 @@ export const TRUSTED_BY = {
       intrinsicHeight: 140,
       height: 52,
       href: "https://www.dcincubator.co.uk/",
-    },
-    {
-      src: "/images/logo-newcastle-university.png",
-      alt: "Newcastle University",
-      intrinsicWidth: 493,
-      intrinsicHeight: 140,
-      height: 46,
-      href: "https://www.ncl.ac.uk/",
     },
     {
       src: "/images/logo-tech-builders-uk-co-working-club.png",

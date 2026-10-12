@@ -54,7 +54,8 @@ export interface PartnerLogo {
 }
 
 export interface TrustedByContent {
-  readonly eyebrow: string;
+  /** Accessible name for the logo strip. Not shown on the page. */
+  readonly label: string;
   readonly logos: readonly PartnerLogo[];
 }
 
