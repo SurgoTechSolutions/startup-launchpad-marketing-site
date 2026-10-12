@@ -18,11 +18,18 @@
 .logoLink {
   display: block;
   border-radius: 6px;
-  transition: opacity 0.15s;
+  transition: transform 0.2s ease;
 }
 
-.logoLink:hover {
-  opacity: 0.75;
+.logoLink:hover,
+.logoLink:focus-visible {
+  transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoLink {
+    transition: none;
+  }
 }
 
 /* Some logo files have a white background. Multiply blends it into the page. */
