@@ -12,10 +12,7 @@
   justify-content: center;
   align-items: center;
   gap: 24px 56px;
-  padding: 22px 36px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: var(--surface);
+  padding: 8px 16px;
 }
 
 .logoLink {
@@ -26,4 +23,19 @@
 
 .logoLink:hover {
   opacity: 0.75;
+}
+
+/* Some logo files have a white background. Multiply blends it into the page. */
+.logos img {
+  mix-blend-mode: multiply;
+}
+
+/* Two by two on phones, rather than three and one. */
+@media (max-width: 640px) {
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: center;
+    gap: 24px 40px;
+  }
 }
