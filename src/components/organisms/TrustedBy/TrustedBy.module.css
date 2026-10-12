@@ -1,9 +1,14 @@
+/* White band across the full width. The shadow fills the sides without widening the page. */
 .trust {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
-  padding-block: 0 24px;
+  margin-block: 8px 32px;
+  padding-block: 28px;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
 }
 
 .logos {
