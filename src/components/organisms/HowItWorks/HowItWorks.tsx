@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { GitHubMark } from "@/components/atoms/GitHubMark";
 import { RevealList } from "@/components/atoms/RevealList";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
@@ -28,7 +29,12 @@ export function HowItWorks({ content, signupUrl }: HowItWorksProps): ReactNode {
       </RevealList>
       <div className={styles.cta}>
         <p>{content.ctaText}</p>
-        <Button href={signupUrl}>{content.ctaLabel}</Button>
+        <Button
+          href={signupUrl}
+          {...(content.ctaIcon === "github" ? { icon: <GitHubMark /> } : {})}
+        >
+          {content.ctaLabel}
+        </Button>
       </div>
     </section>
   );

@@ -230,6 +230,7 @@ export const HOW_IT_WORKS = {
   ],
   ctaText: "Step one takes a couple of minutes.",
   ctaLabel: "Connect my GitHub",
+  ctaIcon: "github",
 } as const satisfies HowItWorksContent;
 
 export const LAUNCHPAD_PRICING = {

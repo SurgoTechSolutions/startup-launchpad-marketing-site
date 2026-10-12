@@ -157,6 +157,8 @@ export interface HowItWorksContent {
   readonly steps: readonly Step[];
   readonly ctaText: string;
   readonly ctaLabel: string;
+  /** Logo shown on the button. */
+  readonly ctaIcon?: "github";
 }
 
 export interface PricingContent {

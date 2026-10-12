@@ -8,6 +8,8 @@ export type ButtonVariant = "primary" | "underline" | "nav";
 export interface ButtonProps {
   readonly href: string;
   readonly children: ReactNode;
+  /** Shown before the label, e.g. a logo. */
+  readonly icon?: ReactNode;
   readonly variant?: ButtonVariant;
   /** Marks the link for the page being viewed. */
   readonly current?: boolean;
@@ -21,24 +23,34 @@ export interface ButtonProps {
 export function Button({
   href,
   children,
+  icon,
   variant = "primary",
   current = false,
   className,
 }: ButtonProps): ReactNode {
-  const classes = cx(styles[variant], current && styles.current, className);
+  const classes = cx(styles[variant], icon !== undefined && styles.withIcon, current && styles.current, className);
+  const label =
+    icon === undefined ? (
+      children
+    ) : (
+      <>
+        {icon}
+        <span>{children}</span>
+      </>
+    );
   const ariaCurrent = current ? "page" : undefined;
 
   if (href.startsWith("/")) {
     return (
       <Link href={href} className={classes} aria-current={ariaCurrent}>
-        {children}
+        {label}
       </Link>
     );
   }
 
   return (
     <a href={href} className={classes} aria-current={ariaCurrent} target="_blank" rel="noopener noreferrer">
-      {children}
+      {label}
     </a>
   );
 }
