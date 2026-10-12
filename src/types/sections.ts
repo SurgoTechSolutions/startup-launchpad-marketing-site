@@ -199,6 +199,8 @@ export interface FinalCtaContent {
 
 export interface FooterContent {
   readonly text: string;
+  /** Email and phone, shown as links. */
+  readonly contact?: readonly Link[];
   readonly links?: readonly Link[];
 }
 

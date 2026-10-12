@@ -9,15 +9,23 @@
   font-size: 13px;
 }
 
-.links {
+.links,
+.contact {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 4px 20px;
 }
 
-.links a {
+.contact {
+  font-style: normal;
+}
+
+.links a,
+.contact a {
   color: var(--muted);
 }
 
-.links a:hover {
+.links a:hover,
+.contact a:hover {
   color: var(--accent);
 }

@@ -25,6 +25,10 @@ export const WORDMARK = { lead: "Startup ", accent: "Launchpad" } as const;
 
 export const FOOTER = {
   text: "©2026 SurgoTech Solutions · Newcastle upon Tyne, UK",
+  contact: [
+    { label: "Info@SurgoTechSolutions.co.uk", href: "mailto:info@surgotechsolutions.co.uk" },
+    { label: "+44 7407 742219", href: "tel:+447407742219" },
+  ],
   links: [
     { label: "Terms and conditions", href: ROUTES.terms },
     { label: "Privacy policy", href: ROUTES.privacy },
