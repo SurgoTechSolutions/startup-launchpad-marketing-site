@@ -276,25 +276,16 @@ export interface MissionPageContent {
   readonly footer: FooterContent;
 }
 
-/** A quote from an unnamed founder. Several parts are joined with an ellipsis. */
-export interface AttributedQuote {
-  readonly parts: readonly string[];
-  readonly attribution: string;
-}
-
-export interface Risk {
-  readonly number: string;
-  readonly title: string;
-  readonly body: RichText;
-  readonly proofLabel: string;
-  readonly proofs: readonly string[];
-  readonly quote?: AttributedQuote;
+/** A real finding, with a one-word tag for what it puts at risk. */
+export interface FoundItem {
+  readonly tag: string;
+  readonly text: string;
 }
 
 export interface WhyContent {
   readonly intro: { readonly title: RichText; readonly lede: string };
   readonly reasons: { readonly title: RichText; readonly items: readonly MissionValue[] };
-  readonly risks: { readonly title: RichText; readonly items: readonly Risk[] };
+  readonly found: { readonly title: RichText; readonly items: readonly FoundItem[] };
 }
 
 export interface WhyPageContent {

@@ -30,80 +30,15 @@ export const WHY = {
       },
     ],
   },
-  risks: {
-    title: ["What it ", { highlight: "actually costs" }],
+  found: {
+    title: ["What we've found in ", { highlight: "real apps" }],
     items: [
-      {
-        number: "1",
-        title: "Strangers in your data",
-        body: ["Anyone who knows where to look can sign in as your users, read their data, or make themselves an admin."],
-        proofLabel: "From real scans",
-        proofs: [
-          "A job board where anyone could sign in as any account, including the admin, with just an email address.",
-          "A social app where a stranger could guess a six-digit code and see someone's live location.",
-          "A charity marketplace where any user could make themselves an admin by adding one field to a profile update.",
-        ],
-      },
-      {
-        number: "2",
-        title: "Money walking out the door",
-        body: ["Every unchecked payment and every open API key is a bill you didn't plan for."],
-        proofLabel: "From real scans",
-        proofs: [
-          "A £2,000 instrument, bought for 1p.",
-          "A yearly licence you could buy, copy, refund and keep using.",
-          "Anyone on the internet could make an app run paid Google searches as fast as they liked, straight onto the founder's bill.",
-          'A fake "payment completed" message unlocked paid features for free.',
-        ],
-      },
-      {
-        number: "3",
-        title: "It's your name on it, not the AI's",
-        body: [
-          "Under UK GDPR you're responsible for your users' data, however the code was written and whoever sends your emails. A breach must be ",
-          {
-            link: {
-              label: "reported to the ICO within 72 hours",
-              href: "https://ico.org.uk/for-organisations/report-a-breach/",
-            },
-          },
-          ". Fines can reach £17.5 million or 4% of turnover, and users can claim compensation.",
-        ],
-        proofLabel: "From real scans",
-        proofs: [
-          "A job board keeping CVs forever after failed sign-ups, despite promising to delete them within 24 hours.",
-          "Analytics tracking visitors before they'd agreed to cookies.",
-          "A founder who assumed his email provider was responsible for his users' data. It wasn't.",
-          "Live sites with no privacy policy at all.",
-        ],
-      },
-      {
-        number: "4",
-        title: "The worst week to find out",
-        body: ['Big customers send security questionnaires. Investors check your code. "We haven\'t looked" stalls both.'],
-        proofLabel: "From a real scan",
-        proofs: [
-          "One founder was mid-negotiation with several national organisations, with hundreds of new users arriving within weeks, when his scan found 21 critical issues.",
-        ],
-      },
-      {
-        number: "5",
-        title: "The rewrite quote",
-        body: [
-          "Your first developer will read your code before your business plan. If it's a mess, they'll quote a rewrite, take months to get going, or walk away.",
-        ],
-        proofLabel: "From real scans",
-        proofs: [
-          "A pen tester found roughly 30% of one startup's code was dead code left behind by AI.",
-          "Housekeeping issues ran into the thousands: 3,694 in one codebase, 2,021 in another.",
-        ],
-        quote: {
-          parts: [
-            "I've tried to make it so if I was to get a developer on board, they could read it and go, 'oh, this means that.'",
-          ],
-          attribution: "Founder of a social app, on keeping her code readable",
-        },
-      },
+      { tag: "Data", text: "Any account, including the admin, could be opened with just an email address." },
+      { tag: "Money", text: "A \u00a32,000 instrument, bought for 1p." },
+      { tag: "Data", text: "A stranger could guess a six-digit code and see someone's live location." },
+      { tag: "Law", text: "CVs kept forever, despite a promise to delete them within 24 hours." },
+      { tag: "Growth", text: "21 critical issues, found mid-negotiation with national partners." },
+      { tag: "Hiring", text: "30% of one startup's code was dead code left behind by AI." },
     ],
   },
 } as const satisfies WhyContent;
