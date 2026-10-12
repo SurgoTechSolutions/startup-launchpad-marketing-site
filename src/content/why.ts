@@ -2,7 +2,7 @@ import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, PageMeta, WhyContent, WhyPageContent } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
-import { FOOTER, ROLLING_QUALITIES } from "./site";
+import { FOOTER } from "./site";
 
 /**
  * Findings come from real Startup Launchpad case studies, described by type of app
@@ -10,8 +10,8 @@ import { FOOTER, ROLLING_QUALITIES } from "./site";
  */
 export const WHY = {
   intro: {
-    title: ["Your app works. That doesn't mean it's ", { rotate: ROLLING_QUALITIES, suffix: "." }],
-    lede: "AI tools build things that work. They don't build things that defend themselves. Every startup codebase we've scanned had critical security issues. Here's what those issues actually cost.",
+    title: ["AI tools build things that work. They don't build things that defend themselves."],
+    lede: "Every startup codebase we've scanned had critical security issues.",
   },
   reasons: {
     title: ["Why your AI ", { highlight: "didn't warn you" }],
