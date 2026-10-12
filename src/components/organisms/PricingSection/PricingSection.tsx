@@ -24,7 +24,7 @@ export function PricingSection({ content, signupUrl, headingLevel = "h2" }: Pric
         <SectionTitle as={headingLevel} size="big">
           <RichText content={content.title} />
         </SectionTitle>
-        <Lede>{content.lede}</Lede>
+        {content.lede !== undefined && <Lede>{content.lede}</Lede>}
       </SectionHead>
       <div className={styles.plans}>
         {content.plans.map((plan) => (

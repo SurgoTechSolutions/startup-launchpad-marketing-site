@@ -164,7 +164,7 @@ export interface HowItWorksContent {
 
 export interface PricingContent {
   readonly title: RichText;
-  readonly lede: string;
+  readonly lede?: string;
   readonly plans: readonly Plan[];
   /** Link to the full pricing page. Left out on the pricing page itself. */
   readonly moreLink?: Link;

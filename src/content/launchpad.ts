@@ -235,6 +235,7 @@ export const HOW_IT_WORKS = {
 
 export const LAUNCHPAD_PRICING = {
   ...PRICING,
+  lede: "See your numbers first. Pay when you want the fixes.",
   moreLink: { label: "See full pricing and how it compares →", href: ROUTES.pricing },
 } as const satisfies PricingContent;
 

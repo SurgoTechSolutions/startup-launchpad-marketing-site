@@ -1,10 +1,9 @@
 import type { PricingContent } from "@/types";
 import { resolveQuote } from "./quotes";
 
-/** The pricing block. Shown on the main page and at the top of the pricing page. */
+/** The pricing block. Shown on the main page (with a lede) and at the top of the pricing page. */
 export const PRICING = {
   title: ["Pricing"],
-  lede: "See your numbers first. Pay when you want the fixes.",
   plans: [
     {
       title: "Your first scan",
