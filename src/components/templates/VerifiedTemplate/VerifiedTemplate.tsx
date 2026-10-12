@@ -3,7 +3,8 @@ import { BadgeShowcase } from "@/components/organisms/BadgeShowcase";
 import { FinalCta } from "@/components/organisms/FinalCta";
 import { LevelTrack } from "@/components/organisms/LevelTrack";
 import { PageIntro } from "@/components/organisms/PageIntro";
-import { RulesSection } from "@/components/organisms/RulesSection";
+// Hidden for now. Restore this import and the <RulesSection> line below to bring the rules back.
+// import { RulesSection } from "@/components/organisms/RulesSection";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
 import { ROUTES } from "@/config/site";
@@ -30,7 +31,7 @@ export function VerifiedTemplate({ content, signupUrl }: VerifiedTemplateProps):
           />
           <LevelTrack content={verified.levels} />
           <BadgeShowcase content={verified.badge} />
-          <RulesSection content={verified.rules} />
+          {/* <RulesSection content={verified.rules} /> */}
           <FinalCta content={content.finalCta} signupUrl={signupUrl} />
         </main>
         <SiteFooter content={content.footer} />
