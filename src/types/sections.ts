@@ -1,4 +1,5 @@
 /** Content shapes for each page section. Organisms take these as props. */
+import type { StaticImageData } from "next/image";
 import type {
   Severity,
   ComparisonColumn,
@@ -294,8 +295,11 @@ export interface MissionContent {
   readonly title: RichText;
   /** The rest of the mission, under the heading. */
   readonly lede: string;
-  /** Shown under the heading, before the story. */
-  readonly photo: Photo & { readonly width: number; readonly height: number };
+  /**
+   * Shown beside the story. Imported from src/assets, so the build sizes it, hashes its URL
+   * and makes a blurred placeholder.
+   */
+  readonly photo: { readonly src: StaticImageData; readonly alt: string };
   readonly paragraphs: readonly string[];
   readonly valuesTitle: RichText;
   readonly values: readonly MissionValue[];

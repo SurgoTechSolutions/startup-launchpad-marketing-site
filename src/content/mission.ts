@@ -1,3 +1,4 @@
+import missionTeam from "@/assets/images/mission-team.webp";
 import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, MissionContent, MissionPageContent, PageMeta } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
@@ -8,10 +9,8 @@ export const MISSION = {
   title: ["We want more ", { highlight: "startups to succeed" }, "."],
   lede: "So we put professional-grade security in founders' hands, at a price a first product can afford.",
   photo: {
-    src: "/images/mission-team.webp",
+    src: missionTeam,
     alt: "The Startup Launchpad co-founders presenting at an event, with the Startup Launchpad logo on the screen behind them.",
-    width: 822,
-    height: 822,
   },
   paragraphs: [
     "Proper security is priced for companies that have already made it: pen tests that cost thousands, contractors billed by the day. So most founders launch without it and hope for the best.",
