@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
-import { Lede } from "@/components/atoms/Lede";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import type { FreeScanContent } from "@/types";
@@ -17,7 +16,6 @@ export function FreeScanSection({ content, signupUrl }: FreeScanSectionProps): R
       <SectionTitle size="try">
         <RichText content={content.title} />
       </SectionTitle>
-      <Lede className={styles.lede}>{content.lede}</Lede>
       <Button href={signupUrl}>{content.ctaLabel}</Button>
     </section>
   );

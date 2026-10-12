@@ -67,7 +67,6 @@ export interface StatsContent {
 
 export interface FreeScanContent {
   readonly title: RichText;
-  readonly lede: string;
   readonly ctaLabel: string;
 }
 

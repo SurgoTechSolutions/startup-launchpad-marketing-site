@@ -93,7 +93,6 @@ export const STATS = {
 
 export const FREE_SCAN = {
   title: ["Find out how many issues you have ", { highlight: "before you pay" }, " a penny."],
-  lede: "Connect your repository and we scan it for free. You get your real numbers across all five areas, split by severity, so you know exactly what you're dealing with.",
   ctaLabel: "Scan my code for free",
 } as const satisfies FreeScanContent;
 
