@@ -152,7 +152,7 @@ export const FINDINGS = {
 
 export const EXPLAIN = {
   title: ["Your issues explained in ", { highlight: "plain English" }, "."],
-  fixTitle: ["Then fixed with ", { keys: ["Ctrl", "V"] }],
+  fixTitle: ["Then fix them with ", { keys: ["Ctrl", "V"] }],
   quote: resolveQuote("aliceSimply"),
   issue: {
     severity: "Critical",
