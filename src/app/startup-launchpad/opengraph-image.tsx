@@ -18,19 +18,20 @@ interface TitleWord {
   readonly highlight: boolean;
 }
 
-/** Splits text into words, keeping each trailing space, so the title wraps like running text. */
-function words(text: string, highlight: boolean): TitleWord[] {
-  return text
-    .split(/(?<=\s)/)
-    .filter((word) => word !== "")
-    .map((word) => ({ word, highlight }));
-}
-
-/** The hero title as words, with highlighted phrases in orange. */
+/** Splits the hero title into words so it wraps like running text. The rolling word shows its first option. */
 function titleWords(): TitleWord[] {
-  return HERO.title.flatMap((segment): TitleWord[] =>
-    typeof segment === "string" ? words(segment, false) : words(segment.highlight, true),
-  );
+  return HERO.title.flatMap((segment): TitleWord[] => {
+    if (typeof segment !== "string") {
+      return [
+        { word: segment.rotate[0], highlight: true },
+        { word: segment.suffix, highlight: false },
+      ];
+    }
+    return segment
+      .split(/(?<=\s)/)
+      .filter((word) => word !== "")
+      .map((word) => ({ word, highlight: false }));
+  });
 }
 
 export default async function OpengraphImage(): Promise<ImageResponse> {
