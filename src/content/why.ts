@@ -10,7 +10,7 @@ import { FOOTER } from "./site";
  */
 export const WHY = {
   intro: {
-    title: ["AI tools build things that work. They don't build things that defend themselves."],
+    title: ["AI builds apps that ", { highlight: "work" }, ", not apps that ", { highlight: "defend themselves" }, "."],
     lede: "Every startup codebase we've scanned had critical security issues.",
   },
   reasons: {
