@@ -20,35 +20,6 @@ export const WHAT_WE_CHECK = {
       title: "Security",
       intro:
         "The failures we find most often in AI-built products. None of them are clever attacks. All of them are one line of missing code between a stranger and your users' data.",
-      common: {
-        title: "What we find most often",
-        items: [
-          {
-            title: "Keys sitting in your JavaScript",
-            body: "API keys and tokens hardcoded into the bundle every visitor downloads.",
-          },
-          {
-            title: "Database tables anyone can read",
-            body: "Missing Supabase row-level security or Firebase rules, leaving user records open to anyone holding the public key.",
-          },
-          {
-            title: "Routes that never ask who you are",
-            body: "API endpoints that create, change or delete records without checking identity.",
-          },
-          {
-            title: "Secrets committed to the repo",
-            body: ".env files and credentials sitting in your git history, still live long after they were pasted in.",
-          },
-          {
-            title: "Dependencies with known exploits",
-            body: "Packages carrying published vulnerabilities, including the ones you never chose directly.",
-          },
-          {
-            title: "Unsafe rendering and missing headers",
-            body: "Patterns that let someone else's content run inside your users' browsers.",
-          },
-        ],
-      },
       checksTitle: "The checks",
       checks: [
         {
