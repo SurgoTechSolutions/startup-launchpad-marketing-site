@@ -7,7 +7,7 @@ import { FOOTER } from "./site";
 export const MISSION = {
   eyebrow: "Our mission",
   statement:
-    "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford. Build it secure. Launch it with confidence.",
+    "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford.",
   paragraphs: [
     "Proper security is priced for companies that have already made it: pen tests that cost thousands, contractors billed by the day. So most founders launch without it and hope for the best.",
     "We think that's backwards. The people with the best ideas aren't always the ones with the deepest pockets, and a security gap shouldn't be what stops them.",
