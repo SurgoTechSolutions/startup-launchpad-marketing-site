@@ -245,7 +245,7 @@ export const LAUNCHPAD_PRICING = {
 } as const satisfies PricingContent;
 
 export const FAQS = {
-  title: ["Questions you ", { highlight: "should" }, " be asking"],
+  title: ["FAQs"],
   faqs: [
     {
       question: "How does the scan work?",
