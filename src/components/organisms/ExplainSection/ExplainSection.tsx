@@ -19,7 +19,7 @@ export interface ExplainSectionProps {
 
 /**
  * Two parts. First how an issue is explained, beside a founder's quote. Then the fix prompt for
- * it, with its heading and the call to action alongside.
+ * it, stacked and centred with the call to action underneath.
  */
 export function ExplainSection({ content, signupUrl }: ExplainSectionProps): ReactNode {
   const { issue, prompt } = content;
@@ -48,14 +48,11 @@ export function ExplainSection({ content, signupUrl }: ExplainSectionProps): Rea
           </div>
         </div>
       </section>
-      <section className={cx(styles.part, styles.fixPart)}>
-        <div className={styles.side}>
-          <SectionTitle size="explain">
-            <RichText content={content.fixTitle} />
-          </SectionTitle>
-          <Button href={signupUrl}>{content.ctaLabel}</Button>
-        </div>
-        <div className={styles.card}>
+      <section className={styles.fixPart}>
+        <SectionTitle size="explain">
+          <RichText content={content.fixTitle} />
+        </SectionTitle>
+        <div className={cx(styles.card, styles.fixCard)}>
           <div className={styles.fix}>
             <div className={styles.promptBar}>
               <span>{prompt.heading}</span>
@@ -67,6 +64,7 @@ export function ExplainSection({ content, signupUrl }: ExplainSectionProps): Rea
           </div>
         </div>
         {/* <FixTerminal content={content.terminal} /> */}
+        <Button href={signupUrl}>{content.ctaLabel}</Button>
       </section>
     </>
   );
