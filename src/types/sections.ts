@@ -271,8 +271,8 @@ export interface LaunchpadPageContent {
   readonly hero: HeroContent;
   readonly trustedBy: TrustedByContent;
   readonly stats: StatsContent;
-  readonly founderStory: FounderStoryContent;
   readonly findings: FindingsContent;
+  readonly founderStory: FounderStoryContent;
   readonly findingsCta: FinalCtaContent;
   readonly dashboard: DashboardContent;
   readonly explain: ExplainContent;

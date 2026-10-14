@@ -34,8 +34,8 @@ export function LaunchpadTemplate({ content, signupUrl }: LaunchpadTemplateProps
           <Hero content={content.hero} signupUrl={signupUrl} />
           <TrustedBy content={content.trustedBy} />
           <StatsSection content={content.stats} />
-          <FounderStory content={content.founderStory} signupUrl={signupUrl} />
           <RealFindings content={content.findings} />
+          <FounderStory content={content.founderStory} signupUrl={signupUrl} />
           <FinalCta content={content.findingsCta} signupUrl={signupUrl} layout="banner" />
           <DashboardShowcase content={content.dashboard} signupUrl={signupUrl} />
           <ExplainSection content={content.explain} signupUrl={signupUrl} />
