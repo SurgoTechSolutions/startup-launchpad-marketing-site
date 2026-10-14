@@ -35,9 +35,9 @@
     conic-gradient(
         from var(--glow-angle),
         var(--line) 0deg 200deg,
-        #ffc58a 250deg,
-        var(--accent) 295deg,
-        #ffc58a 340deg,
+        #fbe0c6 250deg,
+        #f6b678 295deg,
+        #fbe0c6 340deg,
         var(--line) 360deg
       )
       border-box;
@@ -55,7 +55,7 @@
   background: conic-gradient(
     from var(--glow-angle),
     transparent 0deg 230deg,
-    rgba(235, 115, 0, 0.5) 295deg,
+    rgba(235, 115, 0, 0.18) 295deg,
     transparent 360deg
   );
   filter: blur(18px);
