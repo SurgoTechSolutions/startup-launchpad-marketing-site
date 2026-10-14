@@ -22,9 +22,9 @@ export const PRICING = {
       yearly: { amount: "£19", billed: "Billed £228 a year" },
       features: [
         "Every finding explained in plain English",
-        "A fix prompt to paste in for each one",
-        "Repository checked every 6 hours",
-        "Full sweep every week",
+        "A fix prompt to paste in for each finding",
+        "Your repository rescanned automatically",
+        "Your live site checked on a regular schedule",
         "Cancel any time",
       ],
       featured: true,

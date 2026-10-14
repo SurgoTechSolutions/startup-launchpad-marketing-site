@@ -225,7 +225,7 @@ export const HOW_IT_WORKS = {
     },
     {
       title: "Keep watching",
-      body: "Subscribers get their repository checked every 6 hours and a full sweep every week.",
+      body: "Subscribers get their repository rescanned automatically and their live site checked on a regular schedule.",
     },
   ],
   ctaText: "Step one takes a couple of minutes.",
