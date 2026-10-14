@@ -1,18 +1,35 @@
+/*
+ * Lit from above: a lighter top in the gradient, a one-pixel highlight on the top edge, a darker
+ * line along the bottom, a tight contact shadow underneath, and a soft orange glow.
+ */
 .primary {
   display: inline-block;
   padding: 14px 24px;
   border-radius: 16px;
-  background: var(--accent);
-  box-shadow: 0 8px 28px rgba(235, 115, 0, 0.3);
+  background: linear-gradient(#f5891f, #e56d00);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 21, 36, 0.3),
+    0 8px 24px -6px rgba(235, 115, 0, 0.6);
   color: var(--ink);
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 .primary:hover {
   transform: translateY(-2px);
+}
+
+/* Pressed: the light flips, the highlight goes and the button sinks into the page. */
+.primary:active {
+  background: linear-gradient(#e56d00, #f5891f);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(1px);
 }
 
 /* An icon before the label, centred on the text. */
@@ -56,7 +73,8 @@
     transition: none;
   }
 
-  .primary:hover {
+  .primary:hover,
+  .primary:active {
     transform: none;
   }
 }
