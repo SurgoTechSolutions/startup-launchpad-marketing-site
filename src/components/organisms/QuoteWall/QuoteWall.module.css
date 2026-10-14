@@ -1,16 +1,3 @@
-/* Slate blue band across the full width. The shadow fills the sides without widening the page. */
-.band {
-  padding-block: 64px;
-  background: #1e3448;
-  box-shadow: 0 0 0 100vmax #1e3448;
-  clip-path: inset(0 -100vmax);
-}
-
-/* White heading on the slate blue. The highlighted word stays orange. */
-.band h2 {
-  color: #fff;
-}
-
 /* Bleeds into the page gutter so cards scroll to the edge. */
 .wall {
   margin-inline: -20px;
