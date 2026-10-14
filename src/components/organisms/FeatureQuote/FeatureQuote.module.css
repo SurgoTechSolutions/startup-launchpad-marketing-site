@@ -1,5 +1,5 @@
 /*
- * White band across the full width, heading on the left and Jason's quote on the right.
+ * Navy band across the full width, heading on the left and Jason's quote on the right.
  * The shadow fills the sides without widening the page.
  */
 .band {
@@ -8,9 +8,21 @@
   align-items: center;
   gap: 56px;
   padding-block: 64px;
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
+  background: var(--ink);
+  box-shadow: 0 0 0 100vmax var(--ink);
   clip-path: inset(0 -100vmax);
+}
+
+/* Light text on the navy. The highlighted words and the quote mark stay orange. */
+.band h2,
+.band blockquote,
+.band figcaption b {
+  color: #fff;
+}
+
+.band p,
+.band figcaption {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .band > :first-child {
