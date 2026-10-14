@@ -34,23 +34,28 @@ export function HeroQuoteRotator({
   intervalMs = ROTATE_EVERY_MS,
 }: HeroQuoteRotatorProps): ReactNode {
   const reduced = usePrefersReducedMotion();
-  // The quote showing, and the one swiping out, so each can move its own way.
-  const [{ active, leaving }, setShown] = useState<{ active: number; leaving: number | null }>({
-    active: 0,
-    leaving: null,
-  });
-  const show = (pick: (current: number) => number): void => {
+  // The quote showing, the one swiping out, and which way they move. Going forward, the new
+  // quote comes in from the left; going back to an earlier one, it comes in from the right.
+  const [{ active, leaving, back }, setShown] = useState<{
+    active: number;
+    leaving: number | null;
+    back: boolean;
+  }>({ active: 0, leaving: null, back: false });
+  /** Moves to the next quote, or to one picked with the dots. */
+  const show = (target: "next" | number): void => {
     setShown((shown) => {
-      const next = pick(shown.active);
-      return next === shown.active ? shown : { active: next, leaving: shown.active };
+      const next = target === "next" ? (shown.active + 1) % slides.length : target;
+      if (next === shown.active) return shown;
+      return { active: next, leaving: shown.active, back: target !== "next" && next < shown.active };
     });
   };
+
   const [paused, setPaused] = useState(false);
   const [stopped, setStopped] = useState(false);
 
   useInterval(
     () => {
-      show((current) => (current + 1) % slides.length);
+      show("next");
     },
     reduced || paused || stopped || slides.length < 2 ? null : intervalMs,
   );
@@ -81,7 +86,13 @@ export function HeroQuoteRotator({
             <div
               // Slides are static content, so their position is a stable key.
               key={index}
-              className={cx(styles.slide, isActive && styles.active, index === leaving && styles.leaving)}
+              className={cx(
+                styles.slide,
+                isActive && styles.active,
+                // Only animate once something has changed, so the first quote doesn't slide in on load.
+                isActive && leaving !== null && (back ? styles.fromRight : styles.fromLeft),
+                index === leaving && (back ? styles.toLeft : styles.toRight),
+              )}
               aria-hidden={!isActive}
               inert={!isActive}
             >
@@ -100,7 +111,7 @@ export function HeroQuoteRotator({
               aria-label={dotLabel}
               aria-current={index === active}
               onClick={() => {
-                show(() => index);
+                show(index);
                 setStopped(true);
               }}
             />

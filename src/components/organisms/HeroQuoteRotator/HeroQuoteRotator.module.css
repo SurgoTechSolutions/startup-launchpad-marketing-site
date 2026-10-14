@@ -27,7 +27,9 @@
   gap: 14px;
   width: 100%;
   max-width: 640px;
-  padding: 22px 32px 18px;
+  --edge: 32px;
+
+  padding: 22px var(--edge) 18px;
   border: 2px solid transparent;
   border-radius: 36px;
   background:
@@ -64,6 +66,8 @@
 
 /* No card, for quotes that sit straight on the page. */
 .bare {
+  --edge: 0px;
+
   max-width: none;
   padding: 0;
   border: 0;
@@ -78,41 +82,84 @@
 }
 
 /* All slides share one cell, so the frame height is the tallest slide. */
+/*
+ * The swipe area reaches out through the card's side padding to its edge, and each slide pads
+ * itself back in, so quotes travel right up to the border before they disappear.
+ */
 .slides {
   display: grid;
-  width: 100%;
+  width: calc(100% + var(--edge) * 2);
+  margin-inline: calc(var(--edge) * -1);
   overflow: hidden;
 }
 
 /*
- * A swipe, like a carousel: the incoming quote slides in from the left while the outgoing one
- * slides out to the right, both clipped by the card. Waiting quotes sit off to the left and jump
- * back there instantly once they are out of sight.
+ * A swipe, like a carousel: the new quote slides in as the old one slides out, both clipped at
+ * the card's edge. Going forward the new one comes from the left; going back it comes from the
+ * right. Quotes not in play are simply hidden.
  */
 .slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
   grid-area: 1 / 1;
+  padding-inline: var(--edge);
   visibility: hidden;
-  translate: -100% 0;
-  transition:
-    translate 0s,
-    visibility 0s;
 }
 
 .active {
   visibility: visible;
-  translate: 0 0;
-  transition: translate 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.leaving {
-  visibility: hidden;
-  translate: 100% 0;
-  transition:
-    translate 0.6s cubic-bezier(0.65, 0, 0.35, 1),
-    visibility 0s 0.6s;
+.fromLeft {
+  animation: enter-from-left 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.fromRight {
+  animation: enter-from-right 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.toRight {
+  animation: exit-to-right 0.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.toLeft {
+  animation: exit-to-left 0.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes enter-from-left {
+  from {
+    translate: -100% 0;
+  }
+}
+
+@keyframes enter-from-right {
+  from {
+    translate: 100% 0;
+  }
+}
+
+/* Visible all the way out, then hidden once off the card. */
+@keyframes exit-to-right {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+    translate: 100% 0;
+  }
+}
+
+@keyframes exit-to-left {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+    translate: -100% 0;
+  }
 }
 
 /* Negative margin keeps the visible spacing as before despite the larger hit areas. */
@@ -147,7 +194,9 @@
 
 @media (max-width: 480px) {
   .frame {
-    padding: 18px 20px 14px;
+    --edge: 20px;
+
+    padding: 18px var(--edge) 14px;
   }
 }
 
@@ -156,14 +205,14 @@
     animation: none;
   }
 
-  .slide,
-  .active,
-  .leaving,
-  .dot::before {
-    transition: none;
+  .fromLeft,
+  .fromRight,
+  .toLeft,
+  .toRight {
+    animation: none;
   }
 
-  .slide {
-    translate: none;
+  .dot::before {
+    transition: none;
   }
 }
