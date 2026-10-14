@@ -43,7 +43,7 @@
       border-box;
   box-shadow: 0 24px 60px rgba(0, 21, 36, 0.08);
   text-align: center;
-  animation: glow-spin 5s linear infinite;
+  animation: glow-spin 10s linear infinite;
 }
 
 .frame::before {
