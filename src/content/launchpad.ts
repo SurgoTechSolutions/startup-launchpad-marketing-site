@@ -127,7 +127,7 @@ export const DASHBOARD = {
 } as const satisfies DashboardContent;
 
 export const FINDINGS = {
-  title: ["Real findings we caught in ", { highlight: "live" }, " applications"],
+  title: ["The worst issues are the ", { highlight: "easiest to miss" }, "."],
   findings: [
     {
       category: "Tampering",
