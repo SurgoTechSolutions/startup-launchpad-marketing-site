@@ -90,7 +90,9 @@
   display: grid;
   width: calc(100% + var(--edge) * 2);
   margin-inline: calc(var(--edge) * -1);
-  overflow: hidden;
+  /* Clipped at the sides only, so nothing at the top or bottom of a quote is cut off. */
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 /*
