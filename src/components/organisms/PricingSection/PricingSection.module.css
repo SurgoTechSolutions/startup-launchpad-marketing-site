@@ -55,6 +55,32 @@
   outline-offset: 2px;
 }
 
+/*
+ * Like the nav underline: one dark pill anchored to whichever option is ticked, so it glides
+ * across when the other is clicked. Without anchor positioning each option keeps its own fill.
+ */
+@supports (anchor-name: --billing-pill) {
+  .billing {
+    position: relative;
+  }
+
+  .billing::before {
+    content: "";
+    position: absolute;
+    position-anchor: --billing-pill;
+    inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+    border-radius: 999px;
+    background: var(--ink);
+    pointer-events: none;
+    transition: inset 0.35s ease;
+  }
+
+  .option:has(:checked) {
+    anchor-name: --billing-pill;
+    background: none;
+  }
+}
+
 .radio {
   position: absolute;
   opacity: 0;
@@ -70,7 +96,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .option {
+  .option,
+  .billing::before {
     transition: none;
   }
 }
