@@ -1,32 +1,17 @@
+/* A big figure with its label underneath. No card: the numbers carry the section. */
 .stat {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
   min-width: 0;
-  padding: 34px 26px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: var(--surface);
-  box-shadow:
-    var(--shadow-stack),
-    0 22px 44px rgba(0, 21, 36, 0.1);
+  padding: 8px 28px;
   text-align: center;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.stat:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    var(--shadow-stack-lg),
-    0 32px 58px rgba(0, 21, 36, 0.16);
 }
 
 .value {
   color: var(--ink);
-  font-size: clamp(46px, 6.4vw, 72px);
+  font-size: clamp(56px, 8vw, 96px);
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   line-height: 1;
@@ -37,13 +22,8 @@
 }
 
 .label {
-  max-width: 26ch;
-  font-size: 15px;
+  max-width: 24ch;
+  color: var(--ink);
+  font-size: 16px;
   line-height: 1.45;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .stat {
-    transition: none;
-  }
 }
