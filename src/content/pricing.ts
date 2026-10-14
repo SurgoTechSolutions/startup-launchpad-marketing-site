@@ -19,7 +19,7 @@ export const PRICING = {
     {
       title: "Ongoing protection",
       price: { amount: "£27", period: "a month", billed: "Billed monthly" },
-      yearly: { amount: "£21.60", billed: "Billed £259.20 a year" },
+      yearly: { amount: "£21", billed: "Billed £252 a year" },
       features: [
         "Every finding explained in plain English",
         "A fix prompt to paste in for each one",
