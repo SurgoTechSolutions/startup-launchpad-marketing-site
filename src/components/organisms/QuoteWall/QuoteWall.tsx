@@ -19,7 +19,7 @@ export function QuoteWall({ content }: QuoteWallProps): ReactNode {
   );
 
   return (
-    <section>
+    <section className={styles.band}>
       <SectionHead>
         <SectionTitle size="find">
           <RichText content={content.title} />
