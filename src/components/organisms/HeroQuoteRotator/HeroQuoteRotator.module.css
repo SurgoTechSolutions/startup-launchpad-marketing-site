@@ -83,6 +83,11 @@
   width: 100%;
 }
 
+/*
+ * A hand-off rather than a crossfade, so two quotes never overlap: the outgoing one blurs and
+ * fades out quickly where it is, then the incoming one rises from just below into focus. Hidden
+ * slides wait just below, moved there only once they are invisible.
+ */
 .slide {
   display: flex;
   flex-direction: column;
@@ -90,14 +95,25 @@
   grid-area: 1 / 1;
   opacity: 0;
   visibility: hidden;
+  filter: blur(6px);
+  translate: 0 12px;
   transition:
-    opacity 0.6s ease,
-    visibility 0.6s;
+    opacity 0.3s ease-in,
+    filter 0.3s ease-in,
+    translate 0s 0.3s,
+    visibility 0s 0.3s;
 }
 
 .active {
   opacity: 1;
   visibility: visible;
+  filter: blur(0);
+  translate: 0 0;
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+    filter 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+    translate 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+    visibility 0s 0.25s;
 }
 
 /* Negative margin keeps the visible spacing as before despite the larger hit areas. */
@@ -142,7 +158,13 @@
   }
 
   .slide,
+  .active,
   .dot::before {
     transition: none;
+  }
+
+  .slide {
+    filter: none;
+    translate: none;
   }
 }
