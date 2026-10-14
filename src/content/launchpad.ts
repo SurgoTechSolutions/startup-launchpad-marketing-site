@@ -107,7 +107,7 @@ export const FINDINGS_CTA = {
 } as const satisfies FinalCtaContent;
 
 export const DASHBOARD = {
-  title: ["Everything you ", { highlight: "need" }],
+  title: ["See every issue ", { highlight: "at a glance" }, "."],
   label:
     "Example scan dashboard showing open issues across security, accessibility, SEO, reliability and performance, and housekeeping",
   repo: "demo/your-app",
@@ -151,7 +151,7 @@ export const FINDINGS = {
 } as const satisfies FindingsContent;
 
 export const EXPLAIN = {
-  title: ["Your issues explained ", { lineBreak: true }, "in ", { highlight: "plain English" }, "."],
+  title: ["Understand each one ", { lineBreak: true }, "in ", { highlight: "plain English" }, "."],
   fixTitle: ["Then fix them with ", { keys: ["Ctrl", "V"] }],
   quote: resolveQuote("aliceSimply"),
   issue: {
