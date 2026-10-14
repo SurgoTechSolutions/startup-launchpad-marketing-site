@@ -91,7 +91,7 @@ export const STATS = {
 
 export const FOUNDER_STORY = {
   eyebrow: "Founder story",
-  title: ["Rousseau got ", { highlight: "1.5 days", noWrap: true }, " of security review in a few minutes"],
+  title: ["Rousseau's colleague took 1.5 days to find them. ", { highlight: "We took minutes.", noWrap: true }],
   lede: "One scan of Nucha, his live platform. It matched what his own pen tester had already found, and he started the clean-up the next morning.",
   ctaLabel: "Get started for free",
   before: "1.5 days",
@@ -127,7 +127,7 @@ export const DASHBOARD = {
 } as const satisfies DashboardContent;
 
 export const FINDINGS = {
-  title: ["The worst holes are the ", { highlight: "easiest to miss" }, "."],
+  title: ["The worst were the ", { highlight: "easiest to miss" }, "."],
   findings: [
     {
       category: "Tampering",
