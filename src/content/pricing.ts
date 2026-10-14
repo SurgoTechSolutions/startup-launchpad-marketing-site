@@ -4,7 +4,7 @@ import { resolveQuote } from "./quotes";
 /** The pricing block. Shown on the main page (with a lede) and at the top of the pricing page. */
 export const PRICING = {
   title: ["Pricing"],
-  billing: { legend: "Billing period", monthly: "Monthly", yearly: "Yearly", saving: "Save 20%" },
+  billing: { legend: "Billing period", monthly: "Monthly", yearly: "Yearly", saving: "Save 30%" },
   plans: [
     {
       title: "Your first scan",
@@ -19,7 +19,7 @@ export const PRICING = {
     {
       title: "Ongoing protection",
       price: { amount: "£27", period: "a month", billed: "Billed monthly" },
-      yearly: { amount: "£21", billed: "Billed £252 a year" },
+      yearly: { amount: "£19", billed: "Billed £228 a year" },
       features: [
         "Every finding explained in plain English",
         "A fix prompt to paste in for each one",
