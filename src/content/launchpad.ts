@@ -77,7 +77,7 @@ export const TRUSTED_BY = {
 
 export const STATS = {
   title: [
-    "100% of the codebases we've scanned had",
+    "100% of the codebases we've scanned had ",
     { lineBreak: true },
     { badge: "critical security issues" },
   ],
