@@ -35,7 +35,7 @@
   user-select: all;
 }
 
-/* White band across the full width. The shadow fills the sides without widening the page. */
+/* Navy band across the full width. The shadow fills the sides without widening the page. */
 .banner {
   display: flex;
   flex-wrap: wrap;
@@ -43,9 +43,18 @@
   align-items: center;
   gap: 20px 40px;
   padding-block: 40px;
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
+  background: var(--ink);
+  box-shadow: 0 0 0 100vmax var(--ink);
   clip-path: inset(0 -100vmax);
+}
+
+/* Light text on the navy. The highlighted words stay orange. */
+.banner h2 {
+  color: #fff;
+}
+
+.banner p {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .bannerText {
