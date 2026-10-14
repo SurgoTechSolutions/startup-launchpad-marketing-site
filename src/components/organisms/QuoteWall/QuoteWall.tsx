@@ -20,7 +20,7 @@ export function QuoteWall({ content }: QuoteWallProps): ReactNode {
 
   return (
     <section>
-      <SectionHead align="start">
+      <SectionHead>
         <SectionTitle size="find">
           <RichText content={content.title} />
         </SectionTitle>
