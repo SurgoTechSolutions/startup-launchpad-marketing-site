@@ -42,7 +42,7 @@ export function FinalCta({ content, signupUrl, id, layout }: FinalCtaProps): Rea
   return (
     <section id={id} className={centered ? styles.centered : styles.split}>
       <div className={styles.copy}>
-        <SectionTitle size={centered ? "find" : "base"}>
+        <SectionTitle size="find">
           <RichText content={content.title} />
         </SectionTitle>
         {content.lede !== undefined && <Lede>{content.lede}</Lede>}

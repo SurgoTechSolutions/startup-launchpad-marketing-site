@@ -1,10 +1,11 @@
 /* "base" adds nothing, so the global h1 and h2 sizes apply. */
+/* Section headings all share the "find" size, up to 48px. The other sizes keep their own spacing and alignment. */
 .base {
 }
 
 .stats {
   max-width: 22ch;
-  font-size: clamp(28px, 4.4vw, 46px);
+  font-size: clamp(30px, 4.6vw, 48px);
   line-height: 1.14;
 }
 
@@ -15,17 +16,17 @@
 }
 
 .spot {
-  font-size: clamp(30px, 4.6vw, 50px);
-  line-height: 1.12;
+  font-size: clamp(30px, 4.6vw, 48px);
+  line-height: 1.14;
 }
 
 .every {
   max-width: 100%;
   margin: 0 0 clamp(24px, 3.5vw, 40px);
   color: var(--ink);
-  font-size: clamp(32px, 6.4vw, 72px);
+  font-size: clamp(30px, 4.6vw, 48px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.14;
   text-align: center;
 }
 
@@ -37,13 +38,13 @@
 
 .explain {
   margin-bottom: 4px;
-  font-size: clamp(26px, 3.8vw, 40px);
-  line-height: 1.25;
+  font-size: clamp(30px, 4.6vw, 48px);
+  line-height: 1.14;
   text-align: center;
 }
 
 .big {
-  font-size: clamp(40px, 7vw, 72px);
+  font-size: clamp(30px, 4.6vw, 48px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.14;
 }
