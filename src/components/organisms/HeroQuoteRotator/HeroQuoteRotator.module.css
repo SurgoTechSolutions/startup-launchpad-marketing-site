@@ -85,8 +85,8 @@
 
 /*
  * A hand-off rather than a crossfade, so two quotes never overlap: the outgoing one blurs and
- * fades out quickly where it is, then the incoming one rises from just below into focus. Hidden
- * slides wait just below, moved there only once they are invisible.
+ * fades out quickly where it is, then the incoming one slides in from the left into focus.
+ * Hidden slides wait just to the left, moved there only once they are invisible.
  */
 .slide {
   display: flex;
@@ -96,7 +96,7 @@
   opacity: 0;
   visibility: hidden;
   filter: blur(6px);
-  translate: 0 12px;
+  translate: -24px 0;
   transition:
     opacity 0.3s ease-in,
     filter 0.3s ease-in,
