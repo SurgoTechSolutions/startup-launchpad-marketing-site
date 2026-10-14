@@ -22,7 +22,7 @@ export interface HeroQuoteRotatorProps {
 
 /**
  * The hero quote card. Every slide sits in the same grid cell, so the card is always as
- * tall as the longest quote and never jumps. Slides cross-fade every 4.5 seconds, pause
+ * tall as the longest quote and never jumps. Slides swipe across every 4.5 seconds, pause
  * while hovered or focused, and stop once a visitor picks one with the dots. With reduced
  * motion, or without JavaScript, the first slide stays put.
  */
@@ -34,13 +34,23 @@ export function HeroQuoteRotator({
   intervalMs = ROTATE_EVERY_MS,
 }: HeroQuoteRotatorProps): ReactNode {
   const reduced = usePrefersReducedMotion();
-  const [active, setActive] = useState(0);
+  // The quote showing, and the one swiping out, so each can move its own way.
+  const [{ active, leaving }, setShown] = useState<{ active: number; leaving: number | null }>({
+    active: 0,
+    leaving: null,
+  });
+  const show = (pick: (current: number) => number): void => {
+    setShown((shown) => {
+      const next = pick(shown.active);
+      return next === shown.active ? shown : { active: next, leaving: shown.active };
+    });
+  };
   const [paused, setPaused] = useState(false);
   const [stopped, setStopped] = useState(false);
 
   useInterval(
     () => {
-      setActive((current) => (current + 1) % slides.length);
+      show((current) => (current + 1) % slides.length);
     },
     reduced || paused || stopped || slides.length < 2 ? null : intervalMs,
   );
@@ -71,7 +81,7 @@ export function HeroQuoteRotator({
             <div
               // Slides are static content, so their position is a stable key.
               key={index}
-              className={cx(styles.slide, isActive && styles.active)}
+              className={cx(styles.slide, isActive && styles.active, index === leaving && styles.leaving)}
               aria-hidden={!isActive}
               inert={!isActive}
             >
@@ -90,7 +100,7 @@ export function HeroQuoteRotator({
               aria-label={dotLabel}
               aria-current={index === active}
               onClick={() => {
-                setActive(index);
+                show(() => index);
                 setStopped(true);
               }}
             />
