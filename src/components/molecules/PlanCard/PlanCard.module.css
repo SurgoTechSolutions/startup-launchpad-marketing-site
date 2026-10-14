@@ -33,6 +33,12 @@
   font-weight: 500;
 }
 
+.billed {
+  margin-top: -6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .features {
   display: flex;
   flex-direction: column;

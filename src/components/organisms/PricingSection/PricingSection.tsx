@@ -19,13 +19,27 @@ export interface PricingSectionProps {
 
 export function PricingSection({ content, signupUrl, headingLevel = "h2" }: PricingSectionProps): ReactNode {
   return (
-    <section>
+    <section className={styles.section}>
       <SectionHead>
         <SectionTitle as={headingLevel} size="big">
           <RichText content={content.title} />
         </SectionTitle>
         {content.lede !== undefined && <Lede>{content.lede}</Lede>}
       </SectionHead>
+      {content.billing !== undefined && (
+        <fieldset className={styles.billing}>
+          <legend className="sr-only">{content.billing.legend}</legend>
+          <label className={styles.option}>
+            <input type="radio" name="billing" value="monthly" defaultChecked className={styles.radio} />
+            {content.billing.monthly}
+          </label>
+          <label className={styles.option}>
+            <input type="radio" name="billing" value="yearly" className={styles.radio} />
+            {content.billing.yearly}
+            <span className={styles.saving}>{content.billing.saving}</span>
+          </label>
+        </fieldset>
+      )}
       <div className={styles.plans}>
         {content.plans.map((plan) => (
           <PlanCard

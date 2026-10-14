@@ -166,6 +166,14 @@ export interface PricingContent {
   readonly title: RichText;
   readonly lede?: string;
   readonly plans: readonly Plan[];
+  /** Monthly and yearly switch, for plans with a yearly price. */
+  readonly billing?: {
+    readonly legend: string;
+    readonly monthly: string;
+    readonly yearly: string;
+    /** Shown beside Yearly, e.g. "Save 20%". */
+    readonly saving: string;
+  };
   /** Link to the full pricing page. Left out on the pricing page itself. */
   readonly moreLink?: Link;
   readonly quote: QuoteWithPerson;

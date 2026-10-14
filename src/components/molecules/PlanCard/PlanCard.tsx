@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { Odometer } from "@/components/atoms/Odometer";
 import { cx } from "@/lib/cx";
 import type { Plan } from "@/types";
 import styles from "./PlanCard.module.css";
@@ -17,7 +18,20 @@ export function PlanCard({ plan, ctaHref, headingLevel: Heading = "h3" }: PlanCa
     <div className={cx(styles.plan, plan.featured === true && styles.featured)}>
       <Heading className={styles.title}>{plan.title}</Heading>
       <div className={styles.amount}>
-        {plan.price.amount}
+        {plan.yearly === undefined ? (
+          plan.price.amount
+        ) : (
+          <>
+            <Odometer from={plan.price.amount} to={plan.yearly.amount} />
+            {/* The wheels are hidden from screen readers; these say the price that shows. */}
+            <span className="sr-only" data-billing="monthly">
+              {plan.price.amount}
+            </span>
+            <span className="sr-only" data-billing="yearly">
+              {plan.yearly.amount}
+            </span>
+          </>
+        )}
         {plan.price.period !== undefined && (
           <>
             {" "}
@@ -25,6 +39,12 @@ export function PlanCard({ plan, ctaHref, headingLevel: Heading = "h3" }: PlanCa
           </>
         )}
       </div>
+      {plan.yearly !== undefined && (
+        <p className={styles.billed}>
+          {plan.price.billed !== undefined && <span data-billing="monthly">{plan.price.billed}</span>}
+          <span data-billing="yearly">{plan.yearly.billed}</span>
+        </p>
+      )}
       <ul className={styles.features}>
         {plan.features.map((feature) => (
           <li key={feature}>{feature}</li>

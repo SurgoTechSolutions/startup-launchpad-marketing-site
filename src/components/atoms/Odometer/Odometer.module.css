@@ -1,0 +1,74 @@
+/*
+ * --odometer-to is 0 or 1, set by an ancestor. Each part works out where it should be from its
+ * own --from and --to, so one switch moves every wheel.
+ */
+.odometer {
+  --spring: linear(
+    0,
+    0.009,
+    0.035 2.1%,
+    0.141,
+    0.281 6.7%,
+    0.723 12.9%,
+    0.938 16.7%,
+    1.017,
+    1.077,
+    1.121,
+    1.149 24.3%,
+    1.159,
+    1.163,
+    1.161,
+    1.154 29.9%,
+    1.129 32.8%,
+    1.051 39.6%,
+    1.017 43.1%,
+    0.991,
+    0.977 51%,
+    0.974 53.8%,
+    0.975 57.1%,
+    0.997 69.8%,
+    1.003 76.9%,
+    1
+  );
+
+  display: inline-flex;
+  align-items: flex-start;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The window: exactly one line tall, so only one number on the wheel shows. */
+.digit {
+  --at: calc(var(--from) + (var(--to) - var(--from)) * var(--odometer-to, 0));
+
+  display: inline-block;
+  height: 1lh;
+  overflow: hidden;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  translate: 0 calc(var(--at) * -1lh);
+  transition: translate 0.8s var(--spring);
+}
+
+/* Pence slide in only when the price has them. */
+.fraction {
+  --shown: calc(var(--from) + (var(--to) - var(--from)) * var(--odometer-to, 0));
+
+  display: inline-flex;
+  max-width: calc(var(--shown) * 2em);
+  overflow: hidden;
+  opacity: var(--shown);
+  transition:
+    max-width 0.5s ease,
+    opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .column,
+  .fraction {
+    transition: none;
+  }
+}

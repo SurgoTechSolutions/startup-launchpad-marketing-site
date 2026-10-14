@@ -71,7 +71,14 @@ export interface Step {
 
 export interface Plan {
   readonly title: string;
-  readonly price: { readonly amount: string; readonly period?: string };
+  readonly price: {
+    readonly amount: string;
+    readonly period?: string;
+    /** How it is charged, e.g. "Billed monthly". Shown when the plan has a yearly price. */
+    readonly billed?: string;
+  };
+  /** The same plan paid yearly. The price rolls to this when Yearly is picked. */
+  readonly yearly?: { readonly amount: string; readonly billed: string };
   readonly features: readonly string[];
   /** Draws the plan with the orange border. */
   readonly featured?: boolean;

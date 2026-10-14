@@ -1,3 +1,80 @@
+/*
+ * Monthly or yearly, with no JavaScript: the section checks which radio is ticked. Yearly sets
+ * --odometer-to so the price wheels roll, and swaps which billing text shows.
+ */
+.section [data-billing="yearly"] {
+  display: none;
+}
+
+.section:has(input[value="yearly"]:checked) {
+  --odometer-to: 1;
+}
+
+.section:has(input[value="yearly"]:checked) [data-billing="monthly"] {
+  display: none;
+}
+
+.section:has(input[value="yearly"]:checked) [data-billing="yearly"] {
+  display: revert;
+}
+
+/* A two-way switch. The radios stay in the page for keyboards and screen readers. */
+.billing {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 24px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.option:has(:checked) {
+  background: var(--ink);
+  color: #fff;
+}
+
+.option:has(:focus-visible) {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.saving {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--ink);
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option {
+    transition: none;
+  }
+}
+
 .plans {
   display: grid;
   grid-template-columns: 1fr 1fr;
