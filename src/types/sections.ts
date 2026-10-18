@@ -325,7 +325,6 @@ export interface MissionContent {
 export interface MissionPageContent {
   readonly header: HeaderContent;
   readonly mission: MissionContent;
-  readonly pullQuote: HookContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
 }

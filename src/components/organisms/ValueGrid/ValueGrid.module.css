@@ -1,9 +1,18 @@
-/* Plain white across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
+/*
+ * Plain white across the full width, hiding the page grid. It fades out over the last 96px so the
+ * grid below shows through gradually. The layer behind reaches the screen edges.
+ */
 .plain {
+  position: relative;
   padding-block: 72px;
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
-  clip-path: inset(0 -100vmax);
+}
+
+.plain::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(var(--surface) calc(100% - 96px), transparent);
 }
 
 .grid {

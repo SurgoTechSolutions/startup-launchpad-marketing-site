@@ -1,6 +1,6 @@
 import missionTeam from "@/assets/images/mission-team.webp";
 import { ROUTES } from "@/config/site";
-import type { FinalCtaContent, HookContent, MissionContent, MissionPageContent, PageMeta } from "@/types";
+import type { FinalCtaContent, MissionContent, MissionPageContent, PageMeta } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
@@ -24,11 +24,6 @@ export const MISSION = {
   ],
 } as const satisfies MissionContent;
 
-/** One line from the story, on slate between the story and the values. */
-export const MISSION_PULL_QUOTE = {
-  title: ["The best ideas aren't always ", { highlight: "the best funded." }],
-} as const satisfies HookContent;
-
 export const MISSION_FINAL_CTA = {
   title: ["Build something secure, and ", { highlight: "launch it with confidence" }, "."],
   ctaLabel: "Scan my code for free",
@@ -45,7 +40,6 @@ export const MISSION_META = {
 export const MISSION_PAGE = {
   header: LAUNCHPAD_HEADER,
   mission: MISSION,
-  pullQuote: MISSION_PULL_QUOTE,
   finalCta: MISSION_FINAL_CTA,
   footer: FOOTER,
 } as const satisfies MissionPageContent;
