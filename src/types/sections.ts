@@ -51,6 +51,11 @@ export interface HeroContent {
   readonly quotes: readonly QuoteWithPerson[];
 }
 
+/** A single big line in its own band. */
+export interface HookContent {
+  readonly title: RichText;
+}
+
 export interface PartnerLogo {
   readonly src: string;
   readonly alt: string;
@@ -273,6 +278,7 @@ export interface LaunchpadPageContent {
   readonly header: HeaderContent;
   readonly hero: HeroContent;
   readonly trustedBy: TrustedByContent;
+  readonly hook: HookContent;
   readonly stats: StatsContent;
   readonly findings: FindingsContent;
   readonly founderStory: FounderStoryContent;

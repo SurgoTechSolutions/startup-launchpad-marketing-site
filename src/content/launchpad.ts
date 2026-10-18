@@ -11,6 +11,7 @@ import type {
   FindingsContent,
   FounderStoryContent,
   HeroContent,
+  HookContent,
   HowItWorksContent,
   LaunchpadPageContent,
   QuoteWallContent,
@@ -29,7 +30,7 @@ export const LAUNCHPAD_HEADER = {
 } as const satisfies HeaderContent;
 
 export const HERO = {
-  title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
+  title: ["Find the ", { highlight: "security holes" }, " in your AI-built app, and fix them in minutes."],
   lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
   ctaLabel: "Scan my code for free",
   note: "Find out how many issues you have before you pay anything.",
@@ -37,6 +38,11 @@ export const HERO = {
   quoteDotLabel: "Show quote from",
   quotes: HERO_QUOTE_KEYS.map(resolveQuote),
 } as const satisfies HeroContent;
+
+/** The question after the logos, answered by the stats that follow. */
+export const HOOK = {
+  title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
+} as const satisfies HookContent;
 
 export const TRUSTED_BY = {
   label: "Trusted by",
@@ -303,6 +309,7 @@ export const LAUNCHPAD_PAGE = {
   header: LAUNCHPAD_HEADER,
   hero: HERO,
   trustedBy: TRUSTED_BY,
+  hook: HOOK,
   stats: STATS,
   findings: FINDINGS,
   founderStory: FOUNDER_STORY,
