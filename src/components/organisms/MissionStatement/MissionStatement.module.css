@@ -27,15 +27,11 @@
   clip-path: inset(0 -100vmax);
 }
 
-/* A white edge then an orange ring, like Jason's photo on the home page. */
 .photo {
   width: 100%;
   height: auto;
-  border: 4px solid var(--surface);
   border-radius: 28px;
-  box-shadow:
-    0 0 0 3px var(--accent),
-    0 24px 60px rgba(0, 21, 36, 0.16);
+  box-shadow: 0 24px 60px rgba(0, 21, 36, 0.16);
 }
 
 .story {
