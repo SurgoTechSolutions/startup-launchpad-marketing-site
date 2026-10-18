@@ -10,34 +10,33 @@
 }
 
 /*
- * Half and half. The photo fills everything left of the middle of the screen, out to its left
- * edge; the slate panel fills everything right of the middle, out to its right edge.
+ * Half and half: the photo in a box on the white left half, and the slate panel filling
+ * everything right of the middle of the screen, out to its right edge.
  */
 .split {
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 460px;
+}
+
+.photoSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 48px 56px 0;
 }
 
 .photo {
-  position: absolute;
-  inset: 0 50% 0 calc(50% - 50vw);
-  background: #1e3448;
+  position: relative;
+  width: min(380px, 100%);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 21, 36, 0.16);
 }
 
 .image {
   object-fit: cover;
   object-position: 40% 30%;
-}
-
-/* Fades the photo's right edge into the slate, so the dark wall behind him runs on into it. */
-.photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent 65%, #1e3448);
-  pointer-events: none;
 }
 
 .quoteSide {
@@ -93,33 +92,28 @@
   margin-top: 28px;
 }
 
-/* Stacked: the photo full width, then the quote on a full-width slate panel below it. */
+/* Stacked: the photo box centred on white, then the quote on a full-width slate panel below it. */
 @media (max-width: 900px) {
   .split {
     grid-template-columns: minmax(0, 1fr);
-    min-height: 0;
   }
 
-  .photo {
-    position: relative;
-    inset: auto;
-    height: 340px;
-    margin-inline: calc(50% - 50vw);
-  }
-
-  /* On top of the slate, the fade runs downwards instead. */
-  .photo::after {
-    background: linear-gradient(180deg, transparent 60%, #1e3448);
+  .photoSide {
+    padding: 8px 0 40px;
   }
 
   .quoteSide {
     grid-column: 1;
-    padding: 8px 0 48px;
+    padding: 48px 0;
     clip-path: inset(0 -100vmax);
   }
 }
 
 @media (max-width: 480px) {
+  .photo {
+    width: min(280px, 100%);
+  }
+
   .mark {
     font-size: 64px;
   }

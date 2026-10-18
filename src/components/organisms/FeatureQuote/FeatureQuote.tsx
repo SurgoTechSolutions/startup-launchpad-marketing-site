@@ -15,8 +15,8 @@ export interface FeatureQuoteProps {
 }
 
 /**
- * The heading centred on white, then a two-tone band: the person's photo filling the left half
- * and their quote, name and the button on slate on the right.
+ * The heading centred on white, then a two-tone band: the person's photo in a box on the white
+ * left half, and their quote, name and the button on slate on the right.
  */
 export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNode {
   return (
@@ -28,15 +28,17 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
         {content.lede !== undefined && <Lede>{content.lede}</Lede>}
       </SectionHead>
       <div className={styles.split}>
-        <div className={styles.photo}>
-          <Image
-            src={content.photo.src}
-            alt={content.photo.alt}
-            fill
-            placeholder="blur"
-            sizes="(max-width: 900px) 100vw, 50vw"
-            className={styles.image}
-          />
+        <div className={styles.photoSide}>
+          <div className={styles.photo}>
+            <Image
+              src={content.photo.src}
+              alt={content.photo.alt}
+              fill
+              placeholder="blur"
+              sizes="(max-width: 480px) 280px, 380px"
+              className={styles.image}
+            />
+          </div>
         </div>
         <div className={styles.quoteSide}>
           <figure className={styles.feature}>
