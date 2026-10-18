@@ -30,17 +30,21 @@
   clip-path: inset(0 -100vmax 0 -28px);
 }
 
-/* Jason's quote in a card, with his headshot beside his name like the other quote cards. */
+/* Jason's quote straight on the slate, in light text, with his headshot beside his name. */
 .feature {
   display: flex;
   flex-direction: column;
   min-width: 0;
   margin: 0;
-  padding: 32px;
-  border: 1px solid var(--line);
-  border-radius: 36px;
-  background: var(--surface);
-  box-shadow: 0 24px 60px rgba(0, 21, 36, 0.1);
+}
+
+.feature blockquote,
+.feature figcaption b {
+  color: #fff;
+}
+
+.feature figcaption {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .mark {
@@ -86,11 +90,6 @@
 }
 
 @media (max-width: 480px) {
-  .feature {
-    padding: 24px 22px;
-    border-radius: 28px;
-  }
-
   .mark {
     font-size: 64px;
   }
