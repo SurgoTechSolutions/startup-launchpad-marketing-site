@@ -1,3 +1,10 @@
+/* White band across the full width. The shadow fills the sides without widening the page. */
+.band {
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
+}
+
 /* Three figures in a row, split by thin lines. On phones they stack, split the same way. */
 .grid {
   display: grid;

@@ -13,7 +13,7 @@ export interface StatsSectionProps {
 
 export function StatsSection({ content }: StatsSectionProps): ReactNode {
   return (
-    <section>
+    <section className={styles.band}>
       <SectionHead>
         <SectionTitle size="stats">
           <RichText content={content.title} />
