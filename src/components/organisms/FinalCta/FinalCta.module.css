@@ -1,24 +1,27 @@
-/*
- * Words beside a quote card, on a slate band across the full width. The shadow fills the sides
- * without widening the page.
- */
+/* Words beside a quote card. */
 .split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 40px;
   padding-block: 72px;
+}
+
+/*
+ * By default the split sits on a slate band across the full width, in light text. The shadow fills
+ * the sides without widening the page. The highlighted words and the quote card keep their colours.
+ */
+.slate {
   background: #1e3448;
   box-shadow: 0 0 0 100vmax #1e3448;
   clip-path: inset(0 -100vmax);
 }
 
-/* Light text on the slate. The highlighted words stay orange; the quote card keeps its own colours. */
-.split .copy h2 {
+.slate .copy h2 {
   color: #fff;
 }
 
-.split .copy p {
+.slate .copy p {
   color: rgba(255, 255, 255, 0.75);
 }
 

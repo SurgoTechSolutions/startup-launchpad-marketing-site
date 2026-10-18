@@ -21,12 +21,7 @@ export function MissionTemplate({ content, signupUrl }: MissionTemplateProps): R
         <main>
           <MissionStatement content={content.mission} />
           <ValueGrid title={content.mission.valuesTitle} values={content.mission.values} plain />
-          <FinalCta
-            content={content.finalCta}
-            signupUrl={signupUrl}
-            layout="centered"
-            className={styles.closeBand}
-          />
+          <FinalCta content={content.finalCta} signupUrl={signupUrl} plain />
         </main>
         <SiteFooter content={content.footer} />
       </div>
