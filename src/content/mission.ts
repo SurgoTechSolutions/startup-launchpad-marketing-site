@@ -22,6 +22,22 @@ export const MISSION = {
     { title: "Self-serve", body: "You run it yourself, whenever you like." },
     { title: "Plain English", body: "Every finding says what's wrong and how to fix it." },
   ],
+  promisesTitle: ["Our ", { highlight: "promises" }, " to founders"],
+  promises: [
+    {
+      title: "Your code isn't kept",
+      body: "We never store it, never write it to logs and never send it to a third-party AI model.",
+    },
+    {
+      title: "Read-only access",
+      body: "Our GitHub app can read your code but never change it, using short-lived tokens for each scan.",
+    },
+    { title: "Run in the UK", body: "Every scan runs in the UK." },
+    {
+      title: "Cancel any time",
+      body: "No minimum term. Cancel from your billing page and you won't be charged again.",
+    },
+  ],
 } as const satisfies MissionContent;
 
 export const MISSION_FINAL_CTA = {

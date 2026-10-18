@@ -1,14 +1,29 @@
 /* Plain white across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
-.plain {
+.white {
   padding-block: 72px;
   background: var(--surface);
   box-shadow: 0 0 0 100vmax var(--surface);
   clip-path: inset(0 -100vmax);
 }
 
+/* Light grey across the full width, fading in from the white above over the first 96px. */
+.grey {
+  position: relative;
+  padding-block: 88px 72px;
+}
+
+.grey::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(var(--surface), var(--bg) 96px);
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* As many columns as fit, so three or four cards share the row evenly. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 28px 24px;
   padding-bottom: 12px;
 }

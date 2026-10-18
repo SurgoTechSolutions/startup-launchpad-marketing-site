@@ -10,14 +10,17 @@ import styles from "./ValueGrid.module.css";
 export interface ValueGridProps {
   readonly title: RichTextContent;
   readonly values: readonly MissionValue[];
-  /** Plain white behind the section, across the full width, with no grid. */
-  readonly plain?: boolean;
+  /**
+   * A plain full-width background instead of the page grid. Grey fades in from white above.
+   * Left out, the section sits on the page grid.
+   */
+  readonly tone?: "white" | "grey";
 }
 
 /** A heading over a row of short principle cards. */
-export function ValueGrid({ title, values, plain = false }: ValueGridProps): ReactNode {
+export function ValueGrid({ title, values, tone }: ValueGridProps): ReactNode {
   return (
-    <section className={cx(plain && styles.plain)}>
+    <section className={cx(tone === "white" && styles.white, tone === "grey" && styles.grey)}>
       <SectionHead>
         <SectionTitle size="find">
           <RichText content={title} />

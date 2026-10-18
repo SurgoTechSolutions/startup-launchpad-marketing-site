@@ -20,7 +20,8 @@ export function MissionTemplate({ content, signupUrl }: MissionTemplateProps): R
       <div className={styles.wrap}>
         <main>
           <MissionStatement content={content.mission} />
-          <ValueGrid title={content.mission.valuesTitle} values={content.mission.values} plain />
+          <ValueGrid title={content.mission.valuesTitle} values={content.mission.values} tone="white" />
+          <ValueGrid title={content.mission.promisesTitle} values={content.mission.promises} tone="grey" />
           <FinalCta content={content.finalCta} signupUrl={signupUrl} className={styles.wideQuote} />
         </main>
         <SiteFooter content={content.footer} />
