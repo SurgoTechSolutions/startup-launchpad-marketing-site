@@ -35,7 +35,7 @@ export function HeroQuoteRotator({
 }: HeroQuoteRotatorProps): ReactNode {
   const reduced = usePrefersReducedMotion();
   // The quote showing, the one swiping out, and which way they move. Going forward, the new
-  // quote comes in from the left; going back to an earlier one, it comes in from the right.
+  // quote comes in from the right; going back to an earlier one, it comes in from the left.
   const [{ active, leaving, back }, setShown] = useState<{
     active: number;
     leaving: number | null;
@@ -90,8 +90,8 @@ export function HeroQuoteRotator({
                 styles.slide,
                 isActive && styles.active,
                 // Only animate once something has changed, so the first quote doesn't slide in on load.
-                isActive && leaving !== null && (back ? styles.fromRight : styles.fromLeft),
-                index === leaving && (back ? styles.toLeft : styles.toRight),
+                isActive && leaving !== null && (back ? styles.fromLeft : styles.fromRight),
+                index === leaving && (back ? styles.toRight : styles.toLeft),
               )}
               aria-hidden={!isActive}
               inert={!isActive}

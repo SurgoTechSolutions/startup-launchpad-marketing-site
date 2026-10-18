@@ -97,8 +97,8 @@
 
 /*
  * A swipe, like a carousel: the new quote slides in as the old one slides out, both clipped at
- * the card's edge. Going forward the new one comes from the left; going back it comes from the
- * right. Quotes not in play are simply hidden.
+ * the card's edge. Going forward the new one comes from the right; going back it comes from the
+ * left. Quotes not in play are simply hidden.
  */
 .slide {
   display: flex;
