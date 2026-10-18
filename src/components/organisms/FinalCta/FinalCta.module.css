@@ -7,6 +7,11 @@
   padding-block: 72px;
 }
 
+/* Without the slate band, the quote card gets the wider column. */
+.split:not(.slate) {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
 /*
  * By default the split sits on a slate band across the full width, in light text. The shadow fills
  * the sides without widening the page. The highlighted words and the quote card keep their colours.
@@ -88,7 +93,8 @@
 }
 
 @media (max-width: 900px) {
-  .split {
+  .split,
+  .split:not(.slate) {
     grid-template-columns: 1fr;
   }
 }
