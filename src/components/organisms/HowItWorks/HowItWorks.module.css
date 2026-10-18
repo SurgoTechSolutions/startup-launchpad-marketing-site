@@ -37,3 +37,21 @@
     padding-left: 0;
   }
 }
+
+/*
+ * Once the steps are set to reveal, the closing line and button wait hidden, then fade up just
+ * after the last step appears. Without JavaScript or with reduced motion the steps never arm,
+ * so these simply show.
+ */
+.band:has([data-reveal="armed"]) .cta {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease 0.5s,
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s;
+}
+
+.band:has([data-reveal="armed"] > :last-child[data-in]) .cta {
+  opacity: 1;
+  transform: none;
+}
