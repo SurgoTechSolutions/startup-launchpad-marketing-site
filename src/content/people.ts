@@ -40,6 +40,7 @@ export const PEOPLE = {
   wale: {
     name: "Wale Ameen",
     role: "Founder, Kush",
+    photo: { src: "/images/headshot-wale.webp", alt: "Wale Ameen" },
   },
   richard: {
     name: "Richard Blakeborough",
@@ -49,6 +50,7 @@ export const PEOPLE = {
   catherine: {
     name: "Catherine Hancher",
     role: "The Networker",
+    photo: { src: "/images/headshot-catherine.webp", alt: "Catherine Hancher" },
   },
 } as const satisfies Record<string, Person>;
 
