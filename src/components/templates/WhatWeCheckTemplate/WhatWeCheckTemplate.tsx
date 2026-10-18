@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { CheckAreaList } from "@/components/organisms/CheckAreaList";
 import { FinalCta } from "@/components/organisms/FinalCta";
+import { FounderProfile } from "@/components/organisms/FounderProfile";
 import { PageIntro } from "@/components/organisms/PageIntro";
 import { ScoringGuide } from "@/components/organisms/ScoringGuide";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
@@ -25,6 +26,7 @@ export function WhatWeCheckTemplate({ content, signupUrl }: WhatWeCheckTemplateP
           <PageIntro title={page.intro.title} lede={page.intro.lede} />
           <CheckAreaList content={page} />
           <ScoringGuide content={page.scoring} />
+          <FounderProfile content={content.profile} />
           <FinalCta content={content.finalCta} signupUrl={signupUrl} />
         </main>
         <SiteFooter content={content.footer} />

@@ -1,5 +1,6 @@
+import jackSheriff from "@/assets/images/jack-sheriff.webp";
 import { ROUTES } from "@/config/site";
-import type { FinalCtaContent, PageMeta, WhatWeCheckContent, WhatWeCheckPageContent } from "@/types";
+import type { FinalCtaContent, PageMeta, ProfileContent, WhatWeCheckContent, WhatWeCheckPageContent } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
@@ -141,6 +142,18 @@ export const WHAT_WE_CHECK = {
   },
 } as const satisfies WhatWeCheckContent;
 
+/** Who builds the checks, to show the product is in expert hands. */
+export const WHAT_WE_CHECK_PROFILE = {
+  title: ["The engineer ", { highlight: "behind the checks" }],
+  name: "Jack Sheriff",
+  role: "Co-Founder & Technical Lead",
+  paragraphs: [
+    "By day, Jack is a senior software engineer at a major national organisation, building products that handle millions of interactions a day.",
+    "He studied ethical hacking and cybersecurity at Abertay University, and leads the engineering behind every check Startup Launchpad runs.",
+  ],
+  photo: { src: jackSheriff, alt: "Jack Sheriff, smiling, in an orange checked jacket" },
+} as const satisfies ProfileContent;
+
 export const WHAT_WE_CHECK_FINAL_CTA = {
   title: ["See what we'd find in ", { highlight: "your code" }, "."],
   lede: "Your first scan is free.",
@@ -158,6 +171,7 @@ export const WHAT_WE_CHECK_META = {
 export const WHAT_WE_CHECK_PAGE = {
   header: LAUNCHPAD_HEADER,
   page: WHAT_WE_CHECK,
+  profile: WHAT_WE_CHECK_PROFILE,
   finalCta: WHAT_WE_CHECK_FINAL_CTA,
   footer: FOOTER,
 } as const satisfies WhatWeCheckPageContent;

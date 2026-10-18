@@ -1,6 +1,6 @@
 /*
- * Photo on the left, words on the right, on light grey across the full width. The grey fades in
- * from the white section above over the first 96px. Stacks on narrow screens.
+ * Photo on the left, words on the right, on white across the full width. The white fades in from
+ * the grey section above over the first 96px. Stacks on narrow screens.
  */
 .band {
   position: relative;
@@ -16,7 +16,7 @@
   position: absolute;
   inset: 0 -100vmax;
   z-index: -1;
-  background: linear-gradient(var(--surface), var(--bg) 96px);
+  background: linear-gradient(var(--bg), var(--surface) 96px);
 }
 
 .photo {

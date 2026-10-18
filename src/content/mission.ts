@@ -1,7 +1,6 @@
-import jackSheriff from "@/assets/images/jack-sheriff.webp";
 import missionTeam from "@/assets/images/mission-team.webp";
 import { ROUTES } from "@/config/site";
-import type { FinalCtaContent, MissionContent, MissionPageContent, PageMeta, ProfileContent } from "@/types";
+import type { FinalCtaContent, MissionContent, MissionPageContent, PageMeta } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
@@ -25,18 +24,6 @@ export const MISSION = {
   ],
 } as const satisfies MissionContent;
 
-/** Who builds the checks, to show the product is in expert hands. */
-export const MISSION_PROFILE = {
-  title: ["The engineer ", { highlight: "behind the checks" }],
-  name: "Jack Sheriff",
-  role: "Co-Founder & Technical Lead",
-  paragraphs: [
-    "By day, Jack is a senior software engineer at a major national organisation, building products that handle millions of interactions a day.",
-    "He studied ethical hacking and cybersecurity at Abertay University, and leads the engineering behind every check Startup Launchpad runs.",
-  ],
-  photo: { src: jackSheriff, alt: "Jack Sheriff, smiling, in an orange checked jacket" },
-} as const satisfies ProfileContent;
-
 export const MISSION_FINAL_CTA = {
   title: ["Build something secure, and ", { highlight: "launch it with confidence" }, "."],
   ctaLabel: "Scan my code for free",
@@ -53,7 +40,6 @@ export const MISSION_META = {
 export const MISSION_PAGE = {
   header: LAUNCHPAD_HEADER,
   mission: MISSION,
-  profile: MISSION_PROFILE,
   finalCta: MISSION_FINAL_CTA,
   footer: FOOTER,
 } as const satisfies MissionPageContent;

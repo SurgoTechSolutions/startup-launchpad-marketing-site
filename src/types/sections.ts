@@ -336,7 +336,6 @@ export interface ProfileContent {
 export interface MissionPageContent {
   readonly header: HeaderContent;
   readonly mission: MissionContent;
-  readonly profile: ProfileContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
 }
@@ -458,6 +457,7 @@ export interface WhatWeCheckContent {
 export interface WhatWeCheckPageContent {
   readonly header: HeaderContent;
   readonly page: WhatWeCheckContent;
+  readonly profile: ProfileContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
 }
