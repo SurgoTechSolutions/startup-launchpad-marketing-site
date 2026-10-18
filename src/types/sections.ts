@@ -321,9 +321,8 @@ export interface MissionContent {
   readonly paragraphs: readonly string[];
   readonly valuesTitle: RichText;
   readonly values: readonly MissionValue[];
-  /** Short commitments to founders, shown after the values. */
-  readonly promisesTitle: RichText;
-  readonly promises: readonly MissionValue[];
+  /** One promise to founders, shown after the values. */
+  readonly promise: { readonly title: RichText; readonly text: string };
 }
 
 /** A short introduction to one of the team, with their photo. */

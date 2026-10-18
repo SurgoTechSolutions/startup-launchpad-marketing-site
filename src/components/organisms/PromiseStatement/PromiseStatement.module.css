@@ -1,0 +1,37 @@
+/*
+ * Centred on light grey across the full width. The grey fades in from the white section above over
+ * the first 96px. The layer behind reaches the screen edges.
+ */
+.band {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-block: 88px 80px;
+  text-align: center;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(var(--surface), var(--bg) 96px);
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  color: var(--accent);
+}
+
+/* The promise itself, large like a pull quote. */
+.text {
+  max-width: 48ch;
+  color: var(--ink);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700;
+  line-height: 1.45;
+  text-wrap: balance;
+}
