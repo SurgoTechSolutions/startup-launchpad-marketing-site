@@ -68,10 +68,12 @@
 /* Light text on the slate blue. The highlighted words stay orange. */
 .banner h2 {
   color: #fff;
+  font-size: clamp(24px, 3.2vw, 34px);
 }
 
 .banner p {
   color: rgba(255, 255, 255, 0.75);
+  font-size: 17px;
 }
 
 .bannerText {

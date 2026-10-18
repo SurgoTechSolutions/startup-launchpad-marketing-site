@@ -8,7 +8,11 @@
   clip-path: inset(0 -100vmax);
 }
 
-/* White words on the slate. The rolling word keeps its orange. */
+/* White words on the slate, a step smaller than section headings. The rolling word keeps its orange. */
+.band .title {
+  font-size: clamp(24px, 3.2vw, 34px);
+}
+
 .title {
   max-width: 30ch;
   color: #fff;
