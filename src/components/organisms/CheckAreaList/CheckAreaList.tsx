@@ -66,8 +66,9 @@ function Area({
  * All of it renders without JavaScript.
  */
 export function CheckAreaList({ content }: CheckAreaListProps): ReactNode {
+  // The links only stick while this wrapper is on screen, so they scroll away after the last area.
   return (
-    <>
+    <div>
       <JumpNav
         label={content.jumpLabel}
         links={content.areas.map((area) => ({ id: area.id, label: area.title }))}
@@ -75,6 +76,6 @@ export function CheckAreaList({ content }: CheckAreaListProps): ReactNode {
       {content.areas.map((area, index) => (
         <Area key={area.id} area={area} grey={index % 2 === 1} first={index === 0} />
       ))}
-    </>
+    </div>
   );
 }
