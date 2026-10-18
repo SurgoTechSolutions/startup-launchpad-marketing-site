@@ -1,3 +1,10 @@
+/* Plain grey across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
+.band {
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

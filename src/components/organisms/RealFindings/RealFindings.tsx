@@ -12,7 +12,7 @@ export interface RealFindingsProps {
 
 export function RealFindings({ content }: RealFindingsProps): ReactNode {
   return (
-    <section>
+    <section className={styles.band}>
       <SectionHead>
         <SectionTitle size="find">
           <RichText content={content.title} />
