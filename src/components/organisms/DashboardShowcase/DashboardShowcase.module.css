@@ -1,9 +1,13 @@
+/* On a white band across the full width. The shadow fills the sides without widening the page. */
 .every {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  padding-top: clamp(28px, 5vw, 56px);
+  padding-block: 72px;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
 }
 
 .stage {

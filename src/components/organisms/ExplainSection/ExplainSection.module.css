@@ -1,8 +1,16 @@
+/*
+ * The two parts sit on alternating full-width bands: grey for the explained issue, white for the
+ * fix prompt. The shadows fill the sides without widening the page.
+ */
 .part {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   align-items: center;
   gap: 48px;
+  padding-block: 72px;
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
 }
 
 /* Heading, prompt card and button, stacked and centred. */
@@ -11,7 +19,10 @@
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  margin-top: 72px;
+  padding-block: 72px;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
   text-align: center;
 }
 
@@ -137,8 +148,9 @@
     gap: 32px;
   }
 
+  .part,
   .fixPart {
-    margin-top: 48px;
+    padding-block: 56px;
   }
 
   .issue {
