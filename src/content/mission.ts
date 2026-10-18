@@ -31,7 +31,7 @@ export const MISSION_PROFILE = {
   name: "Jack Sheriff",
   role: "Co-Founder & Technical Lead",
   paragraphs: [
-    "By day, Jack is a senior software engineer at the BBC, building products that handle millions of interactions a day.",
+    "By day, Jack is a senior software engineer at a large enterprise, building products that handle millions of interactions a day.",
     "He studied ethical hacking and cybersecurity at Abertay University, and leads the engineering behind every check Startup Launchpad runs.",
   ],
   photo: { src: jackSheriff, alt: "Jack Sheriff, smiling, in an orange checked jacket" },
