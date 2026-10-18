@@ -1,8 +1,14 @@
+/* On a white band across the full width. The shadow fills the sides without widening the page. */
 .spot {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 56px;
+  /* Room for the quote card's soft shadow, which the band would otherwise cut off. */
+  padding-block: 88px;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
 }
 
 .copy {
