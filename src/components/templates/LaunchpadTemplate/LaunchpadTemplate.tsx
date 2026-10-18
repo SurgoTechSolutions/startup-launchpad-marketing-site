@@ -41,8 +41,8 @@ export function LaunchpadTemplate({ content, signupUrl }: LaunchpadTemplateProps
           <ExplainSection content={content.explain} signupUrl={signupUrl} />
           <FeatureQuote content={content.featureQuote} signupUrl={signupUrl} />
           <HowItWorks content={content.howItWorks} signupUrl={signupUrl} />
-          <QuoteWall content={content.quoteWall} />
           <PricingSection content={content.pricing} signupUrl={signupUrl} />
+          <QuoteWall content={content.quoteWall} />
           <FaqSection content={content.faq} />
           <FinalCta id="book" content={content.finalCta} signupUrl={signupUrl} />
         </main>
