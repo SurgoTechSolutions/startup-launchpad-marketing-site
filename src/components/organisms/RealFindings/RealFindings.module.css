@@ -1,6 +1,6 @@
 /*
  * Plain grey across the full width, hiding the page grid. It fades in from the white stats band
- * above over the first 96px, so the join isn't a hard line. The layer behind reaches the screen
+ * above and back out to the white founder story below, over 96px each, so the joins aren't hard lines. The layer behind reaches the screen
  * edges; the clip stops it widening the page.
  */
 .band {
@@ -13,7 +13,12 @@
   position: absolute;
   inset: 0 -100vmax;
   z-index: -1;
-  background: linear-gradient(var(--surface), var(--bg) 96px);
+  background: linear-gradient(
+    var(--surface),
+    var(--bg) 96px,
+    var(--bg) calc(100% - 96px),
+    var(--surface)
+  );
 }
 
 .grid {

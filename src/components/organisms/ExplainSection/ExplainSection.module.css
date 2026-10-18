@@ -9,7 +9,6 @@
   align-items: center;
   gap: 48px;
   padding-block: 72px;
-  clip-path: inset(0 -100vmax);
 }
 
 /* The grey fades in from the white above and back out to the white below, over 96px each. */
@@ -31,12 +30,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   gap: 32px;
   padding-block: 72px;
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
-  clip-path: inset(0 -100vmax);
   text-align: center;
+}
+
+/*
+ * The white is drawn behind everything, so the issue card's shadow from the section above falls
+ * softly across it instead of stopping in a hard line.
+ */
+.fixPart::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: var(--surface);
 }
 
 .fixCard {
