@@ -201,8 +201,9 @@ export const FEATURE_QUOTE = {
 
 export const QUOTE_WALL = {
   label: "What founders said once they'd seen their own results",
-  // Every quote used anywhere on the site. The first half is the top row, the second half the
-  // bottom row, ordered so the same person never appears twice in a row.
+  // Every quote used on the site except Jason's long one, which would stretch every card in its
+  // row. The first half is the top row, the second half the bottom row, ordered so the same
+  // person never appears twice in a row.
   quotes: [
     resolveQuote("robHoly"),
     resolveQuote("aliceTime"),
@@ -218,7 +219,6 @@ export const QUOTE_WALL = {
     resolveQuote("joFixIt"),
     resolveQuote("rousseauExercise"),
     resolveQuote("catherineEasy"),
-    resolveQuote("jasonCalm"),
     resolveQuote("aliceFixes"),
     resolveQuote("joThanks"),
     resolveQuote("robPrice"),
