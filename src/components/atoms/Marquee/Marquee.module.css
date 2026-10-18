@@ -21,12 +21,13 @@
 }
 
 .animated .row {
-  animation: slide 60s linear infinite;
+  animation: slide var(--duration, 60s) linear infinite;
 }
 
+/* The bottom row runs the other way, a touch slower, so the two never line up. */
 .animated .reverse {
   animation-direction: reverse;
-  animation-duration: 70s;
+  animation-duration: calc(var(--duration, 60s) * 1.15);
 }
 
 .animated:hover .row,

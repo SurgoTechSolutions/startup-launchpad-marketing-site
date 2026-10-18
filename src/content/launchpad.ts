@@ -201,14 +201,29 @@ export const FEATURE_QUOTE = {
 
 export const QUOTE_WALL = {
   label: "What founders said once they'd seen their own results",
+  // Every quote used anywhere on the site. The first half is the top row, the second half the
+  // bottom row, ordered so the same person never appears twice in a row.
   quotes: [
+    resolveQuote("robHoly"),
     resolveQuote("aliceTime"),
-    resolveQuote("robSelling"),
+    resolveQuote("rousseauMinutes"),
+    resolveQuote("joIncredible"),
     resolveQuote("waleGateway"),
-    resolveQuote("catherineEasy"),
-    resolveQuote("rousseauExercise"),
+    resolveQuote("jasonPremium"),
+    resolveQuote("richardBuilders"),
+    resolveQuote("rosiePaying"),
     resolveQuote("mcleodVibe"),
+    resolveQuote("aliceSimply"),
+    resolveQuote("robSelling"),
     resolveQuote("joFixIt"),
+    resolveQuote("rousseauExercise"),
+    resolveQuote("catherineEasy"),
+    resolveQuote("jasonCalm"),
+    resolveQuote("aliceFixes"),
+    resolveQuote("joThanks"),
+    resolveQuote("robPrice"),
+    resolveQuote("rousseauPenTesting"),
+    resolveQuote("joScared"),
   ],
 } as const satisfies QuoteWallContent;
 
