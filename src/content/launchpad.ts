@@ -193,12 +193,12 @@ Review the change before merging.`,
       { kind: "question", text: "Ready to fix your code?", typed: true },
     ],
   },
-  ctaLabel: "Start fixing my code",
 } as const satisfies ExplainContent;
 
 /** A single line on slate between the fixing section and Jason's story. */
 export const FIX_BANNER = {
   title: ["Your AI tool wrote the code. ", { highlight: "Now it can fix it too." }],
+  ctaLabel: "Start fixing my code",
 } as const satisfies HookContent;
 
 export const FEATURE_QUOTE = {

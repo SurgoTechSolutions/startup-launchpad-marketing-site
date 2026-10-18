@@ -1,7 +1,9 @@
 /* Slate band across the full width. The shadow fills the sides without widening the page. */
 .band {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
   padding-block: 84px;
   background: #1e3448;
   box-shadow: 0 0 0 100vmax #1e3448;

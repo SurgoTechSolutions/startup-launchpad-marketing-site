@@ -54,6 +54,8 @@ export interface HeroContent {
 /** A single big line in its own slate band. */
 export interface HookContent {
   readonly title: RichText;
+  /** Optional button under the line. */
+  readonly ctaLabel?: string;
 }
 
 export interface PartnerLogo {
@@ -142,7 +144,6 @@ export interface ExplainContent {
     readonly copyLabels: { readonly idle: string; readonly copied: string; readonly selected: string };
   };
   readonly terminal: TerminalContent;
-  readonly ctaLabel: string;
 }
 
 export interface FeatureQuoteContent {

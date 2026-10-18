@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Button } from "@/components/atoms/Button";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { CopyPromptButton } from "@/components/molecules/CopyPromptButton";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
@@ -14,14 +13,13 @@ const PROMPT_ID = "fix-prompt";
 
 export interface ExplainSectionProps {
   readonly content: ExplainContent;
-  readonly signupUrl: string;
 }
 
 /**
  * Two parts. First how an issue is explained, beside a founder's quote. Then the fix prompt for
- * it, stacked and centred with the call to action underneath.
+ * it, stacked and centred.
  */
-export function ExplainSection({ content, signupUrl }: ExplainSectionProps): ReactNode {
+export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
   const { issue, prompt } = content;
 
   return (
@@ -64,7 +62,6 @@ export function ExplainSection({ content, signupUrl }: ExplainSectionProps): Rea
           </div>
         </div>
         {/* <FixTerminal content={content.terminal} /> */}
-        <Button href={signupUrl}>{content.ctaLabel}</Button>
       </section>
     </>
   );
