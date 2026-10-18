@@ -2,7 +2,7 @@
 .band {
   display: flex;
   justify-content: center;
-  padding-block: 64px;
+  padding-block: 84px;
   background: #1e3448;
   box-shadow: 0 0 0 100vmax #1e3448;
   clip-path: inset(0 -100vmax);
