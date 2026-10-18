@@ -14,7 +14,7 @@ export const MISSION = {
   },
   paragraphs: [
     "Security is priced for companies that have already made it. Pen tests and contractors cost thousands. So many founders launch without either, and find out what they missed when someone else does.",
-    "We don't think a security gap should be what stops a good idea. So we built Startup Launchpad. Scan your codebase, see what's exposed in plain English, and fix it with a prompt you paste straight into Claude. It's self-serve, and your first scan is free, so you know how many issues you have before you pay.",
+    "We don't think a security gap should be what stops a good idea. So we built Startup Launchpad to give every founder the checks a funded company would pay for. Scan your codebase, see what's exposed in plain English, and fix it with a prompt you paste straight into Claude. It's self-serve, and your first scan is free, so you know how many issues you have before you pay.",
   ],
   valuesTitle: ["How we ", { highlight: "lower the barrier" }],
   values: [
