@@ -1,33 +1,40 @@
-.jump {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.chip {
-  padding: 8px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.chip:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* Each area: title and subtitle on top, the checks underneath. */
+/*
+ * Each area: title and subtitle on top, the checks underneath. Areas alternate white and grey
+ * across the full width. Grey ones fade in and out from the white either side, and the first white
+ * one fades in from the page grid above. The layers behind reach the screen edges. The margin keeps
+ * the heading clear of the header and sticky links after a jump.
+ */
 .area {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  border-top: 1px solid var(--line);
+  padding-block: 72px;
+  scroll-margin-top: 120px;
+}
+
+.area::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+}
+
+.white::before {
+  background: var(--surface);
+}
+
+.first::before {
+  background: linear-gradient(transparent, var(--surface) 96px);
+}
+
+.grey::before {
+  background: linear-gradient(
+    var(--surface),
+    var(--bg) 96px,
+    var(--bg) calc(100% - 96px),
+    var(--surface)
+  );
 }
 
 .lead {
@@ -37,8 +44,19 @@
   max-width: 760px;
 }
 
+/* A step below the 48px section headings, with the area's dashboard icon in orange beside it. */
 .title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-size: clamp(28px, 3.6vw, 40px);
+}
+
+.icon {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  color: var(--accent);
 }
 
 .intro {
@@ -92,12 +110,15 @@
   background: var(--surface);
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
+/* An orange outline and a gentle lift, like the value cards. */
 .check:hover {
   border-color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent);
+  transform: translateY(-4px);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,7 @@
 /** Content shapes for each page section. Organisms take these as props. */
 import type { StaticImageData } from "next/image";
 import type {
+  DashArea,
   Severity,
   ComparisonColumn,
   ComparisonRow,
@@ -425,6 +426,8 @@ export interface CheckGroup {
 export interface CheckArea {
   /** Anchor for the jump links, e.g. "security". */
   readonly id: string;
+  /** The same icon the area has on the dashboard. */
+  readonly icon: DashArea;
   readonly title: string;
   readonly intro: string;
   /** The most common failures, shown as cards. Security only. */

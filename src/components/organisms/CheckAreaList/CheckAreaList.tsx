@@ -1,6 +1,9 @@
 import type { ReactNode } from "react";
+import { AreaIcon } from "@/components/atoms/AreaIcon";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
+import { JumpNav } from "@/components/molecules/JumpNav";
 import { ValueCard } from "@/components/molecules/ValueCard";
+import { cx } from "@/lib/cx";
 import type { CheckArea, WhatWeCheckContent } from "@/types";
 import styles from "./CheckAreaList.module.css";
 
@@ -8,11 +11,24 @@ export interface CheckAreaListProps {
   readonly content: WhatWeCheckContent;
 }
 
-function Area({ area }: { readonly area: CheckArea }): ReactNode {
+function Area({
+  area,
+  grey,
+  first,
+}: {
+  readonly area: CheckArea;
+  readonly grey: boolean;
+  readonly first: boolean;
+}): ReactNode {
   return (
-    <section id={area.id} className={styles.area} aria-labelledby={`${area.id}-title`}>
+    <section
+      id={area.id}
+      className={cx(styles.area, grey ? styles.grey : styles.white, first && styles.first)}
+      aria-labelledby={`${area.id}-title`}
+    >
       <div className={styles.lead}>
         <SectionTitle className={styles.title}>
+          <AreaIcon area={area.icon} className={styles.icon} />
           <span id={`${area.id}-title`}>{area.title}</span>
         </SectionTitle>
         <p className={styles.intro}>{area.intro}</p>
@@ -45,19 +61,19 @@ function Area({ area }: { readonly area: CheckArea }): ReactNode {
   );
 }
 
-/** Jump links to each area, then every area in full. All of it renders without JavaScript. */
+/**
+ * Sticky jump links to each area, then every area in full on alternating white and grey bands.
+ * All of it renders without JavaScript.
+ */
 export function CheckAreaList({ content }: CheckAreaListProps): ReactNode {
   return (
     <>
-      <nav className={styles.jump} aria-label={content.jumpLabel}>
-        {content.areas.map((area) => (
-          <a key={area.id} href={`#${area.id}`} className={styles.chip}>
-            {area.title}
-          </a>
-        ))}
-      </nav>
-      {content.areas.map((area) => (
-        <Area key={area.id} area={area} />
+      <JumpNav
+        label={content.jumpLabel}
+        links={content.areas.map((area) => ({ id: area.id, label: area.title }))}
+      />
+      {content.areas.map((area, index) => (
+        <Area key={area.id} area={area} grey={index % 2 === 1} first={index === 0} />
       ))}
     </>
   );

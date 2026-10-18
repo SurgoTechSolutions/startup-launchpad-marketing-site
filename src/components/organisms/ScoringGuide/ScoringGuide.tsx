@@ -14,7 +14,7 @@ export interface ScoringGuideProps {
 /** The five severities, what each means, and what never counts towards a score. */
 export function ScoringGuide({ content }: ScoringGuideProps): ReactNode {
   return (
-    <section>
+    <section className={styles.band}>
       <SectionHead>
         <SectionTitle size="find">
           <RichText content={content.title} />
@@ -23,7 +23,7 @@ export function ScoringGuide({ content }: ScoringGuideProps): ReactNode {
       </SectionHead>
       <dl className={styles.levels}>
         {content.levels.map((level) => (
-          <div key={level.severity} className={styles.level}>
+          <div key={level.severity} className={cx(styles.level, styles[`${level.severity}Bar`])}>
             <dt>
               <span className={cx(styles.dot, styles[level.severity])} aria-hidden="true" />
               {level.name}

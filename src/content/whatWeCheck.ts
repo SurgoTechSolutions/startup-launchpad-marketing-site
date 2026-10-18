@@ -14,6 +14,7 @@ export const WHAT_WE_CHECK = {
   areas: [
     {
       id: "security",
+      icon: "security",
       title: "Security",
       intro:
         "The failures we find most often in AI-built products. None of them are clever attacks. All of them are one line of missing code between a stranger and your users' data.",
@@ -43,6 +44,7 @@ export const WHAT_WE_CHECK = {
     },
     {
       id: "accessibility",
+      icon: "accessibility",
       title: "Accessibility",
       intro: "Issues that make your product harder to use for people with disabilities.",
       checksTitle: "The checks",
@@ -55,6 +57,7 @@ export const WHAT_WE_CHECK = {
     },
     {
       id: "seo",
+      icon: "seo",
       title: "SEO",
       intro: "The reasons search engines can't find, read or rank the product you just launched.",
       checksTitle: "The checks",
@@ -87,6 +90,7 @@ export const WHAT_WE_CHECK = {
     },
     {
       id: "reliability",
+      icon: "reliability",
       title: "Reliability & Performance",
       intro: "Slow pages and silent errors that lose people before they ever sign up.",
       checksTitle: "The checks",
@@ -99,6 +103,7 @@ export const WHAT_WE_CHECK = {
     },
     {
       id: "housekeeping",
+      icon: "housekeeping",
       title: "Housekeeping",
       intro:
         "Dead code, unused dependencies and duplication: the drag that makes every future change slower.",

@@ -1,3 +1,20 @@
+/*
+ * Light grey across the full width, fading in from the white section above over the first 96px.
+ * The layer behind reaches the screen edges.
+ */
+.band {
+  position: relative;
+  padding-block: 88px 72px;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(var(--surface), var(--bg) 96px);
+}
+
 .levels {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -10,9 +27,32 @@
   flex-direction: column;
   gap: 8px;
   padding: 20px;
+  overflow: hidden;
   border: 1px solid var(--line);
+  border-top-width: 5px;
   border-radius: 20px;
   background: var(--surface);
+}
+
+/* A coloured top edge for each severity, in the same colours as the dashboard bars. */
+.criticalBar {
+  border-top-color: #e53e3e;
+}
+
+.highBar {
+  border-top-color: #dd6b20;
+}
+
+.mediumBar {
+  border-top-color: #d69e2e;
+}
+
+.lowBar {
+  border-top-color: #718096;
+}
+
+.infoBar {
+  border-top-color: #a0aec0;
 }
 
 .level dt {
