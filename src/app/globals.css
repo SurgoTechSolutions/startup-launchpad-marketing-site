@@ -48,6 +48,15 @@ body {
   line-height: 1.65;
 }
 
+/*
+ * Full-width pieces are sized from the viewport, which includes any scrollbar. Clipping the
+ * sides stops them ever adding a sideways scroll. Clip, unlike hidden, keeps sticky headers working.
+ */
+html,
+body {
+  overflow-x: clip;
+}
+
 img {
   max-width: 100%;
 }

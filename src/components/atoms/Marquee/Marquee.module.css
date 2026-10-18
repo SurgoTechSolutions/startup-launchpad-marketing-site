@@ -18,8 +18,6 @@
 
 .animated {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 
 .animated .row {
@@ -46,8 +44,6 @@
 @media (prefers-reduced-motion: reduce) {
   .animated {
     overflow-x: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
   }
 
   .animated .row {

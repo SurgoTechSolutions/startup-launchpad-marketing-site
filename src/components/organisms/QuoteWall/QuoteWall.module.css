@@ -5,8 +5,8 @@
   clip-path: inset(0 -100vmax);
 }
 
-/* Bleeds into the page gutter so cards scroll to the edge. */
+/* Runs the full width of the screen, so cards scroll in and out past its edges. */
 .wall {
-  margin-inline: -20px;
+  margin-inline: calc(50% - 50vw);
   padding-block: 4px;
 }
