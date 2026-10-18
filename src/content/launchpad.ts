@@ -195,11 +195,11 @@ Review the change before merging.`,
   },
 } as const satisfies ExplainContent;
 
-/** A single line on slate between the fixing section and Jason's story. */
+/** A slate band between the fixing section and Jason's story, with its button beside it. */
 export const FIX_BANNER = {
-  title: ["Your AI tool wrote the code. ", { highlight: "Now it can fix it too." }],
+  title: ["Your AI tool wrote the code. ", { lineBreak: true }, { highlight: "Now it can fix it too." }],
   ctaLabel: "Start fixing my code",
-} as const satisfies HookContent;
+} as const satisfies FinalCtaContent;
 
 export const FEATURE_QUOTE = {
   title: ["One less thing to ", { highlight: "worry about" }, "."],

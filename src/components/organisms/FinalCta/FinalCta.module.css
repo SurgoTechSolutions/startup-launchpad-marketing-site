@@ -66,7 +66,9 @@
 }
 
 /* Light text on the slate blue. The highlighted words stay orange. */
+/* No width cap, so the heading's box hugs its words and the button sits right beside them. */
 .banner h2 {
+  max-width: none;
   color: #fff;
   font-size: clamp(24px, 3.2vw, 34px);
 }

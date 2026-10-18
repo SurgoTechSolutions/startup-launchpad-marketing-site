@@ -54,8 +54,6 @@ export interface HeroContent {
 /** A single big line in its own slate band. */
 export interface HookContent {
   readonly title: RichText;
-  /** Optional button under the line. */
-  readonly ctaLabel?: string;
 }
 
 export interface PartnerLogo {
@@ -286,7 +284,7 @@ export interface LaunchpadPageContent {
   readonly findingsCta: FinalCtaContent;
   readonly dashboard: DashboardContent;
   readonly explain: ExplainContent;
-  readonly fixBanner: HookContent;
+  readonly fixBanner: FinalCtaContent;
   readonly featureQuote: FeatureQuoteContent;
   readonly quoteWall: QuoteWallContent;
   readonly howItWorks: HowItWorksContent;
