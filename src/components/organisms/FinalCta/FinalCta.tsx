@@ -4,6 +4,7 @@ import { Lede } from "@/components/atoms/Lede";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
+import { cx } from "@/lib/cx";
 import type { FinalCtaContent } from "@/types";
 import styles from "./FinalCta.module.css";
 
@@ -17,10 +18,12 @@ export interface FinalCtaProps {
    * on the left and the button on the right, and no quote. Defaults to split when there is a quote.
    */
   readonly layout?: "split" | "centered" | "banner";
+  /** Extra class for the section, e.g. a page-specific background. */
+  readonly className?: string | undefined;
 }
 
 /** The closing call to action, with an optional quote. */
-export function FinalCta({ content, signupUrl, id, layout }: FinalCtaProps): ReactNode {
+export function FinalCta({ content, signupUrl, id, layout, className }: FinalCtaProps): ReactNode {
   const { quote } = content;
 
   if (layout === "banner") {
@@ -40,7 +43,7 @@ export function FinalCta({ content, signupUrl, id, layout }: FinalCtaProps): Rea
   const centered = (layout ?? (quote === undefined ? "centered" : "split")) === "centered";
 
   return (
-    <section id={id} className={centered ? styles.centered : styles.split}>
+    <section id={id} className={cx(centered ? styles.centered : styles.split, className)}>
       <div className={styles.copy}>
         <SectionTitle size="find">
           <RichText content={content.title} />
