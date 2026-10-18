@@ -34,7 +34,7 @@ export function LaunchpadTemplate({ content, signupUrl }: LaunchpadTemplateProps
         <main>
           <Hero content={content.hero} signupUrl={signupUrl} />
           <TrustedBy content={content.trustedBy} />
-          <HookBanner content={content.hook} signupUrl={signupUrl} />
+          <HookBanner content={content.hook} />
           <StatsSection content={content.stats} />
           <RealFindings content={content.findings} />
           <FounderStory content={content.founderStory} signupUrl={signupUrl} />
