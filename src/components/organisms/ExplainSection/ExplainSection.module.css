@@ -3,14 +3,27 @@
  * fix prompt. The shadows fill the sides without widening the page.
  */
 .part {
+  position: relative;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   align-items: center;
   gap: 48px;
   padding-block: 72px;
-  background: var(--bg);
-  box-shadow: 0 0 0 100vmax var(--bg);
   clip-path: inset(0 -100vmax);
+}
+
+/* The grey fades in from the white above and back out to the white below, over 96px each. */
+.part::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(
+    var(--surface),
+    var(--bg) 96px,
+    var(--bg) calc(100% - 96px),
+    var(--surface)
+  );
 }
 
 /* Heading, prompt card and button, stacked and centred. */
