@@ -280,8 +280,8 @@ export interface LaunchpadPageContent {
   readonly dashboard: DashboardContent;
   readonly explain: ExplainContent;
   readonly featureQuote: FeatureQuoteContent;
-  readonly quoteWall: QuoteWallContent;
   readonly howItWorks: HowItWorksContent;
+  readonly quoteWall: QuoteWallContent;
   readonly pricing: PricingContent;
   readonly faq: FaqContent;
   readonly finalCta: FinalCtaContent;
