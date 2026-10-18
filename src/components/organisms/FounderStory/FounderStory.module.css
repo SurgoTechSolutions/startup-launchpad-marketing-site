@@ -1,25 +1,14 @@
-/*
- * A white sheet across the full width, laid over the bottom of the grey band above. It's pulled
- * up 80px so its rounded top-left corner shows the grey behind it.
- */
+/* On a white band across the full width. The shadow fills the sides without widening the page. */
 .spot {
-  position: relative;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 56px;
-  margin-top: -80px;
-  /* Room for the quote card's soft shadow, plus the 80px of overlap at the top. */
-  padding-block: 168px 88px;
-}
-
-.spot::before {
-  content: "";
-  position: absolute;
-  inset: 0 calc(50% - 50vw);
-  z-index: -1;
-  border-top-left-radius: 80px;
+  /* Room for the quote card's soft shadow, which the band would otherwise cut off. */
+  padding-block: 88px;
   background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
 }
 
 .copy {
