@@ -200,7 +200,7 @@ export const FEATURE_QUOTE = {
 } as const satisfies FeatureQuoteContent;
 
 export const QUOTE_WALL = {
-  title: ["What founders said once they'd seen their own ", { highlight: "results" }, "."],
+  label: "What founders said once they'd seen their own results",
   quotes: [
     resolveQuote("aliceTime"),
     resolveQuote("robSelling"),
