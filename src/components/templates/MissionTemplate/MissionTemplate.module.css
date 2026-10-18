@@ -4,10 +4,10 @@
   padding-inline: 20px;
 }
 
-/* The closing section on white across the full width, running into the white footer. */
-.whiteBand {
+/* The closing section on plain grey across the full width, with no grid. */
+.closeBand {
   padding-block: 72px;
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
   clip-path: inset(0 -100vmax);
 }

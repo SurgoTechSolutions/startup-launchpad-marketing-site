@@ -27,7 +27,7 @@ export function MissionTemplate({ content, signupUrl }: MissionTemplateProps): R
             content={content.finalCta}
             signupUrl={signupUrl}
             layout="centered"
-            className={styles.whiteBand}
+            className={styles.closeBand}
           />
         </main>
         <SiteFooter content={content.footer} />
