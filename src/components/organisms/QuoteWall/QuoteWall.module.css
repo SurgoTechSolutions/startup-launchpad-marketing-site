@@ -1,8 +1,17 @@
-/* Plain light grey across the full width, with no grid behind the quotes. The shadow fills the sides without widening the page. */
+/*
+ * Plain light grey across the full width, with no grid behind the quotes. It fades in from the
+ * white section above over the first 96px, so the join isn't a hard line.
+ */
 .band {
-  background: var(--bg);
-  box-shadow: 0 0 0 100vmax var(--bg);
-  clip-path: inset(0 -100vmax);
+  position: relative;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(var(--surface), var(--bg) 96px);
 }
 
 /* Runs the full width of the screen, so cards scroll in and out past its edges. */
