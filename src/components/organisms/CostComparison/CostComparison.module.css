@@ -1,3 +1,20 @@
+/*
+ * On white across the full width. The white fades in from the page grid above over the first 96px.
+ * The layer behind reaches the screen edges.
+ */
+.section {
+  position: relative;
+  padding-block: 88px 72px;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(transparent, var(--surface) 96px);
+}
+
 .band {
   display: flex;
   flex-direction: column;
@@ -61,13 +78,20 @@
   border-bottom: 0;
 }
 
+/* Our column stands out: a warm tint, an orange top edge and orange ticks. */
 .ours {
   background: var(--warm-soft);
 }
 
 .table thead .ours {
   border-radius: 16px 16px 0 0;
+  box-shadow: inset 0 4px 0 var(--accent);
   color: var(--ink);
+}
+
+.yes.ours .mark {
+  background: var(--accent);
+  color: #fff;
 }
 
 .table tbody tr:last-child .ours {
@@ -113,15 +137,14 @@
   color: inherit;
 }
 
-.quotes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 16px;
-}
-
-@media (max-width: 900px) {
-  .quotes {
-    grid-template-columns: 1fr;
+/* On narrow screens the table scrolls sideways; the row labels stay put so each row stays clear. */
+@media (max-width: 760px) {
+  .table tbody th,
+  .table thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--surface);
+    box-shadow: 1px 0 0 var(--line);
   }
 }

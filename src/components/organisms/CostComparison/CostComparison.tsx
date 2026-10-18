@@ -43,7 +43,7 @@ function Cell({
 
 export function CostComparison({ content }: CostComparisonProps): ReactNode {
   return (
-    <section>
+    <section className={styles.section}>
       <SectionHead>
         <SectionTitle size="find">
           <RichText content={content.title} />
@@ -95,11 +95,9 @@ export function CostComparison({ content }: CostComparisonProps): ReactNode {
           )}
         </p>
       </div>
-      <div className={styles.quotes}>
-        {content.quotes.map((quote) => (
-          <QuoteCard key={quote.text} variant="card" text={quote.text} person={quote.person} />
-        ))}
-      </div>
+      {content.quotes.map((quote) => (
+        <QuoteCard key={quote.text} variant="centered" text={quote.text} person={quote.person} />
+      ))}
     </section>
   );
 }

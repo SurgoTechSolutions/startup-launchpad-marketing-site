@@ -1,5 +1,6 @@
 import { ROUTES } from "@/config/site";
-import type { CostComparisonContent, FinalCtaContent, HeaderContent, PricingPageContent } from "@/types";
+import type { CostComparisonContent, FaqContent, FinalCtaContent, HeaderContent, PricingPageContent } from "@/types";
+import { MISSION } from "./mission";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
 import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
@@ -56,12 +57,44 @@ export const COST_COMPARISON = {
     { label: "Matproof", href: "https://matproof.com/blog/penetration-testing-cost-uk-2026" },
     "). Launchpad is a first line of defence that runs all the time. It doesn't replace a manual penetration test where you need one.",
   ],
-  quotes: [resolveQuote("jasonPremium"), resolveQuote("rousseauPenTesting")],
+  quotes: [resolveQuote("rousseauPenTesting")],
 } as const satisfies CostComparisonContent;
+
+/** Buying questions, answered from the terms. */
+export const PRICING_FAQS = {
+  title: ["Billing ", { highlight: "questions" }],
+  faqs: [
+    {
+      question: "Can I cancel any time?",
+      answer:
+        "Yes. Cancel from your billing page whenever you like. Your plan runs to the end of the period you've paid for, and you won't be charged again.",
+    },
+    {
+      question: "What happens if I cancel a yearly plan?",
+      answer:
+        "It runs to the end of the year you've paid for, then stops. You won't be charged again.",
+    },
+    {
+      question: "Is there VAT?",
+      answer: "Not at the moment. We're not VAT registered, so the price you see is what you pay.",
+    },
+    {
+      question: "Do I need a company to subscribe?",
+      answer:
+        "No. You don't need to be a limited company, but Startup Launchpad is sold for business use, so you'll need to be using it for your work.",
+    },
+    {
+      question: "What's in the free scan?",
+      answer:
+        "One full scan of your repository, with your issue count across all five areas broken down by severity, and one critical issue shown in full with its fix.",
+    },
+  ],
+} as const satisfies FaqContent;
 
 export const PRICING_FINAL_CTA = {
   title: ["Find out how many issues you have ", { highlight: "before you pay" }, " a penny."],
   ctaLabel: "Scan my code for free",
+  quote: resolveQuote("jasonPremium"),
 } as const satisfies FinalCtaContent;
 
 /** Everything the pricing page shows, in page order. */
@@ -76,6 +109,8 @@ export const PRICING_PAGE = {
     },
   },
   comparison: COST_COMPARISON,
+  promise: MISSION.promise,
+  faq: PRICING_FAQS,
   finalCta: PRICING_FINAL_CTA,
   footer: FOOTER,
 } as const satisfies PricingPageContent;

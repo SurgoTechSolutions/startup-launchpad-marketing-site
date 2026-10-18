@@ -20,6 +20,15 @@
   background: linear-gradient(var(--surface), var(--bg) 96px);
 }
 
+.fadeOut::before {
+  background: linear-gradient(
+    var(--surface),
+    var(--bg) 96px,
+    var(--bg) calc(100% - 96px),
+    var(--surface)
+  );
+}
+
 /* The promise itself, large, in a white card. */
 .card {
   max-width: 760px;
