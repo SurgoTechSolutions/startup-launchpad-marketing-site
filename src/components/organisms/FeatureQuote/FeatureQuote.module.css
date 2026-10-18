@@ -15,7 +15,8 @@
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   align-items: center;
   gap: 56px;
-  padding-block: 64px;
+  /* Close under the heading, the same space at the bottom as the section has at the top. */
+  padding-block: 16px 64px;
   background: var(--surface);
   box-shadow: 0 0 0 100vmax var(--surface);
   clip-path: inset(0 -100vmax);
@@ -96,7 +97,7 @@
   .split {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;
-    padding-block: 48px;
+    padding-block: 8px 48px;
   }
 }
 
