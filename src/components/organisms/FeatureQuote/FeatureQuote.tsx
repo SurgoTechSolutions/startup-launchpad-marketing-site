@@ -25,13 +25,15 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
           <Button href={signupUrl}>{content.ctaLabel}</Button>
         </div>
       </SectionHead>
-      <figure className={styles.feature}>
-        <span className={styles.mark} aria-hidden="true">
-          &quot;
-        </span>
-        <blockquote className={styles.text}>{content.quote.text}</blockquote>
-        <PersonCredit person={content.quote.person} note={content.bio} className={styles.credit} />
-      </figure>
+      <div className={styles.quoteSide}>
+        <figure className={styles.feature}>
+          <span className={styles.mark} aria-hidden="true">
+            &quot;
+          </span>
+          <blockquote className={styles.text}>{content.quote.text}</blockquote>
+          <PersonCredit person={content.quote.person} note={content.bio} className={styles.credit} />
+        </figure>
+      </div>
     </section>
   );
 }

@@ -1,20 +1,33 @@
 /*
- * White band across the full width, heading on the left and Jason's quote on the right.
- * The shadow fills the sides without widening the page.
+ * Half and half: a white band with the heading on the left, and a slate panel behind Jason's
+ * quote card on the right. Both reach the screen edges through shadows, without widening the
+ * page. The panel stops halfway across the gap between the columns.
  */
 .band {
   display: grid;
   grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
-  align-items: center;
   gap: 56px;
-  padding-block: 64px;
+  /* The two halves carry their own spacing, so the slate reaches the band's top and bottom. */
+  padding-block: 0;
   background: var(--surface);
   box-shadow: 0 0 0 100vmax var(--surface);
   clip-path: inset(0 -100vmax);
 }
 
 .band > :first-child {
+  align-self: center;
   margin-bottom: 0;
+  padding-block: 64px;
+}
+
+.quoteSide {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding-block: 64px;
+  background: #1e3448;
+  box-shadow: 0 0 0 100vmax #1e3448;
+  clip-path: inset(0 -100vmax 0 -28px);
 }
 
 /* Jason's quote in a card, with his headshot beside his name like the other quote cards. */
@@ -55,11 +68,20 @@
   margin-top: 12px;
 }
 
+/* Stacked: the heading on white, then the quote on a full-width slate panel below it. */
 @media (max-width: 900px) {
   .band {
     grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-    padding-block: 48px;
+    gap: 0;
+  }
+
+  .band > :first-child {
+    padding-block: 48px 40px;
+  }
+
+  .quoteSide {
+    padding-block: 40px 48px;
+    clip-path: inset(0 -100vmax);
   }
 }
 
