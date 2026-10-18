@@ -42,6 +42,7 @@ export const HERO = {
 /** The question after the logos, answered by the stats that follow. */
 export const HOOK = {
   title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
+  ctaLabel: "Find out here",
 } as const satisfies HookContent;
 
 export const TRUSTED_BY = {

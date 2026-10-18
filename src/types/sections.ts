@@ -54,6 +54,7 @@ export interface HeroContent {
 /** A single big line in its own band. */
 export interface HookContent {
   readonly title: RichText;
+  readonly ctaLabel: string;
 }
 
 export interface PartnerLogo {
