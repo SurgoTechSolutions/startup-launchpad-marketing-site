@@ -152,8 +152,7 @@ export interface FeatureQuoteContent {
 }
 
 export interface QuoteWallContent {
-  /** Accessible name for the section. Not shown on the page. */
-  readonly label: string;
+  readonly title: RichText;
   readonly quotes: readonly QuoteWithPerson[];
 }
 

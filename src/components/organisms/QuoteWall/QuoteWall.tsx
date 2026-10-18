@@ -1,6 +1,9 @@
 import type { ReactNode } from "react";
 import { Marquee } from "@/components/atoms/Marquee";
+import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
+import { RichText } from "@/components/molecules/RichText";
+import { SectionHead } from "@/components/molecules/SectionHead";
 import type { QuoteWallContent } from "@/types";
 import styles from "./QuoteWall.module.css";
 
@@ -16,7 +19,12 @@ export function QuoteWall({ content }: QuoteWallProps): ReactNode {
   );
 
   return (
-    <section aria-label={content.label} className={styles.band}>
+    <section className={styles.band}>
+      <SectionHead>
+        <SectionTitle size="find">
+          <RichText content={content.title} />
+        </SectionTitle>
+      </SectionHead>
       <Marquee rows={rows} className={styles.wall} />
     </section>
   );

@@ -200,7 +200,7 @@ export const FEATURE_QUOTE = {
 } as const satisfies FeatureQuoteContent;
 
 export const QUOTE_WALL = {
-  label: "What founders said once they'd seen their own results",
+  title: ["What founders said once they'd seen their own ", { highlight: "results" }, "."],
   // Every quote used on the site except Jason's long one, which would stretch every card in its
   // row. The first half is the top row, the second half the bottom row, ordered so the same
   // person never appears twice in a row.
