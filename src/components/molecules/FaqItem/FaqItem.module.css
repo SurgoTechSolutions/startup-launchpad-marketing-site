@@ -2,7 +2,8 @@
   padding: 16px 20px;
   border: 1px solid var(--line);
   border-radius: var(--r-sm);
-  background: var(--surface);
+  /* Light grey, so the questions stand out on the white FAQ band. */
+  background: var(--bg);
 }
 
 .question {

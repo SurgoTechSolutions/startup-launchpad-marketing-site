@@ -14,7 +14,7 @@ export interface FaqSectionProps {
 
 export function FaqSection({ content }: FaqSectionProps): ReactNode {
   return (
-    <section>
+    <section className={styles.band}>
       <JsonLd data={faqPageJsonLd(content.faqs)} />
       <SectionHead>
         <SectionTitle size="find">
