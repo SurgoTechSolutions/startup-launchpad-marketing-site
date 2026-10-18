@@ -1,6 +1,5 @@
 /* White band across the full width. The shadow fills the sides without widening the page. */
 .footer {
-  margin-top: 48px;
   padding-block: 48px 28px;
   border-top: 1px solid var(--line);
   background: var(--surface);
