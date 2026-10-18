@@ -1,3 +1,10 @@
+/* Plain grey across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
+.plain {
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+}
+
 /*
  * Monthly or yearly, with no JavaScript: the section checks which radio is ticked. Yearly sets
  * --odometer-to so the price wheels roll, and swaps which billing text shows.

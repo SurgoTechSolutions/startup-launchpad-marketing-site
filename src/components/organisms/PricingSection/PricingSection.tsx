@@ -6,6 +6,7 @@ import { PlanCard } from "@/components/molecules/PlanCard";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
+import { cx } from "@/lib/cx";
 import { HeroQuoteRotator } from "@/components/organisms/HeroQuoteRotator";
 import type { PricingContent } from "@/types";
 import styles from "./PricingSection.module.css";
@@ -15,11 +16,18 @@ export interface PricingSectionProps {
   readonly signupUrl: string;
   /** The pricing page uses this title as its h1. */
   readonly headingLevel?: "h1" | "h2";
+  /** Plain grey behind the section, across the full width, with no grid. */
+  readonly plain?: boolean;
 }
 
-export function PricingSection({ content, signupUrl, headingLevel = "h2" }: PricingSectionProps): ReactNode {
+export function PricingSection({
+  content,
+  signupUrl,
+  headingLevel = "h2",
+  plain = false,
+}: PricingSectionProps): ReactNode {
   return (
-    <section className={styles.section}>
+    <section className={cx(styles.section, plain && styles.plain)}>
       <SectionHead>
         <SectionTitle as={headingLevel} size="big">
           <RichText content={content.title} />
