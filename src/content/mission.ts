@@ -25,6 +25,7 @@ export const MISSION = {
   promise: {
     title: ["Our ", { highlight: "promise" }, " to founders"],
     text: "Your first scan is free. You'll see exactly how many issues you have, and we'll show you one critical issue in full, with its fix, so you know it works before you pay a penny.",
+    ctaLabel: "Start my free scan",
   },
 } as const satisfies MissionContent;
 

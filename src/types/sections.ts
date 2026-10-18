@@ -322,7 +322,7 @@ export interface MissionContent {
   readonly valuesTitle: RichText;
   readonly values: readonly MissionValue[];
   /** One promise to founders, shown after the values. */
-  readonly promise: { readonly title: RichText; readonly text: string };
+  readonly promise: { readonly title: RichText; readonly text: string; readonly ctaLabel: string };
 }
 
 /** A short introduction to one of the team, with their photo. */

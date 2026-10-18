@@ -22,7 +22,7 @@ export function MissionTemplate({ content, signupUrl }: MissionTemplateProps): R
         <main>
           <MissionStatement content={content.mission} />
           <ValueGrid title={content.mission.valuesTitle} values={content.mission.values} tone="white" />
-          <PromiseStatement title={content.mission.promise.title} text={content.mission.promise.text} />
+          <PromiseStatement content={content.mission.promise} signupUrl={signupUrl} />
           <FinalCta content={content.finalCta} signupUrl={signupUrl} className={styles.wideQuote} />
         </main>
         <SiteFooter content={content.footer} />

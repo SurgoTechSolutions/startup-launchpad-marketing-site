@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
   padding-block: 88px 80px;
   text-align: center;
 }
@@ -20,18 +20,23 @@
   background: linear-gradient(var(--surface), var(--bg) 96px);
 }
 
-.icon {
-  width: 44px;
-  height: 44px;
-  color: var(--accent);
-}
-
-/* The promise itself, large like a pull quote. */
-.text {
-  max-width: 48ch;
+/* The promise itself, large, in a white card. */
+.card {
+  max-width: 760px;
+  padding: 36px 40px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 0 24px 60px rgba(0, 21, 36, 0.1);
   color: var(--ink);
   font-size: clamp(20px, 2.4vw, 26px);
   font-weight: 700;
   line-height: 1.45;
   text-wrap: balance;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 26px 22px;
+  }
 }
