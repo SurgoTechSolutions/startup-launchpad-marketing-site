@@ -2,7 +2,7 @@
 .band {
   display: flex;
   justify-content: center;
-  padding-block: 112px;
+  padding-block: 64px;
   background: #1e3448;
   box-shadow: 0 0 0 100vmax #1e3448;
   clip-path: inset(0 -100vmax);
@@ -13,10 +13,4 @@
   max-width: 30ch;
   color: #fff;
   text-align: center;
-}
-
-@media (max-width: 640px) {
-  .band {
-    padding-block: 72px;
-  }
 }
