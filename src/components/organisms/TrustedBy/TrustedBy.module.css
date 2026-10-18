@@ -30,7 +30,7 @@
 /* Lifts and grows a little on hover. */
 .logoLink:hover,
 .logoLink:focus-visible {
-  transform: translateY(-4px) scale(1.06);
+  transform: translateY(-8px) scale(1.03);
 }
 
 @media (prefers-reduced-motion: reduce) {
