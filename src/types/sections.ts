@@ -144,7 +144,6 @@ export interface FeatureQuoteContent {
   readonly title: RichText;
   readonly lede?: string;
   readonly quote: QuoteWithPerson;
-  readonly photo: Photo;
   /** Short bio shown on its own line under the person's role. */
   readonly bio: string;
   readonly ctaLabel: string;

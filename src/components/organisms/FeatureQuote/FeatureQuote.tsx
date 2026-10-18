@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Avatar } from "@/components/atoms/Avatar";
 import { Button } from "@/components/atoms/Button";
 import { Lede } from "@/components/atoms/Lede";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
@@ -27,19 +26,11 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
         </div>
       </SectionHead>
       <figure className={styles.feature}>
-        <Avatar src={content.photo.src} alt={content.photo.alt} size="feature" />
-        <div>
-          <span className={styles.mark} aria-hidden="true">
-            &quot;
-          </span>
-          <blockquote className={styles.text}>{content.quote.text}</blockquote>
-          <PersonCredit
-            person={content.quote.person}
-            note={content.bio}
-            showAvatar={false}
-            className={styles.credit}
-          />
-        </div>
+        <span className={styles.mark} aria-hidden="true">
+          &quot;
+        </span>
+        <blockquote className={styles.text}>{content.quote.text}</blockquote>
+        <PersonCredit person={content.quote.person} note={content.bio} className={styles.credit} />
       </figure>
     </section>
   );
