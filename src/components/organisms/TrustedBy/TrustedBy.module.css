@@ -27,9 +27,10 @@
   transition: transform 0.2s ease;
 }
 
+/* Lifts a little on hover, like the buttons. */
 .logoLink:hover,
 .logoLink:focus-visible {
-  transform: scale(1.06);
+  transform: translateY(-4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
