@@ -11,10 +11,12 @@
 }
 
 /*
- * Photo on the left, story on the right, on a white band across the full width. The shadow fills
- * the sides without widening the page. Stacks on narrow screens.
+ * Photo on the left, story on the right, on a white band across the full width. The white fades
+ * in over the first 96px, so the grid behind the heading gives way gradually. Stacks on narrow
+ * screens.
  */
 .body {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
   align-items: center;
@@ -22,9 +24,14 @@
   width: 100%;
   margin-top: 16px;
   padding-block: 72px;
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
-  clip-path: inset(0 -100vmax);
+}
+
+.body::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(transparent, var(--surface) 96px);
 }
 
 .photo {
