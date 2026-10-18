@@ -209,9 +209,20 @@
   display: none;
 }
 
+/* Log in sits apart from the page links, set off by a thin line. */
+.login {
+  padding-left: 22px;
+  border-left: 1px solid var(--line);
+}
+
 @media (max-width: 980px) {
   .inner {
     flex-wrap: nowrap;
+  }
+
+  /* Log in moves into the menu with the page links. */
+  .nav .login {
+    display: none;
   }
 
   .nav {

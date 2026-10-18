@@ -32,6 +32,8 @@ export interface HeaderContent {
     readonly logo?: string;
   };
   readonly navLinks: readonly Link[];
+  /** For people who already have an account. */
+  readonly login: Link;
   readonly ctaLabel: string;
   /** Accessible name for the phone menu button. */
   readonly menuLabel: string;

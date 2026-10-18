@@ -30,6 +30,9 @@ export function SiteHeader({ content, signupUrl, currentPath }: SiteHeaderProps)
         <Wordmark {...content.wordmark} className={styles.wordmark} />
         <nav className={styles.nav} aria-label="Main">
           <div className={styles.links}>{links}</div>
+          <Button href={content.login.href} variant="nav" className={styles.login}>
+            {content.login.label}
+          </Button>
           <Button href={signupUrl} className={styles.cta}>
             {content.ctaLabel}
           </Button>
@@ -39,6 +42,9 @@ export function SiteHeader({ content, signupUrl, currentPath }: SiteHeaderProps)
             </summary>
             <div className={styles.panel}>
               {links}
+              <Button href={content.login.href} variant="nav">
+                {content.login.label}
+              </Button>
               <Button href={signupUrl} className={styles.panelCta}>
                 {content.ctaLabel}
               </Button>

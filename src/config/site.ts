@@ -6,6 +6,13 @@ const envSignupUrl = process.env.NEXT_PUBLIC_SIGNUP_URL;
 export const SIGNUP_URL: string =
   envSignupUrl !== undefined && envSignupUrl !== "" ? envSignupUrl : DEFAULT_SIGNUP_URL;
 
+const DEFAULT_LOGIN_URL = "https://app.startuplaunchpad.app/sign-in";
+const envLoginUrl = process.env.NEXT_PUBLIC_LOGIN_URL;
+
+/** Where the Log in link points. Override with NEXT_PUBLIC_LOGIN_URL. */
+export const LOGIN_URL: string =
+  envLoginUrl !== undefined && envLoginUrl !== "" ? envLoginUrl : DEFAULT_LOGIN_URL;
+
 const DEFAULT_SITE_URL = "https://startuplaunchpad.app";
 const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 

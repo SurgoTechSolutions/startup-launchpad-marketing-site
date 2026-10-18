@@ -1,8 +1,9 @@
-import { ROUTES } from "@/config/site";
+import { LOGIN_URL, ROUTES } from "@/config/site";
 import type { FooterContent } from "@/types";
 
 /** Header copy shared by both pages. Each page adds its own wordmark link and nav link. */
 export const HEADER_BASE = {
+  login: { label: "Log in", href: LOGIN_URL },
   ctaLabel: "Scan my code for free",
   menuLabel: "Menu",
 } as const;
