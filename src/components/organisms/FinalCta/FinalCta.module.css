@@ -39,9 +39,9 @@
 .banner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 20px 40px;
+  gap: 16px 32px;
   padding-block: 40px;
   background: #1e3448;
   box-shadow: 0 0 0 100vmax #1e3448;
@@ -60,7 +60,7 @@
 .bannerText {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 @media (max-width: 900px) {
