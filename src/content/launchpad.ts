@@ -1,3 +1,4 @@
+import jasonNesbitt from "@/assets/images/jason-nesbitt.webp";
 import { ROUTES } from "@/config/site";
 import type {
   DashboardContent,
@@ -193,6 +194,7 @@ export const FEATURE_QUOTE = {
   title: ["One less thing to ", { highlight: "worry about" }, "."],
   lede: "More time for the good stuff.",
   quote: resolveQuote("jasonCalm"),
+  photo: { src: jasonNesbitt, alt: "Jason Nesbitt, smiling, in front of a dark wall" },
   bio: "15 years building software, sold his last SaaS business in 2023.",
   ctaLabel: "Scan my code for free",
 } as const satisfies FeatureQuoteContent;

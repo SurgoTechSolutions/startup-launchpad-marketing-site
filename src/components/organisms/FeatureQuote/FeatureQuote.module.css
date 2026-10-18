@@ -1,36 +1,58 @@
 /*
- * Half and half: a white band with the heading on the left, and a slate panel behind Jason's
- * quote card on the right. Both reach the screen edges through shadows, without widening the
- * page. The panel stops halfway across the gap between the columns.
+ * A white band across the full width, with the heading centred at the top. The shadow fills the
+ * sides without widening the page. The split below runs to the band's bottom edge.
  */
-.band {
-  display: grid;
-  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
-  gap: 56px;
-  /* The two halves carry their own spacing, so the slate reaches the band's top and bottom. */
-  padding-block: 0;
+.section {
+  padding-bottom: 0;
   background: var(--surface);
   box-shadow: 0 0 0 100vmax var(--surface);
   clip-path: inset(0 -100vmax);
 }
 
-.band > :first-child {
-  align-self: center;
-  margin-bottom: 0;
-  padding-block: 64px;
+/*
+ * Half and half. The photo fills everything left of the middle of the screen, out to its left
+ * edge; the slate panel fills everything right of the middle, out to its right edge.
+ */
+.split {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 460px;
+}
+
+.photo {
+  position: absolute;
+  inset: 0 50% 0 calc(50% - 50vw);
+  background: #1e3448;
+}
+
+.image {
+  object-fit: cover;
+  object-position: 40% 30%;
+}
+
+/* Fades the photo's right edge into the slate, so the dark wall behind him runs on into it. */
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 65%, #1e3448);
+  pointer-events: none;
 }
 
 .quoteSide {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 2;
   min-width: 0;
-  padding-block: 64px;
+  padding: 56px 0 56px 48px;
   background: #1e3448;
   box-shadow: 0 0 0 100vmax #1e3448;
-  clip-path: inset(0 -100vmax 0 -28px);
+  clip-path: inset(0 -100vmax 0 0);
 }
 
-/* Jason's quote straight on the slate, in light text, with his headshot beside his name. */
+/* The quote in light text on the slate. */
 .feature {
   display: flex;
   flex-direction: column;
@@ -58,7 +80,6 @@
 
 .text {
   max-width: 44ch;
-  color: var(--ink);
   font-size: clamp(18px, 2vw, 22px);
   font-weight: 600;
   line-height: 1.45;
@@ -69,22 +90,31 @@
 }
 
 .cta {
-  margin-top: 12px;
+  margin-top: 28px;
 }
 
-/* Stacked: the heading on white, then the quote on a full-width slate panel below it. */
+/* Stacked: the photo full width, then the quote on a full-width slate panel below it. */
 @media (max-width: 900px) {
-  .band {
+  .split {
     grid-template-columns: minmax(0, 1fr);
-    gap: 0;
+    min-height: 0;
   }
 
-  .band > :first-child {
-    padding-block: 48px 40px;
+  .photo {
+    position: relative;
+    inset: auto;
+    height: 340px;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  /* On top of the slate, the fade runs downwards instead. */
+  .photo::after {
+    background: linear-gradient(180deg, transparent 60%, #1e3448);
   }
 
   .quoteSide {
-    padding-block: 40px 48px;
+    grid-column: 1;
+    padding: 8px 0 48px;
     clip-path: inset(0 -100vmax);
   }
 }
