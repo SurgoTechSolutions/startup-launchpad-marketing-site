@@ -1,8 +1,25 @@
+/*
+ * Words beside a quote card, on a slate band across the full width. The shadow fills the sides
+ * without widening the page.
+ */
 .split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 40px;
+  padding-block: 72px;
+  background: #1e3448;
+  box-shadow: 0 0 0 100vmax #1e3448;
+  clip-path: inset(0 -100vmax);
+}
+
+/* Light text on the slate. The highlighted words stay orange; the quote card keeps its own colours. */
+.split .copy h2 {
+  color: #fff;
+}
+
+.split .copy p {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .copy {
