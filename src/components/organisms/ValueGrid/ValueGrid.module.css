@@ -1,8 +1,8 @@
-/* Plain grey across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
+/* Plain white across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
 .plain {
   padding-block: 72px;
-  background: var(--bg);
-  box-shadow: 0 0 0 100vmax var(--bg);
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
   clip-path: inset(0 -100vmax);
 }
 

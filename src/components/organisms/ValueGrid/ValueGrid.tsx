@@ -10,7 +10,7 @@ import styles from "./ValueGrid.module.css";
 export interface ValueGridProps {
   readonly title: RichTextContent;
   readonly values: readonly MissionValue[];
-  /** Plain grey behind the section, across the full width, with no grid. */
+  /** Plain white behind the section, across the full width, with no grid. */
   readonly plain?: boolean;
 }
 
