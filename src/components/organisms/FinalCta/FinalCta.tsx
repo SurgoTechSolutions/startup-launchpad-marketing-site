@@ -27,7 +27,7 @@ export function FinalCta({ content, signupUrl, id, layout }: FinalCtaProps): Rea
     return (
       <section id={id} className={styles.banner}>
         <div className={styles.bannerText}>
-          <SectionTitle size="base">
+          <SectionTitle size="find">
             <RichText content={content.title} />
           </SectionTitle>
           {content.lede !== undefined && <Lede>{content.lede}</Lede>}
