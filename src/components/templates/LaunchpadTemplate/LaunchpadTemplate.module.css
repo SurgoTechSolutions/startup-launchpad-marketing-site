@@ -3,3 +3,20 @@
   margin: 0 auto;
   padding-inline: 20px;
 }
+
+/*
+ * Desktop: the hero grows so it and the logo band together fill the screen below the header
+ * (93px), and the logos sit right at the bottom edge. The hero's content stays centred in it.
+ */
+@media (min-width: 981px) {
+  .fold {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - 93px);
+  }
+
+  .fold > :first-child {
+    flex: 1;
+    align-content: center;
+  }
+}
