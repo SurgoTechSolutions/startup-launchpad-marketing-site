@@ -30,7 +30,7 @@
   animation-duration: calc(var(--duration, 60s) * 1.15);
 }
 
-.animated:hover .row,
+/* Keyboard users can stop it by tabbing into a card. Mouse hover only slows it, from the component. */
 .animated:focus-within .row {
   animation-play-state: paused;
 }
