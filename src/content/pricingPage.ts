@@ -1,6 +1,5 @@
 import { ROUTES } from "@/config/site";
 import type { CostComparisonContent, FaqContent, FinalCtaContent, HeaderContent, PricingPageContent } from "@/types";
-import { MISSION } from "./mission";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
 import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
@@ -35,10 +34,6 @@ export const COST_COMPARISON = {
       cells: [{ kind: "no" }, { kind: "no" }, { kind: "yes" }],
     },
     { label: "Results in minutes", cells: [{ kind: "no" }, { kind: "no" }, { kind: "yes" }] },
-    {
-      label: "A paste-in fix prompt for every finding",
-      cells: [{ kind: "no" }, { kind: "no" }, { kind: "yes" }],
-    },
     {
       label: "Covers accessibility, SEO, performance and housekeeping too",
       cells: [{ kind: "no" }, { kind: "no" }, { kind: "yes" }],
@@ -75,10 +70,6 @@ export const PRICING_FAQS = {
         "It runs to the end of the year you've paid for, then stops. You won't be charged again.",
     },
     {
-      question: "Is there VAT?",
-      answer: "Not at the moment. We're not VAT registered, so the price you see is what you pay.",
-    },
-    {
       question: "Do I need a company to subscribe?",
       answer:
         "No. You don't need to be a limited company, but Startup Launchpad is sold for business use, so you'll need to be using it for your work.",
@@ -109,7 +100,6 @@ export const PRICING_PAGE = {
     },
   },
   comparison: COST_COMPARISON,
-  promise: MISSION.promise,
   faq: PRICING_FAQS,
   finalCta: PRICING_FINAL_CTA,
   footer: FOOTER,

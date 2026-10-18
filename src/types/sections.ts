@@ -299,7 +299,6 @@ export interface PricingPageContent {
   readonly header: HeaderContent;
   readonly pricing: PricingContent;
   readonly comparison: CostComparisonContent;
-  readonly promise: MissionContent["promise"];
   readonly faq: FaqContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;

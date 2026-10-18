@@ -3,7 +3,6 @@ import { CostComparison } from "@/components/organisms/CostComparison";
 import { FaqSection } from "@/components/organisms/FaqSection";
 import { FinalCta } from "@/components/organisms/FinalCta";
 import { PricingSection } from "@/components/organisms/PricingSection";
-import { PromiseStatement } from "@/components/organisms/PromiseStatement";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
 import { ROUTES } from "@/config/site";
@@ -25,7 +24,6 @@ export function PricingTemplate({ content, signupUrl }: PricingTemplateProps): R
         <main>
           <PricingSection content={content.pricing} signupUrl={signupUrl} headingLevel="h1" />
           <CostComparison content={content.comparison} />
-          <PromiseStatement content={content.promise} signupUrl={signupUrl} fadeOut />
           <FaqSection content={content.faq} />
           <FinalCta content={content.finalCta} signupUrl={signupUrl} />
         </main>
