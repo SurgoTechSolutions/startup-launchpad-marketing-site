@@ -1,8 +1,19 @@
-/* Plain grey across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
+/*
+ * Plain grey across the full width, hiding the page grid. It fades in from the white stats band
+ * above over the first 96px, so the join isn't a hard line. The layer behind reaches the screen
+ * edges; the clip stops it widening the page.
+ */
 .band {
-  background: var(--bg);
-  box-shadow: 0 0 0 100vmax var(--bg);
+  position: relative;
   clip-path: inset(0 -100vmax);
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(var(--surface), var(--bg) 96px);
 }
 
 .grid {
