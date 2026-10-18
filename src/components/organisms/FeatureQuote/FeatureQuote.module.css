@@ -35,10 +35,9 @@
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 28px;
-  /* A faint light edge, so his dark background doesn't merge into the slate. */
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.14),
-    0 24px 60px rgba(0, 0, 0, 0.3);
+  /* An orange edge, like the rings on the headshots, so his dark background stands off the slate. */
+  border: 3px solid var(--accent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
 }
 
 .image {
