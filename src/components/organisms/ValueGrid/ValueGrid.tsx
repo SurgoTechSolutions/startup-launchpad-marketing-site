@@ -3,20 +3,23 @@ import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
 import { ValueCard } from "@/components/molecules/ValueCard";
+import { cx } from "@/lib/cx";
 import type { MissionValue, RichText as RichTextContent } from "@/types";
 import styles from "./ValueGrid.module.css";
 
 export interface ValueGridProps {
   readonly title: RichTextContent;
   readonly values: readonly MissionValue[];
+  /** Plain grey behind the section, across the full width, with no grid. */
+  readonly plain?: boolean;
 }
 
 /** A heading over a row of short principle cards. */
-export function ValueGrid({ title, values }: ValueGridProps): ReactNode {
+export function ValueGrid({ title, values, plain = false }: ValueGridProps): ReactNode {
   return (
-    <section>
+    <section className={cx(plain && styles.plain)}>
       <SectionHead>
-        <SectionTitle>
+        <SectionTitle size="find">
           <RichText content={title} />
         </SectionTitle>
       </SectionHead>

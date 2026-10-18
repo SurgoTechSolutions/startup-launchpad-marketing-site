@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { FinalCta } from "@/components/organisms/FinalCta";
+import { HookBanner } from "@/components/organisms/HookBanner";
 import { MissionStatement } from "@/components/organisms/MissionStatement";
 import { ValueGrid } from "@/components/organisms/ValueGrid";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
@@ -20,8 +21,9 @@ export function MissionTemplate({ content, signupUrl }: MissionTemplateProps): R
       <div className={styles.wrap}>
         <main>
           <MissionStatement content={content.mission} />
-          <ValueGrid title={content.mission.valuesTitle} values={content.mission.values} />
-          <FinalCta content={content.finalCta} signupUrl={signupUrl} layout="centered" />
+          <HookBanner content={content.pullQuote} />
+          <ValueGrid title={content.mission.valuesTitle} values={content.mission.values} plain />
+          <FinalCta content={content.finalCta} signupUrl={signupUrl} />
         </main>
         <SiteFooter content={content.footer} />
       </div>

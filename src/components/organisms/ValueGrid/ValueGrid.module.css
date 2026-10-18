@@ -1,8 +1,31 @@
+/* Plain grey across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
+.plain {
+  padding-block: 72px;
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px 24px;
   padding-bottom: 12px;
+}
+
+/* Each card lifts a little on hover, like the partner logos. */
+.grid > * {
+  transition: transform 0.2s ease;
+}
+
+.grid > *:hover {
+  transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid > * {
+    transition: none;
+  }
 }
 
 @media (max-width: 900px) {
