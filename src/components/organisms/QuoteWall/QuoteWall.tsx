@@ -16,7 +16,7 @@ export function QuoteWall({ content }: QuoteWallProps): ReactNode {
   );
 
   return (
-    <section aria-label={content.label}>
+    <section aria-label={content.label} className={styles.band}>
       <Marquee rows={rows} className={styles.wall} />
     </section>
   );

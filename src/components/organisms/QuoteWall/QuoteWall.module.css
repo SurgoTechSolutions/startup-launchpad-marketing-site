@@ -1,3 +1,10 @@
+/* Plain light grey across the full width, with no grid behind the quotes. The shadow fills the sides without widening the page. */
+.band {
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+}
+
 /* Bleeds into the page gutter so cards scroll to the edge. */
 .wall {
   margin-inline: -20px;
