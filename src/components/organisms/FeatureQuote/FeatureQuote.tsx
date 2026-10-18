@@ -15,8 +15,8 @@ export interface FeatureQuoteProps {
 }
 
 /**
- * The heading centred on white, then a two-tone band: the person's photo in a box on the white
- * left half, and their quote, name and the button on slate on the right.
+ * The heading centred on white, then a slate band with the person's photo in a box on the left
+ * and their quote, name and the button on the right.
  */
 export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNode {
   return (
@@ -35,7 +35,7 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
               alt={content.photo.alt}
               fill
               placeholder="blur"
-              sizes="(max-width: 480px) 280px, 380px"
+              sizes="(max-width: 480px) 280px, 360px"
               className={styles.image}
             />
           </div>

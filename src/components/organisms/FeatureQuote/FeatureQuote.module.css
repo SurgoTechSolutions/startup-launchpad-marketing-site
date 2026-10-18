@@ -1,6 +1,6 @@
 /*
  * A white band across the full width, with the heading centred at the top. The shadow fills the
- * sides without widening the page. The split below runs to the band's bottom edge.
+ * sides without widening the page. The slate band below runs to its bottom edge.
  */
 .section {
   padding-bottom: 0;
@@ -10,28 +10,35 @@
 }
 
 /*
- * Half and half: the photo in a box on the white left half, and the slate panel filling
- * everything right of the middle of the screen, out to its right edge.
+ * One slate band across the full width, with the photo in a box on the left and the quote on
+ * the right. The shadow fills the sides without widening the page.
  */
 .split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 56px;
+  padding-block: 64px;
+  background: #1e3448;
+  box-shadow: 0 0 0 100vmax #1e3448;
+  clip-path: inset(0 -100vmax);
 }
 
 .photoSide {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 56px 48px 56px 0;
 }
 
 .photo {
   position: relative;
-  width: min(380px, 100%);
+  width: min(360px, 100%);
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(0, 21, 36, 0.16);
+  /* A faint light edge, so his dark background doesn't merge into the slate. */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 24px 60px rgba(0, 0, 0, 0.3);
 }
 
 .image {
@@ -42,13 +49,7 @@
 .quoteSide {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  grid-column: 2;
   min-width: 0;
-  padding: 56px 0 56px 48px;
-  background: #1e3448;
-  box-shadow: 0 0 0 100vmax #1e3448;
-  clip-path: inset(0 -100vmax 0 0);
 }
 
 /* The quote in light text on the slate. */
@@ -92,20 +93,12 @@
   margin-top: 28px;
 }
 
-/* Stacked: the photo box centred on white, then the quote on a full-width slate panel below it. */
+/* Stacked: the photo box above the quote, both on the slate band. */
 @media (max-width: 900px) {
   .split {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .photoSide {
-    padding: 8px 0 40px;
-  }
-
-  .quoteSide {
-    grid-column: 1;
-    padding: 48px 0;
-    clip-path: inset(0 -100vmax);
+    gap: 32px;
+    padding-block: 48px;
   }
 }
 
