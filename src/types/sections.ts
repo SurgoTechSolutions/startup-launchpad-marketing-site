@@ -322,9 +322,20 @@ export interface MissionContent {
   readonly values: readonly MissionValue[];
 }
 
+/** A short introduction to one of the team, with their photo. */
+export interface ProfileContent {
+  readonly title: RichText;
+  readonly name: string;
+  readonly role: string;
+  readonly paragraphs: readonly string[];
+  /** Imported from src/assets, so the build sizes it and makes a blurred placeholder. */
+  readonly photo: { readonly src: StaticImageData; readonly alt: string };
+}
+
 export interface MissionPageContent {
   readonly header: HeaderContent;
   readonly mission: MissionContent;
+  readonly profile: ProfileContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
 }

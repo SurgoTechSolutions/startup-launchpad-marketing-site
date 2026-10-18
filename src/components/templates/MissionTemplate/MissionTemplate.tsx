@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { FinalCta } from "@/components/organisms/FinalCta";
+import { FounderProfile } from "@/components/organisms/FounderProfile";
 import { MissionStatement } from "@/components/organisms/MissionStatement";
 import { ValueGrid } from "@/components/organisms/ValueGrid";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
@@ -21,6 +22,7 @@ export function MissionTemplate({ content, signupUrl }: MissionTemplateProps): R
         <main>
           <MissionStatement content={content.mission} />
           <ValueGrid title={content.mission.valuesTitle} values={content.mission.values} plain />
+          <FounderProfile content={content.profile} />
           <FinalCta content={content.finalCta} signupUrl={signupUrl} className={styles.wideQuote} />
         </main>
         <SiteFooter content={content.footer} />

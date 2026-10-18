@@ -1,0 +1,73 @@
+/*
+ * Photo on the left, words on the right, on light grey across the full width. The grey fades in
+ * from the white section above over the first 96px. Stacks on narrow screens.
+ */
+.band {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  align-items: center;
+  gap: 56px;
+  padding-block: 88px 72px;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100vmax;
+  z-index: -1;
+  background: linear-gradient(var(--surface), var(--bg) 96px);
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 21, 36, 0.16);
+}
+
+.image {
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.who {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.who b {
+  color: var(--ink);
+}
+
+.paragraph {
+  max-width: 60ch;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .band {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 32px;
+    padding-block: 72px 56px;
+  }
+
+  .photo {
+    max-width: 280px;
+  }
+}
