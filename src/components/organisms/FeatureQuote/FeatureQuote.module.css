@@ -1,26 +1,31 @@
 /*
- * A white band across the full width, with the heading centred at the top. The shadow fills the
- * sides without widening the page. The slate band below runs to its bottom edge.
+ * The heading in white on a slate band across the full width, then a white band below with the
+ * photo and quote. The shadows fill the sides without widening the page.
  */
 .section {
   padding-bottom: 0;
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
+  background: #1e3448;
+  box-shadow: 0 0 0 100vmax #1e3448;
   clip-path: inset(0 -100vmax);
 }
 
-/*
- * One slate band across the full width, with the photo in a box on the left and the quote on
- * the right. The shadow fills the sides without widening the page.
- */
+.section > :first-child h2 {
+  color: #fff;
+}
+
+.section > :first-child p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* The white band: the photo in a box on the left and the quote on the right. */
 .split {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   align-items: center;
   gap: 56px;
   padding-block: 64px;
-  background: #1e3448;
-  box-shadow: 0 0 0 100vmax #1e3448;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
   clip-path: inset(0 -100vmax);
 }
 
@@ -35,11 +40,11 @@
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 28px;
-  /* A white edge then an orange ring, like the headshots, so his dark background stands off the slate. */
+  /* A white edge then an orange ring, like the headshots. */
   border: 4px solid var(--surface);
   box-shadow:
     0 0 0 3px var(--accent),
-    0 24px 60px rgba(0, 0, 0, 0.3);
+    0 24px 60px rgba(0, 21, 36, 0.16);
 }
 
 .image {
@@ -53,7 +58,7 @@
   min-width: 0;
 }
 
-/* The quote in light text on the slate. */
+/* The quote in dark text on the white. */
 .feature {
   display: flex;
   flex-direction: column;
@@ -63,11 +68,11 @@
 
 .feature blockquote,
 .feature figcaption b {
-  color: #fff;
+  color: var(--ink);
 }
 
 .feature figcaption {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--muted);
 }
 
 .mark {
