@@ -1,20 +1,12 @@
 /*
- * The heading in white on a slate band across the full width, then a white band below with the
- * photo and quote. The shadows fill the sides without widening the page.
+ * One white band across the full width: the heading at the top, then the photo and quote. The
+ * shadow fills the sides without widening the page.
  */
 .section {
   padding-bottom: 0;
-  background: #1e3448;
-  box-shadow: 0 0 0 100vmax #1e3448;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
   clip-path: inset(0 -100vmax);
-}
-
-.section > :first-child h2 {
-  color: #fff;
-}
-
-.section > :first-child p {
-  color: rgba(255, 255, 255, 0.75);
 }
 
 /* The white band: the photo in a box on the left and the quote on the right. */

@@ -196,6 +196,11 @@ Review the change before merging.`,
   ctaLabel: "Start fixing my code",
 } as const satisfies ExplainContent;
 
+/** A single line on slate between the fixing section and Jason's story. */
+export const FIX_BANNER = {
+  title: ["Your AI tool wrote the code. ", { highlight: "Now it can fix it too." }],
+} as const satisfies HookContent;
+
 export const FEATURE_QUOTE = {
   title: ["One less thing to ", { highlight: "worry about" }, "."],
   lede: "More time for the good stuff.",
@@ -316,6 +321,7 @@ export const LAUNCHPAD_PAGE = {
   findingsCta: FINDINGS_CTA,
   dashboard: DASHBOARD,
   explain: EXPLAIN,
+  fixBanner: FIX_BANNER,
   featureQuote: FEATURE_QUOTE,
   quoteWall: QUOTE_WALL,
   howItWorks: HOW_IT_WORKS,

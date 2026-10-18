@@ -8,7 +8,7 @@ export interface HookBannerProps {
   readonly content: HookContent;
 }
 
-/** One big line, centred on a slate band across the full width. A pause before the stats answer it. */
+/** One big line, centred on a slate band across the full width, as a pause between sections. */
 export function HookBanner({ content }: HookBannerProps): ReactNode {
   return (
     <section className={styles.band}>

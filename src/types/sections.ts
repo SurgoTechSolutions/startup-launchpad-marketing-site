@@ -51,7 +51,7 @@ export interface HeroContent {
   readonly quotes: readonly QuoteWithPerson[];
 }
 
-/** A single big line in its own band. */
+/** A single big line in its own slate band. */
 export interface HookContent {
   readonly title: RichText;
 }
@@ -285,6 +285,7 @@ export interface LaunchpadPageContent {
   readonly findingsCta: FinalCtaContent;
   readonly dashboard: DashboardContent;
   readonly explain: ExplainContent;
+  readonly fixBanner: HookContent;
   readonly featureQuote: FeatureQuoteContent;
   readonly quoteWall: QuoteWallContent;
   readonly howItWorks: HowItWorksContent;
