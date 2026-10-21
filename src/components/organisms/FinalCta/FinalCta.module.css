@@ -13,13 +13,22 @@
 }
 
 /*
- * By default the split sits on a slate band across the full width, in light text. The shadow fills
- * the sides without widening the page. The highlighted words and the quote card keep their colours.
+ * By default the split sits on a navy gradient band across the full viewport width, in light text.
+ * The highlighted words and the quote card keep their colours.
  */
-.slate {
-  background: #1e3448;
-  box-shadow: 0 0 0 100vmax #1e3448;
-  clip-path: inset(0 -100vmax);
+.slate,
+.banner {
+  position: relative;
+  isolation: isolate;
+}
+
+.slate::before,
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--navy-gradient);
 }
 
 .slate .copy h2 {
@@ -60,7 +69,7 @@
   user-select: all;
 }
 
-/* Slate blue band across the full width. The shadow fills the sides without widening the page. */
+/* Navy gradient band across the full width, drawn by .banner::before above. */
 .banner {
   display: flex;
   flex-wrap: wrap;
@@ -68,12 +77,9 @@
   align-items: center;
   gap: 16px 32px;
   padding-block: 40px;
-  background: #1e3448;
-  box-shadow: 0 0 0 100vmax #1e3448;
-  clip-path: inset(0 -100vmax);
 }
 
-/* Light text on the slate blue. The highlighted words stay orange. */
+/* Light text on the gradient. The highlighted words stay orange. */
 /* No width cap, so the heading's box hugs its words and the button sits right beside them. */
 .banner h2 {
   max-width: none;

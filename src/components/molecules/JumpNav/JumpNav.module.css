@@ -45,7 +45,7 @@
 }
 
 .chip[aria-current="true"] {
-  background: var(--ink);
+  background: var(--navy-gradient);
   color: #fff;
 }
 
@@ -60,7 +60,7 @@
     position-anchor: --jump-pill;
     inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
     border-radius: 999px;
-    background: var(--ink);
+    background: var(--navy-gradient);
     opacity: 0;
     pointer-events: none;
     transition:

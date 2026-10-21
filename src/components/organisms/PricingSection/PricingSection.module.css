@@ -62,7 +62,7 @@
 }
 
 .option:has(:checked) {
-  background: var(--ink);
+  background: var(--navy-gradient);
   color: #fff;
 }
 
@@ -86,7 +86,7 @@
     position-anchor: --billing-pill;
     inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
     border-radius: 999px;
-    background: var(--ink);
+    background: var(--navy-gradient);
     pointer-events: none;
     transition: inset 0.35s ease;
   }

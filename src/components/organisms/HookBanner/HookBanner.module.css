@@ -1,14 +1,21 @@
-/* Slate band across the full width. The shadow fills the sides without widening the page. */
+/* Navy gradient band across the full viewport width, drawn behind the content. */
 .band {
+  position: relative;
+  isolation: isolate;
   display: flex;
   justify-content: center;
   padding-block: 84px;
-  background: #1e3448;
-  box-shadow: 0 0 0 100vmax #1e3448;
-  clip-path: inset(0 -100vmax);
 }
 
-/* White words on the slate, a step smaller than section headings. The rolling word keeps its orange. */
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--navy-gradient);
+}
+
+/* White words on the gradient, a step smaller than section headings. The rolling word keeps its orange. */
 .band .title {
   font-size: clamp(24px, 3.2vw, 34px);
 }
