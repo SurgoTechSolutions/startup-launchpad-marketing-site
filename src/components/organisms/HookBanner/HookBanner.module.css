@@ -3,7 +3,9 @@
   position: relative;
   isolation: isolate;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   padding-block: 84px;
 }
 
@@ -24,4 +26,21 @@
   max-width: 30ch;
   color: #fff;
   text-align: center;
+}
+
+.video {
+  max-width: 880px;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.note {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
 }

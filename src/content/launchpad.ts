@@ -42,6 +42,16 @@ export const HERO = {
 /** The question after the logos, answered by the stats that follow. */
 export const HOOK = {
   title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
+  video: {
+    title: "Startup Launchpad dashboard demo and fix guide",
+    embedUrl: "https://www.loom.com/embed/7e43aaf3906c4d8589c2fdbb4f72dc5f",
+    thumbnailSrc: "https://www.loom.com/v1/videos/7e43aaf3906c4d8589c2fdbb4f72dc5f/thumbnail.gif",
+    playLabel: "Play video",
+    width: 1316,
+    height: 720,
+  },
+  ctaLabel: "Scan my code for free",
+  note: "See how many issues you have before you pay anything.",
 } as const satisfies HookContent;
 
 export const TRUSTED_BY = {

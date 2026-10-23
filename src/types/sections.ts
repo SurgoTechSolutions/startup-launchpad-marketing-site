@@ -52,9 +52,26 @@ export interface HeroContent {
   readonly quotes: readonly QuoteWithPerson[];
 }
 
-/** A single big line in its own slate band. */
+/** A hosted video, shown as its thumbnail until someone presses play. */
+export interface VideoContent {
+  readonly title: string;
+  /** The player URL, loaded in an iframe on play. */
+  readonly embedUrl: string;
+  readonly thumbnailSrc: string;
+  /** Start of the play button's label, followed by the title. */
+  readonly playLabel: string;
+  /** Intrinsic size, used for the aspect ratio. */
+  readonly width: number;
+  readonly height: number;
+}
+
+/** A single big line in its own slate band, with an optional video and call to action beneath. */
 export interface HookContent {
   readonly title: RichText;
+  readonly video?: VideoContent;
+  readonly ctaLabel?: string;
+  /** A short reassurance under the button. */
+  readonly note?: string;
 }
 
 export interface PartnerLogo {
