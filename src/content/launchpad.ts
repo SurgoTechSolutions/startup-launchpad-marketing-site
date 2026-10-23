@@ -42,7 +42,7 @@ export const HERO = {
 
 /** The question after the logos, answered by the stats that follow. */
 export const HOOK = {
-  title: ["Find the holes in your app's security, and fix them yourself without paying a developer."],
+  title: ["Find the holes in your app's security, and ", { highlight: "fix them yourself" }, " without paying a developer."],
   video: {
     title: "Startup Launchpad dashboard demo and fix guide",
     embedUrl: "https://www.loom.com/embed/7e43aaf3906c4d8589c2fdbb4f72dc5f",
