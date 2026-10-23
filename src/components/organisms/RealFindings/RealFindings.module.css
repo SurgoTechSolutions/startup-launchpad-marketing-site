@@ -1,6 +1,6 @@
 /*
  * Plain grey across the full width, hiding the page grid. It fades in from the white stats band
- * above and back out to the white founder story below, over 96px each, so the joins aren't hard lines. The layer behind reaches the screen
+ * above and back out to the white section below, over 96px each, so the joins aren't hard lines. The layer behind reaches the screen
  * edges; the clip stops it widening the page.
  */
 .band {

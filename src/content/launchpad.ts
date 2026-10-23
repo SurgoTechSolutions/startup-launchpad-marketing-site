@@ -1,6 +1,7 @@
 import jasonNesbitt from "@/assets/images/jason-nesbitt.webp";
 import { ROUTES } from "@/config/site";
 import type {
+  CheckSummaryContent,
   DashboardContent,
   HeaderContent,
   PricingContent,
@@ -21,7 +22,7 @@ import type {
 import { HERO_QUOTE_KEYS } from "./hero";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
-import { FOOTER, HEADER_BASE, NAV_LINKS, ROLLING_QUALITIES, WORDMARK } from "./site";
+import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
 
 export const LAUNCHPAD_HEADER = {
   ...HEADER_BASE,
@@ -30,7 +31,7 @@ export const LAUNCHPAD_HEADER = {
 } as const satisfies HeaderContent;
 
 export const HERO = {
-  title: ["Security checks for apps ", { highlight: "built with AI" }, "."],
+  title: ["Automated security checks for apps ", { highlight: "built with AI" }, "."],
   lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
   ctaLabel: "Scan my code for free",
   note: "Find out how many issues you have before you pay anything.",
@@ -41,7 +42,7 @@ export const HERO = {
 
 /** The question after the logos, answered by the stats that follow. */
 export const HOOK = {
-  title: ["You built something real. Do you know it's ", { rotate: ROLLING_QUALITIES, suffix: "?" }],
+  title: ["Find the holes in your app's security, and fix them yourself without paying a developer."],
   video: {
     title: "Startup Launchpad dashboard demo and fix guide",
     embedUrl: "https://www.loom.com/embed/7e43aaf3906c4d8589c2fdbb4f72dc5f",
@@ -115,6 +116,23 @@ export const FOUNDER_STORY = {
   after: "A few minutes",
   quote: resolveQuote("rousseauMinutes"),
 } as const satisfies FounderStoryContent;
+
+/** What a scan covers, straight after the real findings. */
+export const CHECK_SUMMARY = {
+  title: ["So we look for ", { highlight: "all of it" }, "."],
+  checks: [
+    { kind: "secrets", label: "Leaked secrets" },
+    { kind: "dependencies", label: "Vulnerable dependencies" },
+    { kind: "code", label: "Risky code" },
+    { kind: "https", label: "HTTPS and certificates" },
+    { kind: "headers", label: "Missing security headers" },
+    { kind: "legal", label: "Legal pages" },
+    { kind: "accessibility", label: "Accessibility" },
+    { kind: "speed", label: "Speed" },
+    { kind: "search", label: "Search basics" },
+  ],
+  moreLink: { label: "See everything we check →", href: ROUTES.whatWeCheck },
+} as const satisfies CheckSummaryContent;
 
 /** Call to action straight after the real findings. */
 export const FINDINGS_CTA = {
@@ -327,6 +345,7 @@ export const LAUNCHPAD_PAGE = {
   hook: HOOK,
   stats: STATS,
   findings: FINDINGS,
+  checkSummary: CHECK_SUMMARY,
   founderStory: FOUNDER_STORY,
   findingsCta: FINDINGS_CTA,
   dashboard: DASHBOARD,

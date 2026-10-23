@@ -120,6 +120,23 @@ export type DashArea =
   | "cost"
   | "housekeeping";
 
+/** One thing the homepage says a scan checks, which picks its icon. */
+export type CheckKind =
+  | "secrets"
+  | "dependencies"
+  | "code"
+  | "https"
+  | "headers"
+  | "legal"
+  | "accessibility"
+  | "speed"
+  | "search";
+
+export interface CheckItem {
+  readonly kind: CheckKind;
+  readonly label: string;
+}
+
 export interface DashTileData {
   readonly area: DashArea;
   readonly label: string;

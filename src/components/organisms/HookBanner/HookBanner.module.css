@@ -17,9 +17,9 @@
   background: var(--navy-gradient);
 }
 
-/* White words on the gradient, a step smaller than section headings. The rolling word keeps its orange. */
+/* White words on the gradient, 48px on desktop and scaling down on smaller screens. */
 .band .title {
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: clamp(30px, 4.5vw, 48px);
 }
 
 .title {

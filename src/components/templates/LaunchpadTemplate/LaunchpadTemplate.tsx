@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CheckSummary } from "@/components/organisms/CheckSummary";
 import { DashboardShowcase } from "@/components/organisms/DashboardShowcase";
 import { ExplainSection } from "@/components/organisms/ExplainSection";
 import { FaqSection } from "@/components/organisms/FaqSection";
@@ -39,6 +40,7 @@ export function LaunchpadTemplate({ content, signupUrl }: LaunchpadTemplateProps
           <HookBanner content={content.hook} signupUrl={signupUrl} />
           <StatsSection content={content.stats} />
           <RealFindings content={content.findings} />
+          <CheckSummary content={content.checkSummary} />
           <FounderStory content={content.founderStory} signupUrl={signupUrl} />
           <FinalCta content={content.findingsCta} signupUrl={signupUrl} layout="banner" />
           <DashboardShowcase content={content.dashboard} signupUrl={signupUrl} />

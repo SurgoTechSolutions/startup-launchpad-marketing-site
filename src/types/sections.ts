@@ -1,6 +1,7 @@
 /** Content shapes for each page section. Organisms take these as props. */
 import type { StaticImageData } from "next/image";
 import type {
+  CheckItem,
   DashArea,
   Severity,
   ComparisonColumn,
@@ -117,6 +118,13 @@ export interface DashboardContent {
   readonly tiles: readonly DashTileData[];
   readonly quote: QuoteWithPerson;
   readonly ctaLabel: string;
+}
+
+/** The short list of what a scan covers, linking to the full breakdown. */
+export interface CheckSummaryContent {
+  readonly title: RichText;
+  readonly checks: readonly CheckItem[];
+  readonly moreLink: Link;
 }
 
 export interface FindingsContent {
@@ -298,6 +306,7 @@ export interface LaunchpadPageContent {
   readonly hook: HookContent;
   readonly stats: StatsContent;
   readonly findings: FindingsContent;
+  readonly checkSummary: CheckSummaryContent;
   readonly founderStory: FounderStoryContent;
   readonly findingsCta: FinalCtaContent;
   readonly dashboard: DashboardContent;
