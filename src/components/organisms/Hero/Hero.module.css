@@ -49,25 +49,26 @@
 }
 
 @media (min-width: 981px) {
-  /* One row as tall as the hero, so the column below can fill it; the words stay centred in it. */
+  /*
+   * Both columns start at the same height, so the top of the wall lines up with the top of
+   * the headline. The pair stays centred in the hero.
+   */
   .hero {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr);
-    align-content: stretch;
+    align-content: center;
+    align-items: start;
     min-height: 0;
     padding-block: 16px 24px;
   }
 
   /*
-   * One picture: the wall fills the column and the card sits over its lower-left corner, so
-   * the column is no taller than the wall. Both share the one grid cell.
+   * One picture: the wall fills the column and the card sits over its lower-left corner. Both
+   * share the one grid cell.
    */
   .aside {
     display: grid;
-    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
-    align-items: stretch;
-    align-self: stretch;
-    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    container-type: inline-size;
   }
 
   .figureCell,
@@ -77,18 +78,23 @@
 
   /* Leaves room under the wall for the bottom of the card. */
   .figureCell {
-    container-type: size;
-    align-items: center;
     justify-content: flex-end;
-    min-height: 0;
-    padding-bottom: 56px;
+    padding-bottom: 80px;
   }
 
-  /* Width from whichever runs out first: the column's width or its height. */
+  /*
+   * The drawing doesn't fill its 5:4 box: it sits about 14% in from the left and top, 18% in
+   * from the right and 7% up from the bottom. So the box is sized for the drawing to span the
+   * column, and its margins pull the drawing's own edges onto the column's right edge and top.
+   * On short screens the height caps it, so the logos stay on screen.
+   */
   .figure {
-    width: min(100cqw, 125cqh);
+    --w: min(100cqw / 0.86, (100svh - 330px) * 1.58);
+
+    flex: none;
+    width: var(--w);
     max-width: none;
-    margin: 0;
+    margin: calc(var(--w) * -0.11) calc(var(--w) * -0.176) calc(var(--w) * -0.058) 0;
   }
 
   .quotes {
