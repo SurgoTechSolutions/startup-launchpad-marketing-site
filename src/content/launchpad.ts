@@ -2,6 +2,7 @@ import jasonNesbitt from "@/assets/images/jason-nesbitt.webp";
 import { ROUTES } from "@/config/site";
 import type {
   CheckSummaryContent,
+  CostBandContent,
   DashboardContent,
   HeaderContent,
   PricingContent,
@@ -293,10 +294,23 @@ export const HOW_IT_WORKS = {
   ctaIcon: "github",
 } as const satisfies HowItWorksContent;
 
+/** A slate band just above the pricing, so the reader sees what the alternatives cost first. Figures are the ones sourced on the pricing page. */
+export const COST_BAND = {
+  title: [
+    "£2,500 buys one pen test and a PDF.",
+    { lineBreak: true },
+    "£27 a month checks your code ",
+    { highlight: "every\u00a06\u00a0hours" },
+    ", with a fix to paste in.",
+  ],
+  lede: "That's about 20 minutes of a security contractor's day.",
+  link: { label: "See the full comparison →", href: ROUTES.pricing },
+} as const satisfies CostBandContent;
+
+// The full-comparison link lives on the cost band just above, so it isn't repeated here.
 export const LAUNCHPAD_PRICING = {
   ...PRICING,
   lede: "See your numbers first. Pay when you want the fixes.",
-  moreLink: { label: "See full pricing and how it compares →", href: ROUTES.pricing },
 } as const satisfies PricingContent;
 
 export const FAQS = {
@@ -359,6 +373,7 @@ export const LAUNCHPAD_PAGE = {
   featureQuote: FEATURE_QUOTE,
   quoteWall: QUOTE_WALL,
   howItWorks: HOW_IT_WORKS,
+  costBand: COST_BAND,
   pricing: LAUNCHPAD_PRICING,
   faq: FAQS,
   finalCta: FINAL_CTA,

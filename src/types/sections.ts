@@ -244,6 +244,13 @@ export interface FaqContent {
   readonly faqs: readonly Faq[];
 }
 
+/** A short band setting the price against a pen test and a contractor, linking to the full comparison. */
+export interface CostBandContent {
+  readonly title: RichText;
+  readonly lede: string;
+  readonly link: Link;
+}
+
 export interface FinalCtaContent {
   readonly title: RichText;
   readonly lede?: string;
@@ -317,6 +324,7 @@ export interface LaunchpadPageContent {
   readonly featureQuote: FeatureQuoteContent;
   readonly quoteWall: QuoteWallContent;
   readonly howItWorks: HowItWorksContent;
+  readonly costBand: CostBandContent;
   readonly pricing: PricingContent;
   readonly faq: FaqContent;
   readonly finalCta: FinalCtaContent;

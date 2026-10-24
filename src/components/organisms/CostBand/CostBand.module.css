@@ -1,0 +1,35 @@
+/* Navy gradient band across the full viewport width, drawn behind the content. */
+.band {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-block: 72px;
+  text-align: center;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--navy-gradient);
+}
+
+/* White words on the gradient, a step smaller than section headings. The highlight stays orange. */
+.band .title {
+  max-width: 34ch;
+  color: #fff;
+  font-size: clamp(24px, 3.2vw, 34px);
+}
+
+.lede {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.band .link {
+  margin-top: 8px;
+  color: #fff;
+}
