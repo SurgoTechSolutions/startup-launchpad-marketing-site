@@ -14,10 +14,9 @@ export interface PatchFigureProps {
 
 /**
  * The Hairline "patch" figure: a brick wall with three bricks missing. With the pointer on the
- * wall the bricks lift home one after another; when it leaves they fall back out. It plays
- * that on its own until a pointer arrives. The server sends the empty box at its final size,
- * so nothing shifts when the drawing mounts. Under reduced motion every move lands at once
- * and the tour stays at rest.
+ * wall the bricks lift home one after another; when it leaves they fall back out. Until then
+ * it rests with the gaps showing. The server sends the empty box at its final size, so
+ * nothing shifts when the drawing mounts. Under reduced motion every move lands at once.
  */
 export function PatchFigure({ label, className }: PatchFigureProps): ReactNode {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -37,9 +36,7 @@ export function PatchFigure({ label, className }: PatchFigureProps): ReactNode {
       },
       PATCH.range[1],
     );
-    const tour = HL.tour(stage, PATCH.tour);
     return () => {
-      tour.stop();
       figure.destroy();
       svg.remove();
     };
