@@ -43,8 +43,8 @@ export const HERO = {
 /** The question after the logos, answered by the stats that follow. */
 export const HOOK = {
   title: [
-    "Find the holes in your app's security, and fix them yourself ",
-    { highlight: "without paying a developer" },
+    "Find the holes in your app's security, ",
+    { highlight: "and fix them yourself without paying a developer" },
     ".",
   ],
   video: {
