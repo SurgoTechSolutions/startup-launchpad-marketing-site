@@ -47,7 +47,9 @@ export function FinalCta({
           </SectionTitle>
           {content.lede !== undefined && <Lede>{content.lede}</Lede>}
         </div>
-        <Button href={signupUrl}>{content.ctaLabel}</Button>
+        <Button href={signupUrl} onDark>
+          {content.ctaLabel}
+        </Button>
       </section>
     );
   }
@@ -64,7 +66,9 @@ export function FinalCta({
           <RichText content={content.title} />
         </SectionTitle>
         {content.lede !== undefined && <Lede>{content.lede}</Lede>}
-        <Button href={signupUrl}>{content.ctaLabel}</Button>
+        <Button href={signupUrl} onDark={!centered && !plain}>
+          {content.ctaLabel}
+        </Button>
         {content.contact !== undefined && <p className={styles.contact}>{content.contact}</p>}
       </div>
       {aside !== undefined && <div className={styles.aside}>{aside}</div>}

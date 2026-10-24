@@ -245,7 +245,7 @@
   }
 
   .panel .panelCta {
-    display: block;
+    display: flex;
     margin-top: 16px;
     text-align: center;
   }

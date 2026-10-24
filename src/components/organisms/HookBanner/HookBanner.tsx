@@ -21,7 +21,7 @@ export function HookBanner({ content, signupUrl }: HookBannerProps): ReactNode {
       {content.video !== undefined && <VideoEmbed video={content.video} className={styles.video} />}
       {content.ctaLabel !== undefined && (
         <div className={styles.cta}>
-          <Button href={signupUrl}>{content.ctaLabel}</Button>
+          <Button href={signupUrl} onDark>{content.ctaLabel}</Button>
           {content.note !== undefined && <small className={styles.note}>{content.note}</small>}
         </div>
       )}
