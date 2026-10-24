@@ -7,7 +7,7 @@ import styles from "./QuoteCard.module.css";
 /**
  * Quote layouts from the mock-up.
  * shout: hero slide (the rotator draws the frame). spotlight: founder story card with the big quote mark.
- * rule: orange left rule. stacked: card with the offset outline. wall: quote wall card.
+ * rule: orange left rule. stacked: card. wall: quote wall card.
  * centered: pricing quote. glyph: closing card with the big quote mark. card: plain card.
  */
 export type QuoteCardVariant =

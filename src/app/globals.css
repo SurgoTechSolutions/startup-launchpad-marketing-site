@@ -26,9 +26,6 @@
 
   /* --font is set on <html> by next/font (Comfortaa). */
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-
-  --shadow-stack: 8px 10px 0 -1px var(--surface), 8px 10px 0 0 var(--line);
-  --shadow-stack-lg: 12px 15px 0 -1px var(--surface), 12px 15px 0 0 var(--line);
 }
 
 *,
