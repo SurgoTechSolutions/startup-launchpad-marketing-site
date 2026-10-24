@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { cx } from "@/lib/cx";
 import styles from "./Button.module.css";
 
-export type ButtonVariant = "primary" | "underline" | "nav";
+export type ButtonVariant = "primary" | "slide" | "nav";
 
 export interface ButtonProps {
   readonly href: string;

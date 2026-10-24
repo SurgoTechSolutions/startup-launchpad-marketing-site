@@ -31,7 +31,7 @@ export function CheckSummary({ content }: CheckSummaryProps): ReactNode {
         ))}
       </ul>
       <p className={styles.more}>
-        <Button href={content.moreLink.href} variant="underline">
+        <Button href={content.moreLink.href} variant="slide">
           {content.moreLink.label}
         </Button>
       </p>
