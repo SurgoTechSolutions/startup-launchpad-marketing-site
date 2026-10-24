@@ -63,6 +63,12 @@
   justify-content: center;
 }
 
+/* A picture beside the copy instead of a quote, centred in its column. */
+.aside {
+  display: flex;
+  justify-content: center;
+}
+
 .contact {
   color: var(--muted);
   font-size: 14px;

@@ -22,6 +22,8 @@ export interface FinalCtaProps {
   readonly className?: string | undefined;
   /** For the split layout: show it on the page background instead of the slate band. */
   readonly plain?: boolean;
+  /** Something to show beside the copy in place of the quote, e.g. a picture. Makes the layout split. */
+  readonly aside?: ReactNode;
 }
 
 /** The closing call to action, with an optional quote. */
@@ -32,6 +34,7 @@ export function FinalCta({
   layout,
   className,
   plain = false,
+  aside,
 }: FinalCtaProps): ReactNode {
   const { quote } = content;
 
@@ -49,7 +52,7 @@ export function FinalCta({
     );
   }
 
-  const centered = (layout ?? (quote === undefined ? "centered" : "split")) === "centered";
+  const centered = (layout ?? (quote === undefined && aside === undefined ? "centered" : "split")) === "centered";
 
   return (
     <section
@@ -64,7 +67,8 @@ export function FinalCta({
         <Button href={signupUrl}>{content.ctaLabel}</Button>
         {content.contact !== undefined && <p className={styles.contact}>{content.contact}</p>}
       </div>
-      {quote !== undefined && (
+      {aside !== undefined && <div className={styles.aside}>{aside}</div>}
+      {aside === undefined && quote !== undefined && (
         <QuoteCard
           variant="glyph"
           text={quote.text}

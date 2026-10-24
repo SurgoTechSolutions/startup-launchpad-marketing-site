@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { LevelMark } from "@/components/atoms/LevelMark";
 import { BadgeShowcase } from "@/components/organisms/BadgeShowcase";
 import { FinalCta } from "@/components/organisms/FinalCta";
 import { LevelTrack } from "@/components/organisms/LevelTrack";
@@ -29,10 +30,14 @@ export function VerifiedTemplate({ content, signupUrl }: VerifiedTemplateProps):
             lede={verified.intro.lede}
             {...(verified.intro.status === undefined ? {} : { eyebrow: verified.intro.status })}
           />
-          <LevelTrack content={verified.levels} />
-          <BadgeShowcase content={verified.badge} />
+          <LevelTrack content={verified.levels} tone="grey" />
+          <BadgeShowcase content={verified.badge} tone="white" />
           {/* <RulesSection content={verified.rules} /> */}
-          <FinalCta content={content.finalCta} signupUrl={signupUrl} />
+          <FinalCta
+            content={content.finalCta}
+            signupUrl={signupUrl}
+            aside={<LevelMark metal="gold" height={240} />}
+          />
         </main>
         <SiteFooter content={content.footer} />
       </div>
