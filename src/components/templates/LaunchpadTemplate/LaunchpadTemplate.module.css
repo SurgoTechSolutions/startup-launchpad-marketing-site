@@ -12,7 +12,8 @@
   .fold {
     display: flex;
     flex-direction: column;
-    min-height: calc(100svh - 93px);
+    height: calc(100svh - 93px);
+    min-height: 600px;
   }
 
   .fold > :first-child {

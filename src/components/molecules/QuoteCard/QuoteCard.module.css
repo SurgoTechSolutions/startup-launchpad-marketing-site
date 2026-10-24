@@ -25,12 +25,12 @@
 /* Hero slide. The frame comes from the rotator. */
 .shout {
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   text-align: center;
 }
 
 .shout .text {
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: clamp(20px, 2.2vw, 25px);
   font-weight: 700;
   line-height: 1.15;
 }
