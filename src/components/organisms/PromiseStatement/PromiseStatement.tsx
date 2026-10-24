@@ -9,14 +9,16 @@ import styles from "./PromiseStatement.module.css";
 export interface PromiseStatementProps {
   readonly content: { readonly title: RichTextContent; readonly text: string; readonly ctaLabel: string };
   readonly signupUrl: string;
+  /** Fade in from white at the top. Off when a grey section sits above. */
+  readonly fadeIn?: boolean;
   /** Fade back to white at the bottom, for when a white section follows. */
   readonly fadeOut?: boolean;
 }
 
 /** A single promise in a card, centred under its heading, with a button to take it up. */
-export function PromiseStatement({ content, signupUrl, fadeOut = false }: PromiseStatementProps): ReactNode {
+export function PromiseStatement({ content, signupUrl, fadeIn = true, fadeOut = false }: PromiseStatementProps): ReactNode {
   return (
-    <section className={cx(styles.band, fadeOut && styles.fadeOut)}>
+    <section className={cx(styles.band, !fadeIn && styles.solid, fadeOut && styles.fadeOut)}>
       <SectionTitle size="find">
         <RichText content={content.title} />
       </SectionTitle>

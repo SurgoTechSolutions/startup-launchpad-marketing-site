@@ -20,6 +20,10 @@
   background: linear-gradient(var(--surface), var(--bg) 96px);
 }
 
+.solid::before {
+  background: var(--bg);
+}
+
 .fadeOut::before {
   background: linear-gradient(
     var(--surface),
