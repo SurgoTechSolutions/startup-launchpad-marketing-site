@@ -30,7 +30,7 @@
 }
 
 .shout .text {
-  font-size: clamp(20px, 2.2vw, 25px);
+  font-size: var(--quote-shout-size, clamp(20px, 2.2vw, 25px));
   font-weight: 700;
   line-height: 1.15;
 }

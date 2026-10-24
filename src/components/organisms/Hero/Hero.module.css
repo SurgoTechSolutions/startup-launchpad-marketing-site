@@ -51,35 +51,58 @@
 @media (min-width: 981px) {
   /* One row as tall as the hero, so the column below can fill it; the words stay centred in it. */
   .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr);
     align-content: stretch;
     min-height: 0;
     padding-block: 16px 24px;
   }
 
+  /*
+   * One picture: the wall fills the column and the card sits over its lower-left corner, so
+   * the column is no taller than the wall. Both share the one grid cell.
+   */
   .aside {
     display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
     align-items: stretch;
     align-self: stretch;
     min-height: 0;
   }
 
-  .figureCell {
-    container-type: size;
-    align-items: flex-end;
-    min-height: 0;
+  .figureCell,
+  .quotes {
+    grid-area: 1 / 1;
   }
 
-  /* Width from whichever runs out first: the column's width or its spare height. */
+  /* Leaves room under the wall for the bottom of the card. */
+  .figureCell {
+    container-type: size;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 0;
+    padding-bottom: 56px;
+  }
+
+  /* Width from whichever runs out first: the column's width or its height. */
   .figure {
-    width: min(100cqw, 125cqh + 30px);
+    width: min(100cqw, 125cqh);
     max-width: none;
-    margin: 0 0 -24px;
+    margin: 0;
   }
 
   .quotes {
-    position: relative;
+    z-index: 1;
+    align-self: end;
+    justify-self: start;
+    width: min(360px, 74%);
+    --quote-card-max: none;
+    --quote-card-pad: 14px var(--edge) 8px;
+    --quote-shout-size: 19px;
+  }
+
+  .quotes > * {
+    --edge: 22px;
   }
 }
 
