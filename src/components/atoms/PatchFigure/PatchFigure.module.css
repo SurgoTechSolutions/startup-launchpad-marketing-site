@@ -1,0 +1,13 @@
+/*
+ * The box the kernel draws into. Sized here as well as by the kernel's own styles, so the
+ * server-rendered box already has its height before the drawing mounts. The bright stroke
+ * takes the brand orange; the rest of the palette is the kernel's light one.
+ */
+.stage {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  --hairline-hi: var(--accent);
+  --hairline-plate: var(--surface);
+}

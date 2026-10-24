@@ -46,6 +46,8 @@ export interface HeroContent {
   readonly lede: string;
   readonly ctaLabel: string;
   readonly note: string;
+  /** Accessible name for the brick wall drawing above the quote card. */
+  readonly figureLabel: string;
   /** Accessible name for the rotating quote card. */
   readonly quotesLabel: string;
   /** Start of each dot button's label, followed by the person's name. */

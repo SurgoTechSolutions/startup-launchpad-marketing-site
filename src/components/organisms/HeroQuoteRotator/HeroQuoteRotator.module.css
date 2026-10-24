@@ -26,10 +26,10 @@
   align-items: center;
   gap: 14px;
   width: 100%;
-  max-width: 640px;
+  max-width: var(--quote-card-max, 640px);
   --edge: 32px;
 
-  padding: 22px var(--edge) 18px;
+  padding: var(--quote-card-pad, 22px var(--edge) 18px);
   border: 2px solid transparent;
   border-radius: 36px;
   background:
@@ -95,6 +95,17 @@
   overflow-y: visible;
 }
 
+/* Sideways drags belong to the card; up and down still scroll the page. */
+.swipeable {
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.dragging {
+  cursor: grabbing;
+}
+
 /*
  * A swipe, like a carousel: the new quote slides in as the old one slides out, both clipped at
  * the card's edge. Going forward the new one comes from the right; going back it comes from the
@@ -107,6 +118,12 @@
   grid-area: 1 / 1;
   padding-inline: var(--edge);
   visibility: hidden;
+  /* Springs back when a drag is let go too soon; follows the finger exactly while dragging. */
+  transition: translate 0.25s ease-out;
+}
+
+.dragging .slide {
+  transition: none;
 }
 
 .active {
@@ -129,15 +146,16 @@
   animation: exit-to-left 0.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
+/* --from is how far a swipe had dragged, so the quotes carry on from where the finger let go. */
 @keyframes enter-from-left {
   from {
-    translate: -100% 0;
+    translate: calc(-100% + var(--from, 0px)) 0;
   }
 }
 
 @keyframes enter-from-right {
   from {
-    translate: 100% 0;
+    translate: calc(100% + var(--from, 0px)) 0;
   }
 }
 
@@ -145,6 +163,7 @@
 @keyframes exit-to-right {
   from {
     visibility: visible;
+    translate: var(--from, 0px) 0;
   }
 
   to {
@@ -156,6 +175,7 @@
 @keyframes exit-to-left {
   from {
     visibility: visible;
+    translate: var(--from, 0px) 0;
   }
 
   to {
@@ -214,6 +234,7 @@
     animation: none;
   }
 
+  .slide,
   .dot::before {
     transition: none;
   }

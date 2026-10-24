@@ -35,6 +35,7 @@ export const HERO = {
   lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
   ctaLabel: "Scan my code for free",
   note: "Find out how many issues you have before you pay anything.",
+  figureLabel: "A brick wall with three bricks missing. The bricks lift off the ground and slide back into their gaps, then fall out again.",
   quotesLabel: "What founders said when they saw their results",
   quoteDotLabel: "Show quote from",
   quotes: HERO_QUOTE_KEYS.map(resolveQuote),

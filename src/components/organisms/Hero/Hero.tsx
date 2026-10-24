@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Lede } from "@/components/atoms/Lede";
+import { PatchFigure } from "@/components/atoms/PatchFigure";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
@@ -37,7 +38,14 @@ export function Hero({ content, signupUrl }: HeroProps): ReactNode {
         <Button href={signupUrl}>{content.ctaLabel}</Button>
         <small className={styles.note}>{content.note}</small>
       </div>
-      <HeroQuoteRotator slides={slides} dotLabels={dotLabels} label={content.quotesLabel} />
+      <div className={styles.aside}>
+        <div className={styles.figureCell}>
+          <PatchFigure label={content.figureLabel} className={styles.figure} />
+        </div>
+        <div className={styles.quotes}>
+          <HeroQuoteRotator slides={slides} dotLabels={dotLabels} label={content.quotesLabel} />
+        </div>
+      </div>
     </section>
   );
 }

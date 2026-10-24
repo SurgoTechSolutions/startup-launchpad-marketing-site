@@ -15,6 +15,74 @@
   min-width: 0;
 }
 
+/*
+ * The brick wall sits above a compact quote card, overlapping it a little so the two read as
+ * one. On desktop the column fills the hero's height: the card takes what it needs and the
+ * wall takes the rest, at the largest 5:4 size that fits, so the logos stay on screen.
+ */
+.aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.figureCell {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.figure {
+  max-width: 380px;
+  margin-top: -16px;
+  margin-bottom: -8px;
+}
+
+.quotes {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  --quote-card-max: 440px;
+  --quote-card-pad: 16px var(--edge) 12px;
+}
+
+@media (min-width: 981px) {
+  /* One row as tall as the hero, so the column below can fill it; the words stay centred in it. */
+  .hero {
+    grid-template-rows: minmax(0, 1fr);
+    align-content: stretch;
+    min-height: 0;
+    padding-block: 16px 24px;
+  }
+
+  .aside {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-items: stretch;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  .figureCell {
+    container-type: size;
+    align-items: flex-end;
+    min-height: 0;
+  }
+
+  /* Width from whichever runs out first: the column's width or its spare height. */
+  .figure {
+    width: min(100cqw, 125cqh + 30px);
+    max-width: none;
+    margin: 0 0 -24px;
+  }
+
+  .quotes {
+    position: relative;
+  }
+}
+
 .note {
   color: var(--muted);
   font-size: 13px;
@@ -31,5 +99,10 @@
     align-items: center;
     max-width: 720px;
     text-align: center;
+  }
+
+  /* No wall once stacked, so the quote card follows straight on from the button. */
+  .figureCell {
+    display: none;
   }
 }

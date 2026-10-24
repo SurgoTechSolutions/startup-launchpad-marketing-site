@@ -21,7 +21,7 @@ const layerRule = (forbidden) => ({
 
 export default defineConfig(
   {
-    ignores: [".next/**", "node_modules/**", "out/**", "build/**", "design/**", "next-env.d.ts"],
+    ignores: [".next/**", "node_modules/**", "out/**", "build/**", "design/**", "next-env.d.ts", "src/lib/hairline/kernel.js"],
   },
   ...compat.extends("next/core-web-vitals"),
   {
