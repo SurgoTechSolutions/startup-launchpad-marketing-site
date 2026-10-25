@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
+import { InView } from "@/components/atoms/InView";
 import { Lede } from "@/components/atoms/Lede";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
@@ -16,15 +17,15 @@ export interface FounderStoryProps {
 export function FounderStory({ content, signupUrl }: FounderStoryProps): ReactNode {
   return (
     <section className={styles.spot}>
-      <div className={styles.copy}>
+      <InView className={styles.copy} threshold={0.4}>
         <Eyebrow>{content.eyebrow}</Eyebrow>
         <SectionTitle size="spot">
           <RichText content={content.title} />
         </SectionTitle>
         <Lede>{content.lede}</Lede>
         <Button href={signupUrl}>{content.ctaLabel}</Button>
-      </div>
-      <div className={styles.visual}>
+      </InView>
+      <InView className={styles.visual} threshold={0.4}>
         {/* Decorative: the heading already says the same thing. */}
         <div className={styles.badge} aria-hidden="true">
           <span className={styles.before}>{content.before}</span>
@@ -34,7 +35,7 @@ export function FounderStory({ content, signupUrl }: FounderStoryProps): ReactNo
           <b className={styles.after}>{content.after}</b>
         </div>
         <QuoteCard variant="spotlight" text={content.quote.text} person={content.quote.person} />
-      </div>
+      </InView>
     </section>
   );
 }
