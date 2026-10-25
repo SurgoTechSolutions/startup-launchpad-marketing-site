@@ -121,3 +121,45 @@
 .info {
   background: #a0aec0;
 }
+
+/*
+ * Loading on scroll, timed by the slot round the tile (DashGrid on the dashboard): data-tile is
+ * "waiting" until the slot is reached, then "in", and --tile-delay staggers a row. The tile rises
+ * in, its bar stretches out from the left like the link underlines, and the legend follows once
+ * the bar is full. Without data-tile the tile simply shows.
+ */
+@keyframes tile-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes bar-fill {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes legend-in {
+  from {
+    opacity: 0;
+  }
+}
+
+:global([data-tile="waiting"]) .tile {
+  opacity: 0;
+}
+
+:global([data-tile="in"]) .tile {
+  animation: tile-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) var(--tile-delay, 0ms) backwards;
+}
+
+:global([data-tile="in"]) .bar {
+  transform-origin: left;
+  animation: bar-fill 0.8s cubic-bezier(0.65, 0, 0.35, 1) calc(var(--tile-delay, 0ms) + 200ms) backwards;
+}
+
+:global([data-tile="in"]) .legend {
+  animation: legend-in 0.4s ease-out calc(var(--tile-delay, 0ms) + 800ms) backwards;
+}
