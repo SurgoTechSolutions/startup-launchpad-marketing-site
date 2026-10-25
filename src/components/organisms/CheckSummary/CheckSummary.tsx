@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { CheckIcon } from "@/components/atoms/CheckIcon";
+import { InView } from "@/components/atoms/InView";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
 import type { CheckSummaryContent } from "@/types";
+import { CheckGrid } from "./CheckGrid";
 import styles from "./CheckSummary.module.css";
 
 export interface CheckSummaryProps {
@@ -16,11 +18,13 @@ export function CheckSummary({ content }: CheckSummaryProps): ReactNode {
   return (
     <section className={styles.band}>
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <InView className={styles.fill} threshold={0.6}>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </InView>
       </SectionHead>
-      <ul className={styles.grid}>
+      <CheckGrid className={styles.grid}>
         {content.checks.map((check) => (
           <li key={check.kind} className={styles.check}>
             <span className={styles.icon}>
@@ -29,7 +33,7 @@ export function CheckSummary({ content }: CheckSummaryProps): ReactNode {
             {check.label}
           </li>
         ))}
-      </ul>
+      </CheckGrid>
       <p className={styles.more}>
         <Button href={content.moreLink.href} variant="slide" className={styles.link}>
           {content.moreLink.label}

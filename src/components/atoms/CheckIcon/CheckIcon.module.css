@@ -1,0 +1,170 @@
+/*
+ * Each icon acts out its check once when an ancestor gets data-play: the key turns, the box
+ * drops in, the slash draws, the padlock clicks shut, the shield's bar and the page's lines
+ * write in, the eye blinks, the needle sweeps and the glass scans. Still, they look exactly as
+ * they always have.
+ */
+/* Moves that travel past the 24-unit box, like the box's drop, draw outside it instead of being cut off. */
+.root {
+  overflow: visible;
+}
+
+.key,
+.box,
+.left,
+.right,
+.shackle,
+.eye,
+.needle,
+.glass {
+  transform-box: fill-box;
+}
+
+.key {
+  transform-origin: 25% 75%;
+}
+
+.eye {
+  transform-origin: center;
+}
+
+/* The needle turns about its hub, the bottom-left end of its own box. */
+.needle {
+  transform-origin: 0% 100%;
+}
+
+:global([data-play]) .key {
+  animation: turn 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+:global([data-play]) .box {
+  animation: drop 0.7s ease-out;
+}
+
+:global([data-play]) .left {
+  animation: nudge-left 0.6s ease-in-out;
+}
+
+:global([data-play]) .right {
+  animation: nudge-right 0.6s ease-in-out;
+}
+
+:global([data-play]) .draw {
+  stroke-dasharray: 1;
+  animation: draw 0.5s ease-out backwards;
+}
+
+:global([data-play]) .later {
+  animation-delay: 0.18s;
+}
+
+:global([data-play]) .shackle {
+  animation: click 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+:global([data-play]) .eye {
+  animation: blink 0.45s ease-in-out;
+}
+
+:global([data-play]) .needle {
+  animation: sweep 0.9s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+:global([data-play]) .glass {
+  animation: scan 0.8s ease-in-out;
+}
+
+@keyframes turn {
+  40% {
+    transform: rotate(-28deg);
+  }
+
+  70% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-5px);
+  }
+
+  45% {
+    transform: translateY(0);
+  }
+
+  65% {
+    transform: translateY(-1.5px);
+  }
+
+  85% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes nudge-left {
+  50% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes nudge-right {
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes click {
+  35% {
+    transform: translateY(-3px);
+  }
+
+  75% {
+    transform: translateY(0.4px);
+  }
+}
+
+@keyframes blink {
+  45%,
+  55% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotate(-100deg);
+  }
+
+  65% {
+    transform: rotate(10deg);
+  }
+
+  85% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes scan {
+  25% {
+    transform: translate(-1.5px, -1.5px);
+  }
+
+  50% {
+    transform: translate(1.5px, -1.5px);
+  }
+
+  75% {
+    transform: translate(1.5px, 1.5px);
+  }
+}
