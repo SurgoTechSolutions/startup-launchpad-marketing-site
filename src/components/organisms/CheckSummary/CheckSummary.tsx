@@ -11,7 +11,7 @@ export interface CheckSummaryProps {
   readonly content: CheckSummaryContent;
 }
 
-/** Every area a scan covers, one tile and icon each, with a link to the full breakdown. */
+/** Every area a scan covers, one tile and icon each, with a link to the full breakdown, on a navy band. */
 export function CheckSummary({ content }: CheckSummaryProps): ReactNode {
   return (
     <section className={styles.band}>
@@ -31,7 +31,7 @@ export function CheckSummary({ content }: CheckSummaryProps): ReactNode {
         ))}
       </ul>
       <p className={styles.more}>
-        <Button href={content.moreLink.href} variant="slide">
+        <Button href={content.moreLink.href} variant="slide" className={styles.link}>
           {content.moreLink.label}
         </Button>
       </p>

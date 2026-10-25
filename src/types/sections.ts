@@ -317,7 +317,6 @@ export interface LaunchpadPageContent {
   readonly findings: FindingsContent;
   readonly checkSummary: CheckSummaryContent;
   readonly founderStory: FounderStoryContent;
-  readonly findingsCta: FinalCtaContent;
   readonly dashboard: DashboardContent;
   readonly explain: ExplainContent;
   readonly fixBanner: FinalCtaContent;

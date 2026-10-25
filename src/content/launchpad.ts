@@ -123,9 +123,9 @@ export const FOUNDER_STORY = {
   quote: resolveQuote("rousseauMinutes"),
 } as const satisfies FounderStoryContent;
 
-/** What a scan covers, straight after the real findings. */
+/** What a scan covers, straight after the founder story: it answers "We took minutes." */
 export const CHECK_SUMMARY = {
-  title: ["So we look for ", { highlight: "all of it" }, "."],
+  title: ["Because we look for ", { highlight: "all of it" }, "."],
   checks: [
     { kind: "secrets", label: "Leaked secrets" },
     { kind: "dependencies", label: "Vulnerable dependencies" },
@@ -139,13 +139,6 @@ export const CHECK_SUMMARY = {
   ],
   moreLink: { label: "See everything we check →", href: ROUTES.whatWeCheck },
 } as const satisfies CheckSummaryContent;
-
-/** Call to action straight after the real findings. */
-export const FINDINGS_CTA = {
-  title: ["See what we'd find in ", { highlight: "your code" }, "."],
-  lede: "Your first scan is free.",
-  ctaLabel: "Scan my code for free",
-} as const satisfies FinalCtaContent;
 
 export const DASHBOARD = {
   title: ["See every issue ", { highlight: "at a glance" }, "."],
@@ -366,7 +359,6 @@ export const LAUNCHPAD_PAGE = {
   findings: FINDINGS,
   checkSummary: CHECK_SUMMARY,
   founderStory: FOUNDER_STORY,
-  findingsCta: FINDINGS_CTA,
   dashboard: DASHBOARD,
   explain: EXPLAIN,
   fixBanner: FIX_BANNER,

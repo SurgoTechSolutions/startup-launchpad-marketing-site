@@ -1,11 +1,24 @@
-/* White band across the full width. The shadow fills the sides without widening the page. */
+/* Navy gradient band across the full viewport width, drawn behind the content. */
 .band {
-  background: var(--surface);
-  box-shadow: 0 0 0 100vmax var(--surface);
-  clip-path: inset(0 -100vmax);
+  position: relative;
+  isolation: isolate;
+  padding-block: 84px;
 }
 
-/* Three tiles to a row; two below that, smaller on phones. */
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--navy-gradient);
+}
+
+/* White words on the gradient. The highlight stays orange. */
+.band h2 {
+  color: #fff;
+}
+
+/* Three tiles to a row; two below that, one on phones. */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -21,23 +34,21 @@
   align-items: center;
   gap: 12px;
   padding: 18px 20px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--r-sm);
-  background: var(--surface);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
   font-size: 16px;
   font-weight: 700;
 }
 
-/* The icon, in the brand orange on white. */
+/* The icon, in the brand orange. */
 .icon {
   display: grid;
   flex: none;
   place-items: center;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  background: var(--surface);
   color: var(--accent);
 }
 
@@ -51,6 +62,10 @@
   text-align: center;
 }
 
+.band .link {
+  color: #fff;
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -59,6 +74,7 @@
 
 @media (max-width: 560px) {
   .grid {
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
   }
 
