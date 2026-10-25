@@ -13,38 +13,17 @@ import styles from "./ExplainSection.module.css";
 
 const PROMPT_ID = "fix-prompt";
 
-/**
- * The explanation, one span per word so it can appear word by word, with the emphasised phrase
- * wrapped in a mark. Each word carries its place as --w, which staggers it.
- */
-function Words({ text, emphasis }: { readonly text: string; readonly emphasis?: string | undefined }): ReactNode {
-  const at = emphasis === undefined ? -1 : text.indexOf(emphasis);
-  const parts =
-    at < 0 || emphasis === undefined
-      ? [{ text, marked: false }]
-      : [
-          { text: text.slice(0, at), marked: false },
-          { text: emphasis, marked: true },
-          { text: text.slice(at + emphasis.length), marked: false },
-        ];
+/** The explanation, one span per word so it can appear word by word. Each word carries its place as --w, which staggers it. */
+function Words({ text }: { readonly text: string }): ReactNode {
   let place = 0;
-  return parts.map((part, index) => {
-    const words = part.text.split(/(\s+)/).map((piece, k) => {
-      if (piece.trim() === "") return piece;
-      const style = { "--w": place } as CSSProperties;
-      place += 1;
-      return (
-        <span key={k} className={styles.word} style={style}>
-          {piece}
-        </span>
-      );
-    });
-    return part.marked ? (
-      <mark key={index} className={styles.mark}>
-        {words}
-      </mark>
-    ) : (
-      words
+  return text.split(/(\s+)/).map((piece, k) => {
+    if (piece.trim() === "") return piece;
+    const style = { "--w": place } as CSSProperties;
+    place += 1;
+    return (
+      <span key={k} className={styles.word} style={style}>
+        {piece}
+      </span>
     );
   });
 }
@@ -79,7 +58,7 @@ export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
             </div>
             <h3>{issue.title}</h3>
             <p>
-              <Words text={issue.body} emphasis={issue.emphasis} />
+              <Words text={issue.body} />
             </p>
             <div className={styles.location}>
               <TypedCode text={issue.location} delayMs={1900} />
@@ -89,20 +68,22 @@ export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
         </InView>
       </section>
       <section className={styles.fixPart}>
-        <SectionTitle size="explain">
-          <RichText content={content.fixTitle} />
-        </SectionTitle>
-        <div className={cx(styles.card, styles.fixCard)}>
-          <div className={styles.fix}>
-            <div className={styles.promptBar}>
-              <span>{prompt.heading}</span>
-              <CopyPromptButton text={prompt.text} targetId={PROMPT_ID} labels={prompt.copyLabels} />
+        <InView className={styles.pasteIn} threshold={0.2}>
+          <SectionTitle size="explain">
+            <RichText content={content.fixTitle} />
+          </SectionTitle>
+          <div className={cx(styles.card, styles.fixCard)}>
+            <div className={styles.fix}>
+              <div className={styles.promptBar}>
+                <span>{prompt.heading}</span>
+                <CopyPromptButton text={prompt.text} targetId={PROMPT_ID} labels={prompt.copyLabels} />
+              </div>
+              <pre id={PROMPT_ID} className={styles.prompt}>
+                {prompt.text}
+              </pre>
             </div>
-            <pre id={PROMPT_ID} className={styles.prompt}>
-              {prompt.text}
-            </pre>
           </div>
-        </div>
+        </InView>
         {/* <FixTerminal content={content.terminal} /> */}
       </section>
     </>

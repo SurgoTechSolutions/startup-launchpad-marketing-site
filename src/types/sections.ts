@@ -161,8 +161,6 @@ export interface ExplainContent {
     readonly category: string;
     readonly title: string;
     readonly body: string;
-    /** A phrase in the body, word for word, that gets a marker highlight. */
-    readonly emphasis?: string;
     readonly location: string;
     readonly locationNote: string;
   };

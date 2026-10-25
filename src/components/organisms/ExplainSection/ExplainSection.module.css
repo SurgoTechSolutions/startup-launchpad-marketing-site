@@ -136,8 +136,7 @@
  * Scroll-in. "plain English" fills from ink to orange, the same move as the other headings.
  * Alice's quote slides in from the left and the issue card from the right. Then the card fills
  * itself in like a report being written: the Critical tag stamps down, the title rises, the
- * explanation appears word by word, a marker sweeps under the phrase that matters, and the file
- * path types itself out (TypedCode). Fill mode "backwards" holds each start state through its
+ * explanation appears word by word, and the file path types itself out (TypedCode). Fill mode "backwards" holds each start state through its
  * delay. Without JavaScript or with reduced motion there is no data-in-view, so it all shows.
  */
 @keyframes from-left {
@@ -185,12 +184,6 @@
   }
 }
 
-@keyframes mark {
-  from {
-    background-size: 0% 100%;
-  }
-}
-
 .fill em {
   background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
   -webkit-background-clip: text;
@@ -204,12 +197,6 @@
 
 .fill[data-in-view="true"] em {
   animation: fill-in 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s backwards;
-}
-
-/* A highlighter stroke across the lower part of the phrase, drawn from the left. */
-.mark {
-  background: linear-gradient(transparent 58%, rgba(235, 115, 0, 0.28) 58%) no-repeat 0 0 / 100% 100%;
-  color: inherit;
 }
 
 .copy[data-in-view="false"],
@@ -241,10 +228,6 @@
   animation: appear 0.3s ease-out calc(0.9s + var(--w) * 18ms) backwards;
 }
 
-.explained[data-in-view="true"] .mark {
-  animation: mark 0.6s cubic-bezier(0.65, 0, 0.35, 1) 1.65s backwards;
-}
-
 .explained[data-in-view="true"] .location {
   animation: appear 0.4s ease-out 1.6s backwards;
 }
@@ -254,7 +237,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 24px 26px 28px;
-  background: #f4f4f4;
+  background: var(--surface);
   color: #1f2933;
 }
 
@@ -281,6 +264,71 @@
   overflow-wrap: anywhere;
 }
 
+/*
+ * Scroll-in for the fix prompt, acting out a copy and paste. The card rises with its body
+ * empty, Ctrl then V press down, and the whole prompt lands at once, as a paste does. Under a
+ * hovering mouse a key holds down, and comes back up when the mouse leaves.
+ */
+@keyframes press {
+  50% {
+    transform: translateY(3px);
+    box-shadow: 0 2px 4px rgba(0, 21, 36, 0.1);
+  }
+}
+
+@keyframes paste {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Heading and card, stacked and centred as the section lays them out. */
+.pasteIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.pasteIn[data-in-view="false"] .fixCard {
+  opacity: 0;
+}
+
+.pasteIn[data-in-view="false"] .prompt {
+  opacity: 0;
+}
+
+.pasteIn[data-in-view="true"] .fixCard {
+  animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s backwards;
+}
+
+.pasteIn[data-in-view="true"] kbd {
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.12s ease-out;
+  animation: press 0.3s ease-in-out 0.45s;
+}
+
+.pasteIn[data-in-view="true"] kbd:last-of-type {
+  animation-delay: 0.6s;
+}
+
+.pasteIn[data-in-view="true"] .prompt {
+  animation: paste 0.08s linear 0.75s backwards;
+}
+
+/*
+ * Only once motion is allowed, which is when data-in-view is set. The animation is left alone
+ * here: changing it on hover would replay the scroll-in press every time the mouse left.
+ */
+@media (hover: hover) {
+  .pasteIn[data-in-view="true"] kbd:hover {
+    box-shadow: 0 2px 4px rgba(0, 21, 36, 0.1);
+    transform: translateY(3px);
+  }
+}
+
 @media (max-width: 900px) {
   .part {
     grid-template-columns: 1fr;
@@ -296,124 +344,7 @@
     padding: 24px 20px;
   }
 
-  /*
- * Scroll-in. "plain English" fills from ink to orange, the same move as the other headings.
- * Alice's quote slides in from the left and the issue card from the right. Then the card fills
- * itself in like a report being written: the Critical tag stamps down, the title rises, the
- * explanation appears word by word, a marker sweeps under the phrase that matters, and the file
- * path types itself out (TypedCode). Fill mode "backwards" holds each start state through its
- * delay. Without JavaScript or with reduced motion there is no data-in-view, so it all shows.
- */
-@keyframes from-left {
-  from {
-    opacity: 0;
-    transform: translateX(-48px);
-  }
-}
-
-@keyframes from-right {
-  from {
-    opacity: 0;
-    transform: translateX(48px);
-  }
-}
-
-@keyframes fill-in {
-  from {
-    background-position: 100% 0;
-  }
-}
-
-@keyframes stamp {
-  0% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-
-  60% {
-    opacity: 1;
-    transform: scale(0.94);
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-}
-
-@keyframes mark {
-  from {
-    background-size: 0% 100%;
-  }
-}
-
-.fill em {
-  background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.fill[data-in-view="false"] em {
-  background-position: 100% 0;
-}
-
-.fill[data-in-view="true"] em {
-  animation: fill-in 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s backwards;
-}
-
-/* A highlighter stroke across the lower part of the phrase, drawn from the left. */
-.mark {
-  background: linear-gradient(transparent 58%, rgba(235, 115, 0, 0.28) 58%) no-repeat 0 0 / 100% 100%;
-  color: inherit;
-}
-
-.copy[data-in-view="false"],
-.explained[data-in-view="false"] {
-  opacity: 0;
-}
-
-.copy[data-in-view="true"] {
-  animation: from-left 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
-}
-
-.explained[data-in-view="true"] {
-  animation: from-right 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s backwards;
-}
-
-.explained[data-in-view="true"] .severity {
-  animation: stamp 0.4s cubic-bezier(0.3, 0.7, 0.4, 1) 0.5s backwards;
-}
-
-.explained[data-in-view="true"] .category {
-  animation: appear 0.4s ease-out 0.6s backwards;
-}
-
-.explained[data-in-view="true"] h3 {
-  animation: rise 0.45s ease-out 0.7s backwards;
-}
-
-.explained[data-in-view="true"] .word {
-  animation: appear 0.3s ease-out calc(0.9s + var(--w) * 18ms) backwards;
-}
-
-.explained[data-in-view="true"] .mark {
-  animation: mark 0.6s cubic-bezier(0.65, 0, 0.35, 1) 1.65s backwards;
-}
-
-.explained[data-in-view="true"] .location {
-  animation: appear 0.4s ease-out 1.6s backwards;
-}
-
-.fix {
+  .fix {
     padding: 20px;
   }
 }

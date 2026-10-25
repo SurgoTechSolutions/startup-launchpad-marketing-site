@@ -193,7 +193,6 @@ export const EXPLAIN = {
     category: "Security",
     title: "Your profiles table can be read by anyone",
     body: "Row-level security isn't switched on for this table. Anyone who opens your site can copy the public Supabase key out of your JavaScript and read every row in it: names, email addresses, and anything else you store there.",
-    emphasis: "read every row in it",
     location: "supabase/migrations/0002_profiles.sql:14",
     locationNote: "No alter table ... enable row level security statement on this table.",
   },
