@@ -35,7 +35,6 @@ export const HERO = {
   title: ["Automated security checks for apps ", { highlight: "built with AI" }, "."],
   lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
   ctaLabel: "Scan my code for free",
-  note: "Find out how many issues you have before you pay anything.",
   figureLabel: "A brick wall with three bricks missing. The bricks lift off the ground and slide back into their gaps, then fall out again.",
   quotesLabel: "What founders said when they saw their results",
   quoteDotLabel: "Show quote from",
@@ -58,7 +57,6 @@ export const HOOK = {
     height: 720,
   },
   ctaLabel: "Scan my code for free",
-  note: "See how many issues you have before you pay anything.",
 } as const satisfies HookContent;
 
 export const TRUSTED_BY = {
@@ -114,7 +112,6 @@ export const STATS = {
 } as const satisfies StatsContent;
 
 export const FOUNDER_STORY = {
-  eyebrow: "Founder story",
   title: ["Rousseau's colleague took 1.5 days to find them. ", { highlight: "We took minutes.", noWrap: true }],
   lede: "One scan of Nucha, his live platform. It matched what his own pen tester had already found, and he started the clean-up the next morning.",
   ctaLabel: "Get started for free",

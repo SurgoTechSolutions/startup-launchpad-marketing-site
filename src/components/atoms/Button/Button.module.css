@@ -1,6 +1,6 @@
 /*
  * Lit from above: a lighter top in the gradient, a one-pixel highlight on the top edge and the
- * faintest contact shadow underneath. --glow is an orange halo that only the navy-band hover turns on.
+ * faintest contact shadow underneath. --glow is an orange halo that only the navy-band hover turns on (and, once, scrolling the button into view).
  */
 .primary {
   --glow: rgba(245, 137, 31, 0);
@@ -57,7 +57,8 @@
 
 /*
  * A short glowing line waits just before the start of the outline, and on hover runs once round it
- * and off the far end. The outline's length is set to 100, so this works at any button size. It sits
+ * and off the far end. The outline's length is set to 100, so this works at any button size; the gap
+ * after the line is twice that, so no part of the line wraps back onto the outline before or after the run. It sits
  * 1px in from the edge so the whole line lands on the button rather than half of it on the page.
  */
 .trace {
@@ -70,7 +71,7 @@
   stroke: #fff;
   stroke-width: 2;
   stroke-linecap: round;
-  stroke-dasharray: 22 100;
+  stroke-dasharray: 22 200;
   stroke-dashoffset: 24;
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 8px rgba(255, 200, 140, 0.8));
   pointer-events: none;
@@ -79,6 +80,37 @@
 
 .onDark:hover .trace {
   stroke-dashoffset: -102;
+}
+
+/*
+ * The first time the button scrolls fully into view, the line runs round once and the glow swells and
+ * settles, without a hover. Both are keyframes rather than the hover transitions, so they let go when
+ * they finish and hovering still plays the run again.
+ */
+@keyframes trace-run {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: -102;
+  }
+}
+
+@keyframes glow-swell {
+  50% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      0 1px 2px rgba(0, 21, 36, 0.04),
+      0 0 28px -4px rgba(245, 137, 31, 0.35);
+  }
+}
+
+.trace[data-in-view="true"] {
+  animation: trace-run 1.1s cubic-bezier(0.65, 0, 0.35, 1) 0.2s backwards;
+}
+
+.onDark:has(.trace[data-in-view="true"]) {
+  animation: glow-swell 1.6s ease 0.2s;
 }
 
 /* An icon before the label, centred on the text. */
@@ -140,6 +172,11 @@
 
   .arrow {
     transition: none;
+  }
+
+  .trace,
+  .onDark {
+    animation: none;
   }
 
   .primary:active,

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cx } from "@/lib/cx";
 import styles from "./Button.module.css";
+import { TraceOutline } from "./TraceOutline";
 
 export type ButtonVariant = "primary" | "slide" | "nav";
 
@@ -13,7 +14,7 @@ export interface ButtonProps {
   readonly variant?: ButtonVariant;
   /** Marks the link for the page being viewed. */
   readonly current?: boolean;
-  /** Set when a primary button sits on a navy band: on hover a line of light runs round its edge instead of it pressing in. */
+  /** Set when a primary button sits on a navy band: a line of light runs round its edge as it scrolls into view and on hover. */
   readonly onDark?: boolean;
   readonly className?: string | undefined;
 }
@@ -47,15 +48,14 @@ export function Button({
         <span>{children}</span>
       </>
     );
-  // On a navy band the button carries an outline the size of itself; on hover a line of light runs once around it.
+  // On a navy band the button carries an outline the size of itself; a line of light runs once around it when it
+  // scrolls into view, and again on hover.
   // Elsewhere it ends in an arrow that nudges forward on hover.
   let content: ReactNode = label;
   if (variant === "primary" && onDark) {
     content = (
       <>
-        <svg className={styles.trace} aria-hidden="true" focusable="false">
-          <rect width="100%" height="100%" rx="9" pathLength="100" />
-        </svg>
+        <TraceOutline className={styles.trace} />
         {label}
       </>
     );

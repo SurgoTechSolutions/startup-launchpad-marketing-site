@@ -45,7 +45,6 @@ export interface HeroContent {
   readonly title: RichText;
   readonly lede: string;
   readonly ctaLabel: string;
-  readonly note: string;
   /** Accessible name for the brick wall drawing above the quote card. */
   readonly figureLabel: string;
   /** Accessible name for the rotating quote card. */
@@ -101,7 +100,6 @@ export interface StatsContent {
 }
 
 export interface FounderStoryContent {
-  readonly eyebrow: string;
   readonly title: RichText;
   readonly lede: string;
   readonly ctaLabel: string;

@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
-import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { InView } from "@/components/atoms/InView";
 import { Lede } from "@/components/atoms/Lede";
@@ -19,7 +18,6 @@ export function FounderStory({ content, signupUrl }: FounderStoryProps): ReactNo
   return (
     <section className={styles.spot}>
       <InView className={styles.copy} threshold={0.4}>
-        <Eyebrow>{content.eyebrow}</Eyebrow>
         <HeadingFill>
           <SectionTitle size="spot">
             <RichText content={content.title} />

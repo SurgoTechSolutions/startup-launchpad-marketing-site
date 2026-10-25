@@ -112,13 +112,8 @@
   }
 }
 
-.note {
-  color: var(--muted);
-  font-size: 13px;
-}
-
 /*
- * Load-in: the headline, lede, button and note rise in one after another, the orange phrase
+ * Load-in: the headline, lede and button rise in one after another, the orange phrase
  * fills in left to right (HeadingFill), the wall fades up (its bricks then patch in once, see
  * PatchFigure), and the quote card lands last. Fill mode "backwards" holds the start state through each
  * delay but lets go at the end, so the button's own hover and press transforms still work.
@@ -147,10 +142,6 @@
 
 .copy > :nth-child(3) {
   animation-delay: 140ms;
-}
-
-.copy > :nth-child(4) {
-  animation-delay: 210ms;
 }
 
 .figureCell {

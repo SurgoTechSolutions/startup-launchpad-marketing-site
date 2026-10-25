@@ -63,7 +63,8 @@
 .before::after {
   content: "";
   position: absolute;
-  top: 55%;
+  /* Through the middle of the lowercase letters, which sit low in Comfortaa's line box. */
+  top: 46%;
   left: -1px;
   right: -1px;
   height: 1.5px;

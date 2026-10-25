@@ -39,7 +39,6 @@ export function Hero({ content, signupUrl }: HeroProps): ReactNode {
         </HeadingFill>
         <Lede>{content.lede}</Lede>
         <Button href={signupUrl}>{content.ctaLabel}</Button>
-        <small className={styles.note}>{content.note}</small>
       </div>
       <div className={styles.aside}>
         <div className={styles.figureCell}>
