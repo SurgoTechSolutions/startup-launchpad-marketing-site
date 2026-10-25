@@ -85,7 +85,8 @@
 /*
  * The first time the button scrolls fully into view, the line runs round once and the glow swells and
  * settles, without a hover. Both are keyframes rather than the hover transitions, so they let go when
- * they finish and hovering still plays the run again.
+ * they finish and hovering still plays the run again. A section can hold the run back with
+ * --trace-delay, e.g. until its heading has filled in.
  */
 @keyframes trace-run {
   from {
@@ -106,11 +107,11 @@
 }
 
 .trace[data-in-view="true"] {
-  animation: trace-run 1.1s cubic-bezier(0.65, 0, 0.35, 1) 0.2s backwards;
+  animation: trace-run 1.1s cubic-bezier(0.65, 0, 0.35, 1) var(--trace-delay, 0.2s) backwards;
 }
 
 .onDark:has(.trace[data-in-view="true"]) {
-  animation: glow-swell 1.6s ease 0.2s;
+  animation: glow-swell 1.6s ease var(--trace-delay, 0.2s);
 }
 
 /* An icon before the label, centred on the text. */

@@ -5,7 +5,7 @@
 .part {
   position: relative;
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 1.25fr 1fr;
   align-items: center;
   gap: 48px;
   padding-block: 72px;
@@ -25,15 +25,10 @@
   );
 }
 
-/* Heading, prompt card and button, stacked and centred. */
+/* The mirror of the part above: prompt card on the left, heading on the right. */
 .fixPart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
-  gap: 32px;
   padding-block: 72px;
-  text-align: center;
 }
 
 /*
@@ -49,20 +44,23 @@
 }
 
 .fixCard {
-  width: 100%;
-  max-width: 720px;
+  grid-area: card;
+  min-width: 0;
+}
+
+/* Both headings sit beside their cards, so they read left-aligned rather than centred. */
+.title,
+.fixTitle {
+  min-width: 0;
+}
+
+.title h2,
+.fixTitle h2 {
   text-align: left;
 }
 
-.title {
-  grid-column: 1 / -1;
-}
-
-.copy {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-width: 0;
+.fixTitle {
+  grid-area: title;
 }
 
 .card {
@@ -134,7 +132,7 @@
 
 /*
  * Scroll-in. "plain English" fills from ink to orange through HeadingFill, like the others.
- * Alice's quote slides in from the left and the issue card from the right. Then the card fills
+ * The issue card slides in from the right. Then it fills
  * itself in like a report being written: the Critical tag stamps down, the title rises, the
  * explanation appears word by word, and the file path fades in beneath it. Fill mode
  * "backwards" holds each start state through its delay. Without JavaScript or with reduced
@@ -179,17 +177,12 @@
   }
 }
 
-.copy[data-in-view="false"],
 .explained[data-in-view="false"] {
   opacity: 0;
 }
 
-.copy[data-in-view="true"] {
-  animation: from-left 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
-}
-
 .explained[data-in-view="true"] {
-  animation: from-right 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s backwards;
+  animation: from-right 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
 }
 
 .explained[data-in-view="true"] .severity {
@@ -245,7 +238,9 @@
 }
 
 /*
- * Scroll-in for the fix prompt. The card rises in, prompt and all, and Ctrl then V press down.
+ * Scroll-in for the fix prompt, the mirror of the issue card above. "fix them" fills from ink to
+ * orange through HeadingFill and the card slides in from the left. The label and copy button
+ * appear, the prompt writes itself in word by word, and once it is written Ctrl then V press down.
  * Under a hovering mouse a key holds down, and comes back up when the mouse leaves.
  */
 @keyframes press {
@@ -255,13 +250,12 @@
   }
 }
 
-/* Heading and card, stacked and centred as the section lays them out. */
 .fixIn {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-areas: "card title";
   align-items: center;
-  gap: 32px;
-  width: 100%;
+  gap: 48px;
 }
 
 .fixIn[data-in-view="false"] .fixCard {
@@ -269,18 +263,30 @@
 }
 
 .fixIn[data-in-view="true"] .fixCard {
-  animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s backwards;
+  animation: from-left 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s backwards;
+}
+
+.fixIn[data-in-view="true"] .promptBar > span {
+  animation: appear 0.3s ease-out 0.5s backwards;
+}
+
+.fixIn[data-in-view="true"] .promptBar > button {
+  animation: appear 0.3s ease-out 0.55s backwards;
+}
+
+.fixIn[data-in-view="true"] .word {
+  animation: appear 0.2s ease-out calc(0.65s + var(--w) * 8ms) backwards;
 }
 
 .fixIn[data-in-view="true"] kbd {
   transition:
     transform 0.12s ease-out,
     box-shadow 0.12s ease-out;
-  animation: press 0.3s ease-in-out 0.45s;
+  animation: press 0.3s ease-in-out 1.45s;
 }
 
 .fixIn[data-in-view="true"] kbd:last-of-type {
-  animation-delay: 0.6s;
+  animation-delay: 1.6s;
 }
 
 /*
@@ -295,9 +301,16 @@
 }
 
 @media (max-width: 900px) {
-  .part {
+  .part,
+  .fixIn {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .fixIn {
+    grid-template-areas:
+      "title"
+      "card";
   }
 
   .part,

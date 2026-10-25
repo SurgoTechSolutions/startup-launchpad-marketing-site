@@ -153,7 +153,6 @@ export interface ExplainContent {
   readonly title: RichText;
   /** Heading over the fix prompt. */
   readonly fixTitle: RichText;
-  readonly quote: QuoteWithPerson;
   readonly issue: {
     readonly severity: string;
     readonly category: string;

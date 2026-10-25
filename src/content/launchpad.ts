@@ -183,8 +183,7 @@ export const FINDINGS = {
 
 export const EXPLAIN = {
   title: ["Understand each one ", { lineBreak: true }, "in ", { highlight: "plain English" }, "."],
-  fixTitle: ["Then fix them with ", { keys: ["Ctrl", "V"] }],
-  quote: resolveQuote("aliceSimply"),
+  fixTitle: ["Then ", { highlight: "fix them" }, " with ", { keys: ["Ctrl", "V"] }],
   issue: {
     severity: "Critical",
     category: "Security",
@@ -195,13 +194,10 @@ export const EXPLAIN = {
   },
   prompt: {
     heading: "Fix prompt",
-    text: `In supabase/migrations/, add a migration that enables Row Level
-Security on the \`profiles\` table, with policies so a signed-in
-user can select and update only their own row (auth.uid() = user_id).
-Do not add a policy granting the anon role read access to all rows.
+    // One line per paragraph, so the card wraps it to its own width.
+    text: `In supabase/migrations/, add a migration that enables Row Level Security on the \`profiles\` table, with policies so a signed-in user can select and update only their own row (auth.uid() = user_id). Do not add a policy granting the anon role read access to all rows.
 
-Then check every other table in the schema for the same gap and
-list any you find.
+Then check every other table in the schema for the same gap and list any you find.
 
 Review the change before merging.`,
     copyLabels: { idle: "Copy prompt", copied: "Copied", selected: "Selected, press copy" },

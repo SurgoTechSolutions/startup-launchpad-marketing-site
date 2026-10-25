@@ -3,7 +3,6 @@ import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { InView } from "@/components/atoms/InView";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { CopyPromptButton } from "@/components/molecules/CopyPromptButton";
-import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
 import { cx } from "@/lib/cx";
 import type { ExplainContent } from "@/types";
@@ -13,7 +12,7 @@ import styles from "./ExplainSection.module.css";
 
 const PROMPT_ID = "fix-prompt";
 
-/** The explanation, one span per word so it can appear word by word. Each word carries its place as --w, which staggers it. */
+/** The explanation or prompt, one span per word so it can appear word by word. Each word carries its place as --w, which staggers it. */
 function Words({ text }: { readonly text: string }): ReactNode {
   let place = 0;
   return text.split(/(\s+)/).map((piece, k) => {
@@ -33,8 +32,8 @@ export interface ExplainSectionProps {
 }
 
 /**
- * Two parts. First how an issue is explained, beside a founder's quote. Then the fix prompt for
- * it, stacked and centred.
+ * Two parts. First how an issue is explained, with the heading on the left and the issue card on
+ * the right. Then the fix prompt for it, mirrored: the prompt card left and its heading right.
  */
 export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
   const { issue, prompt } = content;
@@ -47,9 +46,6 @@ export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
             <RichText content={content.title} />
           </SectionTitle>
         </HeadingFill>
-        <InView className={styles.copy} threshold={0.4}>
-          <QuoteCard variant="stacked" text={content.quote.text} person={content.quote.person} />
-        </InView>
         <InView className={cx(styles.card, styles.explained)} threshold={0.4}>
           <div className={styles.issue}>
             <div className={styles.tags}>
@@ -69,9 +65,11 @@ export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
       </section>
       <section className={styles.fixPart}>
         <InView className={styles.fixIn} threshold={0.2}>
-          <SectionTitle size="explain">
-            <RichText content={content.fixTitle} />
-          </SectionTitle>
+          <HeadingFill className={styles.fixTitle}>
+            <SectionTitle size="explain">
+              <RichText content={content.fixTitle} />
+            </SectionTitle>
+          </HeadingFill>
           <div className={cx(styles.card, styles.fixCard)}>
             <div className={styles.fix}>
               <div className={styles.promptBar}>
@@ -79,7 +77,7 @@ export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
                 <CopyPromptButton text={prompt.text} targetId={PROMPT_ID} labels={prompt.copyLabels} />
               </div>
               <pre id={PROMPT_ID} className={styles.prompt}>
-                {prompt.text}
+                <Words text={prompt.text} />
               </pre>
             </div>
           </div>

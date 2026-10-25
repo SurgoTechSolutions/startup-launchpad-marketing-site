@@ -75,8 +75,12 @@
   user-select: all;
 }
 
-/* Navy gradient band across the full width, drawn by .banner::before above. */
+/*
+ * Navy gradient band across the full width, drawn by .banner::before above. The button's line of
+ * light waits for the heading's orange fill (0.15s delay + 0.8s) to finish before it runs.
+ */
 .banner {
+  --trace-delay: 1.05s;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
