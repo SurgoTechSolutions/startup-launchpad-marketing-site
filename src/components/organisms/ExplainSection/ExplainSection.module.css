@@ -132,6 +132,123 @@
   overflow-wrap: anywhere;
 }
 
+/*
+ * Scroll-in. "plain English" fills from ink to orange, the same move as the other headings.
+ * Alice's quote slides in from the left and the issue card from the right. Then the card fills
+ * itself in like a report being written: the Critical tag stamps down, the title rises, the
+ * explanation appears word by word, a marker sweeps under the phrase that matters, and the file
+ * path types itself out (TypedCode). Fill mode "backwards" holds each start state through its
+ * delay. Without JavaScript or with reduced motion there is no data-in-view, so it all shows.
+ */
+@keyframes from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+}
+
+@keyframes from-right {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+}
+
+@keyframes fill-in {
+  from {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes mark {
+  from {
+    background-size: 0% 100%;
+  }
+}
+
+.fill em {
+  background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fill[data-in-view="false"] em {
+  background-position: 100% 0;
+}
+
+.fill[data-in-view="true"] em {
+  animation: fill-in 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s backwards;
+}
+
+/* A highlighter stroke across the lower part of the phrase, drawn from the left. */
+.mark {
+  background: linear-gradient(transparent 58%, rgba(235, 115, 0, 0.28) 58%) no-repeat 0 0 / 100% 100%;
+  color: inherit;
+}
+
+.copy[data-in-view="false"],
+.explained[data-in-view="false"] {
+  opacity: 0;
+}
+
+.copy[data-in-view="true"] {
+  animation: from-left 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+.explained[data-in-view="true"] {
+  animation: from-right 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s backwards;
+}
+
+.explained[data-in-view="true"] .severity {
+  animation: stamp 0.4s cubic-bezier(0.3, 0.7, 0.4, 1) 0.5s backwards;
+}
+
+.explained[data-in-view="true"] .category {
+  animation: appear 0.4s ease-out 0.6s backwards;
+}
+
+.explained[data-in-view="true"] h3 {
+  animation: rise 0.45s ease-out 0.7s backwards;
+}
+
+.explained[data-in-view="true"] .word {
+  animation: appear 0.3s ease-out calc(0.9s + var(--w) * 18ms) backwards;
+}
+
+.explained[data-in-view="true"] .mark {
+  animation: mark 0.6s cubic-bezier(0.65, 0, 0.35, 1) 1.65s backwards;
+}
+
+.explained[data-in-view="true"] .location {
+  animation: appear 0.4s ease-out 1.6s backwards;
+}
+
 .fix {
   display: flex;
   flex-direction: column;
@@ -179,7 +296,124 @@
     padding: 24px 20px;
   }
 
-  .fix {
+  /*
+ * Scroll-in. "plain English" fills from ink to orange, the same move as the other headings.
+ * Alice's quote slides in from the left and the issue card from the right. Then the card fills
+ * itself in like a report being written: the Critical tag stamps down, the title rises, the
+ * explanation appears word by word, a marker sweeps under the phrase that matters, and the file
+ * path types itself out (TypedCode). Fill mode "backwards" holds each start state through its
+ * delay. Without JavaScript or with reduced motion there is no data-in-view, so it all shows.
+ */
+@keyframes from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+}
+
+@keyframes from-right {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+}
+
+@keyframes fill-in {
+  from {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes mark {
+  from {
+    background-size: 0% 100%;
+  }
+}
+
+.fill em {
+  background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fill[data-in-view="false"] em {
+  background-position: 100% 0;
+}
+
+.fill[data-in-view="true"] em {
+  animation: fill-in 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s backwards;
+}
+
+/* A highlighter stroke across the lower part of the phrase, drawn from the left. */
+.mark {
+  background: linear-gradient(transparent 58%, rgba(235, 115, 0, 0.28) 58%) no-repeat 0 0 / 100% 100%;
+  color: inherit;
+}
+
+.copy[data-in-view="false"],
+.explained[data-in-view="false"] {
+  opacity: 0;
+}
+
+.copy[data-in-view="true"] {
+  animation: from-left 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+.explained[data-in-view="true"] {
+  animation: from-right 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s backwards;
+}
+
+.explained[data-in-view="true"] .severity {
+  animation: stamp 0.4s cubic-bezier(0.3, 0.7, 0.4, 1) 0.5s backwards;
+}
+
+.explained[data-in-view="true"] .category {
+  animation: appear 0.4s ease-out 0.6s backwards;
+}
+
+.explained[data-in-view="true"] h3 {
+  animation: rise 0.45s ease-out 0.7s backwards;
+}
+
+.explained[data-in-view="true"] .word {
+  animation: appear 0.3s ease-out calc(0.9s + var(--w) * 18ms) backwards;
+}
+
+.explained[data-in-view="true"] .mark {
+  animation: mark 0.6s cubic-bezier(0.65, 0, 0.35, 1) 1.65s backwards;
+}
+
+.explained[data-in-view="true"] .location {
+  animation: appear 0.4s ease-out 1.6s backwards;
+}
+
+.fix {
     padding: 20px;
   }
 }
