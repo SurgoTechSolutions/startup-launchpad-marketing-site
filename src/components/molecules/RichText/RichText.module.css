@@ -1,3 +1,15 @@
 .keys {
   white-space: nowrap;
 }
+
+/*
+ * A small word on its own line between two statements, like "or". Faded from the heading's own
+ * colour, so it reads on light and dark bands alike.
+ */
+.divider {
+  display: block;
+  margin-block: 0.4em;
+  font-size: max(15px, 0.6em);
+  font-weight: 600;
+  opacity: 0.6;
+}

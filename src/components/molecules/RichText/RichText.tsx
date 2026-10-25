@@ -15,6 +15,7 @@ function renderSegment(segment: RichSegment): ReactNode {
   if ("highlight" in segment) {
     return <Highlight noWrap={segment.noWrap ?? false}>{segment.highlight}</Highlight>;
   }
+  if ("divider" in segment) return <span className={styles.divider}>{segment.divider}</span>;
   if ("badge" in segment) return <CritBadge>{segment.badge}</CritBadge>;
   if ("keys" in segment) {
     return (

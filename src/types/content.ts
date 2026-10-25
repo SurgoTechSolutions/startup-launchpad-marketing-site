@@ -28,11 +28,13 @@ export interface Quote<K extends string = string> {
 
 /**
  * Heading text with inline styling. Plain strings render as text.
- * Objects mark the orange highlight, the red badge, keyboard keys or a line break.
+ * Objects mark the orange highlight, the red badge, keyboard keys, a quiet divider word on its own
+ * line, or a line break.
  */
 export type RichSegment =
   | string
   | { readonly highlight: string; readonly noWrap?: boolean }
+  | { readonly divider: string }
   | { readonly badge: string }
   | { readonly keys: readonly string[] }
   | { readonly link: Link }

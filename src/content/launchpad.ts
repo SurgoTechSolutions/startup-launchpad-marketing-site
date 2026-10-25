@@ -307,12 +307,11 @@ export const HOW_IT_WORKS = {
 export const COST_BAND = {
   title: [
     "£2,500 buys one pen test and a PDF.",
-    { lineBreak: true },
+    { divider: "or" },
     "£27 a month checks your code ",
     { highlight: "every\u00a06\u00a0hours" },
-    ", with a fix to paste in.",
+    ", and writes the fix for every issue.",
   ],
-  lede: "That's about 20 minutes of a security contractor's day.",
   link: { label: "See the full comparison →", href: ROUTES.pricing },
 } as const satisfies CostBandContent;
 

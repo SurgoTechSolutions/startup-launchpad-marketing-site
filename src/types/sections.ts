@@ -251,7 +251,6 @@ export interface FaqContent {
 /** A short band setting the price against a pen test and a contractor, linking to the full comparison. */
 export interface CostBandContent {
   readonly title: RichText;
-  readonly lede: string;
   readonly link: Link;
 }
 

@@ -18,15 +18,14 @@
   background: var(--navy-gradient);
 }
 
-/* White words on the gradient, a step smaller than section headings. The highlight stays orange. */
+/*
+ * White words on the gradient, a step smaller than section headings. The highlight stays orange.
+ * Wide enough for the £27 line to sit on two lines on desktop.
+ */
 .band .title {
-  max-width: 34ch;
+  max-width: 46ch;
   color: #fff;
   font-size: clamp(24px, 3.2vw, 34px);
-}
-
-.lede {
-  color: rgba(255, 255, 255, 0.75);
 }
 
 .band .link {
