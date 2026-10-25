@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
+import { NameCredit } from "@/components/molecules/NameCredit";
 import { RichText } from "@/components/molecules/RichText";
 import { VideoEmbed } from "@/components/molecules/VideoEmbed";
 import type { HookContent } from "@/types";
@@ -25,10 +26,7 @@ export function HookBanner({ content, signupUrl }: HookBannerProps): ReactNode {
         <div className={styles.media}>
           <VideoEmbed video={content.video} className={styles.video} />
           {content.presenter !== undefined && (
-            <p className={styles.presenter}>
-              <b className={styles.presenterName}>{content.presenter.name}</b>
-              {content.presenter.role}
-            </p>
+            <NameCredit credit={content.presenter} onDark className={styles.presenter} />
           )}
         </div>
       )}

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Lede } from "@/components/atoms/Lede";
 import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
+import { NameCredit } from "@/components/molecules/NameCredit";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
 import type { MissionContent } from "@/types";
@@ -25,14 +26,21 @@ export function MissionStatement({ content }: MissionStatementProps): ReactNode 
         <Lede>{content.lede}</Lede>
       </SectionHead>
       <div className={styles.body}>
-        <Image
-          className={styles.photo}
-          src={content.photo.src}
-          alt={content.photo.alt}
-          placeholder="blur"
-          sizes="(max-width: 680px) calc(100vw - 32px), (max-width: 860px) 640px, 460px"
-          priority
-        />
+        <figure className={styles.figure}>
+          <Image
+            className={styles.photo}
+            src={content.photo.src}
+            alt={content.photo.alt}
+            placeholder="blur"
+            sizes="(max-width: 680px) calc(100vw - 32px), (max-width: 860px) 640px, 460px"
+            priority
+          />
+          <figcaption className={styles.founders}>
+            {content.founders.map((founder) => (
+              <NameCredit key={founder.name} credit={founder} />
+            ))}
+          </figcaption>
+        </figure>
         <div className={styles.story}>
           {content.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

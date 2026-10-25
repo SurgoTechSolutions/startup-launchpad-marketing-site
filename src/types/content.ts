@@ -14,6 +14,13 @@ export interface Person {
   readonly photo?: Photo;
 }
 
+/** A name and role shown as a credit. The name links to their profile in a new tab when href is set. */
+export interface Credit {
+  readonly name: string;
+  readonly role: string;
+  readonly href?: string;
+}
+
 /**
  * A quote attributed to a person in the people registry.
  * K is the registry's key type, so a typo in a person key fails type checking.

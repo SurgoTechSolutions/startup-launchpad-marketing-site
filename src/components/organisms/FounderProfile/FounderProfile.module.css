@@ -19,6 +19,14 @@
   background: linear-gradient(var(--bg), var(--surface) 96px);
 }
 
+/* The photo with the name and role underneath, from its left edge. */
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
 .photo {
   position: relative;
   width: 100%;
@@ -40,18 +48,6 @@
   min-width: 0;
 }
 
-.who {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 10px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.who b {
-  color: var(--ink);
-}
-
 .paragraph {
   max-width: 60ch;
   color: var(--ink);
@@ -67,7 +63,7 @@
     padding-block: 72px 56px;
   }
 
-  .photo {
+  .figure {
     max-width: 280px;
   }
 }

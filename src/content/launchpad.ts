@@ -21,6 +21,7 @@ import type {
   StatsContent,
   TrustedByContent,
 } from "@/types";
+import { FOUNDERS } from "./founders";
 import { HERO_QUOTE_KEYS } from "./hero";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
@@ -57,7 +58,7 @@ export const HOOK = {
     width: 1316,
     height: 720,
   },
-  presenter: { name: "Thomas Charlton", role: "Co-Founder, Startup Launchpad" },
+  presenter: { ...FOUNDERS.thomas, role: "Co-Founder, Startup Launchpad" },
   ctaLabel: "Scan my code for free",
 } as const satisfies HookContent;
 

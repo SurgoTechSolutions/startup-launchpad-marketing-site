@@ -34,11 +34,26 @@
   background: linear-gradient(transparent, var(--surface) 96px);
 }
 
+/* The photo with the co-founders credited side by side underneath, from its left edge. */
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
 .photo {
   width: 100%;
   height: auto;
   border-radius: 28px;
   box-shadow: 0 24px 60px rgba(0, 21, 36, 0.16);
+}
+
+.founders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  padding-inline: 4px;
 }
 
 .story {
@@ -65,7 +80,7 @@
     padding-block: 48px;
   }
 
-  .photo {
+  .figure {
     max-width: 640px;
   }
 }

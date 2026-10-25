@@ -1,6 +1,7 @@
 import jackSheriff from "@/assets/images/jack-sheriff.webp";
 import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, PageMeta, ProfileContent, WhatWeCheckContent, WhatWeCheckPageContent } from "@/types";
+import { FOUNDERS } from "./founders";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
 import { FOOTER } from "./site";
@@ -145,7 +146,7 @@ export const WHAT_WE_CHECK = {
 /** Who builds the checks, to show the product is in expert hands. */
 export const WHAT_WE_CHECK_PROFILE = {
   title: ["The engineer ", { highlight: "behind the checks" }],
-  name: "Jack Sheriff",
+  ...FOUNDERS.jack,
   role: "Co-Founder & Technical Lead",
   paragraphs: [
     "By day, Jack is a senior software engineer at a major national organisation, building products that handle millions of interactions a day.",

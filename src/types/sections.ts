@@ -2,6 +2,7 @@
 import type { StaticImageData } from "next/image";
 import type {
   CheckItem,
+  Credit,
   DashArea,
   Severity,
   ComparisonColumn,
@@ -72,7 +73,7 @@ export interface HookContent {
   readonly title: RichText;
   readonly video?: VideoContent;
   /** Who presents the video, credited just under it. */
-  readonly presenter?: { readonly name: string; readonly role: string };
+  readonly presenter?: Credit;
   readonly ctaLabel?: string;
   /** A short reassurance under the button. */
   readonly note?: string;
@@ -358,6 +359,8 @@ export interface MissionContent {
    * and makes a blurred placeholder.
    */
   readonly photo: { readonly src: StaticImageData; readonly alt: string };
+  /** The people in the photo, credited under it. */
+  readonly founders: readonly Credit[];
   readonly paragraphs: readonly string[];
   readonly valuesTitle: RichText;
   readonly values: readonly MissionValue[];
@@ -366,10 +369,8 @@ export interface MissionContent {
 }
 
 /** A short introduction to one of the team, with their photo. */
-export interface ProfileContent {
+export interface ProfileContent extends Credit {
   readonly title: RichText;
-  readonly name: string;
-  readonly role: string;
   readonly paragraphs: readonly string[];
   /** Imported from src/assets, so the build sizes it and makes a blurred placeholder. */
   readonly photo: { readonly src: StaticImageData; readonly alt: string };

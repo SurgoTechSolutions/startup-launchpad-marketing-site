@@ -1,0 +1,29 @@
+.credit {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.name {
+  display: block;
+  width: fit-content;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Linked names underline on hover, so they read as links without a line at rest. */
+a.name:hover,
+a.name:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.onDark {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.onDark .name {
+  color: #fff;
+}
