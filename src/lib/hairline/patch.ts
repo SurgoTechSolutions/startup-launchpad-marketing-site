@@ -24,6 +24,8 @@ export interface HairlineMount {
 
 export interface HairlineHandle {
   readonly set: (value: number) => void;
+  /** Fills the gaps once after delay ms, holds them for hold ms, then lets the bricks fall back out. */
+  readonly play: (delay: number, hold: number) => void;
   readonly destroy: () => void;
 }
 
@@ -210,17 +212,34 @@ function mount({ stage, svg, onRead }: HairlineMount, value: number): HairlineHa
     loop.wake();
   }
 
+  let hovered = false;
   onRead("rest");
   bag.add(
     pointer(stage, {
       move: (p) => {
-        setFull(onWall(p));
+        hovered = onWall(p);
+        setFull(hovered);
       },
       leave: () => {
+        hovered = false;
         setFull(false);
       },
     }),
   );
+
+  /** One unprompted patch. The pointer takes over whenever it comes on: if it is on the wall when the hold ends, the bricks stay until it leaves. */
+  function play(delay: number, hold: number): void {
+    if (reducedMotion()) return;
+    let timer = window.setTimeout(() => {
+      setFull(true);
+      timer = window.setTimeout(() => {
+        if (!hovered) setFull(false);
+      }, (holes.length - 1) * stag + FILL + hold);
+    }, delay);
+    bag.add(() => {
+      window.clearTimeout(timer);
+    });
+  }
   bag.add(() => {
     svg.replaceChildren();
   });
@@ -229,6 +248,7 @@ function mount({ stage, svg, onRead }: HairlineMount, value: number): HairlineHa
     set: (v) => {
       stag = v;
     },
+    play,
     destroy: bag.dispose,
   };
 }

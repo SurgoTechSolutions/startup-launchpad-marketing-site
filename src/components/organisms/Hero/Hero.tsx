@@ -40,7 +40,7 @@ export function Hero({ content, signupUrl }: HeroProps): ReactNode {
       </div>
       <div className={styles.aside}>
         <div className={styles.figureCell}>
-          <PatchFigure label={content.figureLabel} className={styles.figure} />
+          <PatchFigure label={content.figureLabel} className={styles.figure} intro />
         </div>
         <div className={styles.quotes}>
           <HeroQuoteRotator slides={slides} dotLabels={dotLabels} label={content.quotesLabel} />

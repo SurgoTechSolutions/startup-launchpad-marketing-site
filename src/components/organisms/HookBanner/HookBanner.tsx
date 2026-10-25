@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { InView } from "@/components/atoms/InView";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { VideoEmbed } from "@/components/molecules/VideoEmbed";
@@ -15,9 +16,11 @@ export interface HookBannerProps {
 export function HookBanner({ content, signupUrl }: HookBannerProps): ReactNode {
   return (
     <section className={styles.band}>
-      <SectionTitle size="find" className={styles.title}>
-        <RichText content={content.title} />
-      </SectionTitle>
+      <InView className={styles.fill} threshold={0.6}>
+        <SectionTitle size="find" className={styles.title}>
+          <RichText content={content.title} />
+        </SectionTitle>
+      </InView>
       {content.video !== undefined && <VideoEmbed video={content.video} className={styles.video} />}
       {content.ctaLabel !== undefined && (
         <div className={styles.cta}>

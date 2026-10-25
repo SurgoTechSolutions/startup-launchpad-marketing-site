@@ -10,15 +10,17 @@ export interface PatchFigureProps {
   /** Accessible name for the drawing. */
   readonly label: string;
   readonly className?: string | undefined;
+  /** Patches the wall once on load, then lets the bricks fall back out. */
+  readonly intro?: boolean;
 }
 
 /**
  * The Hairline "patch" figure: a brick wall with three bricks missing. With the pointer on the
  * wall the bricks lift home one after another; when it leaves they fall back out. Until then
- * it rests with the gaps showing. The server sends the empty box at its final size, so
+ * it rests with the gaps showing, or, with intro, patches itself once as the page loads. The server sends the empty box at its final size, so
  * nothing shifts when the drawing mounts. Under reduced motion every move lands at once.
  */
-export function PatchFigure({ label, className }: PatchFigureProps): ReactNode {
+export function PatchFigure({ label, className, intro = false }: PatchFigureProps): ReactNode {
   const stageRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -36,11 +38,13 @@ export function PatchFigure({ label, className }: PatchFigureProps): ReactNode {
       },
       PATCH.range[1],
     );
+    // Starts once the wall has faded up; the hold gives the fixed wall a moment before it falls.
+    if (intro) figure.play(600, 900);
     return () => {
       figure.destroy();
       svg.remove();
     };
-  }, []);
+  }, [intro]);
 
   return <div ref={stageRef} className={cx(styles.stage, className)} data-hairline={PATCH.name} role="img" aria-label={label} />;
 }

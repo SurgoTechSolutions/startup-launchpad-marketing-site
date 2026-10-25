@@ -28,6 +28,33 @@
   text-align: center;
 }
 
+/*
+ * The orange phrase starts white and fills in left to right once the line scrolls into view,
+ * the same move as the hero headline. It is a half-orange, half-white gradient clipped to the
+ * text, slid across. On a wrapped phrase it runs on from one line to the next.
+ */
+.fill em {
+  background: linear-gradient(90deg, var(--accent) 50%, #fff 50%) 0 0 / 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.15s;
+}
+
+.fill[data-in-view="false"] em {
+  background-position: 100% 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill em {
+    transition: none;
+  }
+
+  .fill[data-in-view="false"] em {
+    background-position: 0 0;
+  }
+}
+
 .video {
   max-width: 880px;
 }

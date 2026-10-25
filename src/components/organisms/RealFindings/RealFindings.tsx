@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { InView } from "@/components/atoms/InView";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { FindingCard } from "@/components/molecules/FindingCard";
 import { RichText } from "@/components/molecules/RichText";
@@ -14,13 +15,17 @@ export function RealFindings({ content }: RealFindingsProps): ReactNode {
   return (
     <section className={styles.band}>
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <InView className={styles.fill} threshold={0.6}>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </InView>
       </SectionHead>
       <div className={styles.grid}>
         {content.findings.map((finding) => (
-          <FindingCard key={finding.title} finding={finding} />
+          <InView key={finding.title} className={styles.reveal} threshold={0.3}>
+            <FindingCard finding={finding} />
+          </InView>
         ))}
       </div>
     </section>
