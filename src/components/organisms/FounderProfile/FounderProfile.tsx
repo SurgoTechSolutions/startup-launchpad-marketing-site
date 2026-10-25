@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import type { ProfileContent } from "@/types";
@@ -24,9 +25,11 @@ export function FounderProfile({ content }: FounderProfileProps): ReactNode {
         />
       </div>
       <div className={styles.text}>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
         <p className={styles.who}>
           <b>{content.name}</b>
           <span>{content.role}</span>

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Lede } from "@/components/atoms/Lede";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import type { RichText as RichTextContent } from "@/types";
@@ -17,9 +18,11 @@ export function PageIntro({ title, lede, eyebrow }: PageIntroProps): ReactNode {
   return (
     <section className={styles.intro}>
       {eyebrow !== undefined && <Eyebrow>{eyebrow}</Eyebrow>}
-      <SectionTitle as="h1" size="find" className={styles.title}>
-        <RichText content={title} />
-      </SectionTitle>
+      <HeadingFill onLoad>
+        <SectionTitle as="h1" size="find" className={styles.title}>
+          <RichText content={title} />
+        </SectionTitle>
+      </HeadingFill>
       <Lede>{lede}</Lede>
     </section>
   );

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { GitHubMark } from "@/components/atoms/GitHubMark";
 import { RevealList } from "@/components/atoms/RevealList";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -18,9 +19,11 @@ export function HowItWorks({ content, signupUrl }: HowItWorksProps): ReactNode {
   return (
     <section className={styles.band}>
       <SectionHead>
-        <SectionTitle size="big">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="big">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
       </SectionHead>
       <RevealList className={styles.steps}>
         {content.steps.map((step) => (

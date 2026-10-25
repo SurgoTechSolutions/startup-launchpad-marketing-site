@@ -18,22 +18,6 @@
   color: #fff;
 }
 
-/*
- * Scroll-in. "all of it" fills from white to orange, the same move as the other headings: a
- * half-orange, half-white gradient clipped to the text, slid across.
- */
-.fill em {
-  background: linear-gradient(90deg, var(--accent) 50%, #fff 50%) 0 0 / 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: background-position 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.15s;
-}
-
-.fill[data-in-view="false"] em {
-  background-position: 100% 0;
-}
-
 /* Three tiles to a row; two below that, one on phones. */
 .grid {
   display: grid;

@@ -119,8 +119,8 @@
 
 /*
  * Load-in: the headline, lede, button and note rise in one after another, the orange phrase
- * fills in left to right, the wall fades up (its bricks then patch in once, see PatchFigure),
- * and the quote card lands last. Fill mode "backwards" holds the start state through each
+ * fills in left to right (HeadingFill), the wall fades up (its bricks then patch in once, see
+ * PatchFigure), and the quote card lands last. Fill mode "backwards" holds the start state through each
  * delay but lets go at the end, so the button's own hover and press transforms still work.
  * The headline starts at once, so the page's largest text isn't held back.
  */
@@ -134,12 +134,6 @@
 @keyframes fade {
   from {
     opacity: 0;
-  }
-}
-
-@keyframes fill-in {
-  from {
-    background-position: 100% 0;
   }
 }
 
@@ -159,15 +153,6 @@
   animation-delay: 210ms;
 }
 
-/* The phrase is painted as a half-orange, half-ink gradient clipped to the text, slid across. */
-.copy h1 em {
-  background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: fill-in 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.35s backwards;
-}
-
 .figureCell {
   animation: fade 0.6s ease-out 0.1s backwards;
 }
@@ -180,7 +165,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .copy > *,
-  .copy h1 em,
   .figureCell,
   .quotes {
     animation: none;

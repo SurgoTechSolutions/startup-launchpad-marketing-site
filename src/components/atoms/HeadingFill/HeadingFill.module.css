@@ -1,0 +1,55 @@
+/*
+ * The orange phrase is a half-orange, half-base gradient clipped to the text, slid across once
+ * the heading is in view. On a wrapped phrase it runs on from one line to the next. A long
+ * phrase can take longer by setting --fill-duration through className.
+ */
+.fill {
+  --fill-base: var(--ink);
+}
+
+.dark {
+  --fill-base: #fff;
+}
+
+.fill em {
+  background: linear-gradient(90deg, var(--accent) 50%, var(--fill-base) 50%) 0 0 / 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position var(--fill-duration, 0.8s) cubic-bezier(0.65, 0, 0.35, 1) 0.15s;
+}
+
+.fill[data-in-view="false"] em {
+  background-position: 100% 0;
+}
+
+/*
+ * Every line at once: each line of the phrase gets its own copy of the gradient. Chrome doesn't
+ * repaint a transition on per-line backgrounds, so this one runs as an animation instead.
+ */
+.lines em {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: none;
+}
+
+.lines[data-in-view="true"] em {
+  animation: fill-in var(--fill-duration, 0.8s) cubic-bezier(0.65, 0, 0.35, 1) 0.15s backwards;
+}
+
+/* The load-in version runs on its own as the page opens, a beat after the heading appears. */
+@keyframes fill-in {
+  from {
+    background-position: 100% 0;
+  }
+}
+
+.load em {
+  animation: fill-in var(--fill-duration, 0.7s) cubic-bezier(0.65, 0, 0.35, 1) 0.35s backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .load em {
+    animation: none;
+  }
+}

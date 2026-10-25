@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { cx } from "@/lib/cx";
@@ -19,9 +20,11 @@ export interface PromiseStatementProps {
 export function PromiseStatement({ content, signupUrl, fadeIn = true, fadeOut = false }: PromiseStatementProps): ReactNode {
   return (
     <section className={cx(styles.band, !fadeIn && styles.solid, fadeOut && styles.fadeOut)}>
-      <SectionTitle size="find">
-        <RichText content={content.title} />
-      </SectionTitle>
+      <HeadingFill>
+        <SectionTitle size="find">
+          <RichText content={content.title} />
+        </SectionTitle>
+      </HeadingFill>
       <p className={styles.card}>{content.text}</p>
       <Button href={signupUrl}>{content.ctaLabel}</Button>
     </section>

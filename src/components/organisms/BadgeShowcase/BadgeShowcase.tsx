@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Lede } from "@/components/atoms/Lede";
 import { LevelMark } from "@/components/atoms/LevelMark";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -25,9 +26,11 @@ export function BadgeShowcase({ content, tone }: BadgeShowcaseProps): ReactNode 
   return (
     <section className={cx(tone === "white" && styles.white, tone === "grey" && styles.grey)}>
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
         <Lede>{content.lede}</Lede>
       </SectionHead>
       <div className={styles.grid}>

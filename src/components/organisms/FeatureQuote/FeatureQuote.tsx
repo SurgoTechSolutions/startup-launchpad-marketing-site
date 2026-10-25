@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Lede } from "@/components/atoms/Lede";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { PersonCredit } from "@/components/molecules/PersonCredit";
 import { RichText } from "@/components/molecules/RichText";
@@ -22,9 +23,11 @@ export function FeatureQuote({ content, signupUrl }: FeatureQuoteProps): ReactNo
   return (
     <section className={styles.section}>
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
         {content.lede !== undefined && <Lede>{content.lede}</Lede>}
       </SectionHead>
       <div className={styles.split}>

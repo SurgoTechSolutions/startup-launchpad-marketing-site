@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { RuleCard } from "@/components/molecules/RuleCard";
@@ -14,9 +15,11 @@ export function RulesSection({ content }: RulesSectionProps): ReactNode {
   return (
     <section>
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
       </SectionHead>
       <div className={styles.grid}>
         {content.groups.map((group) => (

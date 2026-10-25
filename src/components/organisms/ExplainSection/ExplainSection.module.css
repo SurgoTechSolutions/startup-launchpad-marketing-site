@@ -133,11 +133,12 @@
 }
 
 /*
- * Scroll-in. "plain English" fills from ink to orange, the same move as the other headings.
+ * Scroll-in. "plain English" fills from ink to orange through HeadingFill, like the others.
  * Alice's quote slides in from the left and the issue card from the right. Then the card fills
  * itself in like a report being written: the Critical tag stamps down, the title rises, the
- * explanation appears word by word, and the file path types itself out (TypedCode). Fill mode "backwards" holds each start state through its
- * delay. Without JavaScript or with reduced motion there is no data-in-view, so it all shows.
+ * explanation appears word by word, and the file path fades in beneath it. Fill mode
+ * "backwards" holds each start state through its delay. Without JavaScript or with reduced
+ * motion there is no data-in-view, so it all shows.
  */
 @keyframes from-left {
   from {
@@ -150,12 +151,6 @@
   from {
     opacity: 0;
     transform: translateX(48px);
-  }
-}
-
-@keyframes fill-in {
-  from {
-    background-position: 100% 0;
   }
 }
 
@@ -182,21 +177,6 @@
     opacity: 0;
     transform: translateY(8px);
   }
-}
-
-.fill em {
-  background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.fill[data-in-view="false"] em {
-  background-position: 100% 0;
-}
-
-.fill[data-in-view="true"] em {
-  animation: fill-in 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s backwards;
 }
 
 .copy[data-in-view="false"],
@@ -265,9 +245,8 @@
 }
 
 /*
- * Scroll-in for the fix prompt, acting out a copy and paste. The card rises with its body
- * empty, Ctrl then V press down, and the whole prompt lands at once, as a paste does. Under a
- * hovering mouse a key holds down, and comes back up when the mouse leaves.
+ * Scroll-in for the fix prompt. The card rises in, prompt and all, and Ctrl then V press down.
+ * Under a hovering mouse a key holds down, and comes back up when the mouse leaves.
  */
 @keyframes press {
   50% {
@@ -276,14 +255,8 @@
   }
 }
 
-@keyframes paste {
-  from {
-    opacity: 0;
-  }
-}
-
 /* Heading and card, stacked and centred as the section lays them out. */
-.pasteIn {
+.fixIn {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -291,31 +264,23 @@
   width: 100%;
 }
 
-.pasteIn[data-in-view="false"] .fixCard {
+.fixIn[data-in-view="false"] .fixCard {
   opacity: 0;
 }
 
-.pasteIn[data-in-view="false"] .prompt {
-  opacity: 0;
-}
-
-.pasteIn[data-in-view="true"] .fixCard {
+.fixIn[data-in-view="true"] .fixCard {
   animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s backwards;
 }
 
-.pasteIn[data-in-view="true"] kbd {
+.fixIn[data-in-view="true"] kbd {
   transition:
     transform 0.12s ease-out,
     box-shadow 0.12s ease-out;
   animation: press 0.3s ease-in-out 0.45s;
 }
 
-.pasteIn[data-in-view="true"] kbd:last-of-type {
+.fixIn[data-in-view="true"] kbd:last-of-type {
   animation-delay: 0.6s;
-}
-
-.pasteIn[data-in-view="true"] .prompt {
-  animation: paste 0.08s linear 0.75s backwards;
 }
 
 /*
@@ -323,7 +288,7 @@
  * here: changing it on hover would replay the scroll-in press every time the mouse left.
  */
 @media (hover: hover) {
-  .pasteIn[data-in-view="true"] kbd:hover {
+  .fixIn[data-in-view="true"] kbd:hover {
     box-shadow: 0 2px 4px rgba(0, 21, 36, 0.1);
     transform: translateY(3px);
   }

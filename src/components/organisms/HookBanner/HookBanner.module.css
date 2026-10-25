@@ -17,42 +17,20 @@
   background: var(--navy-gradient);
 }
 
-/* White words on the gradient, a step smaller than section headings. */
+/* White words on the gradient, at the section heading size. */
 .band .title {
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: clamp(30px, 4.6vw, 48px);
+}
+
+/* The orange phrase runs over two lines or more, all filling at once, at half the usual speed. */
+.fill {
+  --fill-duration: 1.6s;
 }
 
 .title {
   max-width: 30ch;
   color: #fff;
   text-align: center;
-}
-
-/*
- * The orange phrase starts white and fills in left to right once the line scrolls into view,
- * the same move as the hero headline. It is a half-orange, half-white gradient clipped to the
- * text, slid across. On a wrapped phrase it runs on from one line to the next.
- */
-.fill em {
-  background: linear-gradient(90deg, var(--accent) 50%, #fff 50%) 0 0 / 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: background-position 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.15s;
-}
-
-.fill[data-in-view="false"] em {
-  background-position: 100% 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fill em {
-    transition: none;
-  }
-
-  .fill[data-in-view="false"] em {
-    background-position: 0 0;
-  }
 }
 
 .video {

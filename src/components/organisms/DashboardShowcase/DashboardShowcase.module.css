@@ -108,9 +108,10 @@
 }
 
 /*
- * Scroll-in. "at a glance" fills from ink to orange, the same move as the other headings. The
- * dashboard rises and settles to full size like a window opening, while DashGrid loads the tiles
- * inside it (their own moves are in DashTile.module.css). The quote and button follow.
+ * Scroll-in. "at a glance" fills from ink to orange through HeadingFill, like the other
+ * headings. The dashboard rises and settles to full size like a window opening, while DashGrid
+ * loads the tiles inside it (their own moves are in DashTile.module.css). The quote and button
+ * follow.
  */
 @keyframes rise {
   from {
@@ -124,27 +125,6 @@
     opacity: 0;
     transform: translateY(20px) scale(0.98);
   }
-}
-
-@keyframes fill-in {
-  from {
-    background-position: 100% 0;
-  }
-}
-
-.fill em {
-  background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.fill[data-in-view="false"] em {
-  background-position: 100% 0;
-}
-
-.fill[data-in-view="true"] em {
-  animation: fill-in 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s backwards;
 }
 
 .window[data-in-view="false"] > *,

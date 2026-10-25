@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { Lede } from "@/components/atoms/Lede";
 import { PatchFigure } from "@/components/atoms/PatchFigure";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
@@ -31,9 +32,11 @@ export function Hero({ content, signupUrl }: HeroProps): ReactNode {
   return (
     <section className={styles.hero}>
       <div className={styles.copy}>
-        <SectionTitle as="h1">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill onLoad>
+          <SectionTitle as="h1">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
         <Lede>{content.lede}</Lede>
         <Button href={signupUrl}>{content.ctaLabel}</Button>
         <small className={styles.note}>{content.note}</small>

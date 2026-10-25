@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -22,9 +23,11 @@ export function ValueGrid({ title, values, tone }: ValueGridProps): ReactNode {
   return (
     <section className={cx(tone === "white" && styles.white, tone === "grey" && styles.grey)}>
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="find">
+            <RichText content={title} />
+          </SectionTitle>
+        </HeadingFill>
       </SectionHead>
       <div className={styles.grid}>
         {values.map((value) => (

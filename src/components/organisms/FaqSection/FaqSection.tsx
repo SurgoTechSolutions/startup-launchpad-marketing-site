@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { JsonLd } from "@/components/atoms/JsonLd";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { FaqItem } from "@/components/molecules/FaqItem";
 import { RichText } from "@/components/molecules/RichText";
@@ -17,9 +18,11 @@ export function FaqSection({ content }: FaqSectionProps): ReactNode {
     <section className={styles.band}>
       <JsonLd data={faqPageJsonLd(content.faqs)} />
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
       </SectionHead>
       <div className={styles.list}>
         {content.faqs.map((faq) => (

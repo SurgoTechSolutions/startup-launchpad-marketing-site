@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Lede } from "@/components/atoms/Lede";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
@@ -42,9 +43,11 @@ export function FinalCta({
     return (
       <section id={id} className={styles.banner}>
         <div className={styles.bannerText}>
-          <SectionTitle size="find">
-            <RichText content={content.title} />
-          </SectionTitle>
+          <HeadingFill onDark>
+            <SectionTitle size="find">
+              <RichText content={content.title} />
+            </SectionTitle>
+          </HeadingFill>
           {content.lede !== undefined && <Lede>{content.lede}</Lede>}
         </div>
         <Button href={signupUrl} onDark>
@@ -62,9 +65,11 @@ export function FinalCta({
       className={cx(centered ? styles.centered : cx(styles.split, !plain && styles.slate), className)}
     >
       <div className={styles.copy}>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill onDark={!centered && !plain}>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
         {content.lede !== undefined && <Lede>{content.lede}</Lede>}
         <Button href={signupUrl} onDark={!centered && !plain}>
           {content.ctaLabel}

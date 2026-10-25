@@ -29,22 +29,6 @@
 }
 
 /*
- * Scroll-in. "easiest to miss" fills from ink to orange, the same move as the other headings: a
- * half-orange, half-ink gradient clipped to the text, slid across.
- */
-.fill em {
-  background: linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: background-position 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.15s;
-}
-
-.fill[data-in-view="false"] em {
-  background-position: 100% 0;
-}
-
-/*
  * Each card fades up as it comes into view. The rise uses translate, which adds to the middle
  * card's transform offset and the card's own hover lift instead of replacing them. Across a row
  * the cards follow each other; once stacked, each comes in on its own as it is reached.

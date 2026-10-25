@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -14,9 +15,11 @@ export function FoundList({ content }: FoundListProps): ReactNode {
   return (
     <section>
       <SectionHead>
-        <SectionTitle size="find">
-          <RichText content={content.title} />
-        </SectionTitle>
+        <HeadingFill>
+          <SectionTitle size="find">
+            <RichText content={content.title} />
+          </SectionTitle>
+        </HeadingFill>
       </SectionHead>
       <ul className={styles.list}>
         {content.items.map((item) => (

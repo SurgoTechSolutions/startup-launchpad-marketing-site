@@ -224,7 +224,7 @@ Review the change before merging.`,
 
 /** A slate band between the fixing section and Jason's story, with its button beside it. */
 export const FIX_BANNER = {
-  title: ["Your AI tool wrote the code. ", { lineBreak: true }, { highlight: "Now it can fix it too." }],
+  title: ["We write the fix. ", { lineBreak: true }, { highlight: "You just paste it." }],
   ctaLabel: "Start fixing my code",
 } as const satisfies FinalCtaContent;
 

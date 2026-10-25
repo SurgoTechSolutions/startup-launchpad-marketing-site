@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { InView } from "@/components/atoms/InView";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
-import { TypedCode } from "@/components/atoms/TypedCode";
 import { CopyPromptButton } from "@/components/molecules/CopyPromptButton";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
 import { RichText } from "@/components/molecules/RichText";
@@ -42,11 +42,11 @@ export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
   return (
     <>
       <section className={styles.part}>
-        <InView className={cx(styles.title, styles.fill)} threshold={0.6}>
+        <HeadingFill className={styles.title}>
           <SectionTitle size="explain">
             <RichText content={content.title} />
           </SectionTitle>
-        </InView>
+        </HeadingFill>
         <InView className={styles.copy} threshold={0.4}>
           <QuoteCard variant="stacked" text={content.quote.text} person={content.quote.person} />
         </InView>
@@ -61,14 +61,14 @@ export function ExplainSection({ content }: ExplainSectionProps): ReactNode {
               <Words text={issue.body} />
             </p>
             <div className={styles.location}>
-              <TypedCode text={issue.location} delayMs={1900} />
+              <code>{issue.location}</code>
               <span>{issue.locationNote}</span>
             </div>
           </div>
         </InView>
       </section>
       <section className={styles.fixPart}>
-        <InView className={styles.pasteIn} threshold={0.2}>
+        <InView className={styles.fixIn} threshold={0.2}>
           <SectionTitle size="explain">
             <RichText content={content.fixTitle} />
           </SectionTitle>

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { CheckIcon } from "@/components/atoms/CheckIcon";
-import { InView } from "@/components/atoms/InView";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import { SectionHead } from "@/components/molecules/SectionHead";
@@ -18,11 +18,11 @@ export function CheckSummary({ content }: CheckSummaryProps): ReactNode {
   return (
     <section className={styles.band}>
       <SectionHead>
-        <InView className={styles.fill} threshold={0.6}>
+        <HeadingFill onDark>
           <SectionTitle size="find">
             <RichText content={content.title} />
           </SectionTitle>
-        </InView>
+        </HeadingFill>
       </SectionHead>
       <CheckGrid className={styles.grid}>
         {content.checks.map((check) => (

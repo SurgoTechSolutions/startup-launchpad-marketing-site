@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Lede } from "@/components/atoms/Lede";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { RichText } from "@/components/molecules/RichText";
 import type { CostBandContent } from "@/types";
@@ -14,9 +15,11 @@ export interface CostBandProps {
 export function CostBand({ content }: CostBandProps): ReactNode {
   return (
     <section className={styles.band}>
-      <SectionTitle size="find" className={styles.title}>
-        <RichText content={content.title} />
-      </SectionTitle>
+      <HeadingFill onDark>
+        <SectionTitle size="find" className={styles.title}>
+          <RichText content={content.title} />
+        </SectionTitle>
+      </HeadingFill>
       <Lede className={styles.lede}>{content.lede}</Lede>
       <Button href={content.link.href} variant="slide" className={styles.link}>
         {content.link.label}

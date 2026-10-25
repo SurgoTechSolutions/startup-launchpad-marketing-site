@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { HeadingFill } from "@/components/atoms/HeadingFill";
 import { InView } from "@/components/atoms/InView";
 import { SectionTitle } from "@/components/atoms/SectionTitle";
 import { QuoteCard } from "@/components/molecules/QuoteCard";
@@ -17,11 +18,11 @@ export function DashboardShowcase({ content, signupUrl }: DashboardShowcaseProps
   return (
     <section className={styles.every}>
       <div className={styles.stage}>
-        <InView className={styles.fill} threshold={0.6}>
+        <HeadingFill>
           <SectionTitle size="every">
             <RichText content={content.title} />
           </SectionTitle>
-        </InView>
+        </HeadingFill>
         <InView className={styles.window} threshold={0.15}>
           <div className={styles.dash} role="img" aria-label={content.label}>
             <div className={styles.top}>
