@@ -14,8 +14,23 @@
   background: linear-gradient(var(--surface), var(--bg) 96px);
 }
 
-/* Runs the full width of the screen, so cards scroll in and out past its edges. */
+/* Wide enough for the heading to sit on two even lines on desktop. It wraps further on smaller screens. */
+.head {
+  max-width: none;
+}
+
+.title {
+  max-width: 34ch;
+  text-wrap: balance;
+}
+
+/*
+ * Runs the full width of the screen, so cards scroll in and out past its edges. The extra room
+ * above and below keeps a hovered card's glow from being clipped; the negative margin takes it
+ * back out of the layout.
+ */
 .wall {
+  margin-block: -16px;
   margin-inline: calc(50% - 50vw);
-  padding-block: 4px;
+  padding-block: 20px;
 }

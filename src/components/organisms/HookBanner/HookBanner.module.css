@@ -33,8 +33,34 @@
   text-align: center;
 }
 
+/* The video and its presenter credit, kept closer together than the band's other parts. */
+.media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 880px;
+}
+
 .video {
   max-width: 880px;
+}
+
+/* Lines up with the video's left edge. */
+.presenter {
+  align-self: flex-start;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.presenterName {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .cta {

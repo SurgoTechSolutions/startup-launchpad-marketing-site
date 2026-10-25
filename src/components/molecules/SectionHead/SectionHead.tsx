@@ -5,9 +5,10 @@ import styles from "./SectionHead.module.css";
 export interface SectionHeadProps {
   readonly children: ReactNode;
   readonly align?: "start" | "center";
+  readonly className?: string | undefined;
 }
 
 /** The heading block at the top of a section: title, plus an optional lede. */
-export function SectionHead({ children, align = "center" }: SectionHeadProps): ReactNode {
-  return <div className={cx(styles.head, align === "center" && styles.center)}>{children}</div>;
+export function SectionHead({ children, align = "center", className }: SectionHeadProps): ReactNode {
+  return <div className={cx(styles.head, align === "center" && styles.center, className)}>{children}</div>;
 }

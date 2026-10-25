@@ -20,20 +20,30 @@ export interface MarqueeProps {
 
 /**
  * Rows that scroll sideways on a loop. Each row is rendered twice, the copy hidden from
- * assistive tech, so the loop is seamless. Hovering eases the rows down to a slower pace rather
- * than stopping them. With reduced motion, or before hydration, the rows are a plain horizontal
- * scroller with no copies.
+ * assistive tech, so the loop is seamless. Items must not hold links or buttons, since the copy
+ * would put a hidden duplicate of each in the tab order. Hovering eases the rows down to a slower
+ * pace rather than stopping them. With reduced motion, or before hydration, the rows are a plain
+ * horizontal scroller with no copies.
  */
 export function Marquee({ rows, className }: MarqueeProps): ReactNode {
   const animate = !usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const frame = useRef(0);
 
-  /** Eases every row's playback rate to the target, so the speed changes without a jump. */
+  /**
+   * Eases every row's playback rate to the target, so the speed changes without a jump. Only the
+   * rows' own scroll is touched, not animations on the items inside them.
+   */
   const easeTo = (target: number): void => {
     const container = ref.current;
     if (container === null) return;
-    const animations = container.getAnimations({ subtree: true });
+    const animations = container
+      .getAnimations({ subtree: true })
+      .filter(
+        (animation) =>
+          animation.effect instanceof KeyframeEffect &&
+          animation.effect.target?.parentElement === container,
+      );
     const first = animations[0];
     if (first === undefined) return;
     const from = first.playbackRate;
@@ -69,7 +79,9 @@ export function Marquee({ rows, className }: MarqueeProps): ReactNode {
         >
           {row}
           {animate && (
-            <div className={styles.copy} aria-hidden="true" inert>
+            // Hidden from assistive tech but not inert, so the copied items still react to hover.
+            // Nothing in them can take focus, so the copy adds nothing to the tab order.
+            <div className={styles.copy} aria-hidden="true">
               {row}
             </div>
           )}

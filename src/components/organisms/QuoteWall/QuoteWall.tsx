@@ -21,9 +21,9 @@ export function QuoteWall({ content }: QuoteWallProps): ReactNode {
 
   return (
     <section className={styles.band}>
-      <SectionHead>
+      <SectionHead align="start" className={styles.head}>
         <HeadingFill>
-          <SectionTitle size="find">
+          <SectionTitle size="find" className={styles.title}>
             <RichText content={content.title} />
           </SectionTitle>
         </HeadingFill>

@@ -21,7 +21,17 @@ export function HookBanner({ content, signupUrl }: HookBannerProps): ReactNode {
           <RichText content={content.title} />
         </SectionTitle>
       </HeadingFill>
-      {content.video !== undefined && <VideoEmbed video={content.video} className={styles.video} />}
+      {content.video !== undefined && (
+        <div className={styles.media}>
+          <VideoEmbed video={content.video} className={styles.video} />
+          {content.presenter !== undefined && (
+            <p className={styles.presenter}>
+              <b className={styles.presenterName}>{content.presenter.name}</b>
+              {content.presenter.role}
+            </p>
+          )}
+        </div>
+      )}
       {content.ctaLabel !== undefined && (
         <div className={styles.cta}>
           <Button href={signupUrl} onDark>{content.ctaLabel}</Button>

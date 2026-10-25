@@ -1,0 +1,15 @@
+/* Solid grey band across the full width, hiding the page grid. The shadow fills the sides without widening the page. */
+.strip {
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+}
+
+/*
+ * Runs the full width of the screen, so cards scroll in and out past its edges. The room above
+ * and below keeps a hovered card's glow from being clipped.
+ */
+.rows {
+  margin-inline: calc(50% - 50vw);
+  padding-block: 20px;
+}

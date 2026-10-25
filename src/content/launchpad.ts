@@ -16,6 +16,7 @@ import type {
   HookContent,
   HowItWorksContent,
   LaunchpadPageContent,
+  QuoteStripContent,
   QuoteWallContent,
   StatsContent,
   TrustedByContent,
@@ -56,6 +57,7 @@ export const HOOK = {
     width: 1316,
     height: 720,
   },
+  presenter: { name: "Thomas Charlton", role: "Co-Founder, Startup Launchpad" },
   ctaLabel: "Scan my code for free",
 } as const satisfies HookContent;
 
@@ -230,6 +232,27 @@ export const FEATURE_QUOTE = {
   ctaLabel: "Scan my code for free",
 } as const satisfies FeatureQuoteContent;
 
+export const QUOTE_STRIP = {
+  title: ["Founders, after seeing their ", { highlight: "results" }, "."],
+  // None of these are in the hero card. The first half is the top row, the second half the
+  // bottom row, with six each so a row is always wider than the screen. The same person never
+  // appears twice in a row, across the loop point too.
+  quotes: [
+    resolveQuote("catherineEasy"),
+    resolveQuote("robPrice"),
+    resolveQuote("joThanks"),
+    resolveQuote("aliceFixes"),
+    resolveQuote("rosiePaying"),
+    resolveQuote("rousseauPenTesting"),
+    resolveQuote("joScared"),
+    resolveQuote("mcleodVibe"),
+    resolveQuote("rousseauExercise"),
+    resolveQuote("aliceSimply"),
+    resolveQuote("robSelling"),
+    resolveQuote("richardBuilders"),
+  ],
+} as const satisfies QuoteStripContent;
+
 export const QUOTE_WALL = {
   title: ["What founders said once they'd seen their own ", { highlight: "results" }, "."],
   // Every quote used on the site except Jason's long one, which would stretch every card in its
@@ -346,6 +369,7 @@ export const FINAL_CTA = {
 export const LAUNCHPAD_PAGE = {
   header: LAUNCHPAD_HEADER,
   hero: HERO,
+  quoteStrip: QUOTE_STRIP,
   trustedBy: TRUSTED_BY,
   hook: HOOK,
   stats: STATS,

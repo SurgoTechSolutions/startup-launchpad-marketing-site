@@ -71,6 +71,8 @@ export interface VideoContent {
 export interface HookContent {
   readonly title: RichText;
   readonly video?: VideoContent;
+  /** Who presents the video, credited just under it. */
+  readonly presenter?: { readonly name: string; readonly role: string };
   readonly ctaLabel?: string;
   /** A short reassurance under the button. */
   readonly note?: string;
@@ -178,6 +180,11 @@ export interface FeatureQuoteContent {
   /** Short bio shown on its own line under the person's role. */
   readonly bio: string;
   readonly ctaLabel: string;
+}
+
+export interface QuoteStripContent {
+  readonly title: RichText;
+  readonly quotes: readonly QuoteWithPerson[];
 }
 
 export interface QuoteWallContent {
@@ -308,6 +315,7 @@ export interface LegalPageContent {
 export interface LaunchpadPageContent {
   readonly header: HeaderContent;
   readonly hero: HeroContent;
+  readonly quoteStrip: QuoteStripContent;
   readonly trustedBy: TrustedByContent;
   readonly hook: HookContent;
   readonly stats: StatsContent;
