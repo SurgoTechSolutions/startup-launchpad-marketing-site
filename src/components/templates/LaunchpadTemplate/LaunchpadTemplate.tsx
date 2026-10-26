@@ -9,7 +9,6 @@ import { FinalCta } from "@/components/organisms/FinalCta";
 import { FounderStory } from "@/components/organisms/FounderStory";
 import { Hero } from "@/components/organisms/Hero";
 import { HookBanner } from "@/components/organisms/HookBanner";
-import { HowItWorks } from "@/components/organisms/HowItWorks";
 import { PricingSection } from "@/components/organisms/PricingSection";
 import { QuoteStrip } from "@/components/organisms/QuoteStrip";
 import { RealFindings } from "@/components/organisms/RealFindings";
@@ -39,7 +38,6 @@ export function LaunchpadTemplate({ content, signupUrl }: LaunchpadTemplateProps
             <TrustedBy content={content.trustedBy} />
           </div>
           <HookBanner content={content.hook} signupUrl={signupUrl} />
-          <QuoteStrip content={content.quoteStrip} />
           <StatsSection content={content.stats} />
           <RealFindings content={content.findings} />
           <FounderStory content={content.founderStory} signupUrl={signupUrl} />
@@ -48,7 +46,7 @@ export function LaunchpadTemplate({ content, signupUrl }: LaunchpadTemplateProps
           <ExplainSection content={content.explain} />
           <FinalCta content={content.fixBanner} signupUrl={signupUrl} layout="banner" />
           <FeatureQuote content={content.featureQuote} signupUrl={signupUrl} />
-          <HowItWorks content={content.howItWorks} signupUrl={signupUrl} />
+          <QuoteStrip content={content.quoteStrip} />
           <CostBand content={content.costBand} />
           <PricingSection content={content.pricing} signupUrl={signupUrl} plain />
           <FaqSection content={content.faq} />
