@@ -2,7 +2,7 @@ import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, PageMeta, WhyContent, WhyPageContent } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
-import { FOOTER } from "./site";
+import { FOOTER, FREE_FIXES_CTA_LABEL } from "./site";
 
 /**
  * Findings come from real Startup Launchpad case studies, described by type of app
@@ -49,8 +49,8 @@ export const WHY = {
 
 export const WHY_FINAL_CTA = {
   title: ["Find out what's in your code ", { highlight: "before someone else does" }, "."],
-  lede: "Free first scan. Cancel any time.",
-  ctaLabel: "Scan my code for free",
+  lede: "5 fixes free. No card needed.",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
   quote: resolveQuote("joScared"),
 } as const satisfies FinalCtaContent;
 

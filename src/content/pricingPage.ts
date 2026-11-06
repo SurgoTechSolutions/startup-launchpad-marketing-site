@@ -2,7 +2,7 @@ import { ROUTES } from "@/config/site";
 import type { CostComparisonContent, FaqContent, FinalCtaContent, HeaderContent, PricingPageContent } from "@/types";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
-import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
+import { FOOTER, FREE_FIXES_CTA_LABEL, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
 
 export const PRICING_HEADER = {
   ...HEADER_BASE,
@@ -77,14 +77,14 @@ export const PRICING_FAQS = {
     {
       question: "What's in the free scan?",
       answer:
-        "One full scan of your repository, with your issue count across all five areas broken down by severity, and one critical issue shown in full with its fix.",
+        "One full scan of your repository and live site, with your issue count across all five areas broken down by severity, and 5 fixes: your 2 worst security issues, plus 3 more across search, accessibility and speed.",
     },
   ],
 } as const satisfies FaqContent;
 
 export const PRICING_FINAL_CTA = {
   title: ["Find out how many issues you have ", { highlight: "before you pay" }, " a penny."],
-  ctaLabel: "Scan my code for free",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
   quote: resolveQuote("jasonPremium"),
 } as const satisfies FinalCtaContent;
 

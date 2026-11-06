@@ -22,6 +22,7 @@ export const SITE_URL: string =
 
 export const ROUTES = {
   launchpad: "/startup-launchpad",
+  freeScan: "/startup-launchpad/free-scan",
   pricing: "/startup-launchpad/pricing",
   mission: "/startup-launchpad/mission",
   why: "/startup-launchpad/why",

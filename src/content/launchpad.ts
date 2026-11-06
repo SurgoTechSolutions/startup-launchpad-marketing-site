@@ -25,7 +25,7 @@ import { FOUNDERS } from "./founders";
 import { HERO_QUOTE_KEYS } from "./hero";
 import { PRICING } from "./pricing";
 import { resolveQuote } from "./quotes";
-import { FOOTER, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
+import { FOOTER, FREE_FIXES_CTA_LABEL, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
 
 export const LAUNCHPAD_HEADER = {
   ...HEADER_BASE,
@@ -34,9 +34,9 @@ export const LAUNCHPAD_HEADER = {
 } as const satisfies HeaderContent;
 
 export const HERO = {
-  title: ["Automated security checks for apps ", { highlight: "built with AI" }, "."],
-  lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything.",
-  ctaLabel: "Scan my code for free",
+  title: ["Automated cyber security checks for apps ", { highlight: "built with AI" }, "."],
+  lede: "Built with Lovable, Bolt, Replit, v0, Cursor or Claude? We scan your repository and your live site, explain what we find in plain English, and give you a prompt to paste in and fix everything. 5 fixes free, no card needed.",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
   figureLabel: "A brick wall with three bricks missing. The bricks lift off the ground and slide back into their gaps, then fall out again.",
   quotesLabel: "What founders said when they saw their results",
   quoteDotLabel: "Show quote from",
@@ -59,7 +59,7 @@ export const HOOK = {
     height: 720,
   },
   presenter: { ...FOUNDERS.thomas, role: "Co-Founder, Startup Launchpad" },
-  ctaLabel: "Scan my code for free",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
 } as const satisfies HookContent;
 
 export const TRUSTED_BY = {
@@ -230,7 +230,7 @@ export const FEATURE_QUOTE = {
   quote: resolveQuote("jasonCalm"),
   photo: { src: jasonNesbitt, alt: "Jason Nesbitt, smiling, in front of a dark wall" },
   bio: "15 years building software, sold his last SaaS business in 2023.",
-  ctaLabel: "Scan my code for free",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
 } as const satisfies FeatureQuoteContent;
 
 export const QUOTE_STRIP = {
@@ -319,7 +319,7 @@ export const COST_BAND = {
 // The full-comparison link lives on the cost band just above, so it isn't repeated here.
 export const LAUNCHPAD_PRICING = {
   ...PRICING,
-  lede: "See your numbers first. Pay when you want the fixes.",
+  lede: "Your first 5 fixes are free. Pay when you want the rest.",
 } as const satisfies PricingContent;
 
 export const FAQS = {
@@ -359,8 +359,8 @@ export const FAQS = {
 
 export const FINAL_CTA = {
   title: ["Find out what's in your codebase ", { highlight: "before someone else does" }, "."],
-  lede: "Connect your repository, run the scan and see your numbers. No payment until you decide to unlock the fixes.",
-  ctaLabel: "Scan my code for free",
+  lede: "Connect your repository, run the scan and get 5 fixes free. No card. Pay only if you want the rest fixed.",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
   quote: resolveQuote("joThanks"),
 } as const satisfies FinalCtaContent;
 

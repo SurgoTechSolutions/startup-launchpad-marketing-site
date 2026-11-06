@@ -1,7 +1,7 @@
 import { ROUTES } from "@/config/site";
 import type { FinalCtaContent, PageMeta, VerifiedContent, VerifiedPageContent } from "@/types";
 import { LAUNCHPAD_HEADER } from "./launchpad";
-import { FOOTER } from "./site";
+import { FOOTER, FREE_FIXES_CTA_LABEL } from "./site";
 
 export const VERIFIED = {
   intro: {
@@ -107,7 +107,7 @@ export const VERIFIED = {
 export const VERIFIED_FINAL_CTA = {
   title: ["Start your way to ", { highlight: "Gold" }, " today."],
   lede: "Your first scan shows exactly what stands between you and each level.",
-  ctaLabel: "Scan my code for free",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
 } as const satisfies FinalCtaContent;
 
 export const VERIFIED_META = {

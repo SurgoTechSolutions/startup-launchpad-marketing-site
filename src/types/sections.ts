@@ -2,6 +2,7 @@
 import type { StaticImageData } from "next/image";
 import type {
   CheckItem,
+  CheckKind,
   Credit,
   DashArea,
   Severity,
@@ -71,6 +72,8 @@ export interface VideoContent {
 /** A single big line in its own slate band, with an optional video and call to action beneath. */
 export interface HookContent {
   readonly title: RichText;
+  /** A short line straight under the title. */
+  readonly subtitle?: string;
   readonly video?: VideoContent;
   /** Who presents the video, credited just under it. */
   readonly presenter?: Credit;
@@ -501,6 +504,38 @@ export interface WhatWeCheckPageContent {
   readonly header: HeaderContent;
   readonly page: WhatWeCheckContent;
   readonly profile: ProfileContent;
+  readonly finalCta: FinalCtaContent;
+  readonly footer: FooterContent;
+}
+
+export interface OfferTile {
+  readonly kind: CheckKind;
+  readonly label: string;
+}
+
+/** One part of an offer: a large headline, one sentence and either icon tiles or an example issue with its fix prompt. */
+export interface OfferRowContent {
+  readonly title: RichText;
+  readonly detail: string;
+  /** The colour of the tiles. */
+  readonly tone: "ink" | "crit" | "accent";
+  readonly tiles?: readonly OfferTile[];
+  readonly example?: {
+    readonly issue: ExplainContent["issue"];
+    readonly prompt: ExplainContent["prompt"];
+    /** Tells a mouse user the issue changes to its prompt. */
+    readonly hint: string;
+  };
+}
+
+export interface FreeScanPageContent {
+  readonly header: HeaderContent;
+  readonly hook: HookContent;
+  readonly offerTitle: RichText;
+  readonly offerRows: readonly OfferRowContent[];
+  readonly offerClose: FinalCtaContent;
+  readonly quoteStrip: QuoteStripContent;
+  readonly faq: FaqContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
 }

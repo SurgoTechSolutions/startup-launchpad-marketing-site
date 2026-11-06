@@ -53,6 +53,93 @@
   text-align: left;
 }
 
+/*
+ * Opening the page: no band, just the message in large type on the page background, with the
+ * button under it and the video beside them. The empty rows centre the words against the video.
+ */
+.lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  grid-template-rows: 1fr auto auto auto 1fr;
+  grid-template-areas:
+    ". media"
+    "title media"
+    "subtitle media"
+    "cta media"
+    ". media"
+    "extra extra";
+  gap: 28px 56px;
+  padding-block: 40px 0;
+}
+
+.lead::before {
+  content: none;
+}
+
+.lead .fill {
+  grid-area: title;
+}
+
+.band.lead .title {
+  max-width: 30ch;
+  color: var(--ink);
+  font-size: clamp(34px, 3.9vw, 48px);
+  line-height: 1.12;
+  text-align: left;
+}
+
+.lead .subtitle {
+  grid-area: subtitle;
+  color: var(--muted);
+}
+
+.lead .media {
+  grid-area: media;
+  max-width: 680px;
+}
+
+/* A quiet frame, so the headline stays the loudest thing here. */
+.lead .video {
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 44px rgba(0, 21, 36, 0.14);
+}
+
+.lead .cta {
+  grid-area: cta;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.lead .note {
+  color: var(--muted);
+}
+
+.lead .extra {
+  grid-area: extra;
+}
+
+/* Too narrow for two columns: back to one centred stack, with the video above the button. */
+@media (max-width: 900px) {
+  .lead {
+    display: flex;
+    padding-block: 32px 0;
+  }
+
+  .band.lead .title,
+  .lead .subtitle {
+    text-align: center;
+  }
+
+  .lead .cta {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.extra {
+  width: 100%;
+}
+
 .cta {
   display: flex;
   flex-direction: column;

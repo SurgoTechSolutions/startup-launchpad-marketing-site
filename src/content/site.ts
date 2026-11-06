@@ -1,10 +1,13 @@
 import { LOGIN_URL, ROUTES } from "@/config/site";
 import type { FooterContent } from "@/types";
 
+/** The main button, the same on every page. The offer behind it is set out on the free scan page. */
+export const FREE_FIXES_CTA_LABEL = "Get my 5 free fixes";
+
 /** Header copy shared by both pages. Each page adds its own wordmark link and nav link. */
 export const HEADER_BASE = {
   login: { label: "Log in", href: LOGIN_URL },
-  ctaLabel: "Scan my code for free",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
   menuLabel: "Menu",
 } as const;
 
@@ -28,7 +31,7 @@ export const FOOTER = {
     logo: { src: "/images/logo-mark.png", alt: "Startup Launchpad home" },
   },
   columns: [
-    { title: "Explore", links: NAV_LINKS },
+    { title: "Explore", links: [...NAV_LINKS, { label: "Free scan", href: ROUTES.freeScan }] },
     {
       title: "Legal",
       links: [

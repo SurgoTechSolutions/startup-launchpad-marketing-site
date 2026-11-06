@@ -1,5 +1,6 @@
 import type { PricingContent } from "@/types";
 import { resolveQuote } from "./quotes";
+import { FREE_FIXES_CTA_LABEL } from "./site";
 
 /** The pricing block. Shown on the main page (with a lede) and at the top of the pricing page. */
 export const PRICING = {
@@ -16,10 +17,10 @@ export const PRICING = {
       price: { amount: "Free" },
       features: [
         "Full scan of your repository and live site",
-        "Your issue count across all five areas",
-        "Broken down by severity, so you know how many are critical",
+        "Your issue count across all five areas, by severity",
+        "5 fixes, free, including your 2 worst security holes",
       ],
-      ctaLabel: "Scan my code for free",
+      ctaLabel: FREE_FIXES_CTA_LABEL,
     },
     {
       title: "Ongoing protection",

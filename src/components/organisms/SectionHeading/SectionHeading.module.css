@@ -1,0 +1,16 @@
+/* White across the full width, running on into the white section below. The shadow fills the sides without widening the page. */
+.band {
+  padding-top: 72px;
+  /* Pulls the section below up, so the heading reads as its introduction. */
+  margin-bottom: -32px;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
+  text-align: center;
+}
+
+.band h2 {
+  max-width: none;
+  font-size: clamp(42px, 6.4vw, 72px);
+  line-height: 1.08;
+}

@@ -1,0 +1,199 @@
+/* White across the full width. The shadow fills the sides without widening the page. */
+.row {
+  --tone: var(--ink);
+  --tone-soft: var(--bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "copy tiles";
+  align-items: center;
+  gap: 56px;
+  padding-block: 112px;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
+}
+
+.mirrored {
+  grid-template-areas: "tiles copy";
+  background: var(--bg);
+  box-shadow: 0 0 0 100vmax var(--bg);
+}
+
+.crit {
+  --tone: var(--crit-strong);
+  --tone-soft: var(--crit-soft);
+}
+
+.accent {
+  --tone: var(--accent);
+  --tone-soft: var(--warm-soft);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  grid-area: copy;
+  gap: 18px;
+  min-width: 0;
+}
+
+.title {
+  max-width: none;
+  color: var(--ink);
+  font-size: clamp(38px, 5.2vw, 60px);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.detail {
+  color: var(--body);
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.35;
+}
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: tiles;
+  justify-content: center;
+  gap: 16px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.example {
+  grid-area: tiles;
+  min-width: 0;
+}
+
+/* Without hover, as on phones, the prompt simply follows the issue. */
+.faces {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.issueFace,
+.promptFace {
+  display: grid;
+  min-width: 0;
+}
+
+.hint {
+  display: none;
+}
+
+/*
+ * With a mouse, both cards share one spot, sized to the taller, and the issue changes to its fix
+ * prompt while the mouse is on it or the copy button has focus. The prompt is only see-through,
+ * not hidden, so the keyboard can still reach the button.
+ */
+@media (hover: hover) {
+  .faces {
+    display: grid;
+    gap: 0;
+  }
+
+  .issueFace,
+  .promptFace {
+    grid-area: 1 / 1;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .promptFace {
+    opacity: 0;
+    transform: scale(0.98);
+    pointer-events: none;
+  }
+
+  .faces:hover .issueFace,
+  .faces:focus-within .issueFace {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  .faces:hover .promptFace,
+  .faces:focus-within .promptFace {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .hint {
+    display: block;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.tile {
+  display: flex;
+  flex: 0 0 calc((100% - 32px) / 3);
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 30px 10px 24px;
+  border-radius: 24px;
+  background: var(--tone-soft);
+  color: var(--tone);
+  text-align: center;
+  transition:
+    opacity 0.5s ease-out var(--reveal-delay, 0ms),
+    translate 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms);
+}
+
+/* On the grey band the tiles sit on white, so they still stand out. */
+.mirrored .tile {
+  background: var(--surface);
+  box-shadow: 0 14px 30px rgba(0, 21, 36, 0.08);
+}
+
+/* CheckGrid arms the list once motion is allowed, and marks each tile as it scrolls in. */
+.tiles[data-reveal="armed"] .tile:not([data-in]) {
+  opacity: 0;
+  translate: 0 20px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+.label {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (max-width: 900px) {
+  .row,
+  .mirrored {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "copy"
+      "tiles";
+    gap: 32px;
+    padding-block: 56px;
+  }
+
+  .copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .tile {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}

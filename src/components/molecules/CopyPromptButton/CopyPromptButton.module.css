@@ -8,4 +8,47 @@
   font-family: inherit;
   font-size: 14px;
   font-weight: 500;
+  /* Wide enough for every label, so the button keeps its size as they change. */
+  min-width: 116px;
+  transition:
+    transform 0.12s ease-out,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Presses down under the click, then pops up green with a tick once the prompt is copied. */
+.button:active {
+  transform: scale(0.94);
+}
+
+.copied {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+  color: var(--ok);
+  animation: pop 0.35s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.copied::before {
+  content: "\2713\00a0";
+}
+
+@keyframes pop {
+  45% {
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:active {
+    transform: none;
+  }
+
+  .copied {
+    animation: none;
+  }
 }

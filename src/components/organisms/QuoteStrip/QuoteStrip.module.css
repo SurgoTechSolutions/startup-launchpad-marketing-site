@@ -5,6 +5,13 @@
   clip-path: inset(0 -100vmax);
 }
 
+/* Just the rows, for placing inside another section: no band of its own. */
+.untitled {
+  padding-block: 0;
+  background: none;
+  box-shadow: none;
+}
+
 /*
  * Runs the full width of the screen, so cards scroll in and out past its edges. The room above
  * and below keeps a hovered card's glow from being clipped.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { cx } from "@/lib/cx";
 import styles from "./CopyPromptButton.module.css";
 
 export interface CopyPromptButtonLabels {
@@ -57,7 +58,7 @@ export function CopyPromptButton({ text, targetId, labels }: CopyPromptButtonPro
   return (
     <button
       type="button"
-      className={styles.button}
+      className={cx(styles.button, state === "copied" && styles.copied)}
       aria-controls={targetId}
       onClick={() => void handleClick()}
     >

@@ -4,7 +4,7 @@ import type { FinalCtaContent, PageMeta, ProfileContent, WhatWeCheckContent, Wha
 import { FOUNDERS } from "./founders";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
-import { FOOTER } from "./site";
+import { FOOTER, FREE_FIXES_CTA_LABEL } from "./site";
 
 /** What the scan covers, area by area. Check descriptions follow the dashboard's own sections. */
 export const WHAT_WE_CHECK = {
@@ -157,8 +157,8 @@ export const WHAT_WE_CHECK_PROFILE = {
 
 export const WHAT_WE_CHECK_FINAL_CTA = {
   title: ["See what we'd find in ", { highlight: "your code" }, "."],
-  lede: "Your first scan is free.",
-  ctaLabel: "Scan my code for free",
+  lede: "Your first scan is free, with 5 fixes.",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
   quote: resolveQuote("aliceFixes"),
 } as const satisfies FinalCtaContent;
 

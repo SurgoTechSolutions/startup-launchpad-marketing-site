@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "next-dev", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 3000 }
+    { "name": "next-dev", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 3000 },
+    { "name": "high-street-heroes", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "/Users/tomcharlton/first-connections-core", "run", "dev", "-w", "high-street-heroes"], "port": 3001 }
   ]
 }

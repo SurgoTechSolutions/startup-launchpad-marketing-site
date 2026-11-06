@@ -4,7 +4,7 @@ import type { FinalCtaContent, MissionContent, MissionPageContent, PageMeta } fr
 import { FOUNDERS } from "./founders";
 import { LAUNCHPAD_HEADER } from "./launchpad";
 import { resolveQuote } from "./quotes";
-import { FOOTER } from "./site";
+import { FOOTER, FREE_FIXES_CTA_LABEL } from "./site";
 
 export const MISSION = {
   title: ["We want more ", { highlight: "startups to succeed" }, "."],
@@ -29,14 +29,14 @@ export const MISSION = {
   ],
   promise: {
     title: ["Our ", { highlight: "promise" }, " to founders"],
-    text: "Your first scan is free. You'll see exactly how many issues you have, and we'll show you one critical issue in full, with its fix, so you know it works before you pay a penny.",
+    text: "Your first scan is free. You'll see exactly how many issues you have, and we'll give you 5 fixes free, including your 2 worst security holes, so you know it works before you pay a penny.",
     ctaLabel: "Start my free scan",
   },
 } as const satisfies MissionContent;
 
 export const MISSION_FINAL_CTA = {
   title: ["Build something secure, and ", { highlight: "launch it with confidence" }, "."],
-  ctaLabel: "Scan my code for free",
+  ctaLabel: FREE_FIXES_CTA_LABEL,
   quote: resolveQuote("richardBuilders"),
 } as const satisfies FinalCtaContent;
 
