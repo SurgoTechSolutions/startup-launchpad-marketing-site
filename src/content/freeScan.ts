@@ -43,7 +43,7 @@ const OFFER_ROWS = [
     tiles: CHECK_SUMMARY.checks,
   },
   {
-    title: [{ highlight: "2 cyber security fixes" }, "."],
+    title: [{ highlight: "2 security fixes" }, "."],
     detail: "Your worst cyber security holes, with the fix to paste in.",
     tone: "crit",
     example: { issue: EXPLAIN.issue, prompt: EXPLAIN.prompt, hint: "Hover to see the fix" },
