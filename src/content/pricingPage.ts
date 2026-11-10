@@ -16,7 +16,7 @@ export const COST_COMPARISON = {
   cellLabels: { yes: "Yes", no: "No" },
   columns: [
     { label: "One-off pen test" },
-    { label: "Security contractor", sublabel: "one day a week" },
+    { label: "Cyber security contractor", sublabel: "one day a week" },
     { label: "Startup Launchpad", ours: true },
   ],
   rows: [
@@ -77,7 +77,7 @@ export const PRICING_FAQS = {
     {
       question: "What's in the free scan?",
       answer:
-        "One full scan of your repository and live site, with your issue count across all five areas broken down by severity, and 5 fixes: your 2 worst security issues, plus 3 more across search, accessibility and speed.",
+        "One full scan of your repository and live site, with your issue count across all five areas broken down by severity, and 5 fixes: your 2 worst cyber security issues, plus 3 more across search, accessibility and speed.",
     },
   ],
 } as const satisfies FaqContent;

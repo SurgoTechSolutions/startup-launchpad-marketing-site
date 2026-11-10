@@ -19,7 +19,8 @@ export const NAV_LINKS = [
   { label: "Mission", href: ROUTES.mission },
   { label: "What we check", href: ROUTES.whatWeCheck },
   { label: "Pricing", href: ROUTES.pricing },
-  { label: "Verified", href: ROUTES.verified },
+  // Hidden for now. The page is still live at its address. Uncomment to bring it back.
+  // { label: "Verified", href: ROUTES.verified },
 ] as const;
 
 /** The header title. The lead keeps its trailing space; the accent is drawn in orange. The logo sits before it. */

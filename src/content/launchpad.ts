@@ -46,7 +46,7 @@ export const HERO = {
 /** The question after the logos, answered by the stats that follow. */
 export const HOOK = {
   title: [
-    "Find the holes in your app's security, ",
+    "Find the holes in your app's cyber security, ",
     { highlight: "and fix them yourself without paying a developer" },
     ".",
   ],
@@ -143,11 +143,11 @@ export const CHECK_SUMMARY = {
 export const DASHBOARD = {
   title: ["See every issue ", { highlight: "at a glance" }, "."],
   label:
-    "Example scan dashboard showing open issues across security, accessibility, SEO, reliability and performance, and housekeeping",
+    "Example scan dashboard showing open issues across cyber security, accessibility, SEO, reliability and performance, and housekeeping",
   repo: "demo/your-app",
   badge: "Example scan",
   tiles: [
-    { area: "security", label: "Security", counts: { critical: 13, high: 53, medium: 28, low: 10, info: 57 } },
+    { area: "security", label: "Cyber security", counts: { critical: 13, high: 53, medium: 28, low: 10, info: 57 } },
     { area: "accessibility", label: "Accessibility", counts: { high: 11, low: 14, info: 1 } },
     { area: "seo", label: "SEO", counts: { high: 3, low: 30, info: 7 } },
     { area: "reliability", label: "Reliability & Performance", counts: { medium: 14, info: 2 } },
@@ -189,7 +189,7 @@ export const EXPLAIN = {
   fixTitle: ["Then ", { highlight: "fix them" }, " with ", { keys: ["Ctrl", "V"] }],
   issue: {
     severity: "Critical",
-    category: "Security",
+    category: "Cyber security",
     title: "Your profiles table can be read by anyone",
     body: "Row-level security isn't switched on for this table. Anyone who opens your site can copy the public Supabase key out of your JavaScript and read every row in it: names, email addresses, and anything else you store there.",
     location: "supabase/migrations/0002_profiles.sql:14",

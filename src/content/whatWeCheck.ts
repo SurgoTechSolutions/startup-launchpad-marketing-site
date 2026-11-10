@@ -17,7 +17,7 @@ export const WHAT_WE_CHECK = {
     {
       id: "security",
       icon: "security",
-      title: "Security",
+      title: "Cyber security",
       intro:
         "The failures we find most often in AI-built products. None of them are clever attacks. All of them are one line of missing code between a stranger and your users' data.",
       checksTitle: "The checks",
@@ -121,7 +121,7 @@ export const WHAT_WE_CHECK = {
         },
         {
           title: "Unused packages",
-          body: "Packages your project installs but never uses. Each one is extra code shipped with your app, and one more thing that can carry a security flaw.",
+          body: "Packages your project installs but never uses. Each one is extra code shipped with your app, and one more thing that can carry a cyber security flaw.",
         },
         {
           title: "Unused code",
@@ -150,7 +150,7 @@ export const WHAT_WE_CHECK_PROFILE = {
   role: "Co-Founder & Technical Lead",
   paragraphs: [
     "By day, Jack is a senior software engineer at a major national organisation, building products that handle millions of interactions a day.",
-    "He studied ethical hacking and cybersecurity at Abertay University, and leads the engineering behind every check Startup Launchpad runs.",
+    "He studied ethical hacking and cyber security at Abertay University, and leads the engineering behind every check Startup Launchpad runs.",
   ],
   photo: { src: jackSheriff, alt: "Jack Sheriff, smiling, in an orange checked jacket" },
 } as const satisfies ProfileContent;
@@ -165,7 +165,7 @@ export const WHAT_WE_CHECK_FINAL_CTA = {
 export const WHAT_WE_CHECK_META = {
   title: "What we check",
   description:
-    "Security, accessibility, SEO, reliability and housekeeping: what Startup Launchpad checks in your code and live site, and what each check looks for.",
+    "Cyber security, accessibility, SEO, reliability and housekeeping: what Startup Launchpad checks in your code and live site, and what each check looks for.",
   path: ROUTES.whatWeCheck,
 } as const satisfies PageMeta;
 
