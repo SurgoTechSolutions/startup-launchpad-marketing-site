@@ -5,7 +5,8 @@ import { cx } from "@/lib/cx";
 import styles from "./Wordmark.module.css";
 
 export interface WordmarkProps {
-  readonly href: string;
+  /** Where the name links. Leave it out on pages that should have no way off, e.g. the free scan page. */
+  readonly href?: string | undefined;
   /** The plain part of the name, including any trailing space, e.g. "Startup ". */
   readonly lead: string;
   /** The orange part of the name, e.g. "Launchpad". */
@@ -29,6 +30,10 @@ export function Wordmark({ href, lead, accent, logo, className }: WordmarkProps)
       </span>
     </>
   );
+
+  if (href === undefined) {
+    return <span className={classes}>{content}</span>;
+  }
 
   if (href.startsWith("/")) {
     return (

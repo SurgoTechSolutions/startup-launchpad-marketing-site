@@ -8,13 +8,15 @@ import type {
   OfferRowContent,
   PageMeta,
 } from "@/types";
-import { CHECK_SUMMARY, EXPLAIN, HOOK, QUOTE_STRIP } from "./launchpad";
+import { CHECK_SUMMARY, EXPLAIN, HOOK, QUOTE_STRIP, STATS, TRUSTED_BY } from "./launchpad";
 import { resolveQuote } from "./quotes";
 import { FOOTER, FREE_FIXES_CTA_LABEL, HEADER_BASE, NAV_LINKS, WORDMARK } from "./site";
 
 /**
  * The Free App Safety Check landing page. Copy follows the No-Brainer Free Scan Offer doc: lead
  * with the free fixes, keep the trust lines by the button, and say "my app", not "my repository".
+ * It is laid out as a video sales letter, with no page links in the header or footer, so the only
+ * way forward is the button. The video script is in design/free-scan-vsl-script.md.
  */
 const TRUST_LINE = "No card needed";
 
@@ -26,9 +28,11 @@ const FREE_SCAN_HEADER = {
 
 const FREE_SCAN_HOOK = {
   ...HOOK,
-  title: ["A free cyber security check of your code and live site. ", { highlight: "Get 5 issues fixed free" }, "."],
-  subtitle: TRUST_LINE,
+  title: ["Find and fix your app's ", { highlight: "2 worst security holes" }, " in 30 minutes. Free."],
+  subtitle:
+    "Connect your app in 2 minutes. Each fix is a prompt you paste into the AI tool you build with, plus 3 more fixes for speed, accessibility and search.",
   ctaLabel: FREE_FIXES_CTA_LABEL,
+  note: TRUST_LINE,
 } as const satisfies HookContent;
 
 const OFFER_ROWS = [
@@ -56,13 +60,15 @@ const OFFER_ROWS = [
   },
 ] as const satisfies readonly OfferRowContent[];
 
-const OFFER_CLOSE = {
+/** The risk reversal. Every claim here is already true of the free check: no card, no call, nothing to cancel. */
+const GUARANTEE = {
   title: [
-    "All of this is worth about a day of expert time. ",
-    { lineBreak: true },
+    "About a day of expert time. ",
     { highlight: "You pay nothing." },
+    { lineBreak: true },
+    "Find nothing worth fixing? You've lost 2 minutes.",
   ],
-  lede: TRUST_LINE,
+  lede: "No card, no call, nothing to cancel. Disconnect our GitHub app whenever you like.",
   ctaLabel: FREE_FIXES_CTA_LABEL,
 } as const satisfies FinalCtaContent;
 
@@ -129,10 +135,12 @@ export const FREE_SCAN_META = {
 export const FREE_SCAN_PAGE = {
   header: FREE_SCAN_HEADER,
   hook: FREE_SCAN_HOOK,
+  trustedBy: TRUSTED_BY,
   offerTitle: ["What you get, ", { highlight: "free" }, "."],
   offerRows: OFFER_ROWS,
-  offerClose: OFFER_CLOSE,
+  stats: STATS,
   quoteStrip: QUOTE_STRIP,
+  guarantee: GUARANTEE,
   faq: FREE_SCAN_FAQS,
   finalCta: FREE_SCAN_FINAL_CTA,
   footer: FOOTER,

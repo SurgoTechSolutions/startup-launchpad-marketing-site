@@ -81,6 +81,36 @@
   text-align: center;
 }
 
+/* Landing-page footer: the legal links in one centred row over the bottom line. */
+.minimal {
+  padding-block: 28px 24px;
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.inline a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.inline a:hover {
+  color: var(--accent);
+}
+
+.minimal .bottom {
+  margin-top: 20px;
+  padding-top: 18px;
+}
+
 /* Tablets: logo and contact on their own rows, page links side by side. */
 @media (max-width: 860px) {
   .top {

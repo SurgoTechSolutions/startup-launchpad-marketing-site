@@ -6,12 +6,14 @@ import styles from "./TrustedBy.module.css";
 
 export interface TrustedByProps {
   readonly content: TrustedByContent;
+  /** Show the logos without their links, on pages that should keep people on the page. */
+  readonly unlinked?: boolean;
 }
 
 /** Logos this much wider than tall get a row of their own on phones. */
 const WIDE_RATIO = 4;
 
-export function TrustedBy({ content }: TrustedByProps): ReactNode {
+export function TrustedBy({ content, unlinked = false }: TrustedByProps): ReactNode {
   return (
     <section className={styles.trust} aria-label={content.label}>
       <div className={styles.logos}>
@@ -20,7 +22,7 @@ export function TrustedBy({ content }: TrustedByProps): ReactNode {
             styles.item,
             logo.intrinsicWidth / logo.intrinsicHeight > WIDE_RATIO && styles.wide,
           );
-          return href === undefined ? (
+          return href === undefined || unlinked ? (
             <span key={logo.src} className={className}>
               <Logo {...logo} />
             </span>

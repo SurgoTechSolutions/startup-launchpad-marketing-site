@@ -528,13 +528,21 @@ export interface OfferRowContent {
   };
 }
 
+/**
+ * The free scan landing page, in video sales letter order: headline and video with the button,
+ * who backs us, what you get, the numbers, what founders said, the guarantee, objections, and
+ * the last call to action.
+ */
 export interface FreeScanPageContent {
   readonly header: HeaderContent;
   readonly hook: HookContent;
+  readonly trustedBy: TrustedByContent;
   readonly offerTitle: RichText;
   readonly offerRows: readonly OfferRowContent[];
-  readonly offerClose: FinalCtaContent;
+  readonly stats: StatsContent;
   readonly quoteStrip: QuoteStripContent;
+  /** The risk reversal, as a full-width band with the button. */
+  readonly guarantee: FinalCtaContent;
   readonly faq: FaqContent;
   readonly finalCta: FinalCtaContent;
   readonly footer: FooterContent;
