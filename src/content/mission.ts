@@ -29,7 +29,7 @@ export const MISSION = {
   ],
   promise: {
     title: ["Our ", { highlight: "promise" }, " to founders"],
-    text: "Your first scan is free. You'll see exactly how many issues you have, and we'll give you 5 fixes free, including your 2 worst security holes, so you know it works before you pay a penny.",
+    text: "Your first scan is free. You'll see exactly how many issues you have, and we'll give you 5 fixes free, including your 2 worst cyber security holes, so you know it works before you pay a penny.",
     ctaLabel: "Start my free scan",
   },
 } as const satisfies MissionContent;

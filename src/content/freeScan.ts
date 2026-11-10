@@ -28,7 +28,7 @@ const FREE_SCAN_HEADER = {
 
 const FREE_SCAN_HOOK = {
   ...HOOK,
-  title: ["Find and fix your app's ", { highlight: "2 worst security holes" }, " in 30 minutes. Free."],
+  title: ["Find and fix your app's ", { highlight: "2 worst cyber security holes" }, " in 30 minutes. Free."],
   subtitle:
     "Connect your app in 2 minutes. Each fix is a prompt you paste into the AI tool you build with, plus 3 more fixes for speed, accessibility and search.",
   ctaLabel: FREE_FIXES_CTA_LABEL,
@@ -43,8 +43,8 @@ const OFFER_ROWS = [
     tiles: CHECK_SUMMARY.checks,
   },
   {
-    title: [{ highlight: "2 security fixes" }, "."],
-    detail: "Your worst security holes, with the fix to paste in.",
+    title: [{ highlight: "2 cyber security fixes" }, "."],
+    detail: "Your worst cyber security holes, with the fix to paste in.",
     tone: "crit",
     example: { issue: EXPLAIN.issue, prompt: EXPLAIN.prompt, hint: "Hover to see the fix" },
   },
@@ -128,7 +128,7 @@ const FREE_SCAN_FINAL_CTA = {
 export const FREE_SCAN_META = {
   title: "The Free App Safety Check",
   description:
-    "A free check that finds the holes in your AI-built app and fixes 5 of them, including your 2 worst security issues. No card.",
+    "A free check that finds the holes in your AI-built app and fixes 5 of them, including your 2 worst cyber security issues. No card.",
   path: ROUTES.freeScan,
 } as const satisfies PageMeta;
 

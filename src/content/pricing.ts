@@ -18,7 +18,7 @@ export const PRICING = {
       features: [
         "Full scan of your repository and live site",
         "Your issue count across all five areas, by severity",
-        "5 fixes, free, including your 2 worst security holes",
+        "5 fixes, free, including your 2 worst cyber security holes",
       ],
       ctaLabel: FREE_FIXES_CTA_LABEL,
     },
