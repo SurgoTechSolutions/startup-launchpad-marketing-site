@@ -11,7 +11,7 @@ import { FOOTER, FREE_FIXES_CTA_LABEL } from "./site";
 export const WHY = {
   intro: {
     title: ["AI builds apps that ", { highlight: "work" }, ", not apps that ", { highlight: "defend themselves" }, "."],
-    lede: "Every startup codebase we've scanned had critical security issues.",
+    lede: "Every startup codebase we've scanned had critical cyber security issues.",
   },
   reasons: {
     title: ["Why your AI ", { highlight: "didn't warn you" }],
@@ -57,7 +57,7 @@ export const WHY_FINAL_CTA = {
 export const WHY_META = {
   title: "Why it matters",
   description:
-    "AI tools build things that work. They don't build things that defend themselves. Here's what security gaps in vibe-coded apps actually cost: data, money, fines and growth.",
+    "AI tools build things that work. They don't build things that defend themselves. Here's what cyber security gaps in vibe-coded apps actually cost: data, money, fines and growth.",
   path: ROUTES.why,
 } as const satisfies PageMeta;
 

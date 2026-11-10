@@ -6,7 +6,7 @@ import { FOOTER, FREE_FIXES_CTA_LABEL } from "./site";
 export const VERIFIED = {
   intro: {
     title: ["Launchpad ", { highlight: "Verified" }],
-    lede: "A live, public check that your app meets published security rules. Earn it, keep it, and show it to the customers and investors who ask.",
+    lede: "A live, public check that your app meets published cyber security rules. Earn it, keep it, and show it to the customers and investors who ask.",
   },
   levels: {
     title: ["The Four Levels"],
@@ -27,7 +27,7 @@ export const VERIFIED = {
         number: "2",
         name: "Silver",
         tagline: "Baseline. No open doors.",
-        rules: ["Security: no open critical findings", "Vulnerable dependencies: no critical flaws"],
+        rules: ["Cyber security: no open critical findings", "Vulnerable dependencies: no critical flaws"],
         metal: "silver",
       },
       {
@@ -35,7 +35,7 @@ export const VERIFIED = {
         name: "Gold",
         tagline: "Hardened. Defended.",
         rules: [
-          "Security: no open high findings",
+          "Cyber security: no open high findings",
           "Vulnerable dependencies: no high flaws",
           "Missing security headers: every medium one added",
         ],
@@ -92,7 +92,7 @@ export const VERIFIED = {
       {
         title: "Fair for everyone",
         items: [
-          "Only the automated checks count. AI security review findings are leads to confirm, so they never affect your level.",
+          "Only the automated checks count. AI cyber security review findings are leads to confirm, so they never affect your level.",
           "Findings you mark not applicable are always counted on your public page.",
           "Only the branch you deploy from counts.",
           "SEO, copy-pasted code, unused code and info findings never block a level.",
@@ -113,7 +113,7 @@ export const VERIFIED_FINAL_CTA = {
 export const VERIFIED_META = {
   title: "Launchpad Verified",
   description:
-    "A live, public check that your app meets published security rules. Four levels from Bronze to Platinum, and a badge you can show customers and investors.",
+    "A live, public check that your app meets published cyber security rules. Four levels from Bronze to Platinum, and a badge you can show customers and investors.",
   path: ROUTES.verified,
 } as const satisfies PageMeta;
 

@@ -16,7 +16,7 @@ export const COST_COMPARISON = {
   cellLabels: { yes: "Yes", no: "No" },
   columns: [
     { label: "One-off pen test" },
-    { label: "Security contractor", sublabel: "one day a week" },
+    { label: "Cyber security contractor", sublabel: "one day a week" },
     { label: "Startup Launchpad", ours: true },
   ],
   rows: [

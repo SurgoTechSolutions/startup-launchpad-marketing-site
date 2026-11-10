@@ -8,7 +8,7 @@ import { FOOTER, FREE_FIXES_CTA_LABEL } from "./site";
 
 export const MISSION = {
   title: ["We want more ", { highlight: "startups to succeed" }, "."],
-  lede: "So we put professional-grade security in founders' hands, at a price a first product can afford.",
+  lede: "So we put professional-grade cyber security in founders' hands, at a price a first product can afford.",
   photo: {
     src: missionTeam,
     alt: "The Startup Launchpad co-founders presenting at an event, with the Startup Launchpad logo on the screen behind them.",
@@ -18,8 +18,8 @@ export const MISSION = {
     { ...FOUNDERS.jack, role: "Co-Founder" },
   ],
   paragraphs: [
-    "Security is priced for companies that have already made it. Pen tests and contractors cost thousands. So many founders launch without either, and find out what they missed when someone else does.",
-    "We don't think a security gap should be what stops a good idea. So we built Startup Launchpad to give every founder the checks a funded company would pay for.",
+    "Cyber security is priced for companies that have already made it. Pen tests and contractors cost thousands. So many founders launch without either, and find out what they missed when someone else does.",
+    "We don't think a cyber security gap should be what stops a good idea. So we built Startup Launchpad to give every founder the checks a funded company would pay for.",
   ],
   valuesTitle: ["How we ", { highlight: "lower the barrier" }],
   values: [
@@ -43,7 +43,7 @@ export const MISSION_FINAL_CTA = {
 export const MISSION_META = {
   title: "Our Mission",
   description:
-    "We want more startups to succeed. So we put professional-grade security in founders' hands, at a price a first product can afford.",
+    "We want more startups to succeed. So we put professional-grade cyber security in founders' hands, at a price a first product can afford.",
   path: ROUTES.mission,
 } as const satisfies PageMeta;
 
